@@ -1,0 +1,90 @@
+[gd_scene load_steps=11 format=3 uid="uid://b7co442vfn4a5"]
+
+[ext_resource type="PackedScene" uid="uid://b6aowcqbcswti" path="res://Assets/Models/Characters/characters-rodolfo-classic_v1.glb" id="1_bvieq"]
+[ext_resource type="PackedScene" uid="uid://ns8puyi8ci0w" path="res://Assets/Models/Scene/floor-road_v1.glb" id="2_vatyn"]
+[ext_resource type="PackedScene" uid="uid://byv1u8jlvd2rs" path="res://floor_road_v_1.tscn" id="3_1c4fl"]
+[ext_resource type="PackedScene" uid="uid://bplkpyps27gl4" path="res://Assets/Models/Scene/Background/mountain_v1.glb" id="3_oac4i"]
+[ext_resource type="PackedScene" uid="uid://b7822i5iwibmg" path="res://Assets/Models/Scene/Background/mountain_v2.glb" id="4_qmpij"]
+[ext_resource type="PackedScene" uid="uid://b3u8qg2yl7eja" path="res://Assets/Models/Scene/Background/mountain_v3.glb" id="5_k8x41"]
+[ext_resource type="PackedScene" uid="uid://c3yn2qntcr7t2" path="res://Assets/Models/Scene/buzon-es_v1.glb" id="6_3cfy7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_78j8c"]
+sky_top_color = Color(0.176471, 0.14902, 0.321569, 1)
+sky_horizon_color = Color(0.85098, 0.65098, 0.415686, 1)
+sky_cover_modulate = Color(1, 0.941176, 0.823529, 1)
+ground_bottom_color = Color(0.101961, 0.0823529, 0.0588235, 1)
+ground_horizon_color = Color(0.729412, 0.654902, 0.52549, 1)
+
+[sub_resource type="Sky" id="Sky_3ygco"]
+sky_material = SubResource("ProceduralSkyMaterial_78j8c")
+
+[sub_resource type="Environment" id="Environment_on610"]
+background_mode = 2
+sky = SubResource("Sky_3ygco")
+sky_custom_fov = 100.0
+ambient_light_sky_contribution = 0.41
+ambient_light_energy = 16.0
+tonemap_mode = 2
+tonemap_exposure = 2.0
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_bounce_feedback = 0.25
+sdfgi_energy = 0.75
+glow_enabled = true
+glow_normalized = true
+fog_enabled = true
+fog_light_color = Color(1, 0.831373, 0.788235, 1)
+fog_light_energy = 0.03
+fog_sun_scatter = 0.04
+fog_density = 0.025
+fog_sky_affect = 0.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+volumetric_fog_albedo = Color(1, 0.933333, 0.788235, 1)
+adjustment_brightness = 0.9
+adjustment_contrast = 1.2
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_on610")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.275637, -0.406247, 0.871199, 0, 0.906308, 0.422618, -0.961261, -0.116489, 0.249812, 6.03504, 9.07319, -10.5586)
+light_color = Color(0.960784, 0.898039, 0.823529, 1)
+shadow_enabled = true
+shadow_blur = 1.5
+
+[node name="Camera3D" type="Camera3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 1.369, 5.864)
+far = 200.0
+
+[node name="characters-rodolfo-classic_v1" parent="." instance=ExtResource("1_bvieq")]
+transform = Transform3D(0.91706, 0, 0.398749, 0, 1, 0, -0.398749, 0, 0.91706, 0, -0.118991, 1.13995)
+
+[node name="floor-road_v1" parent="." instance=ExtResource("2_vatyn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.70535, 0, 0)
+visible = false
+
+[node name="floor-road_v1" parent="floor-road_v1" instance=ExtResource("2_vatyn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3751, 0, 0)
+
+[node name="floor-road_v2" parent="." instance=ExtResource("3_1c4fl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.68372, 0, 0)
+
+[node name="floor-road_v3" parent="." instance=ExtResource("3_1c4fl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.54414, 0, 0)
+
+[node name="mountain_v1" parent="." instance=ExtResource("3_oac4i")]
+transform = Transform3D(3.29839, 0, 0, 0, 3.29839, 0, 0, 0, 3.29839, 0.294955, -0.375197, -65.3754)
+
+[node name="mountain_v2" parent="." instance=ExtResource("4_qmpij")]
+transform = Transform3D(3.29839, 0, 0, 0, 3.29839, 0, 0, 0, 3.29839, 56.084, 2.768, -49.953)
+
+[node name="mountain_v3" parent="." instance=ExtResource("5_k8x41")]
+transform = Transform3D(3.29839, 0, 0, 0, 3.29839, 0, 0, 0, 3.29839, -47.965, -0.808, -49.729)
+
+[node name="buzon-es_v1" parent="." instance=ExtResource("6_3cfy7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.14927, 0.179719, 4.61299)
