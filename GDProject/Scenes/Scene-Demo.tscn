@@ -1,11 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://b7co442vfn4a5"]
+[gd_scene load_steps=35 format=3 uid="uid://b7co442vfn4a5"]
 
-[ext_resource type="PackedScene" uid="uid://b6aowcqbcswti" path="res://Assets/Models/Characters/characters-rodolfo-classic_v1.glb" id="1_bvieq"]
 [ext_resource type="Environment" uid="uid://bt7lbvekdafji" path="res://Enviroments/Enviroment-sunrise.tres" id="1_hmru1"]
 [ext_resource type="PackedScene" uid="uid://bplkpyps27gl4" path="res://Assets/Models/Scene/Background/mountain_v1.glb" id="3_oac4i"]
 [ext_resource type="PackedScene" uid="uid://b7822i5iwibmg" path="res://Assets/Models/Scene/Background/mountain_v2.glb" id="4_qmpij"]
 [ext_resource type="PackedScene" uid="uid://b3u8qg2yl7eja" path="res://Assets/Models/Scene/Background/mountain_v3.glb" id="5_k8x41"]
-[ext_resource type="PackedScene" path="res://Assets/Models/Scene/Ground/floor_road_v_1.tscn" id="6_amxjb"]
+[ext_resource type="PackedScene" uid="uid://byqqv7ru2gool" path="res://Assets/Models/Scene/Ground/floor_road_v_1.tscn" id="6_amxjb"]
 [ext_resource type="PackedScene" uid="uid://cbivejfbjsknp" path="res://Assets/Models/Scene/City/fireguard_v_1.tscn" id="6_dyq5u"]
 [ext_resource type="PackedScene" uid="uid://v2b8gvi7bbyw" path="res://Assets/Models/Scene/City/jerrycan_v_1.tscn" id="7_t8dne"]
 [ext_resource type="PackedScene" uid="uid://bbydseovuksx6" path="res://Assets/Models/Scene/City/mailbox_es_v_1.tscn" id="8_t5dqu"]
@@ -30,16 +29,17 @@
 [ext_resource type="PackedScene" uid="uid://duugcq0f5kiuv" path="res://Assets/Models/Scene/City/grassbox_v_1.tscn" id="28_cpy64"]
 [ext_resource type="PackedScene" uid="uid://w7ueajgut2ao" path="res://Assets/Models/Scene/City/fountain_v_1.tscn" id="29_vup38"]
 [ext_resource type="PackedScene" uid="uid://bfdka1lvht0ye" path="res://Assets/Models/Scene/City/bush_v_1.tscn" id="30_dgdml"]
+[ext_resource type="PackedScene" uid="uid://bemfpf3tvuute" path="res://Character/characters_rodolfo.tscn" id="31_hedx5"]
 [ext_resource type="PackedScene" uid="uid://dudug7ux0n23m" path="res://Assets/Models/Scene/Background/edificio_fondo.tscn" id="31_yoblv"]
 
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_4t1bm"]
-dof_blur_far_enabled = true
-dof_blur_far_distance = 20.0
-dof_blur_far_transition = 10.0
-dof_blur_near_enabled = true
-dof_blur_near_distance = 10.0
-dof_blur_near_transition = 5.0
-dof_blur_amount = 0.05
+[sub_resource type="BoxShape3D" id="BoxShape3D_21vss"]
+size = Vector3(35.881, 0.23524, 3.31054)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kniw6"]
+size = Vector3(0.162849, 8.77163, 2.86731)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fsef7"]
+size = Vector3(0.165222, 8.99543, 3.27318)
 
 [node name="Node3D" type="Node3D"]
 
@@ -52,14 +52,6 @@ light_color = Color(0.960784, 0.898039, 0.823529, 1)
 light_energy = 1.5
 shadow_enabled = true
 shadow_blur = 1.5
-
-[node name="Camera3D" type="Camera3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00431442, 1.14576, 9.8509)
-attributes = SubResource("CameraAttributesPractical_4t1bm")
-fov = 37.8493
-
-[node name="characters-rodolfo-classic_v1" parent="." instance=ExtResource("1_bvieq")]
-transform = Transform3D(0.942057, 0, 0.335452, 0, 1, 0, -0.335452, 0, 0.942057, -1.28711, -0.118991, -0.517985)
 
 [node name="floor-road_v1" parent="." instance=ExtResource("6_amxjb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0)
@@ -254,3 +246,36 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 
 [node name="edificio-fondo3" parent="City/edificio-fondo3" instance=ExtResource("31_yoblv")]
 transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 0, 0, 0)
+
+[node name="characters-rodolfo-classic_v1" parent="." instance=ExtResource("31_hedx5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.606656, 0.22158, -6.09322)
+jumpSpeed = 11.0
+maxFallSpeed = 50.0
+gravity = 15.0
+jumpHangTimeThreshold = 0.2
+jumpHangAccelMult = 1.4
+jumpHangMaxSpeedMult = 1.4
+runDeccelAmount = 10.0
+turnSpeed = 10.0
+blendTime = 0.5
+slowBlendTime = 3.0
+
+[node name="Hitboxes" type="Node3D" parent="."]
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Hitboxes"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.50001)
+shape = SubResource("BoxShape3D_21vss")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Hitboxes"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8888, 4.36728, -5.1975)
+shape = SubResource("BoxShape3D_kniw6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Hitboxes"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9628, 4.22381, -5.47463)
+shape = SubResource("BoxShape3D_fsef7")

@@ -1,17 +1,18 @@
 extends State
 
-class_name AirState
+class_name FallState
 
 func onEnter(player: MainCharacter, delta: float):
 	super.onEnter(player, delta)
+	if chara.animationPlayer.assigned_animation == "Jump Ro":
+		chara.animationPlayer.play("FallingJump Ro")
 	
 func onExit(delta: float):
-	chara.gravity = chara.defaultGravity
+	pass
 
 func check():
-	if chara.velocity.y >= 0:
-		return "FallState"
 	if chara.is_on_floor():
+		chara.animationPlayer.play("FallingFloor Ro")
 		return "RunState"
 	if Input.is_action_just_pressed("Jump") and not chara.hasDoubleJumped:
 		chara.hasDoubleJumped = true
@@ -19,5 +20,8 @@ func check():
 	return null
 
 func apply(delta):
-	chara.applyForce(chara.gravity * delta * Vector3.DOWN)
+	chara.applyForce(chara.gravity * chara.fallGravityMult * delta * Vector3.DOWN)
+	var newForce = chara.velocity
+	newForce.y = max(newForce.y, -chara.maxFallSpeed)
+	chara.setForce(newForce)
 	chara.applyHorizMovementAir(delta)

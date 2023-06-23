@@ -1,20 +1,22 @@
 extends State
 
-class_name JumpState
+class_name AirState
 
 func onEnter(player: MainCharacter, delta: float):
 	super.onEnter(player, delta)
-	chara.setVertForce((chara.jumpSpeed * Vector3.UP).y)
+	chara.animationPlayer.play("FallingJump Ro")
 	
 func onExit(delta: float):
-	if chara.velocity.y < 0:
-		chara.gravity *= chara.jumpCutGravityMult
+	pass
 
 func check():
 	if chara.velocity.y >= 0:
 		return "FallState"
-	if Input.is_action_just_released("Jump"):
-		return "AirState"
+	if chara.is_on_floor():
+		return "RunState"
+	if Input.is_action_just_pressed("Jump") and not chara.hasDoubleJumped:
+		chara.hasDoubleJumped = true
+		return "JumpState"
 	return null
 
 func apply(delta):

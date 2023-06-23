@@ -5,12 +5,17 @@ class_name RunState
 func onEnter(player: MainCharacter, delta: float):
 	super.onEnter(player, delta)
 	chara.hasDoubleJumped = false
+	if chara.animationPlayer.assigned_animation == "FallingFloor Ro":
+		chara.animationPlayer.clear_queue()
+		chara.animationPlayer.queue("Run Ro")
+	else:
+		chara.animationPlayer.play("Run Ro")
 	
 func onExit(delta: float):
-	pass
+	chara.animationPlayer.set_speed_scale(chara.animationSpeed)
 
 func check():
-	if not Input.is_action_pressed("left") and not Input.is_action_pressed("right"):
+	if not Input.is_action_pressed("Left") and not Input.is_action_pressed("Right"):
 		return "IdleState"
 	if Input.is_action_just_pressed("Jump"):
 		return "JumpState"
