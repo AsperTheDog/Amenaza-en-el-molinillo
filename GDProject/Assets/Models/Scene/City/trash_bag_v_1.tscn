@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://f0yuhre1iinv"]
+
+[ext_resource type="PackedScene" uid="uid://lk8f0f7rqgfs" path="res://Assets/Models/Scene/City/trash-bag_v1.glb" id="1_yxp1k"]
+[ext_resource type="Material" path="res://Materials/City/sings_v1.tres" id="2_dy0d7"]
+
+[node name="trash-bag_v1" instance=ExtResource("1_yxp1k")]
+
+[node name="Basura bolsa" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_dy0d7")

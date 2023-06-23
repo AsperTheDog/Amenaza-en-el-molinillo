@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdh2iel1ls7p4"]
+
+[ext_resource type="PackedScene" uid="uid://dwwye4x22ogk7" path="res://Assets/Models/Scene/City/sewer_v1.glb" id="1_6fedj"]
+[ext_resource type="Material" path="res://Materials/City/sings_v1.tres" id="2_p5y8e"]
+
+[node name="sewer_v1" instance=ExtResource("1_6fedj")]
+
+[node name="Alcantarilla" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_p5y8e")

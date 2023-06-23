@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://durwc2toyjrny"]
+
+[ext_resource type="PackedScene" uid="uid://ddf2gkq4iakur" path="res://Assets/Models/Scene/City/trash-cover_v1.glb" id="1_oi0xp"]
+[ext_resource type="Material" path="res://Materials/City/sings_v1.tres" id="2_lux3g"]
+
+[node name="trash-cover_v1" instance=ExtResource("1_oi0xp")]
+
+[node name="cubo Basura tapa" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_lux3g")

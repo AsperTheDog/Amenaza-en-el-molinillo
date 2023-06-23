@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://v2b8gvi7bbyw"]
+
+[ext_resource type="PackedScene" uid="uid://by082ahmiwhbs" path="res://Assets/Models/Scene/City/jerrycan_v1.glb" id="1_3todh"]
+[ext_resource type="Material" path="res://Materials/City/sings_v1.tres" id="2_abyji"]
+
+[node name="jerrycan_v1" instance=ExtResource("1_3todh")]
+
+[node name="Bidon" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_abyji")

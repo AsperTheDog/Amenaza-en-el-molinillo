@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbydseovuksx6"]
+
+[ext_resource type="PackedScene" uid="uid://jefwtcdec3k3" path="res://Assets/Models/Scene/City/mailbox-es_v1.glb" id="1_y0dnj"]
+[ext_resource type="Material" path="res://Materials/City/sings_v1.tres" id="2_e704h"]
+
+[node name="mailbox-es_v1" instance=ExtResource("1_y0dnj")]
+
+[node name="Buzon correos" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_e704h")

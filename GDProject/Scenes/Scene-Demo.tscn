@@ -1,67 +1,52 @@
-[gd_scene load_steps=10 format=3 uid="uid://b7co442vfn4a5"]
+[gd_scene load_steps=21 format=3 uid="uid://b7co442vfn4a5"]
 
 [ext_resource type="PackedScene" uid="uid://b6aowcqbcswti" path="res://Assets/Models/Characters/characters-rodolfo-classic_v1.glb" id="1_bvieq"]
+[ext_resource type="Environment" uid="uid://bt7lbvekdafji" path="res://Enviroments/Enviroment-sunrise.tres" id="1_hmru1"]
 [ext_resource type="PackedScene" uid="uid://bplkpyps27gl4" path="res://Assets/Models/Scene/Background/mountain_v1.glb" id="3_oac4i"]
 [ext_resource type="PackedScene" uid="uid://b7822i5iwibmg" path="res://Assets/Models/Scene/Background/mountain_v2.glb" id="4_qmpij"]
 [ext_resource type="PackedScene" uid="uid://b3u8qg2yl7eja" path="res://Assets/Models/Scene/Background/mountain_v3.glb" id="5_k8x41"]
-[ext_resource type="PackedScene" uid="uid://c3yn2qntcr7t2" path="res://Assets/Models/Scene/buzon-es_v1.glb" id="6_3cfy7"]
-[ext_resource type="PackedScene" uid="uid://l0ls2dupl5pf" path="res://Assets/Models/Scene/Ground/floor_road_v_1.tscn" id="6_amxjb"]
+[ext_resource type="PackedScene" path="res://Assets/Models/Scene/Ground/floor_road_v_1.tscn" id="6_amxjb"]
+[ext_resource type="PackedScene" uid="uid://cbivejfbjsknp" path="res://Assets/Models/Scene/City/fireguard_v_1.tscn" id="6_dyq5u"]
+[ext_resource type="PackedScene" uid="uid://v2b8gvi7bbyw" path="res://Assets/Models/Scene/City/jerrycan_v_1.tscn" id="7_t8dne"]
+[ext_resource type="PackedScene" uid="uid://bbydseovuksx6" path="res://Assets/Models/Scene/City/mailbox_es_v_1.tscn" id="8_t5dqu"]
+[ext_resource type="PackedScene" uid="uid://cdh2iel1ls7p4" path="res://Assets/Models/Scene/City/sewer_v_1.tscn" id="9_ymfnq"]
+[ext_resource type="PackedScene" uid="uid://b1ifq70lf04ra" path="res://Assets/Models/Scene/City/streetlight_en_v_1.tscn" id="10_f1afg"]
+[ext_resource type="PackedScene" uid="uid://b5kx2l73c23p2" path="res://Assets/Models/Scene/City/trafficlight_v_1.tscn" id="11_2mf3f"]
+[ext_resource type="PackedScene" uid="uid://bourqnlij6081" path="res://Assets/Models/Scene/City/trafficlight_walker_v_1.tscn" id="12_y5tyq"]
+[ext_resource type="PackedScene" uid="uid://dx4njq6fdas5x" path="res://Assets/Models/Scene/City/trafficsing_base_v_1.tscn" id="13_xqcf5"]
+[ext_resource type="PackedScene" uid="uid://f0yuhre1iinv" path="res://Assets/Models/Scene/City/trash_bag_v_1.tscn" id="14_qvniu"]
+[ext_resource type="PackedScene" uid="uid://r3yqkusrdnuw" path="res://Assets/Models/Scene/City/trash_big_v_1.tscn" id="15_ywwjj"]
+[ext_resource type="PackedScene" uid="uid://durwc2toyjrny" path="res://Assets/Models/Scene/City/trash_cover_v_1.tscn" id="16_mxtfv"]
+[ext_resource type="PackedScene" uid="uid://lxa58k22y2ic" path="res://Assets/Models/Scene/City/trash_v_1.tscn" id="17_g0wgi"]
+[ext_resource type="PackedScene" uid="uid://nis4e1gkwv4d" path="res://Assets/Models/Scene/City/trafficsing_walker_v_1.tscn" id="18_f1lfm"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_78j8c"]
-sky_top_color = Color(0.176471, 0.14902, 0.321569, 1)
-sky_horizon_color = Color(0.85098, 0.65098, 0.415686, 1)
-sky_cover_modulate = Color(1, 0.941176, 0.823529, 1)
-ground_bottom_color = Color(0.101961, 0.0823529, 0.0588235, 1)
-ground_horizon_color = Color(0.729412, 0.654902, 0.52549, 1)
-
-[sub_resource type="Sky" id="Sky_3ygco"]
-sky_material = SubResource("ProceduralSkyMaterial_78j8c")
-
-[sub_resource type="Environment" id="Environment_on610"]
-background_mode = 2
-sky = SubResource("Sky_3ygco")
-sky_custom_fov = 100.0
-ambient_light_sky_contribution = 0.41
-ambient_light_energy = 16.0
-tonemap_mode = 2
-tonemap_exposure = 2.0
-ssr_enabled = true
-ssao_enabled = true
-ssil_enabled = true
-sdfgi_enabled = true
-sdfgi_bounce_feedback = 0.25
-sdfgi_energy = 0.75
-glow_enabled = true
-glow_normalized = true
-fog_enabled = true
-fog_light_color = Color(1, 0.831373, 0.788235, 1)
-fog_light_energy = 0.03
-fog_sun_scatter = 0.04
-fog_density = 0.025
-fog_sky_affect = 0.0
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.01
-volumetric_fog_albedo = Color(1, 0.933333, 0.788235, 1)
-adjustment_brightness = 0.9
-adjustment_contrast = 1.2
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_4t1bm"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 20.0
+dof_blur_far_transition = 10.0
+dof_blur_near_enabled = true
+dof_blur_near_distance = 10.0
+dof_blur_near_transition = 5.0
+dof_blur_amount = 0.05
 
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_on610")
+environment = ExtResource("1_hmru1")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(0.275637, -0.406247, 0.871199, 0, 0.906308, 0.422618, -0.961261, -0.116489, 0.249812, 6.03504, 9.07319, -10.5586)
+transform = Transform3D(0.855364, -0.383757, 0.347969, 0, 0.671721, 0.740805, -0.518027, -0.633658, 0.574566, 6.03504, 9.07319, -10.5586)
 light_color = Color(0.960784, 0.898039, 0.823529, 1)
 shadow_enabled = true
 shadow_blur = 1.5
 
 [node name="Camera3D" type="Camera3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 1.369, 5.864)
-far = 200.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.068, 10)
+attributes = SubResource("CameraAttributesPractical_4t1bm")
+fov = 37.8493
 
 [node name="characters-rodolfo-classic_v1" parent="." instance=ExtResource("1_bvieq")]
-transform = Transform3D(0.91706, 0, 0.398749, 0, 1, 0, -0.398749, 0, 0.91706, 0, -0.118991, 1.13995)
+transform = Transform3D(0.642788, 0, 0.766044, 0, 1, 0, -0.766044, 0, 0.642788, -1.28711, -0.118991, -0.517985)
 
 [node name="mountain_v1" parent="." instance=ExtResource("3_oac4i")]
 transform = Transform3D(3.29839, 0, 0, 0, 3.29839, 0, 0, 0, 3.29839, 0.294955, -0.375197, -65.3754)
@@ -72,7 +57,65 @@ transform = Transform3D(3.29839, 0, 0, 0, 3.29839, 0, 0, 0, 3.29839, 56.084, 2.7
 [node name="mountain_v3" parent="." instance=ExtResource("5_k8x41")]
 transform = Transform3D(3.29839, 0, 0, 0, 3.29839, 0, 0, 0, 3.29839, -47.965, -0.808, -49.729)
 
-[node name="buzon-es_v1" parent="." instance=ExtResource("6_3cfy7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.14927, 0.179719, 4.61299)
+[node name="fireguard_v1" parent="." instance=ExtResource("6_dyq5u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.59026, 0, -4.85249)
+
+[node name="jerrycan_v1" parent="." instance=ExtResource("7_t8dne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.13872, -0.109766, -0.519199)
+
+[node name="mailbox-es_v1" parent="." instance=ExtResource("8_t5dqu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.03562, 0, -4.96624)
+
+[node name="sewer_v1" parent="." instance=ExtResource("9_ymfnq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.60292, 0, -6.17666)
+
+[node name="sewer_v2" parent="." instance=ExtResource("9_ymfnq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.88854, 0, 5.9798)
+
+[node name="streetlight-en_v1" parent="." instance=ExtResource("10_f1afg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0095, 0, -5.29085)
+
+[node name="streetlight-en_v2" parent="." instance=ExtResource("10_f1afg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3679, 0, -5.10729)
+
+[node name="streetlight-en_v3" parent="." instance=ExtResource("10_f1afg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.881, 0, -5.30956)
+
+[node name="streetlight-en_v4" parent="." instance=ExtResource("10_f1afg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2447, 0, 5.52996)
+
+[node name="streetlight-en_v5" parent="." instance=ExtResource("10_f1afg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.653186, 0, 5.56747)
+
+[node name="streetlight-en_v6" parent="." instance=ExtResource("10_f1afg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6355, 0, 5.77156)
+
+[node name="trafficlight_v1" parent="." instance=ExtResource("11_2mf3f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4342, 0, -4.56483)
+
+[node name="trafficlight-walker_v1" parent="." instance=ExtResource("12_y5tyq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4273, 0, -4.55315)
+
+[node name="trafficsing-base_v1" parent="." instance=ExtResource("13_xqcf5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.22505, 0, -4.87408)
+
+[node name="trash-bag_v1" parent="." instance=ExtResource("14_qvniu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.25453, 0, -7.25314)
+
+[node name="trash-big_v1" parent="." instance=ExtResource("15_ywwjj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.50619, 0, -8.0555)
+
+[node name="trash-cover_v1" parent="." instance=ExtResource("16_mxtfv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.05884, 0.879999, -4.44858)
+
+[node name="trash_v1" parent="." instance=ExtResource("17_g0wgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.05613, 0, -4.44405)
+
+[node name="trafficsing-walker_v1" parent="." instance=ExtResource("18_f1lfm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.21024, 0, -4.89045)
 
 [node name="floor-road_v1" parent="." instance=ExtResource("6_amxjb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0)
+
+[node name="floor-road_v2" parent="." instance=ExtResource("6_amxjb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.97444, 0, 0)
