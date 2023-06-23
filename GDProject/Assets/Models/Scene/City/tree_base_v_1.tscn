@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctfxwb2uvbn1k"]
+
+[ext_resource type="PackedScene" uid="uid://dhdaps0v5x7bn" path="res://Assets/Models/Scene/City/tree-base_v1.glb" id="1_pt3uh"]
+[ext_resource type="Material" path="res://Materials/City/packfences_v1.tres" id="2_n48s2"]
+
+[node name="tree-base_v1" instance=ExtResource("1_pt3uh")]
+
+[node name="arbol base" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_n48s2")

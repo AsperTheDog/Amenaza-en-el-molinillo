@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnrku7bgr6c2o"]
+
+[ext_resource type="PackedScene" uid="uid://dea3bwigivw0l" path="res://Assets/Models/Scene/City/bush_v1.glb" id="1_7xc2t"]
+[ext_resource type="Material" path="res://Materials/City/packfences_v1.tres" id="2_pgk32"]
+
+[node name="bush_v1" instance=ExtResource("1_7xc2t")]
+
+[node name="Hojas" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_pgk32")

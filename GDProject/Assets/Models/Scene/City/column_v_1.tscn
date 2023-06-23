@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2xib2ierd41u"]
+
+[ext_resource type="PackedScene" uid="uid://crru6bw6vggc8" path="res://Assets/Models/Scene/City/column_v1.glb" id="1_ud6d8"]
+[ext_resource type="Material" path="res://Materials/City/packfences_v1.tres" id="2_2el1s"]
+
+[node name="column_v1" instance=ExtResource("1_ud6d8")]
+
+[node name="Muro exterior001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_2el1s")
