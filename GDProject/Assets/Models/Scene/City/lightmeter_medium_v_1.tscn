@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyy36au0t47ae"]
+
+[ext_resource type="PackedScene" uid="uid://dognj3rrwohte" path="res://Assets/Models/Scene/City/lightmeter-medium_v1.glb" id="1_bdeca"]
+[ext_resource type="Material" path="res://Materials/City/packfences_v1.tres" id="2_kt37m"]
+
+[node name="lightmeter-medium_v1" instance=ExtResource("1_bdeca")]
+
+[node name="00 Buzon 2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_kt37m")

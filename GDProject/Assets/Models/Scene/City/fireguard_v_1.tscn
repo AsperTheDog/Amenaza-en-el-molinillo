@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbivejfbjsknp"]
+
+[ext_resource type="PackedScene" uid="uid://ccki2ou4d5nh6" path="res://Assets/Models/Scene/City/fireguard_v1.glb" id="1_vhvql"]
+[ext_resource type="Material" path="res://Materials/City/sings_v1.tres" id="2_7pe06"]
+
+[node name="fireguard_v1" instance=ExtResource("1_vhvql")]
+
+[node name="Boca de indcendios" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_7pe06")

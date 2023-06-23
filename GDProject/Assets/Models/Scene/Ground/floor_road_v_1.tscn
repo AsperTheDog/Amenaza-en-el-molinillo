@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" uid="uid://dx8lqkutc5ejs" path="res://Assets/Models/Scene/Ground/floor-road_v1.glb" id="1_c6p5t"]
+[ext_resource type="Material" path="res://Materials/Ground/road_v1.tres" id="2_lh6fg"]
+
+[node name="floor-road_v1" instance=ExtResource("1_c6p5t")]
+
+[node name="Road" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_lh6fg")

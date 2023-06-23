@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://w7ueajgut2ao"]
+
+[ext_resource type="PackedScene" uid="uid://d1ffebvjnbaei" path="res://Assets/Models/Scene/City/fountain_v1.glb" id="1_xqyku"]
+[ext_resource type="Material" path="res://Materials/City/packfences_v1.tres" id="2_37sti"]
+
+[node name="fountain_v1" instance=ExtResource("1_xqyku")]
+
+[node name="Fuente" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_37sti")

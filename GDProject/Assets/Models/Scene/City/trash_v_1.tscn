@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://lxa58k22y2ic"]
+
+[ext_resource type="PackedScene" uid="uid://hkik646etw3a" path="res://Assets/Models/Scene/City/trash_v1.glb" id="1_u4u0c"]
+[ext_resource type="Material" path="res://Materials/City/sings_v1.tres" id="2_m61qb"]
+
+[node name="trash_v1" instance=ExtResource("1_u4u0c")]
+
+[node name="cubo Basura" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_m61qb")
