@@ -16,12 +16,10 @@ radius = 0.373235
 [node name="Rodolfo" type="CharacterBody3D" node_paths=PackedStringArray("stateMachine")]
 script = ExtResource("1_m1ybd")
 stateMachine = NodePath("StateMachine")
-runMaxSpeed = 7.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0102, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.880988, 0)
 shape = SubResource("CylinderShape3D_jdlak")
-metadata/_edit_lock_ = true
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("6_qqmhe")
@@ -42,7 +40,8 @@ script = ExtResource("10_w1kia")
 script = ExtResource("11_xr5cu")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.991879, 0.127186, 0, -0.127186, 0.991879, 0, 2.41396, 9.37838)
+transform = Transform3D(1, 0, 0, 0, 0.991399, 0.130872, 0, -0.130872, 0.991399, 0, 2.95998, 13.2244)
+fov = 45.0
 
 [node name="modelo" parent="." instance=ExtResource("8_cycbb")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)

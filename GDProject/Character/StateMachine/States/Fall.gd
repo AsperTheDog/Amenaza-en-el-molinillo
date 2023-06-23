@@ -4,6 +4,7 @@ class_name FallState
 
 func onEnter(player: MainCharacter, delta: float):
 	super.onEnter(player, delta)
+	chara.gravity = chara.defaultGravity
 	if chara.animationPlayer.assigned_animation == "Jump Ro":
 		chara.animationPlayer.play("FallingJump Ro")
 	

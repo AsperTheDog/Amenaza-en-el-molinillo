@@ -7,10 +7,10 @@ class_name MainCharacter
 @export_group("Jump")
 @export_subgroup("Basic")
 @export var fallGravityMult: float = 1.2
-@export var jumpSpeed: float = 1000
-@export var jumpCutGravityMult: float = 0.5
-@export var maxFallSpeed: float = 1000
-@export var gravity: float = 9.8
+@export var jumpSpeed: float = 10
+@export var jumpCutGravityMult: float = 2
+@export var maxFallSpeed: float = 50
+@export var defaultGravity: float = 9.8
 @export_subgroup("Acceleration")
 @export var accelInAirMult: float = 1.0
 @export var deccelInAirMult: float = 1.0
@@ -22,7 +22,7 @@ class_name MainCharacter
 @export_group("Run")
 @export var runAccelAmount: float = 5
 @export var runDeccelAmount: float = 5
-@export var runMaxSpeed: float = 20
+@export var runMaxSpeed: float = 10
 @export var doConserveMomentum = true
 
 @export_group("Animation")
@@ -31,6 +31,7 @@ class_name MainCharacter
 @export var blendTime: float = 0.3
 @export var slowBlendTime: float = 0.3
 
+var gravity: float = defaultGravity;
 var animationPlayer: AnimationPlayer
 var hasDoubleJumped: bool = false
 

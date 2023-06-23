@@ -10,7 +10,7 @@ func onExit(delta: float):
 	pass
 
 func check():
-	if chara.velocity.y >= 0:
+	if chara.velocity.y <= 0:
 		return "FallState"
 	if chara.is_on_floor():
 		return "RunState"
