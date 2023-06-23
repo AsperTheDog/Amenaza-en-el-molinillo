@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b7co442vfn4a5"]
+[gd_scene load_steps=33 format=3 uid="uid://b7co442vfn4a5"]
 
 [ext_resource type="PackedScene" uid="uid://b6aowcqbcswti" path="res://Assets/Models/Characters/characters-rodolfo-classic_v1.glb" id="1_bvieq"]
 [ext_resource type="Environment" uid="uid://bt7lbvekdafji" path="res://Enviroments/Enviroment-sunrise.tres" id="1_hmru1"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://duugcq0f5kiuv" path="res://Assets/Models/Scene/City/grassbox_v_1.tscn" id="28_cpy64"]
 [ext_resource type="PackedScene" uid="uid://w7ueajgut2ao" path="res://Assets/Models/Scene/City/fountain_v_1.tscn" id="29_vup38"]
 [ext_resource type="PackedScene" uid="uid://bfdka1lvht0ye" path="res://Assets/Models/Scene/City/bush_v_1.tscn" id="30_dgdml"]
+[ext_resource type="PackedScene" uid="uid://dudug7ux0n23m" path="res://Assets/Models/Scene/Background/edificio_fondo.tscn" id="31_yoblv"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_4t1bm"]
 dof_blur_far_enabled = true
@@ -48,16 +49,17 @@ environment = ExtResource("1_hmru1")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(0.855364, -0.383757, 0.347969, 0, 0.671721, 0.740805, -0.518027, -0.633658, 0.574566, 6.03504, 9.07319, -10.5586)
 light_color = Color(0.960784, 0.898039, 0.823529, 1)
+light_energy = 1.5
 shadow_enabled = true
 shadow_blur = 1.5
 
 [node name="Camera3D" type="Camera3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.58307e-05, 1.08523, 9.99572)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00431442, 1.14576, 9.8509)
 attributes = SubResource("CameraAttributesPractical_4t1bm")
 fov = 37.8493
 
 [node name="characters-rodolfo-classic_v1" parent="." instance=ExtResource("1_bvieq")]
-transform = Transform3D(0.642788, 0, 0.766044, 0, 1, 0, -0.766044, 0, 0.642788, -1.28711, -0.118991, -0.517985)
+transform = Transform3D(0.942057, 0, 0.335452, 0, 1, 0, -0.335452, 0, 0.942057, -1.28711, -0.118991, -0.517985)
 
 [node name="floor-road_v1" parent="." instance=ExtResource("6_amxjb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0)
@@ -68,13 +70,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.97444, 0, 0)
 [node name="City" type="Node3D" parent="."]
 
 [node name="mountain_v1" parent="City" instance=ExtResource("3_oac4i")]
-transform = Transform3D(3.29839, 0, 0, 0, 3.29839, 0, 0, 0, 3.29839, 0.294955, -0.375197, -65.3754)
+transform = Transform3D(3.29839, 0, 0, 0, 3.29839, 0, 0, 0, 3.29839, -3.23259, 12.8321, -150.113)
 
 [node name="mountain_v2" parent="City" instance=ExtResource("4_qmpij")]
-transform = Transform3D(3.29839, 0, 0, 0, 3.29839, 0, 0, 0, 3.29839, 56.084, 2.768, -49.953)
+transform = Transform3D(3.29839, 0, 0, 0, 3.29839, 0, 0, 0, 3.29839, 56.084, 17.081, -134.691)
 
 [node name="mountain_v3" parent="City" instance=ExtResource("5_k8x41")]
-transform = Transform3D(3.29839, 0, 0, 0, 3.29839, 0, 0, 0, 3.29839, -47.965, -0.808, -49.729)
+transform = Transform3D(3.29839, 0, 0, 0, 3.29839, 0, 0, 0, 3.29839, -47.965, 13.505, -134.467)
 
 [node name="fireguard_v1" parent="City" instance=ExtResource("6_dyq5u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0146, 0, -4.85249)
@@ -140,40 +142,40 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8799, 0, -8.91748)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.88821, 0, -8.90917)
 
 [node name="wall_v1" parent="City" instance=ExtResource("21_hl8jl")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.64609, 0, -12.5621)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.64609, 0, -12.3805)
 
 [node name="column_v1" parent="City" instance=ExtResource("22_r3f43")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.56861, 0, -9.29399)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.56861, 0, -9.11244)
 
 [node name="column_v2" parent="City" instance=ExtResource("22_r3f43")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.52244, 0, -16.1097)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.52244, 0, -15.9281)
 
 [node name="wall_v2" parent="City" instance=ExtResource("21_hl8jl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.19273, 0, -16.0819)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.19273, 0, -15.9003)
 
 [node name="wall_v3" parent="City" instance=ExtResource("21_hl8jl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.52221, 0, -16.048)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.52221, 0, -15.8665)
 
 [node name="wall_v4" parent="City" instance=ExtResource("21_hl8jl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2527, 0, -16.0737)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2527, 0, -15.8921)
 
 [node name="column_v3" parent="City" instance=ExtResource("22_r3f43")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17433, 0, -16.0764)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17433, 0, -15.8949)
 
 [node name="column_v4" parent="City" instance=ExtResource("22_r3f43")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.87687, 0, -16.0835)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.87687, 0, -15.9019)
 
 [node name="column_v5" parent="City" instance=ExtResource("22_r3f43")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5974, 0, -16.09)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5974, 0, -15.9084)
 
 [node name="wall_v5" parent="City" instance=ExtResource("21_hl8jl")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.6993, 0, -12.5238)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.6993, 0, -12.3422)
 
 [node name="column_v6" parent="City" instance=ExtResource("22_r3f43")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5808, 0, -9.26344)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5808, 0, -9.08189)
 
 [node name="wall-metal_v1" parent="City" instance=ExtResource("23_botnk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9231, 0, -9.35631)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9231, 0, -9.23159)
 
 [node name="trunk_v1" parent="City" instance=ExtResource("24_b7xbm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.48408, 0, -7.39633)
@@ -225,3 +227,30 @@ transform = Transform3D(0.428848, 0, 0, 0, 0.428848, 0, 0, 0, 0.428848, 16.5822,
 
 [node name="fireguard_v2" parent="City" instance=ExtResource("6_dyq5u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.84775, 0, 5.05808)
+
+[node name="edificio-fondo" parent="City" instance=ExtResource("31_yoblv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -24.7872, -4.26851, -44.1166)
+
+[node name="edificio-fondo2" parent="City/edificio-fondo" instance=ExtResource("31_yoblv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="edificio-fondo3" parent="City/edificio-fondo" instance=ExtResource("31_yoblv")]
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 0, 0, 0)
+
+[node name="edificio-fondo2" parent="City" instance=ExtResource("31_yoblv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.54468, -2.17588, -53.9562)
+
+[node name="edificio-fondo2" parent="City/edificio-fondo2" instance=ExtResource("31_yoblv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="edificio-fondo3" parent="City/edificio-fondo2" instance=ExtResource("31_yoblv")]
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 0, 0, 0)
+
+[node name="edificio-fondo3" parent="City" instance=ExtResource("31_yoblv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.5934, -6.12185, -43.4362)
+
+[node name="edificio-fondo2" parent="City/edificio-fondo3" instance=ExtResource("31_yoblv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="edificio-fondo3" parent="City/edificio-fondo3" instance=ExtResource("31_yoblv")]
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 0, 0, 0)
