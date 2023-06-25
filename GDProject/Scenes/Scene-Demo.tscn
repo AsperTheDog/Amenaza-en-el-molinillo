@@ -337,13 +337,13 @@ transform = Transform3D(0.99961, -1.70424e-11, 0.0279216, -0.0279216, -1.22049e-
 [node name="Construction-area" type="Node3D" parent="."]
 
 [node name="cableroll_v1" parent="Construction-area" instance=ExtResource("32_8ymob")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8104, 0.414238, -6.85981)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9379, 0.414238, -6.85981)
 
 [node name="fabricbuild_v1" parent="Construction-area" instance=ExtResource("33_nmlp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.7618, 0.499054, -10.9289)
 
 [node name="giantcontainer_v1" parent="Construction-area" instance=ExtResource("34_tifhq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.791, 0, -6.69393)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.3612, 0, -6.69393)
 
 [node name="joistbig_v1" parent="Construction-area" instance=ExtResource("35_j8woy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.1483, 6.27076, -6.8017)
@@ -355,13 +355,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7253, 8.66941, -6.8017)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.3771, 13.2376, -6.80901)
 
 [node name="pallet_v1" parent="Construction-area" instance=ExtResource("36_6occc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.4852, 0, -6.70657)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8818, 0, -6.70657)
 
 [node name="pipelinebig_v1" parent="Construction-area" instance=ExtResource("37_gt6ws")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.2401, 0, -6.74189)
 
 [node name="sand_v1" parent="Construction-area" instance=ExtResource("38_c7e33")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.0996, 0.0562503, -7.28006)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.3518, 0.0562503, -7.28006)
 
 [node name="scaffold_v1" parent="Construction-area" instance=ExtResource("39_py8gx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.2324, -9.53674e-07, -6.69693)
@@ -370,13 +370,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.2324, -9.53674e-07, -6.696
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 44.2439, 2.33286, -6.7009)
 
 [node name="squadwood_v1" parent="Construction-area" instance=ExtResource("40_1sp4m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.0645, 0, -6.76158)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.3748, 0, -6.76158)
 
 [node name="squadwood_v2" parent="Construction-area" instance=ExtResource("40_1sp4m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4657, 0, -6.76158)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.776, 0, -6.76158)
 
 [node name="table_v1" parent="Construction-area" instance=ExtResource("41_8245g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.7513, 0.916337, -6.76849)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0616, 0.916337, -6.76849)
 
 [node name="wallmetalsmall_v1" parent="Construction-area" instance=ExtResource("42_quh2r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2751, 0, -8.7927)
@@ -409,4 +409,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.3519, 0, -8.7927)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.7739, 0, -8.7927)
 
 [node name="woodbox_v1" parent="Construction-area" instance=ExtResource("43_7b4r7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.2411, 1.55176, -6.72519)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5514, 1.55176, -6.72519)

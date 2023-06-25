@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbie6ecos56eh"]
+[gd_scene load_steps=5 format=3 uid="uid://bbie6ecos56eh"]
 
 [ext_resource type="PackedScene" uid="uid://cbcpwh7f413de" path="res://Assets/Models/Scene/Construction/pallet_v1.glb" id="1_nr1gl"]
 [ext_resource type="Material" uid="uid://fqicphn27oyf" path="res://Materials/City/construction-area_v1.tres" id="2_7y5n5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t7aqa"]
-size = Vector3(2.46223, 0.292874, 2.47595)
+size = Vector3(2.46223, 0.326089, 2.47595)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ujtj6"]
+size = Vector3(0.288016, 3.18873, 1)
 
 [node name="pallet_v1" instance=ExtResource("1_nr1gl")]
 
@@ -14,5 +17,13 @@ surface_material_override/0 = ExtResource("2_7y5n5")
 [node name="StaticBody3D4" type="StaticBody3D" parent="." index="1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D4" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00459123, 0.179228, 0.0206164)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00459123, 0.162815, 0.0206164)
 shape = SubResource("BoxShape3D_t7aqa")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D4" index="1"]
+transform = Transform3D(-9.55541e-09, -0.154575, -0.154575, 0, 0.154575, -0.154575, 0.218602, -6.7567e-09, -6.7567e-09, 1.3954, 0.00220245, -0.00415814)
+shape = SubResource("BoxShape3D_ujtj6")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D4" index="2"]
+transform = Transform3D(-9.55541e-09, 0.154575, 0.154575, 0, 0.154575, -0.154575, -0.218602, -6.7567e-09, -6.7567e-09, -1.40426, 0.00220245, -0.00415814)
+shape = SubResource("BoxShape3D_ujtj6")
