@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnxofsvugjldv"]
+
+[ext_resource type="PackedScene" uid="uid://cql6hl45qo6uc" path="res://Assets/Models/Scene/Construction/squadwood_v1.glb" id="1_fcy06"]
+[ext_resource type="Material" uid="uid://fqicphn27oyf" path="res://Materials/City/construction-area_v1.tres" id="2_f16qa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7gfkl"]
+size = Vector3(0.640362, 0.868464, 1.24256)
+
+[node name="squadwood_v1" instance=ExtResource("1_fcy06")]
+
+[node name="PatasMesa" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_f16qa")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="PatasMesa" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PatasMesa/StaticBody3D4" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00118828, 0.431418, -0.00415814)
+shape = SubResource("BoxShape3D_7gfkl")

@@ -1,9 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://v2b8gvi7bbyw"]
+[gd_scene load_steps=4 format=3 uid="uid://v2b8gvi7bbyw"]
 
 [ext_resource type="PackedScene" uid="uid://by082ahmiwhbs" path="res://Assets/Models/Scene/City/jerrycan_v1.glb" id="1_3todh"]
-[ext_resource type="Material" path="res://Materials/City/sings_v1.tres" id="2_abyji"]
+[ext_resource type="Material" uid="uid://cr8tfh2f1wgns" path="res://Materials/City/sings_v1.tres" id="2_abyji"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qqqie"]
+size = Vector3(0.702924, 0.90285, 0.723759)
 
 [node name="jerrycan_v1" instance=ExtResource("1_3todh")]
 
 [node name="Bidon" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_abyji")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D4" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00132751, 0.443244, -0.000760376)
+shape = SubResource("BoxShape3D_qqqie")

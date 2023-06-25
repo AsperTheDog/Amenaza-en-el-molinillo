@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ou3kvjokc66s"]
+
+[ext_resource type="PackedScene" uid="uid://breww28dyiod4" path="res://Assets/Models/Scene/Construction/plank_v1.glb" id="1_qdpmr"]
+[ext_resource type="Material" uid="uid://fqicphn27oyf" path="res://Materials/City/construction-area_v1.tres" id="2_lktgd"]
+
+[node name="plank_v1" instance=ExtResource("1_qdpmr")]
+
+[node name="Tablon" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_lktgd")

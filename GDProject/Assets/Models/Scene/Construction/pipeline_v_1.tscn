@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b85685enr0vb3"]
+
+[ext_resource type="PackedScene" uid="uid://bljyxxuno82yj" path="res://Assets/Models/Scene/Construction/pipeline_v1.glb" id="1_hfuyw"]
+[ext_resource type="Material" uid="uid://fqicphn27oyf" path="res://Materials/City/construction-area_v1.tres" id="2_d17gh"]
+
+[node name="pipeline_v1" instance=ExtResource("1_hfuyw")]
+
+[node name="Tuberia" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_d17gh")
+surface_material_override/1 = ExtResource("2_d17gh")

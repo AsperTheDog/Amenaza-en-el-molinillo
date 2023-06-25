@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://m368yg6v6wl4"]
+
+[ext_resource type="PackedScene" uid="uid://dx47ugfxls7pg" path="res://Assets/Models/Scene/Construction/concretetile_v1.glb" id="1_du3wp"]
+[ext_resource type="Material" uid="uid://fqicphn27oyf" path="res://Materials/City/construction-area_v1.tres" id="2_6oblf"]
+
+[node name="concretetile_v1" instance=ExtResource("1_du3wp")]
+
+[node name="LadrilloCemento" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_6oblf")

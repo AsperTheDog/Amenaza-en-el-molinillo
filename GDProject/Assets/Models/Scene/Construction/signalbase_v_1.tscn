@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc3xtt0it2pv"]
+
+[ext_resource type="PackedScene" uid="uid://bmlyyjrfjl47s" path="res://Assets/Models/Scene/Construction/signalbase_v1.glb" id="1_2c7p4"]
+[ext_resource type="Material" uid="uid://fqicphn27oyf" path="res://Materials/City/construction-area_v1.tres" id="2_bnfaa"]
+
+[node name="signalbase_v1" instance=ExtResource("1_2c7p4")]
+
+[node name="SeñalBase" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_bnfaa")

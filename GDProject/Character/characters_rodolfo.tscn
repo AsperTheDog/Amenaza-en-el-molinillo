@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bemfpf3tvuute"]
+[gd_scene load_steps=11 format=3 uid="uid://bemfpf3tvuute"]
 
 [ext_resource type="Script" path="res://Character/chara.gd" id="1_m1ybd"]
 [ext_resource type="Script" path="res://Character/StateMachine/StateMachine.gd" id="6_qqmhe"]
@@ -12,6 +12,13 @@
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_jdlak"]
 height = 1.73991
 radius = 0.373235
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_g0tw0"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 20.0
+dof_blur_near_enabled = true
+dof_blur_near_distance = 10.0
+dof_blur_near_transition = 3.0
 
 [node name="Rodolfo" type="CharacterBody3D" node_paths=PackedStringArray("stateMachine")]
 script = ExtResource("1_m1ybd")
@@ -40,8 +47,10 @@ script = ExtResource("10_w1kia")
 script = ExtResource("11_xr5cu")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.991399, 0.130872, 0, -0.130872, 0.991399, 0, 2.95998, 13.2244)
-fov = 45.0
+transform = Transform3D(1, 0, 0, 0, 0.996194, 0.0871557, 0, -0.0871557, 0.996194, 0, 3, 13.224)
+attributes = SubResource("CameraAttributesPractical_g0tw0")
+fov = 36.0
+far = 200.0
 
 [node name="modelo" parent="." instance=ExtResource("8_cycbb")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)

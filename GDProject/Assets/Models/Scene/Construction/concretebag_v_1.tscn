@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bawbxpjipc0rj"]
+
+[ext_resource type="PackedScene" uid="uid://bwmyriswxaa37" path="res://Assets/Models/Scene/Construction/concretebag_v1.glb" id="1_a5bkk"]
+[ext_resource type="Material" uid="uid://fqicphn27oyf" path="res://Materials/City/construction-area_v1.tres" id="2_jhyex"]
+
+[node name="concretebag_v1" instance=ExtResource("1_a5bkk")]
+
+[node name="SacoCemento" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_jhyex")

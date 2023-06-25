@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://k6u2nfwda81n"]
+
+[ext_resource type="PackedScene" uid="uid://wf8c25gebdin" path="res://Assets/Models/Scene/Construction/wallmetalsmall_v1.glb" id="1_gcj08"]
+[ext_resource type="Material" uid="uid://fqicphn27oyf" path="res://Materials/City/construction-area_v1.tres" id="2_uyanb"]
+
+[node name="wallmetalsmall_v1" instance=ExtResource("1_gcj08")]
+
+[node name="WallMalla" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_uyanb")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://br4wwlyorpqkl"]
+
+[ext_resource type="PackedScene" uid="uid://db7nh1m4i1cyo" path="res://Assets/Models/Scene/Construction/giantcontainer_v1.glb" id="1_wksb5"]
+[ext_resource type="Material" uid="uid://fqicphn27oyf" path="res://Materials/City/construction-area_v1.tres" id="2_ud6lt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jomss"]
+size = Vector3(4.57217, 1.08365, 1.23636)
+
+[node name="giantcontainer_v1" instance=ExtResource("1_wksb5")]
+
+[node name="BidonGigante" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_ud6lt")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.664637, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D4" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168792, -0.119772, -0.00415814)
+shape = SubResource("BoxShape3D_jomss")
