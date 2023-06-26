@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdu0j4wxfvw5w"]
+
+[ext_resource type="PackedScene" uid="uid://bu7kryf20r2yd" path="res://Assets/Models/Scene/Background/build-bg-front_v1.glb" id="1_6ic08"]
+[ext_resource type="Material" uid="uid://c18ngb847oqie" path="res://Materials/City/build-bg_v1.tres" id="2_bu4re"]
+
+[node name="build-bg-front_v1" instance=ExtResource("1_6ic08")]
+
+[node name="Edificio Fondo 1" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_bu4re")

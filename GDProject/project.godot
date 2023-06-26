@@ -13,6 +13,9 @@ config_version=5
 config/name="GDProject"
 run/main_scene="res://Scenes/Scene-Demo.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
+boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
+boot_splash/image="res://Assets/UI/Icono_Wallpaper.png"
+boot_splash/fullsize=false
 config/icon="res://icon.svg"
 
 [display]
@@ -51,3 +54,8 @@ Right={
 [physics]
 
 3d/default_gravity=0.98
+
+[rendering]
+
+anti_aliasing/quality/msaa_3d=2
+anti_aliasing/quality/screen_space_aa=1

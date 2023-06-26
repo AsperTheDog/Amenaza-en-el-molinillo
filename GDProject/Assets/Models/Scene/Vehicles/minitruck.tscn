@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwnbraco5hwpg"]
+
+[ext_resource type="PackedScene" uid="uid://va6oucm4207y" path="res://Assets/Models/Scene/Vehicles/minitruck.glb" id="1_gd2uv"]
+[ext_resource type="Material" path="res://Materials/Vehicles/vehicles_v1.tres" id="2_4bwg4"]
+
+[node name="minitruck" instance=ExtResource("1_gd2uv")]
+
+[node name="Camion" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_4bwg4")

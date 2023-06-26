@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://uhga0eja3xrg"]
+
+[ext_resource type="PackedScene" uid="uid://1fbar87m2tgn" path="res://Assets/Models/Scene/Background/build-bg-roof_v1.glb" id="1_05vk8"]
+[ext_resource type="Material" uid="uid://c18ngb847oqie" path="res://Materials/City/build-bg_v1.tres" id="2_e1pik"]
+
+[node name="build-bg-roof_v1" instance=ExtResource("1_05vk8")]
+
+[node name="Edificio Fondo Tejado" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_e1pik")

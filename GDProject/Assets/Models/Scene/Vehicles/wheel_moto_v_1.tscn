@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://df1sysq2m02gr"]
+
+[ext_resource type="PackedScene" uid="uid://kmob34g3vigl" path="res://Assets/Models/Scene/Vehicles/wheel_moto_v1.glb" id="1_uar1j"]
+[ext_resource type="Material" path="res://Materials/Vehicles/vehicles_v1.tres" id="2_j4bl1"]
+
+[node name="wheel_moto_v1" instance=ExtResource("1_uar1j")]
+
+[node name="Rueda moto" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_j4bl1")

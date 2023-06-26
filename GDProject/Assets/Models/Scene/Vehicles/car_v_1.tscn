@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5kro12rxfmyr"]
+
+[ext_resource type="PackedScene" uid="uid://ckvtahosgquvq" path="res://Assets/Models/Scene/Vehicles/car_v1.glb" id="1_bla2w"]
+[ext_resource type="Material" path="res://Materials/Vehicles/vehicles_v1.tres" id="2_yot56"]
+
+[node name="car_v1" instance=ExtResource("1_bla2w")]
+
+[node name="Coche" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_yot56")
