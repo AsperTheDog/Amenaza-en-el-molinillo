@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bfdka1lvht0ye"]
 
 [ext_resource type="PackedScene" uid="uid://dea3bwigivw0l" path="res://Assets/Models/Scene/City/bush_v1.glb" id="1_6ypra"]
-[ext_resource type="Material" path="res://Materials/City/packfences_v1.tres" id="2_v3v4j"]
+[ext_resource type="Material" uid="uid://cpiqx1885dxs" path="res://Materials/City/packfences_v1.tres" id="2_v3v4j"]
 
 [node name="bush_v1" instance=ExtResource("1_6ypra")]
 

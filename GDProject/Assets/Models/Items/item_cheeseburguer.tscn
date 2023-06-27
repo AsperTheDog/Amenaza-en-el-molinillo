@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://eb83bpu6mh0"]
+
+[ext_resource type="PackedScene" uid="uid://ckn7uibkl6kl" path="res://Assets/Models/Items/item-cheeseburguer.glb" id="1_f3kjg"]
+[ext_resource type="Material" uid="uid://cunl1snm1avpe" path="res://Materials/Items/items_v1.tres" id="2_33jio"]
+
+[node name="item-cheeseburguer" instance=ExtResource("1_f3kjg")]
+
+[node name="Burguer" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_33jio")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bourqnlij6081"]
 
 [ext_resource type="PackedScene" uid="uid://ubvdjf6id7uu" path="res://Assets/Models/Scene/City/trafficlight-walker_v1.glb" id="1_hvq66"]
-[ext_resource type="Material" path="res://Materials/City/sings_v1.tres" id="2_p2iop"]
+[ext_resource type="Material" uid="uid://cr8tfh2f1wgns" path="res://Materials/City/sings_v1.tres" id="2_p2iop"]
 
 [node name="trafficlight-walker_v1" instance=ExtResource("1_hvq66")]
 

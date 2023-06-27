@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c83yv1tj5m02f"]
 
 [ext_resource type="PackedScene" uid="uid://bygcbmupucgqf" path="res://Assets/Models/Scene/Vehicles/moto_v1.glb" id="1_x0gw8"]
-[ext_resource type="Material" path="res://Materials/Vehicles/vehicles_v1.tres" id="2_4kl87"]
+[ext_resource type="Material" uid="uid://0dfvcqofn3v2" path="res://Materials/Vehicles/vehicles_v1.tres" id="2_4kl87"]
 
 [node name="moto_v1" instance=ExtResource("1_x0gw8")]
 

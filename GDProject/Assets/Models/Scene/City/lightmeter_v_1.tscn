@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dm72nqcgen7q2"]
 
 [ext_resource type="PackedScene" uid="uid://cv7efamka6l7p" path="res://Assets/Models/Scene/City/lightmeter_v1.glb" id="1_r58ad"]
-[ext_resource type="Material" path="res://Materials/City/packfences_v1.tres" id="2_a3nhk"]
+[ext_resource type="Material" uid="uid://cpiqx1885dxs" path="res://Materials/City/packfences_v1.tres" id="2_a3nhk"]
 
 [node name="lightmeter_v1" instance=ExtResource("1_r58ad")]
 

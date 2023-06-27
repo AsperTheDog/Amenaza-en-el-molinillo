@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b1ifq70lf04ra"]
 
 [ext_resource type="PackedScene" uid="uid://cks15xnedje82" path="res://Assets/Models/Scene/City/streetlight-en_v1.glb" id="1_2khgg"]
-[ext_resource type="Material" path="res://Materials/City/sings_v1.tres" id="2_7bfc1"]
+[ext_resource type="Material" uid="uid://cr8tfh2f1wgns" path="res://Materials/City/sings_v1.tres" id="2_7bfc1"]
 
 [node name="streetlight-en_v1" instance=ExtResource("1_2khgg")]
 

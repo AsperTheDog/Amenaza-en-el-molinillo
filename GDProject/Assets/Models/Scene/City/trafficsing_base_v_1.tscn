@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dx4njq6fdas5x"]
 
 [ext_resource type="PackedScene" uid="uid://b6iybnc4ag476" path="res://Assets/Models/Scene/City/trafficsing-base_v1.glb" id="1_eav3u"]
-[ext_resource type="Material" path="res://Materials/City/sings_v1.tres" id="2_uf6ga"]
+[ext_resource type="Material" uid="uid://cr8tfh2f1wgns" path="res://Materials/City/sings_v1.tres" id="2_uf6ga"]
 
 [node name="trafficsing-base_v1" instance=ExtResource("1_eav3u")]
 

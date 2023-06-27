@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://duugcq0f5kiuv"]
 
 [ext_resource type="PackedScene" uid="uid://bv6ikyc0kl3gd" path="res://Assets/Models/Scene/City/grassbox_v1.glb" id="1_ugdh3"]
-[ext_resource type="Material" path="res://Materials/City/packfences_v1.tres" id="2_tyc3o"]
+[ext_resource type="Material" uid="uid://cpiqx1885dxs" path="res://Materials/City/packfences_v1.tres" id="2_tyc3o"]
 
 [node name="grassbox_v1" instance=ExtResource("1_ugdh3")]
 

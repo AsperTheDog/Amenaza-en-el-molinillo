@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs23f68u86f8g"]
+
+[ext_resource type="PackedScene" uid="uid://ce2ky5xstdl7n" path="res://Assets/Models/Items/item-trash_v1.glb" id="1_6oudv"]
+[ext_resource type="Material" uid="uid://cunl1snm1avpe" path="res://Materials/Items/items_v1.tres" id="2_6isxs"]
+
+[node name="item-trash_v1" instance=ExtResource("1_6oudv")]
+
+[node name="cubo Basura" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_6isxs")

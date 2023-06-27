@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://um2vftdk6a40"]
 
 [ext_resource type="PackedScene" uid="uid://bvvfj76cuy12n" path="res://Assets/Models/Scene/Vehicles/wheel_car_v1.glb" id="1_eq37l"]
-[ext_resource type="Material" path="res://Materials/Vehicles/vehicles_v1.tres" id="2_mvkoa"]
+[ext_resource type="Material" uid="uid://0dfvcqofn3v2" path="res://Materials/Vehicles/vehicles_v1.tres" id="2_mvkoa"]
 
 [node name="wheel_car_v1" instance=ExtResource("1_eq37l")]
 

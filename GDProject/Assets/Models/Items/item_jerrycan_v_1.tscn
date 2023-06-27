@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dswswdvs4634f"]
+
+[ext_resource type="PackedScene" uid="uid://cvbr3mbq1ccm6" path="res://Assets/Models/Items/item-jerrycan_v1.glb" id="1_jqxup"]
+[ext_resource type="Material" uid="uid://cunl1snm1avpe" path="res://Materials/Items/items_v1.tres" id="2_0b7wm"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fnofs"]
+height = 0.909175
+radius = 0.344123
+
+[node name="item-jerrycan_v1" instance=ExtResource("1_jqxup")]
+
+[node name="Bidon" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_0b7wm")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Bidon" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bidon/RigidBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.449364, 0)
+shape = SubResource("CylinderShape3D_fnofs")

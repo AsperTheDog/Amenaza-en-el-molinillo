@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://b7co442vfn4a5"]
+[gd_scene load_steps=79 format=3 uid="uid://b7co442vfn4a5"]
 
 [ext_resource type="Environment" uid="uid://bt7lbvekdafji" path="res://Enviroments/Enviroment-sunrise.tres" id="1_hmru1"]
 [ext_resource type="PackedScene" uid="uid://bplkpyps27gl4" path="res://Assets/Models/Scene/Background/mountain_v1.glb" id="3_oac4i"]
@@ -61,6 +61,14 @@
 [ext_resource type="PackedScene" uid="uid://dwnbraco5hwpg" path="res://Assets/Models/Scene/Vehicles/minitruck.tscn" id="59_2g6cu"]
 [ext_resource type="PackedScene" uid="uid://c83yv1tj5m02f" path="res://Assets/Models/Scene/Vehicles/moto_v_1.tscn" id="60_4cp5b"]
 [ext_resource type="PackedScene" uid="uid://df1sysq2m02gr" path="res://Assets/Models/Scene/Vehicles/wheel_moto_v_1.tscn" id="61_ujud4"]
+[ext_resource type="PackedScene" uid="uid://eb83bpu6mh0" path="res://Assets/Models/Items/item_cheeseburguer.tscn" id="62_yglnw"]
+[ext_resource type="PackedScene" uid="uid://dswswdvs4634f" path="res://Assets/Models/Items/item_jerrycan_v_1.tscn" id="63_krl2w"]
+[ext_resource type="PackedScene" uid="uid://c0msik1e6fxis" path="res://Assets/Models/Items/item_levermachine_v_1.tscn" id="64_6x3om"]
+[ext_resource type="PackedScene" uid="uid://32l0xsrx1w5f" path="res://Assets/Models/Items/item_leversteam_v_1.tscn" id="65_g5qj1"]
+[ext_resource type="PackedScene" uid="uid://cejembuwr5p2v" path="res://Assets/Models/Items/item_lever_v_1.tscn" id="66_f25ow"]
+[ext_resource type="PackedScene" uid="uid://dc0ec4yogkt2i" path="res://Assets/Models/Items/item_newspaper_v_1.tscn" id="67_q17gg"]
+[ext_resource type="PackedScene" uid="uid://cs23f68u86f8g" path="res://Assets/Models/Items/item_trash_v_1.tscn" id="68_w4ad8"]
+[ext_resource type="PackedScene" uid="uid://bihalfhp3ws0e" path="res://Assets/Models/Items/item_trashcover_v_1.tscn" id="69_ouoya"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_21vss"]
 size = Vector3(111.806, 0.0425731, 3.31054)
@@ -73,6 +81,41 @@ size = Vector3(0.165222, 8.99543, 3.27318)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ytw2h"]
 material = ExtResource("47_tic1o")
+
+[sub_resource type="Animation" id="Animation_3h1vw"]
+resource_name = "ItemBurger-Iddle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 0, 0.432871, 0, 2, 1, 0, 0, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sckxo"]
+_data = {
+"ItemBurger-Iddle": SubResource("Animation_3h1vw")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dt8o3"]
+
+[sub_resource type="Animation" id="Animation_x8b1p"]
+resource_name = "item-newspaper-iddle"
+length = 2.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 37.9006, 8.67799, 0.00433779, 0.9, 1, 37.9006, 9.12135, 0.00433779, 2, 1, 37.9006, 8.67799, 0.00433779)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e7em8"]
+_data = {
+"item-newspaper-iddle": SubResource("Animation_x8b1p")
+}
 
 [node name="Node3D" type="Node3D"]
 
@@ -141,6 +184,9 @@ transform = Transform3D(0.900673, 0, 0, 0, 1, 0, 0, 0, 1, 37.0673, -0.607988, -9
 [node name="giantcontainer_v1" parent="Construction-area" instance=ExtResource("34_tifhq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.3612, 0, -7.17442)
 
+[node name="giantcontainer_v2" parent="Construction-area" instance=ExtResource("34_tifhq")]
+transform = Transform3D(0.490326, 0, 0.871539, 0, 1, 0, -0.871539, 0, 0.490326, 9.64786, 0, -26.3988)
+
 [node name="joistbig_v1" parent="Construction-area" instance=ExtResource("35_j8woy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.9689, 11.6856, -6.8017)
 
@@ -158,6 +204,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.2401, 0, -6.92136)
 
 [node name="sand_v1" parent="Construction-area" instance=ExtResource("38_c7e33")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.6017, 0.0562503, -7.28006)
+
+[node name="sand_v2" parent="Construction-area" instance=ExtResource("38_c7e33")]
+transform = Transform3D(2.98269, 0, 0, 0, 2.98269, 0, 0, 0, 2.98269, 25.9116, 0.0562503, -22.5067)
+
+[node name="sand_v4" parent="Construction-area" instance=ExtResource("38_c7e33")]
+transform = Transform3D(4.80848, 0, 0, 0, 1.06321, 0, 0, 0, 4.80848, 20.9721, 0.0562503, -36.3505)
+
+[node name="sand_v3" parent="Construction-area" instance=ExtResource("38_c7e33")]
+transform = Transform3D(1.50192, 0, 2.57694, 0, 1.35444, 0, -2.57694, 0, 1.50192, 18.1773, 0.0562503, -24.2251)
 
 [node name="scaffold_v1" parent="Construction-area" instance=ExtResource("39_py8gx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.2324, -9.53674e-07, -6.69693)
@@ -205,7 +260,10 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 56.513
 transform = Transform3D(0.999589, -0.0286544, 0, 0.0286544, 0.999589, 0, 0, 0, 1, 22.9151, 1.56362, -6.88244)
 
 [node name="jerrycan_v1" parent="Construction-area" instance=ExtResource("7_t8dne")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.1225, 2.43027, -6.78538)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.3716, 2.43027, -6.78538)
+
+[node name="jerrycan_v2" parent="Construction-area" instance=ExtResource("7_t8dne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.4853, 3.33069, -6.87765)
 
 [node name="concretebag_v1" parent="Construction-area" instance=ExtResource("50_ruhng")]
 transform = Transform3D(0.862151, 0, -0.506651, 0, 1, 0, 0.506651, 0, 0.862151, 27.9755, 0.32586, -4.96925)
@@ -242,6 +300,15 @@ transform = Transform3D(0.669416, 0, -0.742888, 0, 1, 0, 0.742888, 0, 0.669416, 
 
 [node name="pipelinebig_v3" parent="Construction-area" instance=ExtResource("37_gt6ws")]
 transform = Transform3D(-0.996587, 0, -0.0825473, 0, 1, 0, 0.0825473, 0, -0.996587, 26.4225, 0, -11.5591)
+
+[node name="pipelinebig_v5" parent="Construction-area" instance=ExtResource("37_gt6ws")]
+transform = Transform3D(0.688038, 0, 0.725675, 0, 1, 0, -0.725675, 0, 0.688038, 11.3026, 0, -42.0518)
+
+[node name="pipelinebig_v6" parent="Construction-area" instance=ExtResource("37_gt6ws")]
+transform = Transform3D(0.669416, 0, -0.742888, 0, 1, 0, 0.742888, 0, 0.669416, 16.0488, 0, -45.6811)
+
+[node name="pipelinebig_v7" parent="Construction-area" instance=ExtResource("37_gt6ws")]
+transform = Transform3D(-0.996587, 0, -0.0825473, 0, 1, 0, 0.0825473, 0, -0.996587, 26.4225, 0, -45.2313)
 
 [node name="plank_v1" parent="Construction-area" instance=ExtResource("54_8n2yo")]
 transform = Transform3D(0.985446, 0.169986, 0, -0.169986, 0.985446, 0, 0, 0, 1, 21.6161, 0.153398, -5.00133)
@@ -291,28 +358,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3679, 0, -5.10729)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8571, 0, -5.30956)
 
 [node name="streetlight-en_v4" parent="City" instance=ExtResource("10_f1afg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2447, 0, 5.52996)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2447, 0, 4.49847)
 
 [node name="streetlight-en_v5" parent="City" instance=ExtResource("10_f1afg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.653186, 0, 5.56747)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.653186, 0, 4.53598)
 
 [node name="streetlight-en_v6" parent="City" instance=ExtResource("10_f1afg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6355, 0, 5.77156)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3962, 0, 4.74007)
 
 [node name="streetlight-en_v7" parent="City" instance=ExtResource("10_f1afg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.8935, 0, 5.52996)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.8935, 0, 4.49847)
 
 [node name="streetlight-en_v8" parent="City" instance=ExtResource("10_f1afg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.302, 0, 5.56747)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.302, 0, 4.53598)
 
 [node name="streetlight-en_v9" parent="City" instance=ExtResource("10_f1afg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0133, 0, 5.77156)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0133, 0, 4.74007)
 
 [node name="streetlight-en_v11" parent="City" instance=ExtResource("10_f1afg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.6099, 0, 5.56747)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.6099, 0, 4.53598)
 
 [node name="streetlight-en_v12" parent="City" instance=ExtResource("10_f1afg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.3212, 0, 5.77156)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.3212, 0, 4.74007)
 
 [node name="trafficlight_v1" parent="City" instance=ExtResource("11_2mf3f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7986, 0, -4.56483)
@@ -336,10 +403,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.06003, 0, -6.89129)
 transform = Transform3D(-0.359687, -0.928337, -0.0938878, 0, 0.100622, -0.994925, 0.933073, -0.357862, -0.0361925, 5.31836, 0.428374, -8.95505)
 
 [node name="trash-cover_v1" parent="City" instance=ExtResource("16_mxtfv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8136, 0.879999, -7.91305)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.87924, 0.879999, -21.6503)
 
 [node name="trash_v1" parent="City" instance=ExtResource("17_g0wgi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8109, 0, -7.90853)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.87654, 0, -21.6458)
 
 [node name="trafficsing-walker_v1" parent="City" instance=ExtResource("18_f1lfm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.1328, 0, -4.89045)
@@ -451,9 +518,6 @@ transform = Transform3D(0.428848, 0, 0, 0, 0.428848, 0, 0, 0, 0.428848, 20.656, 
 
 [node name="bush_v6" parent="City" instance=ExtResource("30_dgdml")]
 transform = Transform3D(0.558412, 0, 0, 0, 0.558412, 0, 0, 0, 0.558412, 21.1854, 4.154, -5.29275)
-
-[node name="jerrycan_v1" parent="City" instance=ExtResource("7_t8dne")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.025, 0, -6.90011)
 
 [node name="trash-bag_v2" parent="City" instance=ExtResource("14_qvniu")]
 transform = Transform3D(0.199014, 0.914021, -0.353497, -0.448404, 0.405668, 0.796472, 0.871394, 0, 0.490584, 5.00282, -0.000776613, -7.84223)
@@ -1346,3 +1410,58 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 3.72529e-09, 1.39698e-09, 1, -0.002907
 
 [node name="wheel_moto_v2" parent="Vehicles/moto_v1" instance=ExtResource("61_ujud4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 3.72529e-09, 1.39698e-09, 1, -0.0020299, 0.285264, -0.926966)
+
+[node name="Items" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.77421, 1.30949, -6.81351)
+
+[node name="Item-Burguer" type="Node3D" parent="Items"]
+
+[node name="item-cheeseburguer" parent="Items/Item-Burguer" instance=ExtResource("62_yglnw")]
+transform = Transform3D(0.704696, 0, 0.709509, 0, 1, 0, -0.709509, 0, 0.704696, 0, 0.152371, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Items/Item-Burguer/item-cheeseburguer"]
+process_mode = 3
+libraries = {
+"": SubResource("AnimationLibrary_sckxo")
+}
+
+[node name="Area3D" type="Area3D" parent="Items/Item-Burguer/item-cheeseburguer"]
+transform = Transform3D(0.486848, 0, -7.45058e-08, 0, 0.486848, 0, 7.45058e-08, 0, 0.486848, 0, 0, 0)
+input_ray_pickable = false
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Items/Item-Burguer/item-cheeseburguer/Area3D"]
+transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_dt8o3")
+
+[node name="item-jerrycan_v1" parent="Items" instance=ExtResource("63_krl2w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.25079, -1.30949, -0.0865998)
+
+[node name="item-newspaper_v1" parent="Items" instance=ExtResource("67_q17gg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.9006, 8.67799, 0.00433779)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Items/item-newspaper_v1"]
+libraries = {
+"": SubResource("AnimationLibrary_e7em8")
+}
+
+[node name="item-newspaper_v1" parent="Items/item-newspaper_v1" instance=ExtResource("67_q17gg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.9006, 9.12135, 0.00433779)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Items/item-newspaper_v1/item-newspaper_v1"]
+libraries = {
+"": SubResource("AnimationLibrary_e7em8")
+}
+
+[node name="item-trash_v1" parent="Items" instance=ExtResource("68_w4ad8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66846, -1.30949, -0.886204)
+
+[node name="item-trashcover_v1" parent="Items/item-trash_v1" instance=ExtResource("69_ouoya")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.906251, 0)
+
+[node name="item-levermachine_v1" parent="Items" instance=ExtResource("64_6x3om")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 63.4553, 11.0076, 0.000836372)
+visible = false
+
+[node name="item-leversteam_v1" parent="Items/item-levermachine_v1" instance=ExtResource("65_g5qj1")]
+
+[node name="item-lever_v1" parent="Items/item-levermachine_v1" instance=ExtResource("66_f25ow")]

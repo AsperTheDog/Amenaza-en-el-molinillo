@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://32l0xsrx1w5f"]
+
+[ext_resource type="PackedScene" uid="uid://ddqhixtdyvv1i" path="res://Assets/Models/Items/item-leversteam_v1.glb" id="1_lhaoa"]
+[ext_resource type="Material" uid="uid://cunl1snm1avpe" path="res://Materials/Items/items_v1.tres" id="2_206dr"]
+
+[node name="item-leversteam_v1" instance=ExtResource("1_lhaoa")]
+
+[node name="LeverSteam" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_206dr")
