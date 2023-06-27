@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://b7co442vfn4a5"]
+[gd_scene load_steps=76 format=3 uid="uid://b7co442vfn4a5"]
 
 [ext_resource type="Environment" uid="uid://bt7lbvekdafji" path="res://Enviroments/Enviroment-sunrise.tres" id="1_hmru1"]
 [ext_resource type="PackedScene" uid="uid://bplkpyps27gl4" path="res://Assets/Models/Scene/Background/mountain_v1.glb" id="3_oac4i"]
@@ -63,6 +63,7 @@
 [ext_resource type="PackedScene" uid="uid://df1sysq2m02gr" path="res://Assets/Models/Scene/Vehicles/wheel_moto_v_1.tscn" id="61_ujud4"]
 [ext_resource type="PackedScene" uid="uid://eb83bpu6mh0" path="res://Assets/Models/Items/item_cheeseburguer.tscn" id="62_yglnw"]
 [ext_resource type="PackedScene" uid="uid://dswswdvs4634f" path="res://Assets/Models/Items/item_jerrycan_v_1.tscn" id="63_krl2w"]
+[ext_resource type="Script" path="res://items/itemAnimation.gd" id="63_y40mm"]
 [ext_resource type="PackedScene" uid="uid://c0msik1e6fxis" path="res://Assets/Models/Items/item_levermachine_v_1.tscn" id="64_6x3om"]
 [ext_resource type="PackedScene" uid="uid://32l0xsrx1w5f" path="res://Assets/Models/Items/item_leversteam_v_1.tscn" id="65_g5qj1"]
 [ext_resource type="PackedScene" uid="uid://cejembuwr5p2v" path="res://Assets/Models/Items/item_lever_v_1.tscn" id="66_f25ow"]
@@ -82,40 +83,7 @@ size = Vector3(0.165222, 8.99543, 3.27318)
 [sub_resource type="PlaneMesh" id="PlaneMesh_ytw2h"]
 material = ExtResource("47_tic1o")
 
-[sub_resource type="Animation" id="Animation_3h1vw"]
-resource_name = "ItemBurger-Iddle"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 0, 0.432871, 0, 2, 1, 0, 0, 0)
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_sckxo"]
-_data = {
-"ItemBurger-Iddle": SubResource("Animation_3h1vw")
-}
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_dt8o3"]
-
-[sub_resource type="Animation" id="Animation_x8b1p"]
-resource_name = "item-newspaper-iddle"
-length = 2.0
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 37.9006, 8.67799, 0.00433779, 0.9, 1, 37.9006, 9.12135, 0.00433779, 2, 1, 37.9006, 8.67799, 0.00433779)
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_e7em8"]
-_data = {
-"item-newspaper-iddle": SubResource("Animation_x8b1p")
-}
 
 [node name="Node3D" type="Node3D"]
 
@@ -1417,13 +1385,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.77421, 1.30949, -6.81351)
 [node name="Item-Burguer" type="Node3D" parent="Items"]
 
 [node name="item-cheeseburguer" parent="Items/Item-Burguer" instance=ExtResource("62_yglnw")]
-transform = Transform3D(0.704696, 0, 0.709509, 0, 1, 0, -0.709509, 0, 0.704696, 0, 0.152371, 0)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Items/Item-Burguer/item-cheeseburguer"]
-process_mode = 3
-libraries = {
-"": SubResource("AnimationLibrary_sckxo")
-}
+transform = Transform3D(0.704696, 0, 0.709509, 0, 1, 0, -0.709509, 0, 0.704696, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="Items/Item-Burguer/item-cheeseburguer"]
 transform = Transform3D(0.486848, 0, -7.45058e-08, 0, 0.486848, 0, 7.45058e-08, 0, 0.486848, 0, 0, 0)
@@ -1433,24 +1395,17 @@ input_ray_pickable = false
 transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_dt8o3")
 
+[node name="ItemAnimator" type="Node" parent="Items/Item-Burguer/item-cheeseburguer"]
+script = ExtResource("63_y40mm")
+
 [node name="item-jerrycan_v1" parent="Items" instance=ExtResource("63_krl2w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.25079, -1.30949, -0.0865998)
 
 [node name="item-newspaper_v1" parent="Items" instance=ExtResource("67_q17gg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.9006, 8.67799, 0.00433779)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 37.9006, 8.67799, 0.00433779)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Items/item-newspaper_v1"]
-libraries = {
-"": SubResource("AnimationLibrary_e7em8")
-}
-
-[node name="item-newspaper_v1" parent="Items/item-newspaper_v1" instance=ExtResource("67_q17gg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.9006, 9.12135, 0.00433779)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Items/item-newspaper_v1/item-newspaper_v1"]
-libraries = {
-"": SubResource("AnimationLibrary_e7em8")
-}
+[node name="ItemAnimator" type="Node" parent="Items/item-newspaper_v1"]
+script = ExtResource("63_y40mm")
 
 [node name="item-trash_v1" parent="Items" instance=ExtResource("68_w4ad8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66846, -1.30949, -0.886204)
