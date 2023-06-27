@@ -15,7 +15,7 @@ func onExit(delta: float):
 	chara.animationPlayer.set_speed_scale(chara.animationSpeed)
 
 func check():
-	if not Input.is_action_pressed("Left") and not Input.is_action_pressed("Right"):
+	if abs(chara.velocity.x) < 0.1:
 		return "IdleState"
 	if Input.is_action_just_pressed("Jump"):
 		return "JumpState"
@@ -23,7 +23,7 @@ func check():
 		if chara.velocity.y <= 0:
 			return "FallState"
 		else:
-			return "FlyState"
+			return "AirState"
 	return null
 
 func apply(delta):

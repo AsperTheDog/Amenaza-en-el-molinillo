@@ -23,4 +23,3 @@ func _process(delta):
 	newPos.y = height
 	parent.transform.origin = newPos
 	parent.rotate(Vector3(0, 1, 0), deg_to_rad(rotationSpeed) * delta)
-	

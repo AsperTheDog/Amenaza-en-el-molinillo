@@ -52,7 +52,6 @@ func _process(delta):
 
 func _physics_process(delta):
 	stateMachine.evaluate(delta)
-	move_and_slide()
 
 func setForce(force: Vector3):
 	velocity = force
@@ -76,6 +75,7 @@ func applyHorizMovement(delta: float):
 	var movement = (targetSpeed - velocity.x) * accelRate * delta;
 	applyForce(movement * Vector3.RIGHT)
 	turn(sign(moveDir), delta)
+	move_and_slide()
 
 func applyHorizMovementAir(delta: float):
 	var moveDir = Input.get_action_strength("Right") - Input.get_action_strength("Left")
@@ -93,6 +93,7 @@ func applyHorizMovementAir(delta: float):
 	var movement = (targetSpeed - velocity.x) * accelRate * delta;
 	applyForce(movement * Vector3.RIGHT)
 	turn(sign(moveDir), delta)
+	move_and_slide()
 
 func turn(direction: int, delta: float):
 	if direction == 0:

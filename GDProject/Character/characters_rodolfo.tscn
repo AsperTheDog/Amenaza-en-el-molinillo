@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://Character/StateMachine/States/Run.gd" id="11_xr5cu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jtewq"]
-size = Vector3(0.3797, 1.76588, 0.510057)
+size = Vector3(0.508796, 1.76588, 0.510057)
 
 [node name="Rodolfo" type="CharacterBody3D" node_paths=PackedStringArray("stateMachine")]
 script = ExtResource("1_m1ybd")
