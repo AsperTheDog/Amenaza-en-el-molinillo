@@ -9,7 +9,11 @@ func onEnter(player: MainCharacter, delta: float):
 	super.onEnter(player, delta)
 	jumped = false
 	count = 0
-	chara.animationPlayer.play("Jump Ro", chara.blendTime, 1)
+	chara.gravity = chara.defaultGravity
+	if (!chara.hasDoubleJumped):
+		chara.animationPlayer.play("Jump Ro", chara.blendTime, 1)
+	else:
+		chara.animationPlayer.play("Jump Double Ro", chara.blendTime, 1)
 	
 func onExit(delta: float):
 	if chara.velocity.y > 0:
