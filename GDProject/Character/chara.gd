@@ -34,6 +34,8 @@ class_name MainCharacter
 var gravity: float = defaultGravity;
 var animationPlayer: AnimationPlayer
 var hasDoubleJumped: bool = false
+var vaultingDir: int
+var vaultingPos: Vector3
 
 
 func _ready():
@@ -43,27 +45,34 @@ func _ready():
 	animationPlayer.set_blend_time("Run Ro", "Idle Ro", slowBlendTime)
 	stateMachine.setup(self)
 
-func _process(delta):
+
+func _process(_delta):
 	if animationPlayer.assigned_animation == "Run Ro":
 		var speedDiff = 1 - (runMaxSpeed - abs(velocity.x)) / runMaxSpeed
 		animationPlayer.set_speed_scale(lerp(0.0, animationSpeed, speedDiff))
 	else:
 		animationPlayer.set_speed_scale(animationSpeed)
 
+
 func _physics_process(delta):
 	stateMachine.evaluate(delta)
+
 
 func setForce(force: Vector3):
 	velocity = force
 
+
 func applyForce(force: Vector3):
 	velocity += force
+
 
 func setVertForce(force: float):
 	velocity.y = force
 
+
 func setHorizForce(force: float):
 	velocity.x = force
+
 
 func applyHorizMovement(delta: float):
 	var moveDir = Input.get_action_strength("Right") - Input.get_action_strength("Left")
@@ -76,6 +85,7 @@ func applyHorizMovement(delta: float):
 	applyForce(movement * Vector3.RIGHT)
 	turn(sign(moveDir), delta)
 	move_and_slide()
+
 
 func applyHorizMovementAir(delta: float):
 	var moveDir = Input.get_action_strength("Right") - Input.get_action_strength("Left")
@@ -95,8 +105,22 @@ func applyHorizMovementAir(delta: float):
 	turn(sign(moveDir), delta)
 	move_and_slide()
 
+
 func turn(direction: int, delta: float):
 	if direction == 0:
 		return
 	var targetAngle = deg_to_rad(direction * 89)
 	$modelo.rotation.y = lerp_angle($modelo.rotation.y, targetAngle, delta * turnSpeed)
+
+
+func getVaultingDirection():
+	if $VaultRayLeft.is_colliding():
+		vaultingPos = $VaultRayLeft.get_collider().get_parent().global_transform.origin
+		vaultingDir = 1
+	elif $VaultRayRight.is_colliding():
+		vaultingPos = $VaultRayRight.get_collider().get_parent().global_transform.origin
+		vaultingDir = -1
+	else:
+		vaultingDir = 0
+	return vaultingDir
+		

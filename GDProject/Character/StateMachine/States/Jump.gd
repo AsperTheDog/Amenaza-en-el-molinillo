@@ -25,6 +25,11 @@ func check():
 			return "FallState"
 		if not Input.is_action_pressed("Jump"):
 			return "AirState"
+	if chara.getVaultingDirection() != 0:
+		if chara.vaultingDir == 1 and Input.is_action_pressed("Right"):
+			return "VaultState"
+		if chara.vaultingDir == -1 and Input.is_action_pressed("Left"):
+			return "VaultState"
 	return null
 
 func apply(delta):

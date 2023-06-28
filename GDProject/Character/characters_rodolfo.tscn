@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bemfpf3tvuute"]
+[gd_scene load_steps=12 format=3 uid="uid://bemfpf3tvuute"]
 
 [ext_resource type="Script" path="res://Character/chara.gd" id="1_m1ybd"]
 [ext_resource type="Script" path="res://Character/StateMachine/StateMachine.gd" id="6_qqmhe"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Air.gd" id="7_t700i"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Fall.gd" id="8_5ghpb"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/Vault.gd" id="8_6eond"]
 [ext_resource type="PackedScene" uid="uid://b6aowcqbcswti" path="res://Assets/Models/Characters/characters-rodolfo-classic_v1.glb" id="8_cycbb"]
 [ext_resource type="CameraAttributesPractical" uid="uid://73bot76e0rcf" path="res://Enviroments/camera_pj_practical.tres" id="8_u46h6"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Idle.gd" id="9_jjdcd"]
@@ -39,6 +40,9 @@ script = ExtResource("10_w1kia")
 [node name="RunState" type="Node" parent="StateMachine"]
 script = ExtResource("11_xr5cu")
 
+[node name="VaultState" type="Node" parent="StateMachine"]
+script = ExtResource("8_6eond")
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871558, 0, -0.0871558, 0.996195, 0, 3, 13.224)
 attributes = ExtResource("8_u46h6")
@@ -48,3 +52,17 @@ far = 200.0
 
 [node name="modelo" parent="." instance=ExtResource("8_cycbb")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="VaultRayLeft" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+target_position = Vector3(0.8, 0, 0)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="VaultRayRight" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+target_position = Vector3(-0.8, 0, 0)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false

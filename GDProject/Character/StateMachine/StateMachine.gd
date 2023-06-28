@@ -19,7 +19,7 @@ func evaluate(delta):
 	var ret = activeState.check()
 	if ret != null:
 		activeState.onExit(delta)
-		activeState = states[ret]
+		activeState = states[ret]    
 		activeState.onEnter(chara, delta)
 	else:
 		activeState.apply(delta)

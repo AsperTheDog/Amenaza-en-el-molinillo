@@ -2,7 +2,7 @@ extends Node
 
 class_name State
 
-var chara = null
+var chara: MainCharacter = null
 
 func onEnter(player: MainCharacter, delta: float):
 	chara = player

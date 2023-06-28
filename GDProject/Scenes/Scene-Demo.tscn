@@ -1,9 +1,10 @@
-[gd_scene load_steps=76 format=3 uid="uid://b7co442vfn4a5"]
+[gd_scene load_steps=77 format=3 uid="uid://b7co442vfn4a5"]
 
 [ext_resource type="Environment" uid="uid://bt7lbvekdafji" path="res://Enviroments/Enviroment-sunrise.tres" id="1_hmru1"]
 [ext_resource type="PackedScene" uid="uid://bplkpyps27gl4" path="res://Assets/Models/Scene/Background/mountain_v1.glb" id="3_oac4i"]
 [ext_resource type="PackedScene" uid="uid://b7822i5iwibmg" path="res://Assets/Models/Scene/Background/mountain_v2.glb" id="4_qmpij"]
 [ext_resource type="PackedScene" uid="uid://b3u8qg2yl7eja" path="res://Assets/Models/Scene/Background/mountain_v3.glb" id="5_k8x41"]
+[ext_resource type="PackedScene" uid="uid://ummnp0d1tn3x" path="res://Assets/Behavior/Corner-hitbox.tscn" id="6_7r22e"]
 [ext_resource type="PackedScene" uid="uid://byqqv7ru2gool" path="res://Assets/Models/Scene/Ground/floor_road_v_1.tscn" id="6_amxjb"]
 [ext_resource type="PackedScene" uid="uid://cbivejfbjsknp" path="res://Assets/Models/Scene/City/fireguard_v_1.tscn" id="6_dyq5u"]
 [ext_resource type="PackedScene" uid="uid://v2b8gvi7bbyw" path="res://Assets/Models/Scene/City/jerrycan_v_1.tscn" id="7_t8dne"]
@@ -74,11 +75,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_21vss"]
 size = Vector3(111.806, 0.0425731, 3.31054)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_kniw6"]
-size = Vector3(0.162849, 8.77163, 2.86731)
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_l65kj"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_fsef7"]
-size = Vector3(0.165222, 8.99543, 3.27318)
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2u762"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ytw2h"]
 material = ExtResource("47_tic1o")
@@ -123,14 +122,14 @@ shape = SubResource("BoxShape3D_21vss")
 [node name="StaticBody3D2" type="StaticBody3D" parent="Hitboxes"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.4211, 4.36728, -6.77295)
-shape = SubResource("BoxShape3D_kniw6")
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 56.3801, 4.36728, -6.77295)
+shape = SubResource("WorldBoundaryShape3D_l65kj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Hitboxes"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9628, 4.22381, -7.05008)
-shape = SubResource("BoxShape3D_fsef7")
+transform = Transform3D(-0.000185134, 1, -5.09761e-05, -1, -0.000185134, 1.27565e-06, 1.27564e-06, 5.09761e-05, 1, -17.9628, 4.22381, -7.05008)
+shape = SubResource("WorldBoundaryShape3D_2u762")
 
 [node name="Construction-area" type="Node3D" parent="."]
 
@@ -158,17 +157,41 @@ transform = Transform3D(0.490326, 0, 0.871539, 0, 1, 0, -0.871539, 0, 0.490326, 
 [node name="joistbig_v1" parent="Construction-area" instance=ExtResource("35_j8woy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.9689, 11.6856, -6.8017)
 
+[node name="Corner-hitbox" parent="Construction-area/joistbig_v1" instance=ExtResource("6_7r22e")]
+transform = Transform3D(0.617, 0, 0, 0, 0.617, 0, 0, 0, 0.617, -2.15984, 0.247205, 0)
+
+[node name="Corner-hitbox2" parent="Construction-area/joistbig_v1" instance=ExtResource("6_7r22e")]
+transform = Transform3D(0.623, 0, 0, 0, 0.623, 0, 0, 0, 0.623, 2.1576, 0.238892, 0)
+
 [node name="joistbig_v2" parent="Construction-area" instance=ExtResource("35_j8woy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7253, 8.66941, -6.8017)
 
+[node name="Corner-hitbox" parent="Construction-area/joistbig_v2" instance=ExtResource("6_7r22e")]
+transform = Transform3D(0.718, 0, 0, 0, 0.718, 0, 0, 0, 0.718, -2.14596, 0.242165, 0)
+
+[node name="Corner-hitbox2" parent="Construction-area/joistbig_v2" instance=ExtResource("6_7r22e")]
+transform = Transform3D(0.672, 0, 0, 0, 0.672, 0, 0, 0, 0.672, 2.13735, 0.232742, 0.00348234)
+
 [node name="joistbig_v3" parent="Construction-area" instance=ExtResource("35_j8woy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.3771, 13.2376, -6.80901)
+
+[node name="Corner-hitbox" parent="Construction-area/joistbig_v3" instance=ExtResource("6_7r22e")]
+transform = Transform3D(0.655588, 0, 0, 0, 0.655588, 0, 0, 0, 0.655588, -2.16579, 0.243806, 0)
+
+[node name="Corner-hitbox2" parent="Construction-area/joistbig_v3" instance=ExtResource("6_7r22e")]
+transform = Transform3D(0.656, 0, 0, 0, 0.656, 0, 0, 0, 0.656, 2.15814, 0.249238, -0.00882816)
 
 [node name="pallet_v1" parent="Construction-area" instance=ExtResource("36_6occc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8818, 0, -6.70657)
 
 [node name="pipelinebig_v1" parent="Construction-area" instance=ExtResource("37_gt6ws")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.2401, 0, -6.92136)
+
+[node name="Corner-hitbox" parent="Construction-area/pipelinebig_v1" instance=ExtResource("6_7r22e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.68248, 2.65427, 0)
+
+[node name="Corner-hitbox2" parent="Construction-area/pipelinebig_v1" instance=ExtResource("6_7r22e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.26258, 2.49362, 0)
 
 [node name="sand_v1" parent="Construction-area" instance=ExtResource("38_c7e33")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.6017, 0.0562503, -7.28006)
@@ -188,11 +211,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.2324, -9.53674e-07, -6.696
 [node name="scaffold_v2" parent="Construction-area" instance=ExtResource("39_py8gx")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 44.2439, 2.33286, -6.7009)
 
+[node name="Corner-hitbox" parent="Construction-area/scaffold_v2" instance=ExtResource("6_7r22e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38762, 2.32724, 0.250887)
+
+[node name="Corner-hitbox2" parent="Construction-area/scaffold_v2" instance=ExtResource("6_7r22e")]
+transform = Transform3D(0.737, 0, 0, 0, 0.737, 0, 0, 0, 0.737, 2.42888, 2.34705, 0.276977)
+
+[node name="Corner-hitbox3" parent="Construction-area/scaffold_v2" instance=ExtResource("6_7r22e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.37528, 0.100312, 0.182085)
+
 [node name="squadwood_v1" parent="Construction-area" instance=ExtResource("40_1sp4m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.3748, 0, -6.91883)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2442, 0, -6.91883)
 
 [node name="squadwood_v2" parent="Construction-area" instance=ExtResource("40_1sp4m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.776, 0, -6.91883)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.883, 0, -6.91883)
 
 [node name="table_v1" parent="Construction-area" instance=ExtResource("41_8245g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0616, 0.916337, -6.92574)
@@ -225,13 +257,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1813, 0, -8.7927)
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 56.5133, 0, -6.87934)
 
 [node name="woodbox_v1" parent="Construction-area" instance=ExtResource("43_7b4r7")]
-transform = Transform3D(0.999589, -0.0286544, 0, 0.0286544, 0.999589, 0, 0, 0, 1, 22.9151, 1.56362, -6.88244)
+transform = Transform3D(0.999589, -0.0286544, 0, 0.0286544, 0.999589, 0, 0, 0, 1, 22.9611, 1.56362, -6.88244)
+
+[node name="Corner-hitbox2" parent="Construction-area/woodbox_v1" instance=ExtResource("6_7r22e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.636017, 0.592166, 0)
 
 [node name="jerrycan_v1" parent="Construction-area" instance=ExtResource("7_t8dne")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.3716, 2.43027, -6.78538)
 
 [node name="jerrycan_v2" parent="Construction-area" instance=ExtResource("7_t8dne")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.4853, 3.33069, -6.87765)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.2394, 3.33069, -6.87765)
 
 [node name="concretebag_v1" parent="Construction-area" instance=ExtResource("50_ruhng")]
 transform = Transform3D(0.862151, 0, -0.506651, 0, 1, 0, 0.506651, 0, 0.862151, 27.9755, 0.32586, -4.96925)

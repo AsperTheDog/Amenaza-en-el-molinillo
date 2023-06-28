@@ -17,8 +17,14 @@ func check():
 	if Input.is_action_just_pressed("Jump") and not chara.hasDoubleJumped:
 		chara.hasDoubleJumped = true
 		return "JumpState"
+	if chara.getVaultingDirection() != 0:
+		if chara.vaultingDir == 1 and Input.is_action_pressed("Right"):
+			return "VaultState"
+		if chara.vaultingDir == -1 and Input.is_action_pressed("Left"):
+			return "VaultState"
 	return null
 
 func apply(delta):
 	chara.applyForce(chara.gravity * delta * Vector3.DOWN)
 	chara.applyHorizMovementAir(delta)
+	chara.getVaultingDirection()
