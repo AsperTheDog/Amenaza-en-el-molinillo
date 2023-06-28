@@ -23,11 +23,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00985885, -0.0374589, 0.00
 shape = SubResource("BoxShape3D_8sv2l")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
-transform = Transform3D(0.052, 0, 0, 0, 30, 0, 0, 0, 0.052, 0.942, 15.346, 0.197)
+transform = Transform3D(0.052, 0, 0, 0, 30, 0, 0, 0, 0.052, 0.942, 15.346, 0.316)
 mesh = SubResource("BoxMesh_ftenr")
 surface_material_override/0 = SubResource("StandardMaterial3D_yihn0")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="2"]
-transform = Transform3D(0.052, 0, 0, 0, 30, 0, 0, 0, 0.052, -0.814, 15.346, -0.199)
+transform = Transform3D(0.052, 0, 0, 0, 30, 0, 0, 0, 0.052, -0.814, 15.346, -0.314)
 mesh = SubResource("BoxMesh_ftenr")
 surface_material_override/0 = SubResource("StandardMaterial3D_yihn0")
