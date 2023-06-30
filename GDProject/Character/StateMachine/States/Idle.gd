@@ -2,17 +2,19 @@ extends State
 
 class_name IdleState
 
+var timer: float = 0
+
 func onEnter(player: MainCharacter, delta: float):
 	super.onEnter(player, delta)
 	if chara.animationPlayer.assigned_animation in chara.landingAnimations:
 		chara.animationPlayer.clear_queue()
-		chara.animationPlayer.set_default_blend_time(chara.slowBlendTime)
 		chara.animationPlayer.queue("Idle")
 	else:
 		chara.animationPlayer.play("Idle", chara.slowBlendTime)
+	timer = 0
 		
 func onExit(delta: float):
-	chara.animationPlayer.set_default_blend_time(chara.blendTime)
+	chara.animationPlayer.clear_queue()
 
 func check():
 	if abs(chara.velocity.x) > 1:
@@ -27,5 +29,11 @@ func check():
 	return null
 
 func apply(delta):
+	timer += delta
+	if timer >= chara.minimumIdleTime and randf() < chara.idleActionChance * delta:
+		timer = 0
+		chara.animationPlayer.play("IdleAction")
+		chara.animationPlayer.queue("Idle")
 	var moveDir = Input.get_axis("Left", "Right")
 	chara.applyHorizMovement(delta, moveDir)
+	

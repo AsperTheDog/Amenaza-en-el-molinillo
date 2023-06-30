@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bemfpf3tvuute"]
+[gd_scene load_steps=14 format=3 uid="uid://bemfpf3tvuute"]
 
 [ext_resource type="Script" path="res://Character/chara.gd" id="1_m1ybd"]
 [ext_resource type="Script" path="res://Character/StateMachine/StateMachine.gd" id="6_qqmhe"]
@@ -9,6 +9,7 @@
 [ext_resource type="CameraAttributesPractical" uid="uid://73bot76e0rcf" path="res://Enviroments/camera_pj_practical.tres" id="8_u46h6"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/StrongLanding.gd" id="9_3u7fv"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Idle.gd" id="9_jjdcd"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/Walk.gd" id="10_5bbfa"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Jump.gd" id="10_w1kia"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Run.gd" id="11_xr5cu"]
 
@@ -18,6 +19,7 @@ size = Vector3(0.508796, 1.76588, 0.510057)
 [node name="Rodolfo" type="CharacterBody3D" node_paths=PackedStringArray("stateMachine")]
 script = ExtResource("1_m1ybd")
 stateMachine = NodePath("StateMachine")
+minimumIdleTime = 8.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.880988, 0)
@@ -46,6 +48,9 @@ script = ExtResource("8_6eond")
 
 [node name="StrongLandState" type="Node" parent="StateMachine"]
 script = ExtResource("9_3u7fv")
+
+[node name="WalkState" type="Node" parent="StateMachine"]
+script = ExtResource("10_5bbfa")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871558, 0, -0.0871558, 0.996195, 0, 3, 13.224)

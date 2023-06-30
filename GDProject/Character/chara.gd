@@ -12,6 +12,7 @@ class_name MainCharacter
 @export var maxFallSpeed: float = 50
 @export var defaultGravity: float = 9.8
 @export var bunnyHopTime: float = 0.15
+@export var canDoubleJump: bool = true
 @export_subgroup("Acceleration")
 @export var accelInAirMult: float = 1.0
 @export var deccelInAirMult: float = 1.0
@@ -29,16 +30,21 @@ class_name MainCharacter
 @export var runMaxSpeed: float = 10
 @export var doConserveMomentum = true
 @export var deadZoneMovement: float = 0.25
+@export var walkingThreshold: float = 0.5
 
 @export_group("Animation")
 @export var turnSpeed: float = 1
 @export var animationSpeed: float = 10
 @export var blendTime: float = 0.3
 @export var slowBlendTime: float = 0.3
+@export_subgroup("Idle Action")
+@export var minimumIdleTime: float = 2
+@export var idleActionChance: float = 0.2
 
 var animationPlayer: AnimationPlayer
 var zPos: float
 const landingAnimations = ["FallingFloor", "FallingFloorNear"]
+const movingAnimations = ["Run", "Walk"]
 
 var lastTopFallingSpeed: float = 0
 var gravity: float = defaultGravity;
@@ -57,10 +63,13 @@ func _ready():
 	animationPlayer = $modelo/AnimationPlayer
 	animationPlayer.set_default_blend_time(blendTime)
 	animationPlayer.set_speed_scale(animationSpeed)
+	setAnimationBlendTimes()
 	stateMachine.setup(self)
 	zPos = transform.origin.z
 	flyingAnimationLength = animationPlayer.get_animation("Jump").length
 	flyingAnimationHalftime = flyingAnimationLength / 2
+	if not canDoubleJump:
+		hasDoubleJumped = true
 
 
 func _physics_process(delta):
@@ -156,3 +165,15 @@ func seekAirAnimation():
 		var value: float = 1 - (velocity.y / jumpSpeed)
 		seek  = lerp(0.0, flyingAnimationHalftime, value)
 	animationPlayer.seek(seek)
+
+func setAnimationBlendTimes():
+	animationPlayer.set_blend_time("Run", "Idle", slowBlendTime)
+	animationPlayer.set_blend_time("Run", "Walk", slowBlendTime)
+	animationPlayer.set_blend_time("FallingFloor", "Run", blendTime * 2)
+	animationPlayer.set_blend_time("FallingFloor", "Walk", blendTime * 2)
+	animationPlayer.set_blend_time("FallingFloor", "Idle", slowBlendTime)
+	animationPlayer.set_blend_time("FallingFloorNear", "Run", blendTime * 2)
+	animationPlayer.set_blend_time("FallingFloorNear", "Walk", blendTime * 2)
+	animationPlayer.set_blend_time("FallingFloorNear", "Idle", slowBlendTime)
+	animationPlayer.set_blend_time("Idle", "Run", blendTime * 2)
+	animationPlayer.set_blend_time("Idle", "Walk", blendTime * 2)

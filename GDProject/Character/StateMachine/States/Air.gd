@@ -28,4 +28,3 @@ func apply(delta):
 	chara.applyForce(chara.gravity * delta * Vector3.DOWN)
 	var moveDir = Input.get_axis("Left", "Right")
 	chara.applyHorizMovementAir(delta, moveDir)
-	chara.getVaultingDirection()

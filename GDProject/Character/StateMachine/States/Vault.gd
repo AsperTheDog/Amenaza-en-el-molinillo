@@ -6,8 +6,8 @@ var timer: float = 0
 var initialPos: float
 var snapFinished: bool = false
 
-var snapTime = 0.1
-var timeUntilLift = 0.13
+var snapTime = 0.02
+var timeUntilLift = 0.1
 var liftDuration = 0.2
 
 func onEnter(player: MainCharacter, delta: float):
@@ -28,12 +28,10 @@ func check():
 func apply(delta):
 	timer += delta
 	if timer < snapTime:
-		var movePos = chara.vaultingPos.y - 1.6
-		chara.global_transform.origin.y = lerp(initialPos, movePos, timer / snapTime)
+		chara.global_transform.origin.y = lerp(initialPos, chara.vaultingPos.y - 1.6, timer / snapTime)
 	elif not snapFinished:
 		snapFinished = true
-		var movePos = chara.vaultingPos.y - 1.6
-		chara.global_transform.origin.y = movePos
+		chara.global_transform.origin.y = chara.vaultingPos.y - 1.6
 	if (timer > timeUntilLift):
 		chara.setVertForce(9)
 	else:
