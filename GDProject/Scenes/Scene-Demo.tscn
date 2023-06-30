@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://b7co442vfn4a5"]
+[gd_scene load_steps=76 format=3 uid="uid://b7co442vfn4a5"]
 
 [ext_resource type="Environment" uid="uid://bt7lbvekdafji" path="res://Enviroments/Enviroment-sunrise.tres" id="1_hmru1"]
 [ext_resource type="PackedScene" uid="uid://bplkpyps27gl4" path="res://Assets/Models/Scene/Background/mountain_v1.glb" id="3_oac4i"]
@@ -69,6 +69,7 @@
 [ext_resource type="PackedScene" uid="uid://dc0ec4yogkt2i" path="res://Assets/Models/Items/item_newspaper_v_1.tscn" id="67_q17gg"]
 [ext_resource type="PackedScene" uid="uid://cs23f68u86f8g" path="res://Assets/Models/Items/item_trash_v_1.tscn" id="68_w4ad8"]
 [ext_resource type="PackedScene" uid="uid://bihalfhp3ws0e" path="res://Assets/Models/Items/item_trashcover_v_1.tscn" id="69_ouoya"]
+[ext_resource type="PackedScene" uid="uid://bxryp4uhkt6wg" path="res://Assets/Models/Developer/regla.glb" id="70_m1x68"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_21vss"]
 size = Vector3(111.806, 0.0425731, 3.31054)
@@ -1445,3 +1446,6 @@ visible = false
 [node name="item-leversteam_v1" parent="Items/item-levermachine_v1" instance=ExtResource("65_g5qj1")]
 
 [node name="item-lever_v1" parent="Items/item-levermachine_v1" instance=ExtResource("66_f25ow")]
+
+[node name="regla" parent="." instance=ExtResource("70_m1x68")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9973, -0.00077709, -7.54821)
