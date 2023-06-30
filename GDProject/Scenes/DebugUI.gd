@@ -20,5 +20,5 @@ func _process(delta):
 	+ "\n\nHas Double Jumped: " + str(chara.hasDoubleJumped) \
 	+ "\nIs BunnyHop Timer Active: " + str(chara.isBunnyHopTimerActive) \
 	+ "\nBunnyHop Timer: " + str(chara.bunnyHopTimer) \
-	+ "\nJump Request:" + str(chara.execJumpAction)
+	+ "\nJump Request: " + str(chara.execJumpAction)
  

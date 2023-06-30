@@ -15,7 +15,7 @@ func onExit(delta: float):
 	chara.animationPlayer.set_speed_scale(chara.animationSpeed)
 
 func check():
-	if chara.isBunnyHopTimerActive or Input.is_action_pressed("Jump"):
+	if chara.isBunnyHopTimerActive or Input.is_action_just_pressed("Jump"):
 		chara.isBunnyHopTimerActive = false
 		return "JumpState"
 	if abs(chara.velocity.x) < 1:
