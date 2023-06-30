@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://b7co442vfn4a5"]
+[gd_scene load_steps=75 format=3 uid="uid://b7co442vfn4a5"]
 
 [ext_resource type="Environment" uid="uid://bt7lbvekdafji" path="res://Enviroments/Enviroment-sunrise.tres" id="1_hmru1"]
 [ext_resource type="PackedScene" uid="uid://bplkpyps27gl4" path="res://Assets/Models/Scene/Background/mountain_v1.glb" id="3_oac4i"]
@@ -60,8 +60,6 @@
 [ext_resource type="PackedScene" uid="uid://c5kro12rxfmyr" path="res://Assets/Models/Scene/Vehicles/car_v_1.tscn" id="57_ocoji"]
 [ext_resource type="PackedScene" uid="uid://um2vftdk6a40" path="res://Assets/Models/Scene/Vehicles/wheel_car_v_1.tscn" id="58_f10oa"]
 [ext_resource type="PackedScene" uid="uid://dwnbraco5hwpg" path="res://Assets/Models/Scene/Vehicles/minitruck.tscn" id="59_2g6cu"]
-[ext_resource type="PackedScene" uid="uid://c83yv1tj5m02f" path="res://Assets/Models/Scene/Vehicles/moto_v_1.tscn" id="60_4cp5b"]
-[ext_resource type="PackedScene" uid="uid://df1sysq2m02gr" path="res://Assets/Models/Scene/Vehicles/wheel_moto_v_1.tscn" id="61_ujud4"]
 [ext_resource type="PackedScene" uid="uid://eb83bpu6mh0" path="res://Assets/Models/Items/item_cheeseburguer.tscn" id="62_yglnw"]
 [ext_resource type="PackedScene" uid="uid://dswswdvs4634f" path="res://Assets/Models/Items/item_jerrycan_v_1.tscn" id="63_krl2w"]
 [ext_resource type="Script" path="res://items/itemAnimation.gd" id="63_y40mm"]
@@ -100,7 +98,8 @@ shadow_blur = 1.5
 [node name="characters-rodolfo-classic_v1" parent="." instance=ExtResource("31_hedx5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1617, 0.22158, -6.9139)
 fallGravityMult = 2.0
-jumpSpeed = 12.0
+jumpSpeed = 8.0
+jumpCutGravityMult = 3.0
 defaultGravity = 15.0
 jumpHangTimeThreshold = 0.2
 jumpHangAccelMult = 1.4
@@ -1404,15 +1403,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.0646
 
 [node name="wheel_car_v4" parent="Vehicles/minitruck2" instance=ExtResource("58_f10oa")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.06466, 0.33812, 2.03233)
-
-[node name="moto_v1" parent="Vehicles" instance=ExtResource("60_4cp5b")]
-transform = Transform3D(0.0295093, 0, -0.999565, 0.273571, 0.961818, 0.00807641, 0.961399, -0.273691, 0.0283825, 0.6555, -0.155671, -3.41315)
-
-[node name="wheel_moto_v1" parent="Vehicles/moto_v1" instance=ExtResource("61_ujud4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 3.72529e-09, 1.39698e-09, 1, -0.00290728, 0.285264, 0.82127)
-
-[node name="wheel_moto_v2" parent="Vehicles/moto_v1" instance=ExtResource("61_ujud4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 3.72529e-09, 1.39698e-09, 1, -0.0020299, 0.285264, -0.926966)
 
 [node name="Items" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.77421, 1.30949, -6.81351)
