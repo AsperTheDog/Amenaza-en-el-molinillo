@@ -170,7 +170,7 @@ transform = Transform3D(0.617, 0, 0, 0, 0.617, 0, 0, 0, 0.617, -2.15984, 0.24720
 transform = Transform3D(0.623, 0, 0, 0, 0.623, 0, 0, 0, 0.623, 2.1576, 0.238892, 0)
 
 [node name="joistbig_v2" parent="Construction-area" instance=ExtResource("35_j8woy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7253, 8.66941, -6.8017)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7253, 7.95123, -6.8017)
 
 [node name="Corner-hitbox" parent="Construction-area/joistbig_v2" instance=ExtResource("6_7r22e")]
 transform = Transform3D(0.718, 0, 0, 0, 0.718, 0, 0, 0, 0.718, -2.14596, 0.242165, 0)
@@ -188,7 +188,7 @@ transform = Transform3D(0.655588, 0, 0, 0, 0.655588, 0, 0, 0, 0.655588, -2.16579
 transform = Transform3D(0.656, 0, 0, 0, 0.656, 0, 0, 0, 0.656, 2.15814, 0.249238, -0.00882816)
 
 [node name="joistbig_v4" parent="Construction-area" instance=ExtResource("35_j8woy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.7652, 15.6403, -6.809)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.7652, 15.2636, -6.809)
 
 [node name="Corner-hitbox" parent="Construction-area/joistbig_v4" instance=ExtResource("6_7r22e")]
 transform = Transform3D(0.655588, 0, 0, 0, 0.655588, 0, 0, 0, 0.655588, -2.16579, 0.243806, 0)
@@ -197,7 +197,7 @@ transform = Transform3D(0.655588, 0, 0, 0, 0.655588, 0, 0, 0, 0.655588, -2.16579
 transform = Transform3D(0.656, 0, 0, 0, 0.656, 0, 0, 0, 0.656, 2.15814, 0.249238, -0.00882816)
 
 [node name="joistbig_v3" parent="Construction-area" instance=ExtResource("35_j8woy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.3771, 13.2376, -6.80901)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.3771, 12.6658, -6.80901)
 
 [node name="Corner-hitbox" parent="Construction-area/joistbig_v3" instance=ExtResource("6_7r22e")]
 transform = Transform3D(0.655588, 0, 0, 0, 0.655588, 0, 0, 0, 0.655588, -2.16579, 0.243806, 0)
