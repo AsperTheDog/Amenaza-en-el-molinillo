@@ -1,6 +1,6 @@
 extends State
 
-class_name UpCutState
+class_name TemplateState
 
 func onEnter(player: MainCharacter, delta: float):
 	super.onEnter(player, delta)

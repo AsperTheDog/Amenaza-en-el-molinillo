@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://ummnp0d1tn3x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2clkb"]
-size = Vector3(0.0564834, 0.608016, 0.667443)
+size = Vector3(0.0564834, 0.608016, 2.13098)
 
 [node name="Corner-hitbox" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00195159, 0)

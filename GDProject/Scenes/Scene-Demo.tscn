@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://b7co442vfn4a5"]
+[gd_scene load_steps=78 format=3 uid="uid://b7co442vfn4a5"]
 
 [ext_resource type="Environment" uid="uid://bt7lbvekdafji" path="res://Enviroments/Enviroment-sunrise.tres" id="1_hmru1"]
 [ext_resource type="PackedScene" uid="uid://bplkpyps27gl4" path="res://Assets/Models/Scene/Background/mountain_v1.glb" id="3_oac4i"]
@@ -70,9 +70,11 @@
 [ext_resource type="PackedScene" uid="uid://cs23f68u86f8g" path="res://Assets/Models/Items/item_trash_v_1.tscn" id="68_w4ad8"]
 [ext_resource type="PackedScene" uid="uid://bihalfhp3ws0e" path="res://Assets/Models/Items/item_trashcover_v_1.tscn" id="69_ouoya"]
 [ext_resource type="PackedScene" uid="uid://bxryp4uhkt6wg" path="res://Assets/Models/Developer/regla.glb" id="70_m1x68"]
+[ext_resource type="PackedScene" uid="uid://c2tirkl53jvea" path="res://Scenes/DebugUI.tscn" id="71_qr0il"]
+[ext_resource type="Script" path="res://Scenes/DebugUI.gd" id="72_xe4q7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_21vss"]
-size = Vector3(111.806, 0.0425731, 3.31054)
+size = Vector3(113.319, 0.0425731, 3.31054)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_l65kj"]
 
@@ -96,15 +98,19 @@ light_bake_mode = 1
 shadow_enabled = true
 shadow_blur = 1.5
 
-[node name="characters-rodolfo-classic_v1" parent="." instance=ExtResource("31_hedx5")]
+[node name="rodolfo" parent="." instance=ExtResource("31_hedx5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1617, 0.22158, -6.9139)
 fallGravityMult = 2.0
 jumpSpeed = 8.0
 jumpCutGravityMult = 3.0
+maxFallSpeed = 30.0
 defaultGravity = 15.0
+bunnyHopTime = 0.08
 jumpHangTimeThreshold = 0.2
 jumpHangAccelMult = 1.4
 jumpHangMaxSpeedMult = 1.4
+lightFallThreshold = 0.5
+strongFallThreshold = 0.8
 runDeccelAmount = 10.0
 runMaxSpeed = 7.0
 turnSpeed = 10.0
@@ -171,6 +177,24 @@ transform = Transform3D(0.718, 0, 0, 0, 0.718, 0, 0, 0, 0.718, -2.14596, 0.24216
 
 [node name="Corner-hitbox2" parent="Construction-area/joistbig_v2" instance=ExtResource("6_7r22e")]
 transform = Transform3D(0.672, 0, 0, 0, 0.672, 0, 0, 0, 0.672, 2.13735, 0.232742, 0.00348234)
+
+[node name="joistbig_v5" parent="Construction-area" instance=ExtResource("35_j8woy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6853, 18.1953, -6.809)
+
+[node name="Corner-hitbox" parent="Construction-area/joistbig_v5" instance=ExtResource("6_7r22e")]
+transform = Transform3D(0.655588, 0, 0, 0, 0.655588, 0, 0, 0, 0.655588, -2.16579, 0.243806, 0)
+
+[node name="Corner-hitbox2" parent="Construction-area/joistbig_v5" instance=ExtResource("6_7r22e")]
+transform = Transform3D(0.656, 0, 0, 0, 0.656, 0, 0, 0, 0.656, 2.15814, 0.249238, -0.00882816)
+
+[node name="joistbig_v4" parent="Construction-area" instance=ExtResource("35_j8woy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.7652, 15.6403, -6.809)
+
+[node name="Corner-hitbox" parent="Construction-area/joistbig_v4" instance=ExtResource("6_7r22e")]
+transform = Transform3D(0.655588, 0, 0, 0, 0.655588, 0, 0, 0, 0.655588, -2.16579, 0.243806, 0)
+
+[node name="Corner-hitbox2" parent="Construction-area/joistbig_v4" instance=ExtResource("6_7r22e")]
+transform = Transform3D(0.656, 0, 0, 0, 0.656, 0, 0, 0, 0.656, 2.15814, 0.249238, -0.00882816)
 
 [node name="joistbig_v3" parent="Construction-area" instance=ExtResource("35_j8woy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.3771, 13.2376, -6.80901)
@@ -1449,3 +1473,7 @@ visible = false
 
 [node name="regla" parent="." instance=ExtResource("70_m1x68")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9973, -0.00077709, -7.54821)
+
+[node name="Control" parent="." node_paths=PackedStringArray("chara") instance=ExtResource("71_qr0il")]
+script = ExtResource("72_xe4q7")
+chara = NodePath("../rodolfo")

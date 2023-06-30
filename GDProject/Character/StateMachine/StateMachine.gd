@@ -4,9 +4,10 @@ class_name StateMachine
 
 @export var initialState = "IdleState"
 var states = {}
-var chara = null
+var chara: MainCharacter = null
 
-var activeState = null
+var activeState: State = null
+var activeStateName = ""
 
 func setup(player: MainCharacter):
 	chara = player
@@ -19,7 +20,9 @@ func evaluate(delta):
 	var ret = activeState.check()
 	if ret != null:
 		activeState.onExit(delta)
-		activeState = states[ret]    
+		activeState = states[ret]
+		activeStateName = ret
+		print(ret)
 		activeState.onEnter(chara, delta)
 	else:
 		activeState.apply(delta)

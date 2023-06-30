@@ -4,7 +4,6 @@ class_name AirState
 
 func onEnter(player: MainCharacter, delta: float):
 	super.onEnter(player, delta)
-	chara.animationPlayer.play("FallingJump Ro")
 	
 func onExit(delta: float):
 	pass
@@ -14,17 +13,19 @@ func check():
 		return "FallState"
 	if chara.is_on_floor():
 		return "RunState"
-	if Input.is_action_just_pressed("Jump") and not chara.hasDoubleJumped:
+	if chara.execJumpAction and not chara.hasDoubleJumped:
+		chara.isBunnyHopTimerActive = false
 		chara.hasDoubleJumped = true
 		return "JumpState"
-	if chara.getVaultingDirection() != 0:
-		if chara.vaultingDir == 1 and Input.is_action_pressed("Right"):
-			return "VaultState"
-		if chara.vaultingDir == -1 and Input.is_action_pressed("Left"):
-			return "VaultState"
+	if chara.getVaultingDirection() != 0 and chara.vaultingDir == Input.get_axis("Left", "Right"):
+		chara.isBunnyHopTimerActive = false
+		return "VaultState"
 	return null
 
 func apply(delta):
+	if Input.is_action_just_pressed("Jump"):
+		chara.isBunnyHopTimerActive = true
 	chara.applyForce(chara.gravity * delta * Vector3.DOWN)
-	chara.applyHorizMovementAir(delta)
+	var moveDir = Input.get_action_strength("Right") - Input.get_action_strength("Left")
+	chara.applyHorizMovementAir(delta, moveDir)
 	chara.getVaultingDirection()

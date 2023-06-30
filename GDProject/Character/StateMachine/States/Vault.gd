@@ -4,7 +4,7 @@ class_name VaultState
 
 var timer: float = 0
 var initialPos: float
-var snapFinished = false
+var snapFinished: bool = false
 
 var snapTime = 0.1
 var timeUntilLift = 0.13
@@ -16,8 +16,7 @@ func onEnter(player: MainCharacter, delta: float):
 	initialPos = chara.global_transform.origin.y
 	snapFinished = false
 	chara.get_node("modelo").rotation.y = deg_to_rad(chara.vaultingDir * 89)
-	chara.animationPlayer.play("Jump Corner Ro", -1)
-	chara.animationPlayer.seek(0)
+	chara.animationPlayer.play("JumpCorner", -1)
 	
 func onExit(delta: float):
 	pass

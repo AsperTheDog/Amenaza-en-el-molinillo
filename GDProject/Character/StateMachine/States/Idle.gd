@@ -4,12 +4,18 @@ class_name IdleState
 
 func onEnter(player: MainCharacter, delta: float):
 	super.onEnter(player, delta)
+	if chara.animationPlayer.assigned_animation in chara.landingAnimations:
+		chara.animationPlayer.clear_queue()
+		chara.animationPlayer.set_default_blend_time(chara.slowBlendTime)
+		chara.animationPlayer.queue("Idle")
+	else:
+		chara.animationPlayer.play("Idle", chara.slowBlendTime)
 		
 func onExit(delta: float):
-	pass
+	chara.animationPlayer.set_default_blend_time(chara.blendTime)
 
 func check():
-	if abs(chara.velocity.x) > 0.1:
+	if abs(chara.velocity.x) > 1:
 		return "RunState"
 	if Input.is_action_just_pressed("Jump"):
 		return "JumpState"
@@ -18,16 +24,8 @@ func check():
 			return "FallState"
 		else:
 			return "AirState"
-		
 	return null
 
 func apply(delta):
-	chara.applyHorizMovement(delta)
-	
-	if (abs(chara.velocity.x) < 0.1):
-		if chara.animationPlayer.assigned_animation != "Idle Ro":
-			if chara.animationPlayer.assigned_animation == "FallingFloor Ro":
-				chara.animationPlayer.clear_queue()
-				chara.animationPlayer.queue("Idle Ro")
-			else:
-				chara.animationPlayer.play("Idle Ro")
+	var moveDir = Input.get_action_strength("Right") - Input.get_action_strength("Left")
+	chara.applyHorizMovement(delta, moveDir)
