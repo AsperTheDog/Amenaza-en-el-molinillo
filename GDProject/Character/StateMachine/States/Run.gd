@@ -28,7 +28,7 @@ func check():
 	return null
 
 func apply(delta):
-	var moveDir = Input.get_action_strength("Right") - Input.get_action_strength("Left")
+	var moveDir = Input.get_axis("Left", "Right")
 	chara.applyHorizMovement(delta, moveDir)
 	if chara.animationPlayer.assigned_animation not in chara.landingAnimations:
 		var speedDiff = 1 - (chara.runMaxSpeed - abs(chara.velocity.x)) / chara.runMaxSpeed

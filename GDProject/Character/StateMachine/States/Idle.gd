@@ -27,5 +27,5 @@ func check():
 	return null
 
 func apply(delta):
-	var moveDir = Input.get_action_strength("Right") - Input.get_action_strength("Left")
+	var moveDir = Input.get_axis("Left", "Right")
 	chara.applyHorizMovement(delta, moveDir)

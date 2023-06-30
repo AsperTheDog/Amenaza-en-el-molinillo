@@ -50,5 +50,5 @@ func apply(delta):
 	var newForce = chara.velocity
 	newForce.y = max(newForce.y, -chara.maxFallSpeed)
 	chara.setForce(newForce)
-	var moveDir = Input.get_action_strength("Right") - Input.get_action_strength("Left")
+	var moveDir = Input.get_axis("Left", "Right")
 	chara.applyHorizMovementAir(delta, moveDir)

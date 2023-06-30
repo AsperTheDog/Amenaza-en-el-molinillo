@@ -20,5 +20,7 @@ func _process(delta):
 	+ "\n\nHas Double Jumped: " + str(chara.hasDoubleJumped) \
 	+ "\nIs BunnyHop Timer Active: " + str(chara.isBunnyHopTimerActive) \
 	+ "\nBunnyHop Timer: " + str(chara.bunnyHopTimer) \
-	+ "\nJump Request: " + str(chara.execJumpAction)
+	+ "\nJump Request: " + str(chara.execJumpAction) \
+	+ "\n\nJump Pressed:" + str(Input.is_action_pressed("Jump")) \
+	+ "\n\nRun Direction: " + str(Input.get_axis("Left", "Right"))
  

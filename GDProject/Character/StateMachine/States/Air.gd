@@ -26,6 +26,6 @@ func apply(delta):
 	if Input.is_action_just_pressed("Jump"):
 		chara.isBunnyHopTimerActive = true
 	chara.applyForce(chara.gravity * delta * Vector3.DOWN)
-	var moveDir = Input.get_action_strength("Right") - Input.get_action_strength("Left")
+	var moveDir = Input.get_axis("Left", "Right")
 	chara.applyHorizMovementAir(delta, moveDir)
 	chara.getVaultingDirection()

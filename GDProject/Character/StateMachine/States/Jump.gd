@@ -34,7 +34,7 @@ func check():
 func apply(delta):
 	anticTime += delta
 	afterAnticTime += delta
-	var moveDir = Input.get_action_strength("Right") - Input.get_action_strength("Left")
+	var moveDir = Input.get_axis("Left", "Right")
 	if jumped:
 		chara.applyForce(chara.gravity * delta * Vector3.DOWN)
 		chara.applyHorizMovementAir(delta, moveDir)
