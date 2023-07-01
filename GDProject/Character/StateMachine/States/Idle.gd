@@ -18,7 +18,10 @@ func onExit(delta: float):
 
 func check():
 	if abs(chara.velocity.x) > 1:
-		return "RunState"
+		if abs(Input.get_axis("Left", "Right")) < chara.walkingThreshold:
+			return "WalkState"
+		else:
+			return "RunState"
 	if Input.is_action_just_pressed("Jump"):
 		return "JumpState"
 	if not chara.is_on_floor():
