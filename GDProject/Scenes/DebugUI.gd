@@ -12,7 +12,7 @@ func _ready():
 func _process(delta):
 	label.text = "FPS: " + str(1 / delta) \
 	+ "\n\nState: " + chara.stateMachine.activeStateName \
-	+ "\nGravity: " + str(chara.gravity) \
+	+ "\nGravity: " + str(snapped(chara.gravity, 0.01)) \
 	+ "\nVelocity: " \
 	+ "\n\t- X: " + str(snapped(chara.velocity.x, 0.01)) \
 	+ "\n\t- Y: " + str(snapped(chara.velocity.y, 0.01)) \

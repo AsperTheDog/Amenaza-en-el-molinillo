@@ -100,11 +100,10 @@ shadow_blur = 1.5
 
 [node name="rodolfo" parent="." instance=ExtResource("31_hedx5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1617, 0.22158, -6.9139)
-fallGravityMult = 2.0
-jumpSpeed = 8.0
+fallGravityMult = 1.7
 jumpCutGravityMult = 3.0
 maxFallSpeed = 30.0
-defaultGravity = 15.0
+defaultGravity = 23.5
 bunnyHopTime = 0.08
 jumpHangTimeThreshold = 0.2
 jumpHangAccelMult = 1.4
@@ -1472,7 +1471,10 @@ visible = false
 [node name="item-lever_v1" parent="Items/item-levermachine_v1" instance=ExtResource("66_f25ow")]
 
 [node name="regla" parent="." instance=ExtResource("70_m1x68")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9973, -0.00077709, -7.54821)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.60833, -0.00077709, -7.54821)
+
+[node name="regla" parent="regla" instance=ExtResource("70_m1x68")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.338079, 0.355399, 0.0310001)
 
 [node name="Control" parent="." node_paths=PackedStringArray("chara") instance=ExtResource("71_qr0il")]
 script = ExtResource("72_xe4q7")
