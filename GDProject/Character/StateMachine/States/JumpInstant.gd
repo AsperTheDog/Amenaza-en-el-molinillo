@@ -7,7 +7,9 @@ func onEnter(player: MainCharacter, delta: float):
 	chara.gravity = chara.defaultGravity
 	if chara.hasDoubleJumped or not chara.canDoubleJump:
 		chara.animationPlayer.play("JumpDouble", chara.blendTime, 1)
-	chara.animationPlayer.play("Jump", chara.blendTime)
+		chara.animationPlayer.queue("Jump")
+	else:
+		chara.animationPlayer.play("Jump", chara.blendTime)
 	chara.setVertForce((chara.jumpSpeed * Vector3.UP).y)
 	
 func onExit(delta: float):

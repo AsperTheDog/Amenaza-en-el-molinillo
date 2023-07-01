@@ -20,6 +20,7 @@ size = Vector3(0.508796, 1.76588, 0.510057)
 [node name="Rodolfo" type="CharacterBody3D" node_paths=PackedStringArray("stateMachine")]
 script = ExtResource("1_m1ybd")
 stateMachine = NodePath("StateMachine")
+isJumpInstant = true
 minimumIdleTime = 8.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
