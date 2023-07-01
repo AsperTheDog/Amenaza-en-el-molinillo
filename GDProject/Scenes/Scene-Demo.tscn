@@ -105,7 +105,6 @@ jumpCutGravityMult = 3.0
 maxFallSpeed = 30.0
 defaultGravity = 23.5
 bunnyHopTime = 0.08
-isJumpInstant = true
 jumpHangTimeThreshold = 0.2
 jumpHangAccelMult = 1.4
 jumpHangMaxSpeedMult = 1.4
@@ -128,7 +127,7 @@ shape = SubResource("BoxShape3D_21vss")
 [node name="StaticBody3D2" type="StaticBody3D" parent="Hitboxes"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/StaticBody3D2"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 81.098, 4.36728, -6.77295)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 56.2858, 4.36728, -6.77295)
 shape = SubResource("WorldBoundaryShape3D_l65kj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Hitboxes"]
@@ -1472,7 +1471,7 @@ visible = false
 [node name="item-lever_v1" parent="Items/item-levermachine_v1" instance=ExtResource("66_f25ow")]
 
 [node name="regla" parent="." instance=ExtResource("70_m1x68")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.60833, -0.00077709, -7.54821)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5342, -0.00077709, -8.86975)
 
 [node name="regla" parent="regla" instance=ExtResource("70_m1x68")]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.338079, 0.355399, 0.0310001)

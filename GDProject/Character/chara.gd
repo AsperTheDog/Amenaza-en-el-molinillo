@@ -60,7 +60,17 @@ var execJumpAction: bool = false
 var flyingAnimationLength: float = 0
 var flyingAnimationHalftime: float = 0
 
+var eyesModel: MeshInstance3D
+
+var toggleEyes: bool = true
+
+var cara1 = preload("res://Assets/Models/Characters/Eyes-Open_Mouth-Open.png")
+var cara2 = preload("res://Assets/Models/Characters/Eyes-Half_Mouth-Smile.png")
+var cara3 = preload("res://Assets/Models/Characters/Eyes-Confuse_Mouth-Sad.png")
+var cara4 = preload("res://Assets/Models/Characters/Eyes-Closed_Mouth-Small.png")
+
 func _ready():
+	eyesModel = $"modelo/Rodolfo Character/Armature Ro/Skeleton3D/Eyes Rodolfo"
 	animationPlayer = $modelo/AnimationPlayer
 	animationPlayer.set_default_blend_time(blendTime)
 	animationPlayer.set_speed_scale(animationSpeed)
@@ -72,6 +82,13 @@ func _ready():
 	if not canDoubleJump:
 		hasDoubleJumped = true
 
+func _process(_delta):
+	if Input.is_action_just_pressed("DebugInput"):
+		if toggleEyes:
+			eyesModel.get_mesh().get("surface_0/material").set_texture(StandardMaterial3D.TEXTURE_ALBEDO, cara4)
+		else:
+			eyesModel.get_mesh().get("surface_0/material").set_texture(StandardMaterial3D.TEXTURE_ALBEDO, cara1)
+		toggleEyes = not toggleEyes
 
 func _physics_process(delta):
 	processJumpBuffering(delta)
