@@ -23,7 +23,10 @@ func check():
 		else:
 			return "RunState"
 	if Input.is_action_just_pressed("Jump"):
-		return "JumpState"
+		if chara.isJumpInstant:
+			return "JumpInstantState"
+		else:
+			return "JumpState"
 	if not chara.is_on_floor():
 		if chara.velocity.y <= 0:
 			return "FallState"

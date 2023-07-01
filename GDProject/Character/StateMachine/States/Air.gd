@@ -16,7 +16,10 @@ func check():
 	if chara.execJumpAction and not chara.hasDoubleJumped:
 		chara.isBunnyHopTimerActive = false
 		chara.hasDoubleJumped = true
-		return "JumpState"
+		if chara.isJumpInstant:
+			return "JumpInstantState"
+		else:
+			return "JumpState"
 	if chara.getVaultingDirection() != 0 and chara.vaultingDir == Input.get_axis("Left", "Right"):
 		chara.isBunnyHopTimerActive = false
 		return "VaultState"
