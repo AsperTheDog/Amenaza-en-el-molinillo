@@ -1,6 +1,5 @@
 extends State
 
-var dialogueRunning: bool = false
 var dialogue = null
 
 func onEnter(player: MainCharacter, delta: float):
@@ -10,8 +9,7 @@ func onEnter(player: MainCharacter, delta: float):
 		dialogue = dialogues[0]
 	
 	if dialogue != null:
-		dialogue.startDialogue
-		dialogueRunning = true
+		dialogue.startDialogue()
 	
 		
 func onExit(delta: float):
@@ -19,10 +17,10 @@ func onExit(delta: float):
 	return
 
 func check():
-	if dialogue.isRunning():
-		return "DialogueState"
-	else:
+	if !dialogue.isRunning():
 		return "IdleState"
+	
+	return null
 
 func apply(delta):
 	# Do nothing

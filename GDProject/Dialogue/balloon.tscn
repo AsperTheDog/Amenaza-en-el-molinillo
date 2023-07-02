@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=5 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://Dialogue/balloon.gd" id="1_7fdp3"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="2_fn5n8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5d24i"]
 content_margin_left = 40.0
@@ -69,6 +70,24 @@ scroll_active = false
 shortcut_keys_enabled = false
 meta_underlined = false
 hint_underlined = false
+
+[node name="DialogueLabel" type="RichTextLabel" parent="Balloon/Margin/VBox"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+bbcode_enabled = true
+text = "Dialogue"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+deselect_on_focus_loss_enabled = false
+script = ExtResource("2_fn5n8")
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="resized" from="Balloon/Margin" to="." method="_on_margin_resized"]

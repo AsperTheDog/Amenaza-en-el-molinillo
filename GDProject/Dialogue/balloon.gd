@@ -20,12 +20,15 @@ var is_waiting_for_input: bool = false
 ## See if we are running a long mutation and should hide the balloon
 var will_hide_balloon: bool = false
 
+var dialogueFinished: bool = false
+
 ## The current line
 var dialogue_line: DialogueLine:
 	set(next_dialogue_line):
 		is_waiting_for_input = false
 		
 		if not next_dialogue_line:
+			dialogueFinished = true
 			queue_free()
 			return
 		
