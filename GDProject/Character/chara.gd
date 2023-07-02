@@ -45,7 +45,7 @@ class_name MainCharacter
 
 var animationPlayer: AnimationPlayer
 var zPos: float
-const landingAnimations = ["FallingFloor", "FallingFloorNear"]
+const landingAnimations = ["FallingFloor", "FallingFloorRun", "FallingFloorNear", "FallingFloorNearRun"]
 const movingAnimations = ["Run", "Walk"]
 
 var lastTopFallingSpeed: float = 0

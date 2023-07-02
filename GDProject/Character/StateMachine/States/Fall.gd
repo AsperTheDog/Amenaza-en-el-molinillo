@@ -23,9 +23,15 @@ func onExit(delta: float):
 func check():
 	if chara.is_on_floor():
 		if chara.lastTopFallingSpeed >= chara.lightFallThreshold * chara.maxFallSpeed * Vector3.DOWN.y:
-			chara.animationPlayer.play("FallingFloorNear")
+			if abs(chara.velocity.x) < 0.1:
+				chara.animationPlayer.play("FallingFloorNear")
+			else:
+				chara.animationPlayer.play("FallingFloorNearRun")
 		elif chara.lastTopFallingSpeed > chara.strongFallThreshold * chara.maxFallSpeed * Vector3.DOWN.y:
-			chara.animationPlayer.play("FallingFloor")
+			if abs(chara.velocity.x) < 0.1:
+				chara.animationPlayer.play("FallingFloor")
+			else:
+				chara.animationPlayer.play("FallingFloorRun")
 		else:
 			return "StrongLandState"
 		return "RunState"
