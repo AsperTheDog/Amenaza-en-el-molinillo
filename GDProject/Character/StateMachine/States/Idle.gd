@@ -3,6 +3,7 @@ extends State
 class_name IdleState
 
 var timer: float = 0
+var isActionBeingPerformed: bool = false
 
 func onEnter(player: MainCharacter, delta: float):
 	super.onEnter(player, delta)
@@ -12,6 +13,7 @@ func onEnter(player: MainCharacter, delta: float):
 	else:
 		chara.animationPlayer.play("Idle", chara.slowBlendTime)
 	timer = 0
+	isActionBeingPerformed = false
 		
 func onExit(delta: float):
 	chara.animationPlayer.clear_queue()
@@ -35,11 +37,11 @@ func check():
 	return null
 
 func apply(delta):
-	timer += delta
-	if timer >= chara.minimumIdleTime and randf() < chara.idleActionChance * delta:
-		timer = 0
+	if not isActionBeingPerformed and timer >= chara.minimumIdleTime:
+		isActionBeingPerformed = true
 		chara.animationPlayer.play("IdleAction")
-		chara.animationPlayer.queue("Idle")
+	else:
+		timer += delta
 	var moveDir = Input.get_axis("Left", "Right")
 	chara.applyHorizMovement(delta, moveDir)
 	

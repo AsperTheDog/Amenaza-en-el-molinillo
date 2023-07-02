@@ -195,3 +195,7 @@ func setAnimationBlendTimes():
 	animationPlayer.set_blend_time("FallingFloorNear", "Idle", slowBlendTime)
 	animationPlayer.set_blend_time("Idle", "Run", blendTime * 2)
 	animationPlayer.set_blend_time("Idle", "Walk", blendTime * 2)
+	animationPlayer.set_blend_time("IdleAction", "Walk", blendTime / 2)
+	animationPlayer.set_blend_time("IdleAction", "Run", blendTime / 2)
+	animationPlayer.set_blend_time("IdleAction", "Idle", blendTime / 2)
+	animationPlayer.set_blend_time("IdleAction", "Jump", blendTime / 2)
