@@ -1473,6 +1473,7 @@ visible = false
 
 [node name="regla" parent="." instance=ExtResource("70_m1x68")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5342, -0.00077709, -8.86975)
+visible = false
 
 [node name="regla" parent="regla" instance=ExtResource("70_m1x68")]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.338079, 0.355399, 0.0310001)
