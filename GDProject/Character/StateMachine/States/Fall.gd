@@ -44,7 +44,7 @@ func check():
 
 func apply(delta):
 	chara.lastTopFallingSpeed = min(chara.velocity.y, chara.lastTopFallingSpeed)
-	var fallingLongThreshold = (chara.maxFallSpeed * 0.6 * Vector3.DOWN).y
+	var fallingLongThreshold = (chara.maxFallSpeed * 0.8 * Vector3.DOWN).y
 	if chara.animationPlayer.assigned_animation != "FallingJumpLong" and chara.velocity.y <= fallingLongThreshold:
 		chara.animationPlayer.play("FallingJumpLong", -1, 2)
 	if Input.is_action_just_pressed("Jump"):

@@ -2,13 +2,12 @@ extends State
 
 class_name StrongLandState
 
-const recoveryThreshold = 1
 var timer = 0
 var animationLength: float = 0;
 
 func onEnter(player: MainCharacter, delta: float):
 	super.onEnter(player, delta)
-	chara.animationPlayer.play("FallingFloor")
+	chara.animationPlayer.play("FallingFloorLong")
 	animationLength = chara.animationPlayer.current_animation_length / chara.animationSpeed
 	timer = 0
 	chara.isBunnyHopTimerActive = false
@@ -19,7 +18,13 @@ func onExit(delta: float):
 func check():
 	if animationLength <= timer:
 		return "IdleState"
+	if chara.strongFallRecoveryTime <= timer and abs(chara.velocity.x) > 0.1 :
+		return "RunState"
 
 func apply(delta):
 	timer += delta
-	chara.applyHorizMovement(delta, 0)
+	if chara.strongFallRecoveryTime <= timer:
+		var moveDir = Input.get_axis("Left", "Right")
+		chara.applyHorizMovement(delta, moveDir)
+	else:
+		chara.applyHorizMovement(delta, 0)

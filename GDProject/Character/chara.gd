@@ -24,6 +24,7 @@ class_name MainCharacter
 @export_subgroup("Touch Floor Thresholds")
 @export var lightFallThreshold: float = 0.2
 @export var strongFallThreshold: float = 0.7
+@export var strongFallRecoveryTime: float = 1.2
 
 @export_group("Run")
 @export var runAccelAmount: float = 5
@@ -185,17 +186,15 @@ func seekAirAnimation():
 	animationPlayer.seek(seek)
 
 func setAnimationBlendTimes():
-	animationPlayer.set_blend_time("Run", "Idle", slowBlendTime)
-	animationPlayer.set_blend_time("Run", "Walk", slowBlendTime)
+	animationPlayer.set_blend_time("Run", "Idle", blendTime)
+	animationPlayer.set_blend_time("Run", "Walk", blendTime)
 	animationPlayer.set_blend_time("FallingFloor", "Run", blendTime * 2)
 	animationPlayer.set_blend_time("FallingFloor", "Walk", blendTime * 2)
 	animationPlayer.set_blend_time("FallingFloor", "Idle", slowBlendTime)
 	animationPlayer.set_blend_time("FallingFloorNear", "Run", blendTime * 2)
 	animationPlayer.set_blend_time("FallingFloorNear", "Walk", blendTime * 2)
 	animationPlayer.set_blend_time("FallingFloorNear", "Idle", slowBlendTime)
-	animationPlayer.set_blend_time("Idle", "Run", blendTime * 2)
-	animationPlayer.set_blend_time("Idle", "Walk", blendTime * 2)
-	animationPlayer.set_blend_time("IdleAction", "Walk", blendTime / 2)
-	animationPlayer.set_blend_time("IdleAction", "Run", blendTime / 2)
-	animationPlayer.set_blend_time("IdleAction", "Idle", blendTime / 2)
-	animationPlayer.set_blend_time("IdleAction", "Jump", blendTime / 2)
+	animationPlayer.set_blend_time("IdleAction", "Walk", blendTime / 3)
+	animationPlayer.set_blend_time("IdleAction", "Run", blendTime / 3)
+	animationPlayer.set_blend_time("IdleAction", "Idle", blendTime / 3)
+	animationPlayer.set_blend_time("IdleAction", "Jump", blendTime / 3)
