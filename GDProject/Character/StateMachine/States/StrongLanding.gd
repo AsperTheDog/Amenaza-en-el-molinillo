@@ -17,8 +17,10 @@ func onExit(delta: float):
 
 func check():
 	if animationLength <= timer:
+		chara.executeAnimation("FallingFloorLongUp")
 		return "IdleState"
 	if chara.strongFallRecoveryTime <= timer and abs(chara.velocity.x) > 0.1 :
+		chara.executeAnimation("FallingFloorLongUp", chara.blendTime / 2, 1.5)
 		return "RunState"
 
 func apply(delta):
