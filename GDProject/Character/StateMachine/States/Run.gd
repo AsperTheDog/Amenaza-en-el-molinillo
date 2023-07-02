@@ -7,10 +7,9 @@ func onEnter(player: MainCharacter, delta: float):
 	if chara.canDoubleJump:
 		chara.hasDoubleJumped = false
 	if chara.animationPlayer.assigned_animation in chara.landingAnimations:
-		chara.animationPlayer.clear_queue()
-		chara.animationPlayer.queue("Run")
+		chara.queueAnimation("Run")
 	else:
-		chara.animationPlayer.play("Run")
+		chara.executeAnimation("Run")
 	
 func onExit(delta: float):
 	chara.animationPlayer.set_speed_scale(chara.animationSpeed)

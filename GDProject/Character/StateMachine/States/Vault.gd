@@ -16,7 +16,7 @@ func onEnter(player: MainCharacter, delta: float):
 	initialPos = chara.global_transform.origin.y
 	snapFinished = false
 	chara.get_node("modelo").rotation.y = deg_to_rad(chara.vaultingDir * 89)
-	chara.animationPlayer.play("JumpCorner", -1)
+	chara.executeAnimation("JumpCorner", -1)
 	chara.animationPlayer.seek(0)
 	
 func onExit(delta: float):

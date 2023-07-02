@@ -12,10 +12,10 @@ func onEnter(player: MainCharacter, delta: float):
 	anticTime = 0
 	chara.gravity = chara.defaultGravity
 	if not chara.hasDoubleJumped or not chara.canDoubleJump:
-		chara.animationPlayer.play("JumpAntic", chara.blendTime, 1)
+		chara.executeAnimation("JumpAntic")
 	else:
-		chara.animationPlayer.play("JumpDouble", chara.blendTime, 1)
-	chara.animationPlayer.queue("Jump")
+		chara.executeAnimation("JumpDouble")
+	chara.queueAnimation("Jump", false)
 	
 func onExit(delta: float):
 	if chara.velocity.y > 0:

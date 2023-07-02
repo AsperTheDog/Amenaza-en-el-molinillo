@@ -5,13 +5,12 @@ class_name WalkState
 func onEnter(player: MainCharacter, delta: float):
 	super.onEnter(player, delta)
 	if chara.animationPlayer.assigned_animation in chara.landingAnimations:
-		chara.animationPlayer.clear_queue()
-		chara.animationPlayer.queue("Walk")
+		chara.queueAnimation("Walk")
 	else:
 		if chara.animationPlayer.assigned_animation in chara.movingAnimations:
-			chara.animationPlayer.play("Walk", chara.slowBlendTime)
+			chara.executeAnimation("Walk", chara.slowBlendTime)
 		else:
-			chara.animationPlayer.play("Walk")
+			chara.executeAnimation("Walk")
 	
 func onExit(delta: float):
 	chara.animationPlayer.set_speed_scale(chara.animationSpeed)

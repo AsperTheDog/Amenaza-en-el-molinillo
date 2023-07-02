@@ -7,10 +7,9 @@ func onEnter(player: MainCharacter, delta: float):
 	chara.gravity = chara.defaultGravity
 	if chara.animationPlayer.assigned_animation != "FallingJump":
 		if chara.animationPlayer.assigned_animation == "JumpCorner":
-			chara.animationPlayer.clear_queue()
-			chara.animationPlayer.queue("Jump")
+			chara.queueAnimation("Jump")
 		else:
-			chara.animationPlayer.play("Jump")
+			chara.executeAnimation("Jump")
 	chara.gravity = chara.defaultGravity * chara.fallGravityMult
 	chara.lastTopFallingSpeed = 0
 	if Input.is_action_just_pressed("Jump"):
@@ -23,9 +22,15 @@ func onExit(delta: float):
 func check():
 	if chara.is_on_floor():
 		if chara.lastTopFallingSpeed >= chara.lightFallThreshold * chara.maxFallSpeed * Vector3.DOWN.y:
-			chara.animationPlayer.play("FallingFloorNear")
+			if abs(chara.velocity.x) < 0.1:
+				chara.executeAnimation("FallingFloorNear")
+			else:
+				chara.executeAnimation("FallingFloorNearRun")
 		elif chara.lastTopFallingSpeed > chara.strongFallThreshold * chara.maxFallSpeed * Vector3.DOWN.y:
-			chara.animationPlayer.play("FallingFloor")
+			if abs(chara.velocity.x) < 0.1:
+				chara.executeAnimation("FallingFloor")
+			else:
+				chara.executeAnimation("FallingFloorRun")
 		else:
 			return "StrongLandState"
 		return "RunState"
@@ -44,9 +49,9 @@ func check():
 
 func apply(delta):
 	chara.lastTopFallingSpeed = min(chara.velocity.y, chara.lastTopFallingSpeed)
-	var fallingLongThreshold = (chara.maxFallSpeed * 0.6 * Vector3.DOWN).y
+	var fallingLongThreshold = (chara.maxFallSpeed * 0.8 * Vector3.DOWN).y
 	if chara.animationPlayer.assigned_animation != "FallingJumpLong" and chara.velocity.y <= fallingLongThreshold:
-		chara.animationPlayer.play("FallingJumpLong", -1, 2)
+		chara.executeAnimation("FallingJumpLong", -1, 2)
 	if Input.is_action_just_pressed("Jump"):
 		chara.isBunnyHopTimerActive = true
 	chara.applyForce(chara.gravity * delta * Vector3.DOWN)
