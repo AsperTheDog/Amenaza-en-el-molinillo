@@ -116,7 +116,7 @@ runMaxSpeed = 7.0
 turnSpeed = 10.0
 animationSpeed = 1.0
 blendTime = 0.1
-blinkChance = 0.8
+blinkChance = 0.4
 blinkDuration = 0.15
 
 [node name="Hitboxes" type="Node3D" parent="."]

@@ -203,8 +203,11 @@ func seekAirAnimation():
 		seek  = lerp(0.0, flyingAnimationHalftime, value)
 	animationPlayer.seek(seek)
 
-func executeAnimation(animation: String, blend: float = blendTime, speedMult: float = 1):
-	animationPlayer.play(animation, blend, speedMult)
+func executeAnimation(animation: String, blend = null, speedMult: float = 1):
+	if blend == null:
+		animationPlayer.play(animation)
+	else:
+		animationPlayer.play(animation, blend, speedMult)
 	var mapping = [cara1, cara1]
 	if animation in animMapping:
 		mapping = animMapping[animation]
