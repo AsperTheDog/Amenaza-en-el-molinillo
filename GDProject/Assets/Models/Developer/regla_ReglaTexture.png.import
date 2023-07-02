@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://brny4eigimiih"
 path.s3tc="res://.godot/imported/regla_ReglaTexture.png-7666cab496336fe0ff5d43c1b7c0e338.s3tc.ctex"
+path.etc2="res://.godot/imported/regla_ReglaTexture.png-7666cab496336fe0ff5d43c1b7c0e338.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://Assets/Models/Developer/regla_ReglaTexture.png"
-dest_files=["res://.godot/imported/regla_ReglaTexture.png-7666cab496336fe0ff5d43c1b7c0e338.s3tc.ctex"]
+dest_files=["res://.godot/imported/regla_ReglaTexture.png-7666cab496336fe0ff5d43c1b7c0e338.s3tc.ctex", "res://.godot/imported/regla_ReglaTexture.png-7666cab496336fe0ff5d43c1b7c0e338.etc2.ctex"]
 
 [params]
 

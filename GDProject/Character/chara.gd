@@ -102,6 +102,8 @@ var punchCollider: Area3D
 
 # --- SYSTEM ---
 
+@onready var dialogueFinder: Area3D = $DialogueFinder
+
 func _ready():
 	game = get_parent()
 	

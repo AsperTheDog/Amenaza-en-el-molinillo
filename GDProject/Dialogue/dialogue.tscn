@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cswjech3hp4li"]
+
+[ext_resource type="Script" path="res://Dialogue/dialogue.gd" id="1_41ojr"]
+
+[node name="dialogue" type="Area3D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_41ojr")

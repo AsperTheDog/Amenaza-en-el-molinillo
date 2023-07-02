@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ckthahtx6h3cc"
 path.s3tc="res://.godot/imported/sings_v1_normal.png-3f090d2e92af8f6e2c1a3260671a0506.s3tc.ctex"
+path.etc2="res://.godot/imported/sings_v1_normal.png-3f090d2e92af8f6e2c1a3260671a0506.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Materials/City/sings_v1_normal.png"
-dest_files=["res://.godot/imported/sings_v1_normal.png-3f090d2e92af8f6e2c1a3260671a0506.s3tc.ctex"]
+dest_files=["res://.godot/imported/sings_v1_normal.png-3f090d2e92af8f6e2c1a3260671a0506.s3tc.ctex", "res://.godot/imported/sings_v1_normal.png-3f090d2e92af8f6e2c1a3260671a0506.etc2.ctex"]
 
 [params]
 

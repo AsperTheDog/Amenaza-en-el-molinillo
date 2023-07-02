@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqgasok6xrbq7"
 path.s3tc="res://.godot/imported/characters-rodolfo-classic_v1_Rodolfo_Base_color.png-c800e2c3f33a9721fe704a9447497cb5.s3tc.ctex"
+path.etc2="res://.godot/imported/characters-rodolfo-classic_v1_Rodolfo_Base_color.png-c800e2c3f33a9721fe704a9447497cb5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://Assets/Models/Characters/characters-rodolfo-classic_v1_Rodolfo_Base_color.png"
-dest_files=["res://.godot/imported/characters-rodolfo-classic_v1_Rodolfo_Base_color.png-c800e2c3f33a9721fe704a9447497cb5.s3tc.ctex"]
+dest_files=["res://.godot/imported/characters-rodolfo-classic_v1_Rodolfo_Base_color.png-c800e2c3f33a9721fe704a9447497cb5.s3tc.ctex", "res://.godot/imported/characters-rodolfo-classic_v1_Rodolfo_Base_color.png-c800e2c3f33a9721fe704a9447497cb5.etc2.ctex"]
 
 [params]
 
