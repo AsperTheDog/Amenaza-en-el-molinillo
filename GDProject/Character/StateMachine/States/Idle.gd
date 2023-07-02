@@ -8,10 +8,9 @@ var isActionBeingPerformed: bool = false
 func onEnter(player: MainCharacter, delta: float):
 	super.onEnter(player, delta)
 	if chara.animationPlayer.assigned_animation in chara.landingAnimations:
-		chara.animationPlayer.clear_queue()
-		chara.animationPlayer.queue("Idle")
+		chara.queueAnimation("Idle")
 	else:
-		chara.animationPlayer.play("Idle", chara.slowBlendTime)
+		chara.executeAnimation("Idle", chara.slowBlendTime)
 	timer = 0
 	isActionBeingPerformed = false
 		
@@ -39,7 +38,7 @@ func check():
 func apply(delta):
 	if not isActionBeingPerformed and timer >= chara.minimumIdleTime:
 		isActionBeingPerformed = true
-		chara.animationPlayer.play("IdleAction")
+		chara.executeAnimation("IdleAction")
 	else:
 		timer += delta
 	var moveDir = Input.get_axis("Left", "Right")

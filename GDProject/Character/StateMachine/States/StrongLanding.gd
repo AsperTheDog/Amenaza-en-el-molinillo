@@ -7,7 +7,7 @@ var animationLength: float = 0;
 
 func onEnter(player: MainCharacter, delta: float):
 	super.onEnter(player, delta)
-	chara.animationPlayer.play("FallingFloorLong")
+	chara.executeAnimation("FallingFloorLong")
 	animationLength = chara.animationPlayer.current_animation_length / chara.animationSpeed
 	timer = 0
 	chara.isBunnyHopTimerActive = false
