@@ -14,8 +14,9 @@ func onEnter(player: MainCharacter, delta: float):
 	timer = 0
 	isActionBeingPerformed = false
 		
-func onExit(delta: float):
-	chara.animationPlayer.clear_queue()
+func onExit(_delta: float, _transitionTo: String):
+	if isActionBeingPerformed:
+		chara.executeAnimation("FallingJump")
 
 func check():
 	if abs(chara.velocity.x) > 1:

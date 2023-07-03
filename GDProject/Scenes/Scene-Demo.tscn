@@ -72,7 +72,7 @@
 [ext_resource type="PackedScene" uid="uid://bxryp4uhkt6wg" path="res://Assets/Models/Developer/regla.glb" id="70_m1x68"]
 [ext_resource type="PackedScene" uid="uid://c2tirkl53jvea" path="res://Scenes/DebugUI.tscn" id="71_qr0il"]
 [ext_resource type="Script" path="res://Scenes/DebugUI.gd" id="72_xe4q7"]
-[ext_resource type="PackedScene" uid="uid://y23nj7a35rdu" path="res://Assets/Models/Characters/characters-ramon-classic_v1.glb" id="73_2617f"]
+[ext_resource type="PackedScene" uid="uid://bwu4anuhf4lpi" path="res://Character/characters_ramon.tscn" id="73_f08ue"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_21vss"]
 size = Vector3(113.319, 0.0425731, 3.31054)
@@ -100,7 +100,7 @@ shadow_enabled = true
 shadow_blur = 1.5
 
 [node name="rodolfo" parent="." instance=ExtResource("31_hedx5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1617, 0.22158, -6.9139)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5433, 0.0282117, -6.9139)
 fallGravityMult = 1.7
 jumpCutGravityMult = 3.0
 maxFallSpeed = 30.0
@@ -1484,5 +1484,5 @@ transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.338
 script = ExtResource("72_xe4q7")
 chara = NodePath("../rodolfo")
 
-[node name="characters-ramon-classic_v1" parent="." instance=ExtResource("73_2617f")]
-transform = Transform3D(-0.948639, 0, 0.316361, 0, 1, 0, -0.316361, 0, -0.948639, 46.2329, 4.69241, -7.08874)
+[node name="ramon" parent="." instance=ExtResource("73_f08ue")]
+transform = Transform3D(0.173648, 0, 0.984808, 0, 1, 0, -0.984808, 0, 0.173648, -12.8918, 0, -8.17578)

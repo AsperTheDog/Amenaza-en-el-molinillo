@@ -11,12 +11,13 @@ func onEnter(player: MainCharacter, delta: float):
 	else:
 		chara.executeAnimation("Run")
 	
-func onExit(delta: float):
+func onExit(_delta: float, transitionTo: String):
 	chara.animationPlayer.set_speed_scale(chara.animationSpeed)
+	if transitionTo == "JumpState" or transitionTo == "JumpInstantState":
+		chara.isBunnyHopTimerActive = false
 
 func check():
 	if chara.isBunnyHopTimerActive or Input.is_action_just_pressed("Jump"):
-		chara.isBunnyHopTimerActive = false
 		if chara.isJumpInstant:
 			return "JumpInstantState"
 		else:

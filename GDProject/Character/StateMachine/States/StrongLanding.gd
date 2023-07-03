@@ -12,15 +12,16 @@ func onEnter(player: MainCharacter, delta: float):
 	timer = 0
 	chara.isBunnyHopTimerActive = false
 	
-func onExit(delta: float):
-	pass
+func onExit(_delta: float, transitionTo: String):
+	if transitionTo == "IdleState":
+		chara.executeAnimation("FallingFloorLongUp")
+	elif transitionTo == "RunState":
+		chara.executeAnimation("FallingFloorLongUp", chara.blendTime / 2, 1.5)
 
 func check():
 	if animationLength <= timer:
-		chara.executeAnimation("FallingFloorLongUp")
 		return "IdleState"
 	if chara.strongFallRecoveryTime <= timer and abs(chara.velocity.x) > 0.1 :
-		chara.executeAnimation("FallingFloorLongUp", chara.blendTime / 2, 1.5)
 		return "RunState"
 
 func apply(delta):

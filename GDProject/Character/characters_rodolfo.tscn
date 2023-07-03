@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bemfpf3tvuute"]
+[gd_scene load_steps=20 format=3 uid="uid://bemfpf3tvuute"]
 
 [ext_resource type="Script" path="res://Character/chara.gd" id="1_m1ybd"]
 [ext_resource type="Script" path="res://Character/StateMachine/StateMachine.gd" id="6_qqmhe"]
@@ -13,6 +13,11 @@
 [ext_resource type="Script" path="res://Character/StateMachine/States/JumpInstant.gd" id="11_rqgif"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Run.gd" id="11_xr5cu"]
 [ext_resource type="PackedScene" uid="uid://b6aowcqbcswti" path="res://Assets/Models/Characters/characters-rodolfo-classic_v1.glb" id="13_tkhd7"]
+[ext_resource type="Script" path="res://Character/FaceAnimation.gd" id="14_8s11l"]
+[ext_resource type="Texture2D" uid="uid://dshv8poq44exq" path="res://Assets/Models/Characters/Eyes-Closed_Mouth-Small.png" id="15_tol2k"]
+[ext_resource type="Texture2D" uid="uid://tin14sndqel3" path="res://Assets/Models/Characters/Eyes-Half_Mouth-Smile.png" id="16_2af6e"]
+[ext_resource type="Texture2D" uid="uid://c2ruchoguqevi" path="res://Assets/Models/Characters/Eyes-Confuse_Mouth-Sad.png" id="17_mntqg"]
+[ext_resource type="Texture2D" uid="uid://mljfjy810dje" path="res://Assets/Models/Characters/Eyes-Open_Mouth-Open.png" id="18_nmuto"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jtewq"]
 size = Vector3(0.508796, 1.76588, 0.510057)
@@ -66,6 +71,48 @@ far = 200.0
 
 [node name="modelo" parent="." instance=ExtResource("13_tkhd7")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="FaceAnimations" type="Node" parent="modelo"]
+
+[node name="FallingFloorLongFace" type="Node" parent="modelo/FaceAnimations"]
+script = ExtResource("14_8s11l")
+animation = "FallingFloorLong"
+eyeTimes = Array[float]([0.6, 1.2])
+eyeFaces = Array[CompressedTexture2D]([ExtResource("15_tol2k"), ExtResource("16_2af6e")])
+mouthTimes = Array[float]([0.6])
+mouthFaces = Array[CompressedTexture2D]([ExtResource("17_mntqg")])
+
+[node name="IdleFace" type="Node" parent="modelo/FaceAnimations"]
+script = ExtResource("14_8s11l")
+animation = "Idle"
+eyeTimes = Array[float]([0.0])
+eyeFaces = Array[CompressedTexture2D]([ExtResource("16_2af6e")])
+mouthTimes = Array[float]([0.0])
+mouthFaces = Array[CompressedTexture2D]([ExtResource("16_2af6e")])
+
+[node name="RunFace" type="Node" parent="modelo/FaceAnimations"]
+script = ExtResource("14_8s11l")
+animation = "Run"
+eyeTimes = Array[float]([0.0])
+eyeFaces = Array[CompressedTexture2D]([ExtResource("18_nmuto")])
+mouthTimes = Array[float]([0.0])
+mouthFaces = Array[CompressedTexture2D]([ExtResource("18_nmuto")])
+
+[node name="WalkFace" type="Node" parent="modelo/FaceAnimations"]
+script = ExtResource("14_8s11l")
+animation = "Walk"
+eyeTimes = Array[float]([0.0])
+eyeFaces = Array[CompressedTexture2D]([ExtResource("18_nmuto")])
+mouthTimes = Array[float]([0.0])
+mouthFaces = Array[CompressedTexture2D]([ExtResource("16_2af6e")])
+
+[node name="IdleActionFace" type="Node" parent="modelo/FaceAnimations"]
+script = ExtResource("14_8s11l")
+animation = "IdleAction"
+eyeTimes = Array[float]([0.0, 0.7])
+eyeFaces = Array[CompressedTexture2D]([ExtResource("16_2af6e"), ExtResource("15_tol2k")])
+mouthTimes = Array[float]([0.0])
+mouthFaces = Array[CompressedTexture2D]([ExtResource("16_2af6e")])
 
 [node name="VaultRayLeft" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)

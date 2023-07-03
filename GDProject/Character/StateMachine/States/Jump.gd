@@ -17,8 +17,8 @@ func onEnter(player: MainCharacter, delta: float):
 		chara.executeAnimation("JumpDouble")
 	chara.queueAnimation("Jump", false)
 	
-func onExit(delta: float):
-	if chara.velocity.y > 0:
+func onExit(_delta: float, transitionTo: String):
+	if transitionTo == "AirState":
 		chara.gravity *= chara.jumpCutGravityMult
 
 func check():
