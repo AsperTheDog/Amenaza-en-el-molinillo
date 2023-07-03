@@ -32,7 +32,7 @@ func check():
 	if chara.is_on_floor():
 		var strongFallSpeed = chara.strongFallThreshold * chara.maxFallSpeed * Vector3.DOWN.y
 		return "StrongLandState" if chara.lastTopFallingSpeed <= strongFallSpeed else "RunState"
-	if chara.execJumpAction  and not chara.hasDoubleJumped:
+	if chara.execJumpAction and not chara.hasDoubleJumped:
 		return "JumpInstantState" if chara.isJumpInstant else "JumpState"
 	if chara.getVaultingDirection() != 0 and chara.vaultingDir == Input.get_axis("Left", "Right"):
 		return "VaultState"
