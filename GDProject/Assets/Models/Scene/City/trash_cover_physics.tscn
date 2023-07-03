@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dairhsonk6yl3"]
+
+[ext_resource type="PackedScene" uid="uid://bihalfhp3ws0e" path="res://Assets/Models/Items/item_trashcover_v_1.tscn" id="1_ggavs"]
+[ext_resource type="Script" path="res://Assets/Models/Scene/City/trash_cover_physics.gd" id="1_ic7uw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ff625"]
+size = Vector3(0.773681, 0.12285, 0.765464)
+
+[node name="item-trash_cover" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 5
+gravity_scale = 20.0
+script = ExtResource("1_ic7uw")
+
+[node name="item-trashcover_v1" parent="RigidBody3D" instance=ExtResource("1_ggavs")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0611626, 0)
+shape = SubResource("BoxShape3D_ff625")

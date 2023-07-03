@@ -65,10 +65,10 @@
 [ext_resource type="Script" path="res://items/itemAnimation.gd" id="63_y40mm"]
 [ext_resource type="PackedScene" uid="uid://c0msik1e6fxis" path="res://Assets/Models/Items/item_levermachine_v_1.tscn" id="64_6x3om"]
 [ext_resource type="PackedScene" uid="uid://32l0xsrx1w5f" path="res://Assets/Models/Items/item_leversteam_v_1.tscn" id="65_g5qj1"]
+[ext_resource type="PackedScene" uid="uid://dairhsonk6yl3" path="res://Assets/Models/Scene/City/trash_cover_physics.tscn" id="66_ch1vv"]
 [ext_resource type="PackedScene" uid="uid://cejembuwr5p2v" path="res://Assets/Models/Items/item_lever_v_1.tscn" id="66_f25ow"]
 [ext_resource type="PackedScene" uid="uid://dc0ec4yogkt2i" path="res://Assets/Models/Items/item_newspaper_v_1.tscn" id="67_q17gg"]
 [ext_resource type="PackedScene" uid="uid://cs23f68u86f8g" path="res://Assets/Models/Items/item_trash_v_1.tscn" id="68_w4ad8"]
-[ext_resource type="PackedScene" uid="uid://bihalfhp3ws0e" path="res://Assets/Models/Items/item_trashcover_v_1.tscn" id="69_ouoya"]
 [ext_resource type="PackedScene" uid="uid://bxryp4uhkt6wg" path="res://Assets/Models/Developer/regla.glb" id="70_m1x68"]
 [ext_resource type="PackedScene" uid="uid://c2tirkl53jvea" path="res://Scenes/DebugUI.tscn" id="71_qr0il"]
 [ext_resource type="Script" path="res://Scenes/DebugUI.gd" id="72_xe4q7"]
@@ -100,7 +100,7 @@ shadow_enabled = true
 shadow_blur = 1.5
 
 [node name="rodolfo" parent="." instance=ExtResource("31_hedx5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.9667, 13.3693, -6.9139)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0608, 0.0770848, -6.9139)
 fallGravityMult = 1.7
 jumpCutGravityMult = 3.0
 maxFallSpeed = 30.0
@@ -124,18 +124,24 @@ blinkDuration = 0.15
 [node name="Hitboxes" type="Node3D" parent="."]
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="Hitboxes"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/StaticBody3D3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0220631, -7.07546)
 shape = SubResource("BoxShape3D_21vss")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="Hitboxes"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/StaticBody3D2"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 56.2858, 4.36728, -6.77295)
 shape = SubResource("WorldBoundaryShape3D_l65kj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Hitboxes"]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/StaticBody3D"]
 transform = Transform3D(-0.000185134, 1, -5.09761e-05, -1, -0.000185134, 1.27565e-06, 1.27564e-06, 5.09761e-05, 1, -17.9628, 4.22381, -7.05008)
@@ -1462,10 +1468,10 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 39.120
 script = ExtResource("63_y40mm")
 
 [node name="item-trash_v1" parent="Items" instance=ExtResource("68_w4ad8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66846, -1.30949, -0.886204)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5974, -1.30949, -0.0750732)
 
-[node name="item-trashcover_v1" parent="Items/item-trash_v1" instance=ExtResource("69_ouoya")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.906251, 0)
+[node name="item-trash_cover" parent="Items/item-trash_v1" instance=ExtResource("66_ch1vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.894725, 0)
 
 [node name="item-levermachine_v1" parent="Items" instance=ExtResource("64_6x3om")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 63.4553, 11.0076, 0.000836372)

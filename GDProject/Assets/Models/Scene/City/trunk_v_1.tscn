@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dhofrxqhed0nx"]
 
 [ext_resource type="PackedScene" uid="uid://h0n2u2e2kmtu" path="res://Assets/Models/Scene/City/trunk_v1.glb" id="1_qllsm"]
-[ext_resource type="Material" path="res://Materials/City/packfences_v1.tres" id="2_u0q0p"]
+[ext_resource type="Material" uid="uid://cpiqx1885dxs" path="res://Materials/City/packfences_v1.tres" id="2_u0q0p"]
 
 [node name="trunk_v1" instance=ExtResource("1_qllsm")]
 

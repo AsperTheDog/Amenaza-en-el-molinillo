@@ -1,18 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bihalfhp3ws0e"]
+[gd_scene load_steps=3 format=3 uid="uid://bihalfhp3ws0e"]
 
 [ext_resource type="PackedScene" uid="uid://bydlwo82f6o27" path="res://Assets/Models/Items/item-trashcover_v1.glb" id="1_373hv"]
 [ext_resource type="Material" uid="uid://cunl1snm1avpe" path="res://Materials/Items/items_v1.tres" id="2_n1y3k"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_7nhwe"]
-size = Vector3(0.76661, 0.167649, 0.738548)
 
 [node name="item-trashcover_v1" instance=ExtResource("1_373hv")]
 
 [node name="cubo Basura tapa" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_n1y3k")
-
-[node name="RigidBody3D" type="RigidBody3D" parent="cubo Basura tapa" index="0"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="cubo Basura tapa/RigidBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0712369, 0)
-shape = SubResource("BoxShape3D_7nhwe")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ba0rpbur364xs"]
 
 [ext_resource type="PackedScene" uid="uid://dg3ft6uxcsoke" path="res://Assets/Models/Scene/City/wall-metal_v1.glb" id="1_hyx7k"]
-[ext_resource type="Material" path="res://Materials/City/packfences_v1.tres" id="2_tnq4x"]
+[ext_resource type="Material" uid="uid://cpiqx1885dxs" path="res://Materials/City/packfences_v1.tres" id="2_tnq4x"]
 
 [node name="wall-metal_v1" instance=ExtResource("1_hyx7k")]
 

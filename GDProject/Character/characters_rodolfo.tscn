@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bemfpf3tvuute"]
+[gd_scene load_steps=22 format=3 uid="uid://bemfpf3tvuute"]
 
 [ext_resource type="Script" path="res://Character/chara.gd" id="1_m1ybd"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/JumpRo.gd" id="6_37lii"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://Character/StateMachine/States/Walk.gd" id="10_5bbfa"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/JumpInstantRo.gd" id="11_whyma"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Run.gd" id="11_xr5cu"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/PunchGroundRo.gd" id="12_gaman"]
 [ext_resource type="PackedScene" uid="uid://b6aowcqbcswti" path="res://Assets/Models/Characters/characters-rodolfo-classic_v1.glb" id="13_tkhd7"]
 [ext_resource type="Script" path="res://Character/FaceAnimation.gd" id="14_8s11l"]
 [ext_resource type="Texture2D" uid="uid://dshv8poq44exq" path="res://Assets/Models/Characters/Eyes-Closed_Mouth-Small.png" id="15_tol2k"]
@@ -22,7 +23,12 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_jtewq"]
 size = Vector3(0.508796, 1.76588, 0.510057)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_07ldd"]
+size = Vector3(1.48056, 0.973576, 0.830714)
+
 [node name="Rodolfo" type="CharacterBody3D" node_paths=PackedStringArray("stateMachine")]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_m1ybd")
 stateMachine = NodePath("StateMachine")
 isJumpInstant = true
@@ -62,6 +68,9 @@ script = ExtResource("10_5bbfa")
 
 [node name="JumpInstantState" type="Node" parent="StateMachine"]
 script = ExtResource("11_whyma")
+
+[node name="PunchGroundState" type="Node" parent="StateMachine"]
+script = ExtResource("12_gaman")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871558, 0, -0.0871558, 0.996195, 0, 3, 13.224)
@@ -126,3 +135,16 @@ eyeTimes = Array[float]([0.0, 0.7])
 eyeFaces = Array[CompressedTexture2D]([ExtResource("16_2af6e"), ExtResource("15_tol2k")])
 mouthTimes = Array[float]([0.0])
 mouthFaces = Array[CompressedTexture2D]([ExtResource("16_2af6e")])
+
+[node name="Punch" type="Area3D" parent="modelo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.384842, 0, 0.944636)
+collision_layer = 0
+collision_mask = 4
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="modelo/Punch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.353114, 1.13362, -0.446941)
+shape = SubResource("BoxShape3D_07ldd")
+
+[connection signal="body_entered" from="modelo/Punch" to="." method="_on_punch_body_entered"]

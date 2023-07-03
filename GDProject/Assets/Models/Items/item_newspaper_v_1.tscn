@@ -12,6 +12,8 @@ size = Vector3(0.678711, 0.185601, 0.60545)
 surface_material_override/0 = ExtResource("2_o137w")
 
 [node name="Area3D" type="Area3D" parent="Newsletter" index="0"]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Newsletter/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0236323, 0.0110219)

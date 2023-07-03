@@ -92,7 +92,12 @@ var currentAnimation: String
 
 var activeEyes: CompressedTexture2D = cara1
 
+var punchCollider: Area3D
+
 func _ready():
+	# Colliders
+	punchCollider = $modelo/Punch
+	
 	# Animations
 	animationPlayer = $modelo/AnimationPlayer
 	animationPlayer.set_default_blend_time(blendTime)
@@ -265,4 +270,7 @@ func manageFaces():
 	var active = faceAnim.execute(eyesModel, mouthModel, animTimestamp)
 	if active != null:
 		activeEyes = active
-	
+
+func _on_punch_body_entered(body: Node3D):
+	if body.has_method("getPunched"):
+		body.getPunched()

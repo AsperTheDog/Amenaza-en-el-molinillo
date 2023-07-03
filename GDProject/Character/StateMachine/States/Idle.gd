@@ -26,6 +26,8 @@ func check():
 		return "JumpInstantState" if chara.isJumpInstant else "JumpState"
 	if not chara.is_on_floor():
 		return "FallState" if chara.velocity.y <= 0 else "AirState"
+	if Input.is_action_just_pressed("Punch"):
+		return "PunchGroundState"
 	return null
 
 func apply(delta):
