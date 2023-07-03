@@ -5,7 +5,7 @@ class_name JumpInstantRoState
 func onEnter(player: MainCharacter, delta: float):
 	super.onEnter(player, delta)
 	chara.gravity = chara.defaultGravity
-	if chara.hasDoubleJumped or not chara.canDoubleJump:
+	if chara.hasDoubleJumped and chara.canDoubleJump:
 		chara.executeAnimation("JumpDouble")
 		chara.queueAnimation("Jump", false)
 	else:

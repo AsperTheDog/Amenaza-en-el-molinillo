@@ -106,6 +106,7 @@ jumpCutGravityMult = 3.0
 maxFallSpeed = 30.0
 defaultGravity = 23.5
 bunnyHopTime = 0.08
+coyoteTime = 0.15
 jumpHangTimeThreshold = 0.2
 jumpHangAccelMult = 1.4
 jumpHangMaxSpeedMult = 1.4

@@ -12,6 +12,7 @@ class_name MainCharacter
 @export var maxFallSpeed: float = 50
 @export var defaultGravity: float = 9.8
 @export var bunnyHopTime: float = 0.15
+@export var coyoteTime: float = 0.1
 @export var canDoubleJump: bool = true
 @export var isJumpInstant: bool = false
 @export_subgroup("Acceleration")
