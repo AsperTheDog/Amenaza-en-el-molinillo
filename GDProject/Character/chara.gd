@@ -200,9 +200,9 @@ func processJumpBuffering(delta):
 	lastOnGround = 0 if is_on_floor() else lastOnGround + delta
 	if isBunnyHopTimerActive:
 		bunnyHopTimer += delta
-		execJumpAction = bunnyHopTimer >= bunnyHopTime
 	else:
 		bunnyHopTimer = 0
+	execJumpAction = bunnyHopTimer >= bunnyHopTime
 
 func seekAirAnimation():
 	var seek: float = 0
