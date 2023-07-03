@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://crb07ayn5xow2"]
+
+[ext_resource type="PackedScene" uid="uid://cdvwi3xf4yvp3" path="res://Assets/Models/Developer/Test/wall-balcony-middle.glb" id="1_es0pn"]
+[ext_resource type="Material" uid="uid://d0yhyi0s6s4oq" path="res://Assets/Models/Developer/Test/Test-basic-2.tres" id="2_e1cxo"]
+[ext_resource type="Material" uid="uid://enf0lyeavpgk" path="res://Assets/Models/Developer/Test/Test-basic.tres" id="2_lnqrc"]
+
+[node name="wall-balcony-middle" instance=ExtResource("1_es0pn")]
+
+[node name="Balcony Middle" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_e1cxo")
+
+[node name="Balcony Railing Middle" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_lnqrc")
+
+[node name="Skirting DoubleLines002" parent="." index="2"]
+surface_material_override/0 = ExtResource("2_lnqrc")
+
+[node name="Wall Garaje" parent="." index="3"]
+surface_material_override/0 = ExtResource("2_lnqrc")

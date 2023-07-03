@@ -160,7 +160,7 @@ transform = Transform3D(0.985025, 0.172398, 0.00209431, 0, 0.0121472, -0.999926,
 transform = Transform3D(-0.826317, 0.0356315, 0.562077, 0.0573586, 0.998132, 0.0210499, -0.560277, 0.049634, -0.826817, 16.7122, 0.340736, -3.35661)
 
 [node name="cableroll_v4" parent="Construction-area" instance=ExtResource("32_8ymob")]
-transform = Transform3D(-0.826317, 0.0356315, 0.562077, 0.0573586, 0.998132, 0.0210499, -0.560277, 0.049634, -0.826817, 54.7259, 0.340736, -3.35661)
+transform = Transform3D(-0.826317, 0.0356315, 0.562077, 0.0573586, 0.998132, 0.0210499, -0.560277, 0.049634, -0.826817, 56.5445, 0.340736, -3.35661)
 
 [node name="fabricbuild_v1" parent="Construction-area" instance=ExtResource("33_nmlp2")]
 transform = Transform3D(0.900673, 0, 0, 0, 1, 0, 0, 0, 1, 37.0673, -0.607988, -9.27811)
@@ -417,7 +417,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0133, 0, 4.74007)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.6099, 0, 4.53598)
 
 [node name="streetlight-en_v12" parent="City" instance=ExtResource("10_f1afg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.3212, 0, 4.74007)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.5456, 0, 4.74007)
 
 [node name="trafficlight_v1" parent="City" instance=ExtResource("11_2mf3f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7986, 0, -4.56483)
@@ -1475,12 +1475,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66846, -1.30949, -0.886204
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.906251, 0)
 
 [node name="item-levermachine_v1" parent="Items" instance=ExtResource("64_6x3om")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 63.4553, 11.0076, 0.000836372)
-visible = false
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 65.9068, -0.0966597, -0.0859771)
 
 [node name="item-leversteam_v1" parent="Items/item-levermachine_v1" instance=ExtResource("65_g5qj1")]
 
 [node name="item-lever_v1" parent="Items/item-levermachine_v1" instance=ExtResource("66_f25ow")]
+transform = Transform3D(1, 0, 0, 0, 0.611527, 0.791224, 0, -0.791224, 0.611527, 0, 0, 0)
 
 [node name="regla" parent="." instance=ExtResource("70_m1x68")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5342, -0.00077709, -8.86975)
