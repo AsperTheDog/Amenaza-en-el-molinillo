@@ -42,7 +42,6 @@ collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_m1ybd")
 stateMachine = NodePath("StateMachine")
-isJumpInstant = true
 blinkChance = 0.5
 minimumIdleTime = 8.0
 

@@ -9,7 +9,7 @@ var animationTime: float = 0
 
 func onEnter(player: MainCharacter, delta: float):
 	super.onEnter(player, delta)
-	chara.animationPlayer.play("PunchGround1")
+	chara.executeAnimation("PunchGround1")
 	animationTime = chara.animationPlayer.current_animation_length - 0.4
 	timer = 0
 	

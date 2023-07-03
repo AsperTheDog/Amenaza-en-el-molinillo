@@ -3,6 +3,7 @@ extends CharacterBody3D
 class_name MainCharacter
 
 @export var stateMachine: StateMachine = null
+@export var isSMActive: bool = true
 
 @export_group("Jump")
 @export_subgroup("Basic")
@@ -40,9 +41,11 @@ class_name MainCharacter
 @export var animationSpeed: float = 1
 @export var blendTime: float = 0.1
 @export var slowBlendTime: float = 0.3
+@export var defaultEyes: CompressedTexture2D
 @export_subgroup("Blinking")
 @export var blinkChance: float = 0.4
 @export var blinkDuration: float = 0.15
+@export var blinkingEyes: CompressedTexture2D
 @export_subgroup("Idle Action")
 @export var minimumIdleTime: float = 2
 @export var idleActionChance: float = 0.2
@@ -79,14 +82,13 @@ var flyingAnimationHalftime: float = 0
 var eyesModel: MeshInstance3D
 var mouthModel: MeshInstance3D
 
-var blink: CompressedTexture2D = preload("res://Assets/Models/Characters/Eyes-Closed_Mouth-Small.png")
 var blinking: bool = false
 var blinkTimer: float = 0
 
 var animMappings: Dictionary = {}
 var currentAnimation: String
 
-var activeEyes: CompressedTexture2D = preload("res://Assets/Models/Characters/Eyes-Open_Mouth-Open.png")
+var activeEyes: CompressedTexture2D
 
 var punchCollider: Area3D
 
@@ -111,6 +113,7 @@ func _ready():
 	mouthModel = $"modelo/Character/Armature/Skeleton3D/Mouth"
 	for faceAnim in $modelo/FaceAnimations.get_children():
 		animMappings[faceAnim.animation] = faceAnim
+	activeEyes = defaultEyes
 	
 	# Controls
 	zPos = transform.origin.z
@@ -119,6 +122,8 @@ func _ready():
 	
 	# State Machine
 	stateMachine.setup(self)
+	if isSMActive:
+		$Camera3D.make_current()
 
 func _physics_process(delta):
 	processJumpBuffering(delta)
@@ -126,7 +131,8 @@ func _physics_process(delta):
 	if animationPlayer.assigned_animation == "Jump":
 		seekAirAnimation()
 	transform.origin.z = zPos
-	stateMachine.evaluate(delta)
+	if isSMActive:
+		stateMachine.evaluate(delta)
 	manageFaces()
 
 
@@ -248,7 +254,7 @@ func randomlyBlink(delta):
 		blinking = false
 		blinkTimer = 0
 	elif randf() < blinkChance * delta:
-		eyesModel.get_mesh().get("surface_0/material").set_texture(StandardMaterial3D.TEXTURE_ALBEDO, blink)
+		eyesModel.get_mesh().get("surface_0/material").set_texture(StandardMaterial3D.TEXTURE_ALBEDO, blinkingEyes)
 		blinking = true
 	
 func manageFaces():

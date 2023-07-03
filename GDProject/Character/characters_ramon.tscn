@@ -1,19 +1,164 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwu4anuhf4lpi"]
+[gd_scene load_steps=20 format=3 uid="uid://bwu4anuhf4lpi"]
 
-[ext_resource type="Script" path="res://Character/temp_ramon.gd" id="1_53vp5"]
+[ext_resource type="Script" path="res://Character/chara.gd" id="1_f7c4n"]
 [ext_resource type="PackedScene" uid="uid://y23nj7a35rdu" path="res://Assets/Models/Characters/characters-ramon-classic_v1.glb" id="2_wfxhe"]
+[ext_resource type="Script" path="res://Character/StateMachine/StateMachine.gd" id="3_pnnx0"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/Air.gd" id="4_bth2a"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/Fall.gd" id="5_dqf7i"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/Idle.gd" id="6_qinis"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/JumpRo.gd" id="7_0y7vo"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/Run.gd" id="8_qfey7"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/Vault.gd" id="9_2swcu"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/StrongLanding.gd" id="10_5gucd"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/Walk.gd" id="11_robl3"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/JumpInstantRo.gd" id="12_b5fta"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/PunchGroundRo.gd" id="13_iudlo"]
+[ext_resource type="ArrayMesh" uid="uid://d0d3cchtomsg1" path="res://Assets/Effects/smoke-particle.obj" id="14_24n4y"]
+[ext_resource type="CameraAttributesPractical" uid="uid://73bot76e0rcf" path="res://Enviroments/camera_pj_practical.tres" id="15_8tkx1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8drwj"]
 size = Vector3(0.508796, 1.76588, 0.510057)
 
-[node name="characters_ramon" type="CharacterBody3D"]
-script = ExtResource("1_53vp5")
+[sub_resource type="BoxShape3D" id="BoxShape3D_xrwyj"]
+size = Vector3(1.48056, 0.973576, 0.774941)
+
+[sub_resource type="Curve" id="Curve_17pen"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0, 10.9091), 0.0, -27.4969, 0, 0, Vector2(1, -32.7273), 253.17, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_gsyh7"]
+_data = [Vector2(0.00815217, 0.0090909), 0.0, 4.84514, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="characters_ramon" type="CharacterBody3D" node_paths=PackedStringArray("stateMachine")]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_f7c4n")
+stateMachine = NodePath("StateMachine")
+jumpSpeed = 11.0
+canDoubleJump = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.880988, 0)
 shape = SubResource("BoxShape3D_8drwj")
 
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("3_pnnx0")
+
+[node name="AirState" type="Node" parent="StateMachine"]
+script = ExtResource("4_bth2a")
+
+[node name="FallState" type="Node" parent="StateMachine"]
+script = ExtResource("5_dqf7i")
+
+[node name="IdleState" type="Node" parent="StateMachine"]
+script = ExtResource("6_qinis")
+
+[node name="JumpState" type="Node" parent="StateMachine"]
+script = ExtResource("7_0y7vo")
+
+[node name="RunState" type="Node" parent="StateMachine"]
+script = ExtResource("8_qfey7")
+
+[node name="VaultState" type="Node" parent="StateMachine"]
+script = ExtResource("9_2swcu")
+
+[node name="StrongLandState" type="Node" parent="StateMachine"]
+script = ExtResource("10_5gucd")
+
+[node name="WalkState" type="Node" parent="StateMachine"]
+script = ExtResource("11_robl3")
+
+[node name="JumpInstantState" type="Node" parent="StateMachine"]
+script = ExtResource("12_b5fta")
+
+[node name="PunchGroundState" type="Node" parent="StateMachine"]
+script = ExtResource("13_iudlo")
+
 [node name="modelo" parent="." instance=ExtResource("2_wfxhe")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="FaceAnimations" type="Node" parent="modelo"]
+
+[node name="Punch" type="Area3D" parent="modelo"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.944636, 0, 0.384842)
+collision_layer = 0
+collision_mask = 4
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="modelo/Punch"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.828575, 1.13362, -0.947014)
+shape = SubResource("BoxShape3D_xrwyj")
+
+[node name="particles-jump" type="CPUParticles3D" parent="modelo"]
+transform = Transform3D(-1.33091e-08, 0, -0.304476, 0, 0.304476, 0, 0.304476, 0, -1.33091e-08, 0, 0, 0)
+visible = false
+emitting = false
+amount = 12
+lifetime = 2.0
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+randomness = 0.5
+lifetime_randomness = 0.5
+fract_delta = false
+mesh = ExtResource("14_24n4y")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 0, -1)
+spread = 0.0
+flatness = 1.0
+gravity = Vector3(0, 1, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 5.0
+linear_accel_max = 1.0
+linear_accel_curve = SubResource("Curve_17pen")
+radial_accel_max = 2.0
+damping_max = 5.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_gsyh7")
+
+[node name="particles-run" type="CPUParticles3D" parent="modelo"]
+transform = Transform3D(-1.33091e-08, 0, -0.304476, 0, 0.304476, 0, 0.304476, 0, -1.33091e-08, 0, 0, 0)
+emitting = false
+amount = 12
+lifetime = 2.0
+preprocess = 1.0
+speed_scale = 2.0
+randomness = 0.5
+lifetime_randomness = 0.5
+mesh = ExtResource("14_24n4y")
+direction = Vector3(20, 20, -90)
+spread = 0.0
+gravity = Vector3(0, 0.5, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 3.0
+angular_velocity_max = 330.0
+linear_accel_max = 1.0
+linear_accel_curve = SubResource("Curve_17pen")
+damping_max = 10.94
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_gsyh7")
+
+[node name="VaultRayLeft" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+target_position = Vector3(0.8, 0, 0)
+collision_mask = 8
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="VaultRayRight" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+target_position = Vector3(-0.8, 0, 0)
+collision_mask = 8
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871558, 0, -0.0871558, 0.996195, 0, 3, 13.224)
+attributes = ExtResource("15_8tkx1")
+fov = 37.8493
+far = 200.0

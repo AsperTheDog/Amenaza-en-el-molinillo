@@ -1,7 +1,8 @@
-[gd_scene load_steps=81 format=3 uid="uid://b7co442vfn4a5"]
+[gd_scene load_steps=84 format=3 uid="uid://b7co442vfn4a5"]
 
 [ext_resource type="Environment" uid="uid://bt7lbvekdafji" path="res://Enviroments/Enviroment-sunrise.tres" id="1_hmru1"]
 [ext_resource type="Shader" path="res://Enviroments/Vignette.gdshader" id="2_yqwkb"]
+[ext_resource type="Texture2D" uid="uid://mljfjy810dje" path="res://Assets/Models/Characters/Eyes-Open_Mouth-Open.png" id="3_267m2"]
 [ext_resource type="PackedScene" uid="uid://bplkpyps27gl4" path="res://Assets/Models/Scene/Background/mountain_v1.glb" id="3_oac4i"]
 [ext_resource type="PackedScene" uid="uid://b7822i5iwibmg" path="res://Assets/Models/Scene/Background/mountain_v2.glb" id="4_qmpij"]
 [ext_resource type="PackedScene" uid="uid://b3u8qg2yl7eja" path="res://Assets/Models/Scene/Background/mountain_v3.glb" id="5_k8x41"]
@@ -74,6 +75,8 @@
 [ext_resource type="PackedScene" uid="uid://c2tirkl53jvea" path="res://Scenes/DebugUI.tscn" id="71_qr0il"]
 [ext_resource type="Script" path="res://Scenes/DebugUI.gd" id="72_xe4q7"]
 [ext_resource type="PackedScene" uid="uid://bwu4anuhf4lpi" path="res://Character/characters_ramon.tscn" id="73_f08ue"]
+[ext_resource type="Texture2D" uid="uid://dshv8poq44exq" path="res://Assets/Models/Characters/Eyes-Closed_Mouth-Small.png" id="75_8b8k6"]
+[ext_resource type="Texture2D" uid="uid://cuvhmnynbpcmy" path="res://Assets/Models/Characters/characters-ramon-classic_v1_cara-4.png-cara-4_alpha.png" id="75_agyt1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_21vss"]
 size = Vector3(113.319, 0.0425731, 3.31054)
@@ -107,8 +110,10 @@ shadow_enabled = true
 shadow_blur = 1.5
 
 [node name="rodolfo" parent="." instance=ExtResource("31_hedx5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0608, 0.0770848, -6.9139)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0608, 0.0770848, -6.91186)
+defaultEyes = ExtResource("3_267m2")
 blinkChance = 0.4
+blinkingEyes = ExtResource("75_8b8k6")
 
 [node name="Hitboxes" type="Node3D" parent="."]
 
@@ -1495,4 +1500,7 @@ size_flags_vertical = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="ramon" parent="." instance=ExtResource("73_f08ue")]
-transform = Transform3D(0.173648, 0, 0.984808, 0, 1, 0, -0.984808, 0, 0.173648, -12.8918, 0, -8.10833)
+transform = Transform3D(-0.180863, 0, -0.983509, 0, 1, 0, 0.983509, 0, -0.180863, -12.8918, 0, -8.19709)
+isSMActive = false
+defaultEyes = ExtResource("75_agyt1")
+blinkingEyes = ExtResource("75_8b8k6")
