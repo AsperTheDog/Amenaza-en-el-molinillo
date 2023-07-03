@@ -98,12 +98,12 @@ func _ready():
 	animationPlayer.set_default_blend_time(blendTime)
 	animationPlayer.set_speed_scale(animationSpeed)
 	setAnimationBlendTimes()
-	flyingAnimationLength = animationPlayer.get_animation("Jump").length
+	flyingAnimationLength =  1 # animationPlayer.get_animation("Jump").length
 	flyingAnimationHalftime = flyingAnimationLength / 2
 	
 	# Face Animations
-	eyesModel = $"modelo/Rodolfo Character/Armature/Skeleton3D/Eyes"
-	mouthModel = $"modelo/Rodolfo Character/Armature/Skeleton3D/Mouth"
+	eyesModel = $"modelo/Character/Armature/Skeleton3D/Eyes"
+	mouthModel = $"modelo/Character/Armature/Skeleton3D/Mouth"
 	for faceAnim in $modelo/FaceAnimations.get_children():
 		animMappings[faceAnim.animation] = faceAnim
 	
