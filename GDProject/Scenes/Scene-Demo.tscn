@@ -1,6 +1,7 @@
-[gd_scene load_steps=79 format=3 uid="uid://b7co442vfn4a5"]
+[gd_scene load_steps=81 format=3 uid="uid://b7co442vfn4a5"]
 
 [ext_resource type="Environment" uid="uid://bt7lbvekdafji" path="res://Enviroments/Enviroment-sunrise.tres" id="1_hmru1"]
+[ext_resource type="Shader" path="res://Enviroments/Vignette.gdshader" id="2_yqwkb"]
 [ext_resource type="PackedScene" uid="uid://bplkpyps27gl4" path="res://Assets/Models/Scene/Background/mountain_v1.glb" id="3_oac4i"]
 [ext_resource type="PackedScene" uid="uid://b7822i5iwibmg" path="res://Assets/Models/Scene/Background/mountain_v2.glb" id="4_qmpij"]
 [ext_resource type="PackedScene" uid="uid://b3u8qg2yl7eja" path="res://Assets/Models/Scene/Background/mountain_v3.glb" id="5_k8x41"]
@@ -85,6 +86,12 @@ size = Vector3(113.319, 0.0425731, 3.31054)
 material = ExtResource("47_tic1o")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dt8o3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ysif6"]
+shader = ExtResource("2_yqwkb")
+shader_parameter/color = Color(0.0901961, 0.0862745, 0.0901961, 1)
+shader_parameter/multiplier = 0.3
+shader_parameter/softness = 1.2
 
 [node name="Node3D" type="Node3D"]
 
@@ -1484,6 +1491,20 @@ transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.338
 [node name="Control" parent="." node_paths=PackedStringArray("chara") instance=ExtResource("71_qr0il")]
 script = ExtResource("72_xe4q7")
 chara = NodePath("../rodolfo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
+follow_viewport_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Control/CanvasLayer"]
+material = SubResource("ShaderMaterial_ysif6")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="ramon" parent="." instance=ExtResource("73_f08ue")]
 transform = Transform3D(0.173648, 0, 0.984808, 0, 1, 0, -0.984808, 0, 0.173648, -12.8918, 0, -8.17578)
