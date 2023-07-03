@@ -19,9 +19,9 @@ func onExit(_delta: float, transitionTo: String):
 	chara.gravity = chara.defaultGravity
 	if transitionTo == "RunState":
 		if chara.lastTopFallingSpeed >= chara.lightFallThreshold * chara.maxFallSpeed * Vector3.DOWN.y:
-			chara.executeAnimation("FallinFloorNear" if abs(chara.velocity.x) < 0.1 else "FallingFloorNearRun")
+			chara.executeAnimation("FallingFloorNear" if abs(chara.velocity.x) < 3 else "FallingFloorNearRun")
 		else:
-			chara.executeAnimation("FallinFloor" if abs(chara.velocity.x) < 0.1 else "FallingFloorRun")
+			chara.executeAnimation("FallingFloor" if abs(chara.velocity.x) < 3 else "FallingFloorRun")
 	elif transitionTo == "JumpInstantState" or transitionTo == "JumpState":
 		chara.isBunnyHopTimerActive = false
 		chara.hasDoubleJumped = true
@@ -42,7 +42,7 @@ func apply(delta):
 	chara.lastTopFallingSpeed = min(chara.velocity.y, chara.lastTopFallingSpeed)
 	var fallingLongThreshold = (chara.maxFallSpeed * 0.8 * Vector3.DOWN).y
 	if chara.animationPlayer.assigned_animation != "FallingJumpLong" and chara.velocity.y <= fallingLongThreshold:
-		chara.executeAnimation("FallingJumpLong", -1, 2)
+		chara.executeAnimation("FallingJumpLong", -1, 3)
 	if Input.is_action_just_pressed("Jump"):
 		chara.isBunnyHopTimerActive = true
 	chara.applyForce(chara.gravity * delta * Vector3.DOWN)

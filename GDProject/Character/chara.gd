@@ -101,8 +101,8 @@ func _ready():
 	flyingAnimationHalftime = flyingAnimationLength / 2
 	
 	# Face Animations
-	eyesModel = $"modelo/Rodolfo Character/Armature Ro/Skeleton3D/Eyes Rodolfo"
-	mouthModel = $"modelo/Rodolfo Character/Armature Ro/Skeleton3D/Mouth Rodolfo"
+	eyesModel = $"modelo/Rodolfo Character/Armature/Skeleton3D/Eyes"
+	mouthModel = $"modelo/Rodolfo Character/Armature/Skeleton3D/Mouth"
 	for faceAnim in $modelo/FaceAnimations.get_children():
 		animMappings[faceAnim.animation] = faceAnim
 	

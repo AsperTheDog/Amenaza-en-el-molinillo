@@ -1,6 +1,6 @@
 extends State
 
-class_name JumpState
+class_name JumpStateRo
 
 var anticTime = 0
 var afterAnticTime = 0

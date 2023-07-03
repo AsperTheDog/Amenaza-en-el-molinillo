@@ -16,7 +16,7 @@ func onEnter(player: MainCharacter, delta: float):
 		
 func onExit(_delta: float, _transitionTo: String):
 	if isActionBeingPerformed:
-		chara.executeAnimation("FallingJump")
+		chara.executeAnimation("FallingFloorLongUp", chara.blendTime / 2, 2)
 
 func check():
 	if abs(chara.velocity.x) > 1:

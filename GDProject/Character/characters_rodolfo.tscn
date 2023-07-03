@@ -1,6 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://bemfpf3tvuute"]
 
 [ext_resource type="Script" path="res://Character/chara.gd" id="1_m1ybd"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/JumpRo.gd" id="6_37lii"]
 [ext_resource type="Script" path="res://Character/StateMachine/StateMachine.gd" id="6_qqmhe"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Air.gd" id="7_t700i"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Fall.gd" id="8_5ghpb"]
@@ -9,8 +10,7 @@
 [ext_resource type="Script" path="res://Character/StateMachine/States/StrongLanding.gd" id="9_3u7fv"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Idle.gd" id="9_jjdcd"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Walk.gd" id="10_5bbfa"]
-[ext_resource type="Script" path="res://Character/StateMachine/States/Jump.gd" id="10_w1kia"]
-[ext_resource type="Script" path="res://Character/StateMachine/States/JumpInstant.gd" id="11_rqgif"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/JumpInstantRo.gd" id="11_whyma"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Run.gd" id="11_xr5cu"]
 [ext_resource type="PackedScene" uid="uid://b6aowcqbcswti" path="res://Assets/Models/Characters/characters-rodolfo-classic_v1.glb" id="13_tkhd7"]
 [ext_resource type="Script" path="res://Character/FaceAnimation.gd" id="14_8s11l"]
@@ -46,7 +46,7 @@ script = ExtResource("8_5ghpb")
 script = ExtResource("9_jjdcd")
 
 [node name="JumpState" type="Node" parent="StateMachine"]
-script = ExtResource("10_w1kia")
+script = ExtResource("6_37lii")
 
 [node name="RunState" type="Node" parent="StateMachine"]
 script = ExtResource("11_xr5cu")
@@ -61,7 +61,7 @@ script = ExtResource("9_3u7fv")
 script = ExtResource("10_5bbfa")
 
 [node name="JumpInstantState" type="Node" parent="StateMachine"]
-script = ExtResource("11_rqgif")
+script = ExtResource("11_whyma")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871558, 0, -0.0871558, 0.996195, 0, 3, 13.224)
@@ -69,8 +69,21 @@ attributes = ExtResource("8_u46h6")
 fov = 37.8493
 far = 200.0
 
+[node name="VaultRayLeft" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+target_position = Vector3(0.8, 0, 0)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="VaultRayRight" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+target_position = Vector3(-0.8, 0, 0)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+
 [node name="modelo" parent="." instance=ExtResource("13_tkhd7")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="FaceAnimations" type="Node" parent="modelo"]
 
@@ -113,17 +126,3 @@ eyeTimes = Array[float]([0.0, 0.7])
 eyeFaces = Array[CompressedTexture2D]([ExtResource("16_2af6e"), ExtResource("15_tol2k")])
 mouthTimes = Array[float]([0.0])
 mouthFaces = Array[CompressedTexture2D]([ExtResource("16_2af6e")])
-
-[node name="VaultRayLeft" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
-target_position = Vector3(0.8, 0, 0)
-collision_mask = 2
-collide_with_areas = true
-collide_with_bodies = false
-
-[node name="VaultRayRight" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
-target_position = Vector3(-0.8, 0, 0)
-collision_mask = 2
-collide_with_areas = true
-collide_with_bodies = false

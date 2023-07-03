@@ -19,7 +19,6 @@ func execute(eyes, mouth, animationTimestamp):
 	for i in eyeTimes.size():
 		if eyeTimes[i] > animationTimestamp or prevEyesTime >= eyeTimes[i]:
 			continue
-		print("Changing face for animation ", animation, " at timestamp ", animationTimestamp, " to eyes ", eyeFaces[i].get_load_path())
 		eyes.get_mesh().get("surface_0/material").set_texture(StandardMaterial3D.TEXTURE_ALBEDO, eyeFaces[i])
 		prevEyesTime = eyeTimes[i]
 		newEyes = eyeFaces[i]
@@ -27,7 +26,6 @@ func execute(eyes, mouth, animationTimestamp):
 	for i in mouthTimes.size():
 		if mouthTimes[i] > animationTimestamp or prevMouthTime == mouthTimes[i]:
 			break
-		print("Changing face for animation ", animation, " at timestamp ", animationTimestamp, " to mouth ", mouthFaces[i].get_load_path())
 		mouth.get_mesh().get("surface_0/material").set_texture(StandardMaterial3D.TEXTURE_ALBEDO, mouthFaces[i])
 		prevMouthTime = mouthTimes[i]
 		break

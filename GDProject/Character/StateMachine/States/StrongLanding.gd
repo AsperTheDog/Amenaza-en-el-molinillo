@@ -21,7 +21,7 @@ func onExit(_delta: float, transitionTo: String):
 func check():
 	if animationLength <= timer:
 		return "IdleState"
-	if chara.strongFallRecoveryTime <= timer and abs(chara.velocity.x) > 0.1 :
+	if chara.strongFallRecoveryTime <= timer and abs(chara.velocity.x) > 1 :
 		return "RunState"
 
 func apply(delta):

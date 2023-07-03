@@ -1,6 +1,6 @@
 extends State
 
-class_name JumpInstantState
+class_name JumpInstantRoState
 
 func onEnter(player: MainCharacter, delta: float):
 	super.onEnter(player, delta)
