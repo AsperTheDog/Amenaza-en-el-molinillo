@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg6nn48bxtkrj"]
+
+[ext_resource type="PackedScene" uid="uid://dbmcxbq3ahs2p" path="res://Assets/Models/Scene/Construction/woodbox_v1.glb" id="1_vasb2"]
+[ext_resource type="Material" uid="uid://d0yhyi0s6s4oq" path="res://Assets/Models/Developer/Test/Test-basic-2.tres" id="2_pb0fl"]
+
+[node name="woodbox_v1" instance=ExtResource("1_vasb2")]
+
+[node name="CajaMadera" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_pb0fl")

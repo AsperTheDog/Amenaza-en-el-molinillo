@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bluprmk3vaprr"]
+
+[ext_resource type="PackedScene" uid="uid://db7nh1m4i1cyo" path="res://Assets/Models/Scene/Construction/giantcontainer_v1.glb" id="1_n8gbj"]
+[ext_resource type="Material" uid="uid://d0yhyi0s6s4oq" path="res://Assets/Models/Developer/Test/Test-basic-2.tres" id="2_mx71i"]
+
+[node name="giantcontainer_v1" instance=ExtResource("1_n8gbj")]
+
+[node name="BidonGigante" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_mx71i")

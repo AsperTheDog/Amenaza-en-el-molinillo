@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfok51ie0ttvq"]
+
+[ext_resource type="PackedScene" uid="uid://bki7kvdoleinh" path="res://Assets/Models/Scene/Construction/sand_v1.glb" id="1_kdyff"]
+[ext_resource type="Material" uid="uid://d0yhyi0s6s4oq" path="res://Assets/Models/Developer/Test/Test-basic-2.tres" id="2_evjpb"]
+
+[node name="sand_v1" instance=ExtResource("1_kdyff")]
+
+[node name="Arena" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_evjpb")

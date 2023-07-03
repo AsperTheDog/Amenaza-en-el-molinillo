@@ -1,8 +1,15 @@
-[gd_resource type="Environment" load_steps=3 format=3 uid="uid://bt7lbvekdafji"]
+[gd_resource type="Environment" load_steps=5 format=3 uid="uid://bt7lbvekdafji"]
+
+[sub_resource type="Gradient" id="Gradient_4tj0a"]
+offsets = PackedFloat32Array(0, 0.105919, 0.88162, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.209965, 0.0685847, 0.0299011, 1, 0.95673, 0.860243, 0.809004, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8odt0"]
+gradient = SubResource("Gradient_4tj0a")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_78j8c"]
 sky_top_color = Color(0.176471, 0.14902, 0.321569, 1)
-sky_horizon_color = Color(0.85098, 0.65098, 0.415686, 1)
+sky_horizon_color = Color(0.941176, 0.596078, 0.427451, 1)
 sky_cover_modulate = Color(1, 0.941176, 0.823529, 1)
 ground_bottom_color = Color(0.101961, 0.0823529, 0.0588235, 1)
 ground_horizon_color = Color(0.729412, 0.654902, 0.52549, 1)
@@ -14,7 +21,6 @@ sky_material = SubResource("ProceduralSkyMaterial_78j8c")
 background_mode = 2
 background_energy_multiplier = 1.5
 sky = SubResource("Sky_3ygco")
-sky_rotation = Vector3(0.0872665, 0, 0)
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_sky_contribution = 0.98
 ambient_light_energy = 16.0
@@ -29,12 +35,13 @@ sdfgi_energy = 9.0
 glow_enabled = true
 glow_normalized = true
 fog_enabled = true
-fog_light_color = Color(1, 0.898039, 0.788235, 1)
+fog_light_color = Color(1, 0.894118, 0.831373, 1)
 fog_light_energy = 0.03
 fog_sun_scatter = 0.04
-fog_density = 0.025
+fog_density = 0.015
+fog_aerial_perspective = 0.5
 fog_sky_affect = 0.0
 volumetric_fog_density = 0.02
 volumetric_fog_albedo = Color(1, 0.933333, 0.788235, 1)
 adjustment_enabled = true
-adjustment_contrast = 1.1
+adjustment_color_correction = SubResource("GradientTexture2D_8odt0")

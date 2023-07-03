@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://duq3xuvdwp5mq"]
+
+[ext_resource type="PackedScene" uid="uid://dplt8mx4bn1wd" path="res://Assets/Models/Developer/Test/wall-skyrting-long.glb" id="1_1sxk2"]
+[ext_resource type="Material" uid="uid://enf0lyeavpgk" path="res://Assets/Models/Developer/Test/Test-basic.tres" id="2_dabf2"]
+[ext_resource type="Material" uid="uid://d0yhyi0s6s4oq" path="res://Assets/Models/Developer/Test/Test-basic-2.tres" id="3_gkdwu"]
+
+[node name="wall-skyrting-long" instance=ExtResource("1_1sxk2")]
+
+[node name="Column Double" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_dabf2")
+
+[node name="Skirting Long001" parent="." index="1"]
+surface_material_override/0 = ExtResource("3_gkdwu")
+
+[node name="Wall Garaje" parent="." index="2"]
+surface_material_override/0 = ExtResource("2_dabf2")

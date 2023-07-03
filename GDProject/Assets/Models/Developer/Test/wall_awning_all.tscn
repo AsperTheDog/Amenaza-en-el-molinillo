@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://btuatnl2l68tg"]
+
+[ext_resource type="PackedScene" uid="uid://crqgi20tvqavo" path="res://Assets/Models/Developer/Test/wall-awning-all.glb" id="1_4mr3b"]
+[ext_resource type="Material" uid="uid://enf0lyeavpgk" path="res://Assets/Models/Developer/Test/Test-basic.tres" id="2_bds43"]
+[ext_resource type="Material" uid="uid://d0yhyi0s6s4oq" path="res://Assets/Models/Developer/Test/Test-basic-2.tres" id="2_uht2w"]
+
+[node name="wall-awning-all" instance=ExtResource("1_4mr3b")]
+
+[node name="Awning Wall" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_uht2w")
+
+[node name="Skirting DoubleLines002" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_bds43")
+
+[node name="Wall Garaje" parent="." index="2"]
+surface_material_override/0 = ExtResource("2_bds43")

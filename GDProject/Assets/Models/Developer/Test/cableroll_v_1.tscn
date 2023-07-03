@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqb43g0fj3rc2"]
+
+[ext_resource type="PackedScene" uid="uid://qygga31ygjbc" path="res://Assets/Models/Scene/Construction/cableroll_v1.glb" id="1_rbj4c"]
+[ext_resource type="Material" uid="uid://d0yhyi0s6s4oq" path="res://Assets/Models/Developer/Test/Test-basic-2.tres" id="2_iorgd"]
+
+[node name="cableroll_v1" instance=ExtResource("1_rbj4c")]
+
+[node name="RolloCables" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_iorgd")

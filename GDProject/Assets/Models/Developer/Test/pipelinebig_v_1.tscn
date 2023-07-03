@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://v7ga78foeerk"]
+
+[ext_resource type="PackedScene" uid="uid://kcqlbd1tcyl" path="res://Assets/Models/Scene/Construction/pipelinebig_v1.glb" id="1_j77bm"]
+[ext_resource type="Material" uid="uid://d0yhyi0s6s4oq" path="res://Assets/Models/Developer/Test/Test-basic-2.tres" id="2_1xi5p"]
+
+[node name="pipelinebig_v1" instance=ExtResource("1_j77bm")]
+
+[node name="TuberiaGigante" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_1xi5p")
+surface_material_override/1 = ExtResource("2_1xi5p")

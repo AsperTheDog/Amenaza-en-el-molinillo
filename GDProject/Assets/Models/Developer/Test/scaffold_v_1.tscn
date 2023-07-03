@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://catvyfdfmr3fw"]
+
+[ext_resource type="PackedScene" uid="uid://dqkqkdnw447em" path="res://Assets/Models/Scene/Construction/scaffold_v1.glb" id="1_8w2ad"]
+[ext_resource type="Material" uid="uid://d0yhyi0s6s4oq" path="res://Assets/Models/Developer/Test/Test-basic-2.tres" id="2_1ugw4"]
+
+[node name="scaffold_v1" instance=ExtResource("1_8w2ad")]
+
+[node name="Andamios" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_1ugw4")

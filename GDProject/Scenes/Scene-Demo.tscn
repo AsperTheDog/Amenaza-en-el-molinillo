@@ -1,6 +1,7 @@
-[gd_scene load_steps=79 format=3 uid="uid://b7co442vfn4a5"]
+[gd_scene load_steps=81 format=3 uid="uid://b7co442vfn4a5"]
 
 [ext_resource type="Environment" uid="uid://bt7lbvekdafji" path="res://Enviroments/Enviroment-sunrise.tres" id="1_hmru1"]
+[ext_resource type="Shader" path="res://Enviroments/Vignette.gdshader" id="2_yqwkb"]
 [ext_resource type="PackedScene" uid="uid://bplkpyps27gl4" path="res://Assets/Models/Scene/Background/mountain_v1.glb" id="3_oac4i"]
 [ext_resource type="PackedScene" uid="uid://b7822i5iwibmg" path="res://Assets/Models/Scene/Background/mountain_v2.glb" id="4_qmpij"]
 [ext_resource type="PackedScene" uid="uid://b3u8qg2yl7eja" path="res://Assets/Models/Scene/Background/mountain_v3.glb" id="5_k8x41"]
@@ -86,6 +87,12 @@ material = ExtResource("47_tic1o")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dt8o3"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ysif6"]
+shader = ExtResource("2_yqwkb")
+shader_parameter/color = Color(0.0901961, 0.0862745, 0.0901961, 1)
+shader_parameter/multiplier = 0.3
+shader_parameter/softness = 1.2
+
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -159,7 +166,7 @@ transform = Transform3D(0.985025, 0.172398, 0.00209431, 0, 0.0121472, -0.999926,
 transform = Transform3D(-0.826317, 0.0356315, 0.562077, 0.0573586, 0.998132, 0.0210499, -0.560277, 0.049634, -0.826817, 16.7122, 0.340736, -3.35661)
 
 [node name="cableroll_v4" parent="Construction-area" instance=ExtResource("32_8ymob")]
-transform = Transform3D(-0.826317, 0.0356315, 0.562077, 0.0573586, 0.998132, 0.0210499, -0.560277, 0.049634, -0.826817, 54.7259, 0.340736, -3.35661)
+transform = Transform3D(-0.826317, 0.0356315, 0.562077, 0.0573586, 0.998132, 0.0210499, -0.560277, 0.049634, -0.826817, 56.5445, 0.340736, -3.35661)
 
 [node name="fabricbuild_v1" parent="Construction-area" instance=ExtResource("33_nmlp2")]
 transform = Transform3D(0.900673, 0, 0, 0, 1, 0, 0, 0, 1, 37.0673, -0.607988, -9.27811)
@@ -416,7 +423,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0133, 0, 4.74007)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.6099, 0, 4.53598)
 
 [node name="streetlight-en_v12" parent="City" instance=ExtResource("10_f1afg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.3212, 0, 4.74007)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.5456, 0, 4.74007)
 
 [node name="trafficlight_v1" parent="City" instance=ExtResource("11_2mf3f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7986, 0, -4.56483)
@@ -1474,12 +1481,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5974, -1.30949, -0.0750732
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.894725, 0)
 
 [node name="item-levermachine_v1" parent="Items" instance=ExtResource("64_6x3om")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 63.4553, 11.0076, 0.000836372)
-visible = false
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 65.9068, -0.0966597, -0.0859771)
 
 [node name="item-leversteam_v1" parent="Items/item-levermachine_v1" instance=ExtResource("65_g5qj1")]
 
 [node name="item-lever_v1" parent="Items/item-levermachine_v1" instance=ExtResource("66_f25ow")]
+transform = Transform3D(1, 0, 0, 0, 0.611527, 0.791224, 0, -0.791224, 0.611527, 0, 0, 0)
 
 [node name="regla" parent="." instance=ExtResource("70_m1x68")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5342, -0.00077709, -8.86975)
@@ -1490,6 +1497,20 @@ transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.338
 [node name="Control" parent="." node_paths=PackedStringArray("chara") instance=ExtResource("71_qr0il")]
 script = ExtResource("72_xe4q7")
 chara = NodePath("../rodolfo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
+follow_viewport_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Control/CanvasLayer"]
+material = SubResource("ShaderMaterial_ysif6")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="ramon" parent="." instance=ExtResource("73_f08ue")]
 transform = Transform3D(0.173648, 0, 0.984808, 0, 1, 0, -0.984808, 0, 0.173648, -12.8918, 0, -8.17578)

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbay62ownmbdg"]
+
+[ext_resource type="PackedScene" uid="uid://cj0waxd7kvfdi" path="res://Assets/Models/Scene/City/trash-big_v1.glb" id="1_xm3aw"]
+[ext_resource type="Material" uid="uid://d0yhyi0s6s4oq" path="res://Assets/Models/Developer/Test/Test-basic-2.tres" id="2_6pko3"]
+
+[node name="trash-big_v1" instance=ExtResource("1_xm3aw")]
+
+[node name="Basurero" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_6pko3")

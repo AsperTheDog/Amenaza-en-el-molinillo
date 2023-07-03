@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d0d3cchtomsg1"
+path="res://.godot/imported/smoke-particle.obj-eb664d5fd2a63d44b66d239ce8573c17.mesh"
+
+[deps]
+
+files=["res://.godot/imported/smoke-particle.obj-eb664d5fd2a63d44b66d239ce8573c17.mesh"]
+
+source_file="res://Assets/Effects/smoke-particle.obj"
+dest_files=["res://.godot/imported/smoke-particle.obj-eb664d5fd2a63d44b66d239ce8573c17.mesh", "res://.godot/imported/smoke-particle.obj-eb664d5fd2a63d44b66d239ce8573c17.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

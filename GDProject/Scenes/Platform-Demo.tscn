@@ -1,0 +1,149 @@
+[gd_scene load_steps=25 format=3 uid="uid://djo7dfcpiosdo"]
+
+[ext_resource type="PackedScene" uid="uid://bxryp4uhkt6wg" path="res://Assets/Models/Developer/regla.glb" id="2_ewfu7"]
+[ext_resource type="PackedScene" uid="uid://uqvtlmg0b5nn" path="res://Assets/Models/Developer/Test/floor_road_v_1.tscn" id="2_xnkht"]
+[ext_resource type="PackedScene" uid="uid://b6aowcqbcswti" path="res://Assets/Models/Characters/characters-rodolfo-classic_v1.glb" id="3_ur16o"]
+[ext_resource type="PackedScene" uid="uid://dg6nn48bxtkrj" path="res://Assets/Models/Developer/Test/woodbox_v_1.tscn" id="11_8r5xg"]
+[ext_resource type="PackedScene" uid="uid://btuatnl2l68tg" path="res://Assets/Models/Developer/Test/wall_awning_all.tscn" id="11_nqinq"]
+[ext_resource type="PackedScene" uid="uid://dbay62ownmbdg" path="res://Assets/Models/Developer/Test/trash_big_v_1.tscn" id="12_5hvar"]
+[ext_resource type="PackedScene" uid="uid://c05ygs16d0tfb" path="res://Assets/Models/Developer/Test/wall_awning_door.tscn" id="12_fv0hh"]
+[ext_resource type="PackedScene" uid="uid://catvyfdfmr3fw" path="res://Assets/Models/Developer/Test/scaffold_v_1.tscn" id="13_ecol8"]
+[ext_resource type="PackedScene" uid="uid://bugd1ubjjrytx" path="res://Assets/Models/Developer/Test/wall_awning_garaje.tscn" id="13_j8c5i"]
+[ext_resource type="PackedScene" uid="uid://kyob6ipa06ue" path="res://Assets/Models/Developer/Test/wall_balcony.tscn" id="14_pd1or"]
+[ext_resource type="PackedScene" uid="uid://cfok51ie0ttvq" path="res://Assets/Models/Developer/Test/sand_v_1.tscn" id="14_w5e21"]
+[ext_resource type="PackedScene" uid="uid://b2lshig8548bt" path="res://Assets/Models/Developer/Test/pipeline_v_1.tscn" id="15_8716b"]
+[ext_resource type="PackedScene" uid="uid://ba22naei2uerv" path="res://Assets/Models/Developer/Test/wall_balcony_left.tscn" id="15_al6xt"]
+[ext_resource type="PackedScene" uid="uid://v7ga78foeerk" path="res://Assets/Models/Developer/Test/pipelinebig_v_1.tscn" id="16_dgukk"]
+[ext_resource type="PackedScene" uid="uid://crb07ayn5xow2" path="res://Assets/Models/Developer/Test/wall_balcony_middle.tscn" id="16_s0521"]
+[ext_resource type="PackedScene" uid="uid://duq3xuvdwp5mq" path="res://Assets/Models/Developer/Test/wall_skyrting_long.tscn" id="17_ms2fw"]
+[ext_resource type="PackedScene" uid="uid://b0afvfkabi51x" path="res://Assets/Models/Developer/Test/joistbig_v_1.tscn" id="17_mvpkt"]
+[ext_resource type="PackedScene" uid="uid://bluprmk3vaprr" path="res://Assets/Models/Developer/Test/giantcontainer_v_1.tscn" id="18_l7rrd"]
+[ext_resource type="PackedScene" uid="uid://bqb43g0fj3rc2" path="res://Assets/Models/Developer/Test/cableroll_v_1.tscn" id="19_hmuoy"]
+[ext_resource type="PackedScene" uid="uid://ljjg0kheyihy" path="res://Assets/Models/Developer/Test/wall_skyrting_long_height.tscn" id="20_8gswm"]
+
+[sub_resource type="Environment" id="Environment_6hk84"]
+background_energy_multiplier = 0.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pdkps"]
+size = Vector3(113.319, 0.0425731, 3.31054)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ipmv7"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_y0d63"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6hk84")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 0.743145, 0.669131, 0, -0.669131, 0.743145, 0, 0, 0)
+light_energy = 2.0
+
+[node name="characters-rodolfo-classic_v1" parent="." instance=ExtResource("3_ur16o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -7)
+
+[node name="Hitboxes" type="Node3D" parent="."]
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Hitboxes"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -0.0220631, -7.07546)
+shape = SubResource("BoxShape3D_pdkps")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Hitboxes"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/StaticBody3D2"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 71.4394, 4.36728, -6.77295)
+shape = SubResource("WorldBoundaryShape3D_ipmv7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Hitboxes"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/StaticBody3D"]
+transform = Transform3D(-0.000185134, 1, -5.09761e-05, -1, -0.000185134, 1.27565e-06, 1.27564e-06, 5.09761e-05, 1, -17.7949, 4.22381, -7.05008)
+shape = SubResource("WorldBoundaryShape3D_y0d63")
+
+[node name="Ground" type="Node3D" parent="."]
+
+[node name="floor-road_v6" parent="Ground" instance=ExtResource("2_xnkht")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0)
+
+[node name="floor-road_v7" parent="Ground" instance=ExtResource("2_xnkht")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+
+[node name="floor-road_v8" parent="Ground" instance=ExtResource("2_xnkht")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 0)
+
+[node name="floor-road_v9" parent="Ground" instance=ExtResource("2_xnkht")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 0)
+
+[node name="floor-road_v10" parent="Ground" instance=ExtResource("2_xnkht")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, 0, 0)
+
+[node name="Modulos" type="Node3D" parent="."]
+
+[node name="wall-awning-all" parent="Modulos" instance=ExtResource("11_nqinq")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 41, 0, -10.3099)
+
+[node name="wall-awning-door" parent="Modulos" instance=ExtResource("12_fv0hh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 33, 0, -10)
+
+[node name="wall-awning-garaje" parent="Modulos" instance=ExtResource("13_j8c5i")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 37, 0, -10.3099)
+
+[node name="wall-balcony" parent="Modulos" instance=ExtResource("14_pd1or")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 45, 3.53188, -10.3099)
+
+[node name="wall-balcony-left" parent="Modulos" instance=ExtResource("15_al6xt")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 49, 3.53188, -10.3099)
+
+[node name="wall-balcony-middle" parent="Modulos" instance=ExtResource("16_s0521")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 52, 3.53188, -10.3099)
+
+[node name="wall-skyrting-long" parent="Modulos" instance=ExtResource("17_ms2fw")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 55.9822, 0, -10.3099)
+
+[node name="wall-skyrting-long2" parent="Modulos" instance=ExtResource("17_ms2fw")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 55.9822, 3.33877, -10.3099)
+
+[node name="woodbox_v1" parent="Modulos" instance=ExtResource("11_8r5xg")]
+transform = Transform3D(1.065, 0, 0, 0, 1.065, 0, 0, 0, 1.065, -1.98861, 0.651187, -7)
+
+[node name="trash-big_v1" parent="Modulos" instance=ExtResource("12_5hvar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.382321, 0, -7)
+
+[node name="scaffold_v1" parent="Modulos" instance=ExtResource("13_ecol8")]
+transform = Transform3D(1.125, 0, 0, 0, 1.125, 0, 0, 0, 1.125, 17.662, 0, -7)
+
+[node name="sand_v1" parent="Modulos" instance=ExtResource("14_w5e21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3823, 0, -7)
+
+[node name="pipeline_v1" parent="Modulos" instance=ExtResource("15_8716b")]
+transform = Transform3D(0.95, 0, 0, 0, 0.95, 0, 0, 0, 0.95, -8.87412, 0.479716, -7)
+
+[node name="pipelinebig_v1" parent="Modulos" instance=ExtResource("16_dgukk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, -7)
+
+[node name="joistbig_v1" parent="Modulos" instance=ExtResource("17_mvpkt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5521, 6, -7)
+
+[node name="giantcontainer_v1" parent="Modulos" instance=ExtResource("18_l7rrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.38232, 0, -7)
+
+[node name="cableroll_v1" parent="Modulos" instance=ExtResource("19_hmuoy")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -11.1362, 0.458386, -7)
+
+[node name="wall-skyrting-long-height" parent="Modulos" instance=ExtResource("20_8gswm")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 62, 0, -10.3099)
+
+[node name="regla" parent="." instance=ExtResource("2_ewfu7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9251, 0, -9)
+
+[node name="regla2" parent="regla" instance=ExtResource("2_ewfu7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8525, 0, 0)
+
+[node name="regla3" parent="regla" instance=ExtResource("2_ewfu7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.4332, 0, 0)
+
+[node name="regla4" parent="regla" instance=ExtResource("2_ewfu7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.0856, 0, 0)
