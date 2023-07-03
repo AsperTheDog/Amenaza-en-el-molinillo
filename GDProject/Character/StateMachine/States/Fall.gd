@@ -15,35 +15,26 @@ func onEnter(player: MainCharacter, delta: float):
 	if Input.is_action_just_pressed("Jump"):
 		chara.isBunnyHopTimerActive = true
 	
-	
-func onExit(delta: float):
+func onExit(_delta: float, transitionTo: String):
 	chara.gravity = chara.defaultGravity
+	if transitionTo == "RunState":
+		if chara.lastTopFallingSpeed >= chara.lightFallThreshold * chara.maxFallSpeed * Vector3.DOWN.y:
+			chara.executeAnimation("FallinFloorNear" if abs(chara.velocity.x) < 0.1 else "FallingFloorNearRun")
+		else:
+			chara.executeAnimation("FallinFloor" if abs(chara.velocity.x) < 0.1 else "FallingFloorRun")
+	elif transitionTo == "JumpInstantState" or transitionTo == "JumpState":
+		chara.isBunnyHopTimerActive = false
+		chara.hasDoubleJumped = true
+	elif transitionTo == "VaultState":
+		chara.isBunnyHopTimerActive = false
 
 func check():
 	if chara.is_on_floor():
-		if chara.lastTopFallingSpeed >= chara.lightFallThreshold * chara.maxFallSpeed * Vector3.DOWN.y:
-			if abs(chara.velocity.x) < 0.1:
-				chara.executeAnimation("FallingFloorNear")
-			else:
-				chara.executeAnimation("FallingFloorNearRun")
-		elif chara.lastTopFallingSpeed > chara.strongFallThreshold * chara.maxFallSpeed * Vector3.DOWN.y:
-			if abs(chara.velocity.x) < 0.1:
-				chara.executeAnimation("FallingFloor")
-			else:
-				chara.executeAnimation("FallingFloorRun")
-		else:
-			return "StrongLandState"
-		return "RunState"
-	if chara.execJumpAction:
-		chara.isBunnyHopTimerActive = false
-		if not chara.hasDoubleJumped:
-			chara.hasDoubleJumped = true
-			if chara.isJumpInstant:
-				return "JumpInstantState"
-			else:
-				return "JumpState"
+		var strongFallSpeed = chara.strongFallThreshold * chara.maxFallSpeed * Vector3.DOWN.y
+		return "StrongLandState" if chara.lastTopFallingSpeed <= strongFallSpeed else "RunState"
+	if chara.execJumpAction and not chara.hasDoubleJumped:
+		return "JumpInstantState" if chara.isJumpInstant else "JumpState"
 	if chara.getVaultingDirection() != 0 and chara.vaultingDir == Input.get_axis("Left", "Right"):
-		chara.isBunnyHopTimerActive = false
 		return "VaultState"
 	return null
 

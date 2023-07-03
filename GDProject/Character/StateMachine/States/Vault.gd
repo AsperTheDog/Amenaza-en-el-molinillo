@@ -19,7 +19,7 @@ func onEnter(player: MainCharacter, delta: float):
 	chara.executeAnimation("JumpCorner", -1)
 	chara.animationPlayer.seek(0)
 	
-func onExit(delta: float):
+func onExit(_delta: float, _transitionTo: String):
 	pass
 
 func check():

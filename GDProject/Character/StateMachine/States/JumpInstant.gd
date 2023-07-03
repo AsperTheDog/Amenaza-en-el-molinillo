@@ -12,8 +12,8 @@ func onEnter(player: MainCharacter, delta: float):
 		chara.executeAnimation("Jump")
 	chara.setVertForce((chara.jumpSpeed * Vector3.UP).y)
 	
-func onExit(delta: float):
-	if chara.velocity.y > 0:
+func onExit(_delta: float, transitionTo: String):
+	if transitionTo == "AirState":
 		chara.gravity *= chara.jumpCutGravityMult
 
 func check():

@@ -5,23 +5,21 @@ class_name AirState
 func onEnter(player: MainCharacter, delta: float):
 	super.onEnter(player, delta)
 	
-func onExit(delta: float):
-	pass
-
+func onExit(_delta: float, transitionTo: String):
+	if transitionTo == "JumpInstantState" or transitionTo == "JumpState":
+		chara.isBunnyHopTimerActive = false
+		chara.hasDoubleJumped = true
+	elif transitionTo == "VaultState":
+		chara.isBunnyHopTimerActive = false
+		
 func check():
 	if chara.velocity.y <= 0:
 		return "FallState"
 	if chara.is_on_floor():
 		return "RunState"
 	if chara.execJumpAction and not chara.hasDoubleJumped:
-		chara.isBunnyHopTimerActive = false
-		chara.hasDoubleJumped = true
-		if chara.isJumpInstant:
-			return "JumpInstantState"
-		else:
-			return "JumpState"
+		return "JumpInstantState" if chara.isJumpInstant else "JumpState"
 	if chara.getVaultingDirection() != 0 and chara.vaultingDir == Input.get_axis("Left", "Right"):
-		chara.isBunnyHopTimerActive = false
 		return "VaultState"
 	return null
 

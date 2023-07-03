@@ -11,14 +11,12 @@ func onEnter(player: MainCharacter, delta: float):
 	jumped = false
 	anticTime = 0
 	chara.gravity = chara.defaultGravity
-	if not chara.hasDoubleJumped or not chara.canDoubleJump:
-		chara.executeAnimation("JumpAntic")
-	else:
-		chara.executeAnimation("JumpDouble")
+	var isDoubleJump = not chara.hasDoubleJumped and chara.canDoubleJump
+	chara.executeAnimation("JumpDouble" if not isDoubleJump else "JumpAntic")
 	chara.queueAnimation("Jump", false)
 	
-func onExit(delta: float):
-	if chara.velocity.y > 0:
+func onExit(_delta: float, transitionTo: String):
+	if transitionTo == "AirState":
 		chara.gravity *= chara.jumpCutGravityMult
 
 func check():

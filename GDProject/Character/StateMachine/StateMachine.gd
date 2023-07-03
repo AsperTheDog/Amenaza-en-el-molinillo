@@ -19,7 +19,7 @@ func setup(player: MainCharacter):
 func evaluate(delta):
 	var ret = activeState.check()
 	if ret != null:
-		activeState.onExit(delta)
+		activeState.onExit(delta, ret)
 		activeState = states[ret]
 		activeStateName = ret
 		activeState.onEnter(chara, delta)

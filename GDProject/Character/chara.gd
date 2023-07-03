@@ -63,6 +63,8 @@ var hasDoubleJumped: bool = false
 var vaultingDir: int
 var vaultingPos: Vector3
 
+var lastOnGround: float = 0
+
 var bunnyHopTimer: float = 0
 var isBunnyHopTimerActive: bool = false
 var execJumpAction: bool = false
@@ -84,34 +86,38 @@ var blink = cara4
 var blinking: bool = false
 var blinkTimer: float = 0
 
-var animMapping = {
-	"Run": [cara1, cara1],
-	"Walk": [cara1, cara2],
-	"Idle": [cara2, cara4],
-	"IdleAction": [cara4, cara2]
-}
+var animMappings: Dictionary = {}
+var currentAnimation: String
+
 var activeEyes: CompressedTexture2D = cara1
 
 func _ready():
-	eyesModel = $"modelo/Rodolfo Character/Armature Ro/Skeleton3D/Eyes Rodolfo"
-	mouthModel = $"modelo/Rodolfo Character/Armature Ro/Skeleton3D/Mouth Rodolfo"
+	# Animations
 	animationPlayer = $modelo/AnimationPlayer
 	animationPlayer.set_default_blend_time(blendTime)
 	animationPlayer.set_speed_scale(animationSpeed)
 	setAnimationBlendTimes()
-	stateMachine.setup(self)
-	zPos = transform.origin.z
 	flyingAnimationLength = animationPlayer.get_animation("Jump").length
 	flyingAnimationHalftime = flyingAnimationLength / 2
+	
+	# Face Animations
+	eyesModel = $"modelo/Rodolfo Character/Armature Ro/Skeleton3D/Eyes Rodolfo"
+	mouthModel = $"modelo/Rodolfo Character/Armature Ro/Skeleton3D/Mouth Rodolfo"
+	for faceAnim in $modelo/FaceAnimations.get_children():
+		animMappings[faceAnim.animation] = faceAnim
+	
+	# Controls
+	zPos = transform.origin.z
 	if not canDoubleJump:
 		hasDoubleJumped = true
+	
+	# State Machine
+	stateMachine.setup(self)
 
 func _process(_delta):
 	if Input.is_action_just_pressed("DebugInput"):
-		if toggleEyes:
-			eyesModel.get_mesh().get("surface_0/material").set_texture(StandardMaterial3D.TEXTURE_ALBEDO, cara4)
-		else:
-			eyesModel.get_mesh().get("surface_0/material").set_texture(StandardMaterial3D.TEXTURE_ALBEDO, cara1)
+		var eyesToUse = cara4 if toggleEyes else cara1
+		eyesModel.get_mesh().get("surface_0/material").set_texture(StandardMaterial3D.TEXTURE_ALBEDO, eyesToUse)
 		toggleEyes = not toggleEyes
 
 func _physics_process(delta):
@@ -121,6 +127,7 @@ func _physics_process(delta):
 		seekAirAnimation()
 	transform.origin.z = zPos
 	stateMachine.evaluate(delta)
+	manageFaces()
 
 
 func setForce(force: Vector3):
@@ -190,14 +197,12 @@ func getVaultingDirection():
 	return vaultingDir
 
 func processJumpBuffering(delta):
+	lastOnGround = 0 if is_on_floor() else lastOnGround + delta
 	if isBunnyHopTimerActive:
 		bunnyHopTimer += delta
 	else:
 		bunnyHopTimer = 0
-	if bunnyHopTimer >= bunnyHopTime:
-		execJumpAction = true
-	else:
-		execJumpAction = false	
+	execJumpAction = bunnyHopTimer >= bunnyHopTime
 
 func seekAirAnimation():
 	var seek: float = 0
@@ -214,12 +219,6 @@ func executeAnimation(animation: String, blend = null, speedMult: float = 1):
 		animationPlayer.play(animation)
 	else:
 		animationPlayer.play(animation, blend, speedMult)
-	var mapping = [cara1, cara1]
-	if animation in animMapping:
-		mapping = animMapping[animation]
-	eyesModel.get_mesh().get("surface_0/material").set_texture(StandardMaterial3D.TEXTURE_ALBEDO, mapping[0])
-	mouthModel.get_mesh().get("surface_0/material").set_texture(StandardMaterial3D.TEXTURE_ALBEDO, mapping[1])
-	activeEyes = mapping[0]
 	
 func queueAnimation(animation: String, clearQueue: bool = true):
 	if clearQueue:
@@ -243,11 +242,26 @@ func setAnimationBlendTimes():
 func randomlyBlink(delta):
 	if blinking:
 		blinkTimer += delta
-		if blinkTimer >= blinkDuration:
-			eyesModel.get_mesh().get("surface_0/material").set_texture(StandardMaterial3D.TEXTURE_ALBEDO, activeEyes)
-			blinking = false
-			blinkTimer = 0
+		if blinkTimer < blinkDuration:
+			return
+		eyesModel.get_mesh().get("surface_0/material").set_texture(StandardMaterial3D.TEXTURE_ALBEDO, activeEyes)
+		blinking = false
+		blinkTimer = 0
 	elif randf() < blinkChance * delta:
 		eyesModel.get_mesh().get("surface_0/material").set_texture(StandardMaterial3D.TEXTURE_ALBEDO, blink)
 		blinking = true
+	
+func manageFaces():
+	var currAnim = animationPlayer.current_animation
+	if currAnim == "" or currAnim not in animMappings:
+		return
+	if currAnim != currentAnimation:
+		if currentAnimation in animMappings:
+			animMappings[currentAnimation].reset()
+		currentAnimation = currAnim
+	var animTimestamp = animationPlayer.current_animation_position
+	var faceAnim = animMappings[currAnim]
+	var active = faceAnim.execute(eyesModel, mouthModel, animTimestamp)
+	if active != null:
+		activeEyes = active
 	

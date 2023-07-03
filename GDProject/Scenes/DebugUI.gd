@@ -9,7 +9,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	label.text = "FPS: " + str(Engine.get_frames_per_second()) \
 	+ "\n\nState: " + chara.stateMachine.activeStateName \
 	+ "\nGravity: " + str(snapped(chara.gravity, 0.01)) \

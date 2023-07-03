@@ -14,25 +14,18 @@ func onEnter(player: MainCharacter, delta: float):
 	timer = 0
 	isActionBeingPerformed = false
 		
-func onExit(delta: float):
-	chara.animationPlayer.clear_queue()
+func onExit(_delta: float, _transitionTo: String):
+	if isActionBeingPerformed:
+		chara.executeAnimation("FallingJump")
 
 func check():
 	if abs(chara.velocity.x) > 1:
-		if abs(Input.get_axis("Left", "Right")) < chara.walkingThreshold:
-			return "WalkState"
-		else:
-			return "RunState"
+		var movingDir = abs(Input.get_axis("Left", "Right"))
+		return "WalkState" if movingDir < chara.walkingThreshold else "RunState"
 	if Input.is_action_just_pressed("Jump"):
-		if chara.isJumpInstant:
-			return "JumpInstantState"
-		else:
-			return "JumpState"
+		return "JumpInstantState" if chara.isJumpInstant else "JumpState"
 	if not chara.is_on_floor():
-		if chara.velocity.y <= 0:
-			return "FallState"
-		else:
-			return "AirState"
+		return "FallState" if chara.velocity.y <= 0 else "AirState"
 	return null
 
 func apply(delta):
