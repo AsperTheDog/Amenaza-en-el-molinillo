@@ -15,6 +15,7 @@ func onExit(_delta: float, transitionTo: String):
 	chara.animationPlayer.set_speed_scale(chara.animationSpeed)
 	if transitionTo == "JumpState" or transitionTo == "JumpInstantState":
 		chara.isBunnyHopTimerActive = false
+	chara.runParticles.emitting = false
 
 func check():
 	if chara.isBunnyHopTimerActive or Input.is_action_just_pressed("Jump"):
@@ -35,3 +36,7 @@ func apply(delta):
 	if chara.animationPlayer.assigned_animation not in chara.landingAnimations:
 		var speedDiff = 1 - (chara.runMaxSpeed - abs(chara.velocity.x)) / chara.runMaxSpeed
 		chara.animationPlayer.set_speed_scale(lerp(0.0, chara.animationSpeed, speedDiff))
+	if abs(chara.velocity.x) > 6:
+		chara.runParticles.emitting = true
+	else:
+		chara.runParticles.emitting = false

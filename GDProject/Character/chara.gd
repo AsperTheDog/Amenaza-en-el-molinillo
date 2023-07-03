@@ -6,48 +6,51 @@ class_name MainCharacter
 
 @export_group("Jump")
 @export_subgroup("Basic")
-@export var fallGravityMult: float = 1.2
+@export var fallGravityMult: float = 1.7
 @export var jumpSpeed: float = 10
-@export var jumpCutGravityMult: float = 2
-@export var maxFallSpeed: float = 50
-@export var defaultGravity: float = 9.8
-@export var bunnyHopTime: float = 0.15
-@export var coyoteTime: float = 0.1
+@export var jumpCutGravityMult: float = 3
+@export var maxFallSpeed: float = 30
+@export var defaultGravity: float = 23.5
+@export var bunnyHopTime: float = 0.08
+@export var coyoteTime: float = 0.15
 @export var canDoubleJump: bool = true
-@export var isJumpInstant: bool = false
+@export var isJumpInstant: bool = true
 @export_subgroup("Acceleration")
 @export var accelInAirMult: float = 1.0
 @export var deccelInAirMult: float = 1.0
 @export_subgroup("Hang time")
-@export var jumpHangTimeThreshold: float = 0.02
-@export var jumpHangAccelMult: float = 1.2
-@export var jumpHangMaxSpeedMult: float = 1.2
+@export var jumpHangTimeThreshold: float = 0.2
+@export var jumpHangAccelMult: float = 1.4
+@export var jumpHangMaxSpeedMult: float = 1.4
 @export_subgroup("Touch Floor Thresholds")
-@export var lightFallThreshold: float = 0.2
-@export var strongFallThreshold: float = 0.7
-@export var strongFallRecoveryTime: float = 1.2
+@export var lightFallThreshold: float = 0.5
+@export var strongFallThreshold: float = 1
+@export var strongFallRecoveryTime: float = 1
 
 @export_group("Run")
 @export var runAccelAmount: float = 5
-@export var runDeccelAmount: float = 5
-@export var runMaxSpeed: float = 10
+@export var runDeccelAmount: float = 10
+@export var runMaxSpeed: float = 7
 @export var doConserveMomentum = true
 @export var deadZoneMovement: float = 0.25
 @export var walkingThreshold: float = 0.5
 
 @export_group("Animation")
-@export var turnSpeed: float = 1
-@export var animationSpeed: float = 10
-@export var blendTime: float = 0.3
+@export var turnSpeed: float = 10
+@export var animationSpeed: float = 1
+@export var blendTime: float = 0.1
 @export var slowBlendTime: float = 0.3
 @export_subgroup("Blinking")
-@export var blinkChance: float = 0.2
-@export var blinkDuration: float = 0.1
+@export var blinkChance: float = 0.4
+@export var blinkDuration: float = 0.15
 @export_subgroup("Idle Action")
 @export var minimumIdleTime: float = 2
 @export var idleActionChance: float = 0.2
 
 var animationPlayer: AnimationPlayer
+var runParticles: CPUParticles3D
+var jumpParticles: CPUParticles3D
+
 var zPos: float
 const landingAnimations = [
 	"FallingFloorLongUp", 
@@ -76,21 +79,14 @@ var flyingAnimationHalftime: float = 0
 var eyesModel: MeshInstance3D
 var mouthModel: MeshInstance3D
 
-var toggleEyes: bool = true
-
-var cara1 = preload("res://Assets/Models/Characters/Eyes-Open_Mouth-Open.png")
-var cara2 = preload("res://Assets/Models/Characters/Eyes-Half_Mouth-Smile.png")
-var cara3 = preload("res://Assets/Models/Characters/Eyes-Confuse_Mouth-Sad.png")
-var cara4 = preload("res://Assets/Models/Characters/Eyes-Closed_Mouth-Small.png")
-
-var blink = cara4
+var blink: CompressedTexture2D = preload("res://Assets/Models/Characters/Eyes-Closed_Mouth-Small.png")
 var blinking: bool = false
 var blinkTimer: float = 0
 
 var animMappings: Dictionary = {}
 var currentAnimation: String
 
-var activeEyes: CompressedTexture2D = cara1
+var activeEyes: CompressedTexture2D = preload("res://Assets/Models/Characters/Eyes-Open_Mouth-Open.png")
 
 var punchCollider: Area3D
 
@@ -106,6 +102,10 @@ func _ready():
 	flyingAnimationLength =  1 # animationPlayer.get_animation("Jump").length
 	flyingAnimationHalftime = flyingAnimationLength / 2
 	
+	# Particles
+	runParticles = $"modelo/particles-run"
+	jumpParticles = $"modelo/particles-jump"
+	
 	# Face Animations
 	eyesModel = $"modelo/Character/Armature/Skeleton3D/Eyes"
 	mouthModel = $"modelo/Character/Armature/Skeleton3D/Mouth"
@@ -119,12 +119,6 @@ func _ready():
 	
 	# State Machine
 	stateMachine.setup(self)
-
-func _process(_delta):
-	if Input.is_action_just_pressed("DebugInput"):
-		var eyesToUse = cara4 if toggleEyes else cara1
-		eyesModel.get_mesh().get("surface_0/material").set_texture(StandardMaterial3D.TEXTURE_ALBEDO, eyesToUse)
-		toggleEyes = not toggleEyes
 
 func _physics_process(delta):
 	processJumpBuffering(delta)

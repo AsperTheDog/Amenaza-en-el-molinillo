@@ -14,6 +14,7 @@ func onEnter(player: MainCharacter, delta: float):
 	var isDoubleJump = not chara.hasDoubleJumped and chara.canDoubleJump
 	chara.executeAnimation("JumpDouble" if not isDoubleJump else "JumpAntic")
 	chara.queueAnimation("Jump", false)
+	chara.jumpParticles.emitting = true
 	
 func onExit(_delta: float, transitionTo: String):
 	if transitionTo == "AirState":

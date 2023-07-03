@@ -11,6 +11,7 @@ func onEnter(player: MainCharacter, delta: float):
 	else:
 		chara.executeAnimation("Jump")
 	chara.setVertForce((chara.jumpSpeed * Vector3.UP).y)
+	chara.jumpParticles.emitting = true
 	
 func onExit(_delta: float, transitionTo: String):
 	if transitionTo == "AirState":
