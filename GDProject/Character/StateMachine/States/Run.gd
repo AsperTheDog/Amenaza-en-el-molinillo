@@ -18,19 +18,13 @@ func onExit(_delta: float, transitionTo: String):
 
 func check():
 	if chara.isBunnyHopTimerActive or Input.is_action_just_pressed("Jump"):
-		if chara.isJumpInstant:
-			return "JumpInstantState"
-		else:
-			return "JumpState"
+		return "JumpInstantState" if chara.isJumpInstant else "JumpState"
 	if abs(chara.velocity.x) < 1:
 		return "IdleState"
 	if Input.get_axis("Left", "Right") != 0 and abs(Input.get_axis("Left", "Right")) < chara.walkingThreshold:
 		return "WalkState"
 	if not chara.is_on_floor():
-		if chara.velocity.y <= 0:
-			return "FallState"
-		else:
-			return "AirState"
+		return "FallState" if chara.velocity.y <= 0 else "AirState"
 	return null
 
 func apply(delta):

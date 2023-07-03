@@ -63,6 +63,8 @@ var hasDoubleJumped: bool = false
 var vaultingDir: int
 var vaultingPos: Vector3
 
+var lastOnGround: float = 0
+
 var bunnyHopTimer: float = 0
 var isBunnyHopTimerActive: bool = false
 var execJumpAction: bool = false
@@ -114,10 +116,8 @@ func _ready():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("DebugInput"):
-		if toggleEyes:
-			eyesModel.get_mesh().get("surface_0/material").set_texture(StandardMaterial3D.TEXTURE_ALBEDO, cara4)
-		else:
-			eyesModel.get_mesh().get("surface_0/material").set_texture(StandardMaterial3D.TEXTURE_ALBEDO, cara1)
+		var eyesToUse = cara4 if toggleEyes else cara1
+		eyesModel.get_mesh().get("surface_0/material").set_texture(StandardMaterial3D.TEXTURE_ALBEDO, eyesToUse)
 		toggleEyes = not toggleEyes
 
 func _physics_process(delta):
@@ -197,14 +197,12 @@ func getVaultingDirection():
 	return vaultingDir
 
 func processJumpBuffering(delta):
+	lastOnGround = 0 if is_on_floor() else lastOnGround + delta
 	if isBunnyHopTimerActive:
 		bunnyHopTimer += delta
+		execJumpAction = bunnyHopTimer >= bunnyHopTime
 	else:
 		bunnyHopTimer = 0
-	if bunnyHopTimer >= bunnyHopTime:
-		execJumpAction = true
-	else:
-		execJumpAction = false	
 
 func seekAirAnimation():
 	var seek: float = 0
@@ -244,10 +242,11 @@ func setAnimationBlendTimes():
 func randomlyBlink(delta):
 	if blinking:
 		blinkTimer += delta
-		if blinkTimer >= blinkDuration:
-			eyesModel.get_mesh().get("surface_0/material").set_texture(StandardMaterial3D.TEXTURE_ALBEDO, activeEyes)
-			blinking = false
-			blinkTimer = 0
+		if blinkTimer < blinkDuration:
+			return
+		eyesModel.get_mesh().get("surface_0/material").set_texture(StandardMaterial3D.TEXTURE_ALBEDO, activeEyes)
+		blinking = false
+		blinkTimer = 0
 	elif randf() < blinkChance * delta:
 		eyesModel.get_mesh().get("surface_0/material").set_texture(StandardMaterial3D.TEXTURE_ALBEDO, blink)
 		blinking = true

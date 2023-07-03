@@ -18,10 +18,7 @@ func check():
 	if chara.is_on_floor():
 		return "RunState"
 	if chara.execJumpAction and not chara.hasDoubleJumped:
-		if chara.isJumpInstant:
-			return "JumpInstantState"
-		else:
-			return "JumpState"
+		return "JumpInstantState" if chara.isJumpInstant else "JumpState"
 	if chara.getVaultingDirection() != 0 and chara.vaultingDir == Input.get_axis("Left", "Right"):
 		return "VaultState"
 	return null
