@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://blcpnk11d3lhx"]
+
+[ext_resource type="Script" path="res://Scenes/UI.gd" id="1_knx4a"]
+[ext_resource type="Shader" path="res://Enviroments/Vignette.gdshader" id="1_xqchg"]
+[ext_resource type="Shader" path="res://Enviroments/thatsAllFolks.gdshader" id="3_xnbue"]
+[ext_resource type="Script" path="res://Scenes/DebugUI.gd" id="4_pve5f"]
+
+[sub_resource type="Curve" id="Curve_llpmj"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.167, 0.122), -0.3, -0.3, 0, 0, Vector2(0.217, 0.089), 0.0, 0.0, 0, 0, Vector2(0.303, 0.09), 0.0, 0.0, 0, 0, Vector2(0.355, 0.062), -0.4, -0.4, 0, 0, Vector2(0.630392, 0.714286), 2.51269, 2.51269, 0, 0, Vector2(0.996956, 1), 0.0, 0.0, 0, 0]
+point_count = 7
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0owl3"]
+shader = ExtResource("1_xqchg")
+shader_parameter/color = Color(0.0901961, 0.0862745, 0.0901961, 1)
+shader_parameter/multiplier = 0.3
+shader_parameter/softness = 1.2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mbpdr"]
+shader = ExtResource("3_xnbue")
+shader_parameter/color = null
+shader_parameter/threshold = 0.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_nxymj"]
+font_size = 20
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_knx4a")
+thatsAllSpeed = 0.3
+thatsAllCurve = SubResource("Curve_llpmj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_0owl3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="thatsAllFolksLayer" type="CanvasLayer" parent="."]
+
+[node name="ThatsAllFolks" type="ColorRect" parent="thatsAllFolksLayer"]
+material = SubResource("ShaderMaterial_mbpdr")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -383.0
+offset_bottom = 698.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Debug" type="Label" parent="."]
+offset_right = 242.0
+offset_bottom = 403.0
+label_settings = SubResource("LabelSettings_nxymj")
+script = ExtResource("4_pve5f")

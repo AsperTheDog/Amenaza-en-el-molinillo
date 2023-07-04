@@ -10,7 +10,7 @@ size = Vector3(0.773681, 0.12285, 0.765464)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 collision_layer = 5
-gravity_scale = 20.0
+gravity_scale = 18.0
 script = ExtResource("1_ic7uw")
 
 [node name="item-trashcover_v1" parent="RigidBody3D" instance=ExtResource("1_ggavs")]

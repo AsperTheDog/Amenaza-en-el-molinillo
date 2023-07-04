@@ -159,7 +159,6 @@ shape = SubResource("BoxShape3D_07ldd")
 
 [node name="particles-jump" type="CPUParticles3D" parent="modelo"]
 transform = Transform3D(0.304476, 0, 0, 0, 0.304476, 0, 0, 0, 0.304476, 0, 0, 0)
-visible = false
 emitting = false
 amount = 12
 lifetime = 2.0
