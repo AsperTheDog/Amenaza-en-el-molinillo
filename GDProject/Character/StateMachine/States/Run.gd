@@ -35,7 +35,7 @@ func apply(delta):
 	chara.applyHorizMovement(delta, moveDir)
 	if chara.animationPlayer.assigned_animation not in chara.landingAnimations:
 		var speedDiff = 1 - (chara.runMaxSpeed - abs(chara.velocity.x)) / chara.runMaxSpeed
-		chara.animationPlayer.set_speed_scale(lerp(0.0, chara.animationSpeed, speedDiff))
+		chara.animationPlayer.set_speed_scale(lerp(0.0, chara.animationSpeed * 1.2, speedDiff))
 	if abs(chara.velocity.x) > 6:
 		chara.runParticles.emitting = true
 	else:

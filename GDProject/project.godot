@@ -70,6 +70,7 @@ ui_debug={
 
 [physics]
 
+common/physics_ticks_per_second=100
 3d/physics_engine="GodotPhysics3D"
 3d/default_gravity=0.98
 

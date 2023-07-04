@@ -51,6 +51,7 @@ size_flags_vertical = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="thatsAllFolksLayer" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="ThatsAllFolks" type="ColorRect" parent="thatsAllFolksLayer"]
 material = SubResource("ShaderMaterial_mbpdr")

@@ -125,7 +125,7 @@ func _ready():
 	if isSMActive:
 		$Camera3D.make_current()
 
-func _physics_process(delta):
+func _process(delta):
 	processJumpBuffering(delta)
 	randomlyBlink(delta)
 	if animationPlayer.assigned_animation == "Jump":
