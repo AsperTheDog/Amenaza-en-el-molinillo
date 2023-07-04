@@ -78,6 +78,12 @@
 [ext_resource type="Texture2D" uid="uid://dshv8poq44exq" path="res://Assets/Models/Characters/Eyes-Closed_Mouth-Small.png" id="75_8b8k6"]
 [ext_resource type="Texture2D" uid="uid://cuvhmnynbpcmy" path="res://Assets/Models/Characters/characters-ramon-classic_v1_cara-4.png-cara-4_alpha.png" id="75_agyt1"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ysif6"]
+shader = ExtResource("2_yqwkb")
+shader_parameter/color = Color(0.0901961, 0.0862745, 0.0901961, 1)
+shader_parameter/multiplier = 0.3
+shader_parameter/softness = 1.2
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_21vss"]
 size = Vector3(113.319, 0.0425731, 3.31054)
 
@@ -90,13 +96,25 @@ material = ExtResource("47_tic1o")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dt8o3"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ysif6"]
-shader = ExtResource("2_yqwkb")
-shader_parameter/color = Color(0.0901961, 0.0862745, 0.0901961, 1)
-shader_parameter/multiplier = 0.3
-shader_parameter/softness = 1.2
-
 [node name="Node3D" type="Node3D"]
+
+[node name="Control" parent="." node_paths=PackedStringArray("chara") instance=ExtResource("71_qr0il")]
+script = ExtResource("72_xe4q7")
+chara = NodePath("../rodolfo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
+follow_viewport_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Control/CanvasLayer"]
+material = SubResource("ShaderMaterial_ysif6")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_hmru1")
@@ -113,6 +131,12 @@ shadow_blur = 1.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0608, 0.0770848, -6.91186)
 defaultEyes = ExtResource("3_267m2")
 blinkChance = 0.4
+blinkingEyes = ExtResource("75_8b8k6")
+
+[node name="ramon" parent="." instance=ExtResource("73_f08ue")]
+transform = Transform3D(-0.180863, 0, -0.983509, 0, 1, 0, 0.983509, 0, -0.180863, -12.8918, 0, -8.19709)
+isSMActive = false
+defaultEyes = ExtResource("75_agyt1")
 blinkingEyes = ExtResource("75_8b8k6")
 
 [node name="Hitboxes" type="Node3D" parent="."]
@@ -386,7 +410,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0095, 0, -5.29085)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3679, 0, -5.10729)
 
 [node name="streetlight-en_v3" parent="City" instance=ExtResource("10_f1afg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8571, 0, -5.30956)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.3632, 0, -5.30956)
 
 [node name="streetlight-en_v4" parent="City" instance=ExtResource("10_f1afg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2447, 0, 4.49847)
@@ -395,7 +419,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2447, 0, 4.49847)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.653186, 0, 4.53598)
 
 [node name="streetlight-en_v6" parent="City" instance=ExtResource("10_f1afg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3962, 0, 4.74007)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9023, 0, 4.74007)
 
 [node name="streetlight-en_v7" parent="City" instance=ExtResource("10_f1afg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.8935, 0, 4.49847)
@@ -1480,27 +1504,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5342, -0.00077709, -8.869
 
 [node name="regla" parent="regla" instance=ExtResource("70_m1x68")]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.338079, 0.355399, 0.0310001)
-
-[node name="Control" parent="." node_paths=PackedStringArray("chara") instance=ExtResource("71_qr0il")]
-script = ExtResource("72_xe4q7")
-chara = NodePath("../rodolfo")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
-follow_viewport_enabled = true
-
-[node name="ColorRect" type="ColorRect" parent="Control/CanvasLayer"]
-material = SubResource("ShaderMaterial_ysif6")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-metadata/_edit_use_anchors_ = true
-
-[node name="ramon" parent="." instance=ExtResource("73_f08ue")]
-transform = Transform3D(-0.180863, 0, -0.983509, 0, 1, 0, 0.983509, 0, -0.180863, -12.8918, 0, -8.19709)
-isSMActive = false
-defaultEyes = ExtResource("75_agyt1")
-blinkingEyes = ExtResource("75_8b8k6")
