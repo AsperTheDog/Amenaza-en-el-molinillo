@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://b7co442vfn4a5"]
+[gd_scene load_steps=83 format=3 uid="uid://b7co442vfn4a5"]
 
 [ext_resource type="Environment" uid="uid://bt7lbvekdafji" path="res://Enviroments/Enviroment-sunrise.tres" id="1_hmru1"]
 [ext_resource type="Texture2D" uid="uid://mljfjy810dje" path="res://Assets/Models/Characters/Eyes-Open_Mouth-Open.png" id="3_267m2"]
@@ -75,6 +75,8 @@
 [ext_resource type="Texture2D" uid="uid://dshv8poq44exq" path="res://Assets/Models/Characters/Eyes-Closed_Mouth-Small.png" id="75_8b8k6"]
 [ext_resource type="Texture2D" uid="uid://cuvhmnynbpcmy" path="res://Assets/Models/Characters/characters-ramon-classic_v1_cara-4.png-cara-4_alpha.png" id="75_agyt1"]
 [ext_resource type="PackedScene" uid="uid://blcpnk11d3lhx" path="res://Scenes/UI.tscn" id="75_qlyq7"]
+[ext_resource type="Script" path="res://Scenes/Camera.gd" id="76_h64x5"]
+[ext_resource type="CameraAttributesPractical" uid="uid://73bot76e0rcf" path="res://Enviroments/camera_pj_practical.tres" id="77_2acpb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_21vss"]
 size = Vector3(113.319, 0.0425731, 3.31054)
@@ -1481,3 +1483,13 @@ transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.338
 
 [node name="UI" parent="." node_paths=PackedStringArray("chara") instance=ExtResource("75_qlyq7")]
 chara = NodePath("../rodolfo")
+
+[node name="MainCamera" type="Camera3D" parent="." node_paths=PackedStringArray("debugTarget")]
+transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871558, 0, -0.0871558, 0.996195, -14.061, 3.21, 6.887)
+attributes = ExtResource("77_2acpb")
+fov = 37.8493
+far = 200.0
+script = ExtResource("76_h64x5")
+cameraSpeed = 0.05
+debugTarget = NodePath("../Items/item-levermachine_v1")
+debugSpeed = 0.02

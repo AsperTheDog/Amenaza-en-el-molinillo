@@ -92,9 +92,13 @@ var activeEyes: CompressedTexture2D
 
 var punchCollider: Area3D
 
+func get_class(): 
+	return "MainCharacter"
+	
 func _ready():
 	# Colliders
 	punchCollider = $modelo/Punch
+	punchCollider.body_entered.connect(_on_punch_body_entered)
 	
 	# Animations
 	animationPlayer = $modelo/AnimationPlayer
@@ -123,7 +127,7 @@ func _ready():
 	# State Machine
 	stateMachine.setup(self)
 	if isSMActive:
-		$Camera3D.make_current()
+		$"../MainCamera".setTarget($modelo/CamTarget)
 
 func _process(delta):
 	processJumpBuffering(delta)

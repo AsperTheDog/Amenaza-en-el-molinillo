@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bemfpf3tvuute"]
+[gd_scene load_steps=24 format=3 uid="uid://bemfpf3tvuute"]
 
 [ext_resource type="Script" path="res://Character/chara.gd" id="1_m1ybd"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/JumpRo.gd" id="6_37lii"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://Character/StateMachine/States/Air.gd" id="7_t700i"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Fall.gd" id="8_5ghpb"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Vault.gd" id="8_6eond"]
-[ext_resource type="CameraAttributesPractical" uid="uid://73bot76e0rcf" path="res://Enviroments/camera_pj_practical.tres" id="8_u46h6"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/StrongLanding.gd" id="9_3u7fv"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Idle.gd" id="9_jjdcd"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Walk.gd" id="10_5bbfa"]
@@ -82,12 +81,6 @@ script = ExtResource("11_whyma")
 [node name="PunchGroundState" type="Node" parent="StateMachine"]
 script = ExtResource("12_gaman")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871558, 0, -0.0871558, 0.996195, 0, 3, 13.224)
-attributes = ExtResource("8_u46h6")
-fov = 37.8493
-far = 200.0
-
 [node name="VaultRayLeft" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
 target_position = Vector3(0.8, 0, 0)
@@ -145,6 +138,9 @@ eyeTimes = Array[float]([0.0, 0.7])
 eyeFaces = Array[CompressedTexture2D]([ExtResource("16_2af6e"), ExtResource("15_tol2k")])
 mouthTimes = Array[float]([0.0])
 mouthFaces = Array[CompressedTexture2D]([ExtResource("16_2af6e")])
+
+[node name="CamTarget" type="Node3D" parent="modelo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000329733, 1.34725, 0.644048)
 
 [node name="Punch" type="Area3D" parent="modelo"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.384842, 0, 0.944636)
@@ -205,5 +201,3 @@ linear_accel_curve = SubResource("Curve_3w3vd")
 damping_max = 10.94
 scale_amount_max = 5.0
 scale_amount_curve = SubResource("Curve_376aw")
-
-[connection signal="body_entered" from="modelo/Punch" to="." method="_on_punch_body_entered"]

@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Scenes/DebugUI.gd" id="4_pve5f"]
 
 [sub_resource type="Curve" id="Curve_llpmj"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.167, 0.122), -0.3, -0.3, 0, 0, Vector2(0.217, 0.089), 0.0, 0.0, 0, 0, Vector2(0.303, 0.09), 0.0, 0.0, 0, 0, Vector2(0.355, 0.062), -0.4, -0.4, 0, 0, Vector2(0.630392, 0.714286), 2.51269, 2.51269, 0, 0, Vector2(0.996956, 1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.167, 0.122), 0.0, 0.0, 0, 0, Vector2(0.303, 0.09), 0.0, 0.0, 0, 0, Vector2(0.355, 0.062), -0.4, -0.4, 0, 0, Vector2(0.367, 0.122), -0.3, -0.3, 0, 0, Vector2(0.630392, 0.714286), 2.51269, 2.51269, 0, 0, Vector2(0.996956, 1), 0.0, 0.0, 0, 0]
 point_count = 7
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0owl3"]
@@ -33,7 +33,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_knx4a")
-thatsAllSpeed = 0.3
+thatsAllSpeed = 0.6
 thatsAllCurve = SubResource("Curve_llpmj")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -64,6 +64,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Debug" type="Label" parent="."]
+layout_mode = 0
 offset_right = 242.0
 offset_bottom = 403.0
 label_settings = SubResource("LabelSettings_nxymj")

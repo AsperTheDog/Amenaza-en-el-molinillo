@@ -18,6 +18,11 @@ boot_splash/image="res://Assets/UI/Loading-Wallpaper-1.png"
 boot_splash/fullsize=false
 config/icon="res://icon.svg"
 
+[debug]
+
+gdscript/warnings/native_method_override=1
+gdscript/physics_ticks_per_second=100
+
 [display]
 
 window/size/mode=2
