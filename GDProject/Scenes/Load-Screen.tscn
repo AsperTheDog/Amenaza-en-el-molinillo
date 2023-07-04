@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://d20gei825doie"]
+[gd_scene load_steps=8 format=3 uid="uid://duhw2468gntjr"]
 
 [ext_resource type="Texture2D" uid="uid://bchb2uogk6g8n" path="res://Assets/UI/Menu-Wallpaper-1.png" id="1_5thf7"]
+[ext_resource type="Texture2D" uid="uid://ymcgkf22yolx" path="res://Assets/UI/Logo_UI.tres" id="2_3pr85"]
+[ext_resource type="Texture2D" uid="uid://bi8px2iobc06y" path="res://Assets/UI/Button_Basic_UI.tres" id="3_bce3j"]
+[ext_resource type="Texture2D" uid="uid://cwrwby0q6i2br" path="res://Assets/UI/Button_Pressed_UI.tres" id="4_3rros"]
+[ext_resource type="Texture2D" uid="uid://wmrluepim8c7" path="res://Assets/UI/Button_Hover_UI.tres" id="4_vs87e"]
+[ext_resource type="FontFile" uid="uid://dvlnp3oaymqw1" path="res://Assets/Fonts/Ubuntu/Ubuntu-Medium.ttf" id="6_th06o"]
+
+[sub_resource type="Theme" id="Theme_etrki"]
+default_font = ExtResource("6_th06o")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -10,6 +18,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5thf7")
+centered = false
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -17,22 +29,56 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 64
-theme_override_constants/margin_top = 64
-theme_override_constants/margin_right = 64
-theme_override_constants/margin_bottom = 64
+theme_override_constants/margin_left = 160
+theme_override_constants/margin_top = 160
+theme_override_constants/margin_right = 160
+theme_override_constants/margin_bottom = 160
 
 [node name="LogoContainer" type="BoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/LogoContainer"]
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("2_3pr85")
+centered = false
+
 [node name="MenuContainer" type="BoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
+alignment = 2
+vertical = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("1_5thf7")
-centered = false
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/MenuContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_bce3j")
+texture_pressed = ExtResource("4_3rros")
+texture_hover = ExtResource("4_vs87e")
+texture_focused = ExtResource("4_vs87e")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/MenuContainer/TextureButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 25.0
+offset_right = -20.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_etrki")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 2
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/bold_font_size = 28
+theme_override_font_sizes/italics_font_size = 28
+theme_override_font_sizes/bold_italics_font_size = 28
+theme_override_font_sizes/mono_font_size = 28
+text = "Comenzar partida"
