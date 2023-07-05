@@ -105,7 +105,10 @@ func _ready():
 	animationPlayer.set_default_blend_time(blendTime)
 	animationPlayer.set_speed_scale(animationSpeed)
 	setAnimationBlendTimes()
-	flyingAnimationLength =  1 # animationPlayer.get_animation("Jump").length
+	if animationPlayer.get_animation("Jump") != null:
+		flyingAnimationLength = animationPlayer.get_animation("Jump").length
+	else:
+		flyingAnimationLength = 1
 	flyingAnimationHalftime = flyingAnimationLength / 2
 	
 	# Particles
@@ -130,13 +133,13 @@ func _ready():
 		$"../MainCamera".setTarget($modelo/CamTarget)
 
 func _process(delta):
+	transform.origin.z = zPos
 	processJumpBuffering(delta)
+	if isSMActive:
+		stateMachine.evaluate(delta)
 	randomlyBlink(delta)
 	if animationPlayer.assigned_animation == "Jump":
 		seekAirAnimation()
-	transform.origin.z = zPos
-	if isSMActive:
-		stateMachine.evaluate(delta)
 	manageFaces()
 
 

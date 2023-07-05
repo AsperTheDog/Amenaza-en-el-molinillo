@@ -39,9 +39,6 @@ stateMachine = NodePath("StateMachine")
 jumpSpeed = 11.0
 canDoubleJump = false
 
-[node name="CamTarget" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.34725, 0.787762)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.880988, 0)
 shape = SubResource("BoxShape3D_8drwj")
@@ -95,6 +92,9 @@ collide_with_bodies = false
 
 [node name="modelo" parent="." instance=ExtResource("2_wfxhe")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="CamTarget" type="Node3D" parent="modelo"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.787762, 1.34725, -0.651325)
 
 [node name="FaceAnimations" type="Node" parent="modelo"]
 

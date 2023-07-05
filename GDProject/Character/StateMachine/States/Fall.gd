@@ -8,7 +8,7 @@ func onEnter(player: MainCharacter, delta: float):
 	if chara.animationPlayer.assigned_animation != "FallingJump":
 		if chara.animationPlayer.assigned_animation == "JumpCorner":
 			chara.queueAnimation("Jump")
-		else:
+		elif chara.animationPlayer.assigned_animation != "Jump":
 			chara.executeAnimation("Jump")
 	chara.gravity = chara.defaultGravity * chara.fallGravityMult
 	chara.lastTopFallingSpeed = 0

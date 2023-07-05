@@ -104,13 +104,13 @@ shadow_enabled = true
 shadow_blur = 1.5
 
 [node name="rodolfo" parent="." instance=ExtResource("31_hedx5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0608, 0.0770848, -6.91186)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0608, 0.0770848, -6.82162)
 defaultEyes = ExtResource("3_267m2")
 blinkChance = 0.4
 blinkingEyes = ExtResource("75_8b8k6")
 
 [node name="ramon" parent="." instance=ExtResource("73_f08ue")]
-transform = Transform3D(-0.180863, 0, -0.983509, 0, 1, 0, 0.983509, 0, -0.180863, -12.8918, 0, -8.19709)
+transform = Transform3D(-0.173648, 0, -0.984808, 0, 1, 0, 0.984808, 0, -0.173648, -13.1222, 0, -8.21153)
 isSMActive = false
 defaultEyes = ExtResource("75_agyt1")
 blinkingEyes = ExtResource("75_8b8k6")
@@ -1487,6 +1487,7 @@ chara = NodePath("../rodolfo")
 [node name="MainCamera" type="Camera3D" parent="." node_paths=PackedStringArray("debugTarget")]
 transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871558, 0, -0.0871558, 0.996195, -14.061, 3.21, 6.887)
 attributes = ExtResource("77_2acpb")
+current = true
 fov = 37.8493
 far = 200.0
 script = ExtResource("76_h64x5")
