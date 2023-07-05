@@ -1,9 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://op85een07yr"]
+[gd_scene load_steps=4 format=3 uid="uid://op85een07yr"]
 
 [ext_resource type="Script" path="res://items/item.gd" id="1_ia8mr"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_w0khc"]
-size = Vector3(0.0935897, 0.0935341, 0.108529)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ku1y7"]
 size = Vector3(0.466525, 0.458644, 0.472009)
@@ -15,9 +12,6 @@ radius = 0.103302
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_ia8mr")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_w0khc")
 
 [node name="interact" type="Area3D" parent="."]
 transform = Transform3D(0.486848, 0, -7.45058e-08, 0, 0.486848, 0, 7.45058e-08, 0, 0.486848, 0, 0, 0)

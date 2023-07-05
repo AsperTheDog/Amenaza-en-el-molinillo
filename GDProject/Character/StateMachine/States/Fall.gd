@@ -24,7 +24,6 @@ func onExit(_delta: float, transitionTo: String):
 			chara.executeAnimation("FallingFloor" if abs(chara.velocity.x) < 3 else "FallingFloorRun")
 	elif transitionTo == "JumpInstantState" or transitionTo == "JumpState":
 		chara.isBunnyHopTimerActive = false
-		print(chara.lastOnGround)
 		if chara.lastOnGround >= chara.coyoteTime:
 			chara.hasDoubleJumped = true
 	elif transitionTo == "VaultState":

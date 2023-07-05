@@ -4,26 +4,26 @@
 [ext_resource type="Shader" path="res://Enviroments/Vignette.gdshader" id="1_xqchg"]
 [ext_resource type="Shader" path="res://Enviroments/thatsAllFolks.gdshader" id="3_xnbue"]
 [ext_resource type="Script" path="res://Scenes/DebugUI.gd" id="4_pve5f"]
-[ext_resource type="Texture2D" uid="uid://bsywa1cplpq1k" path="res://Assets/UI/Rodolfo_Info_UI.tres" id="5_dibkr"]
-[ext_resource type="Theme" uid="uid://cbdbhbqebha6h" path="res://Theme.tres" id="5_ro6a2"]
-[ext_resource type="Texture2D" uid="uid://scdq3idcub1p" path="res://Assets/UI/Ramon_Info_UI.tres" id="7_ev1n4"]
-[ext_resource type="Texture2D" uid="uid://64ab21rkiefg" path="res://Assets/UI/Bubble_Notifications_UI.tres" id="8_a4ml0"]
-[ext_resource type="LabelSettings" uid="uid://ciq7hdntgsuu3" path="res://Assets/Fonts/UI_normal_black.tres" id="9_ojyo5"]
-[ext_resource type="Texture2D" uid="uid://c4jt06rnisl1j" path="res://Assets/UI/Icon-Newspaper_UI.tres" id="9_tlf10"]
+[ext_resource type="Texture2D" path="res://Assets/UI/Rodolfo_Info_UI.tres" id="5_dibkr"]
+[ext_resource type="Theme" path="res://Theme.tres" id="5_ro6a2"]
+[ext_resource type="Texture2D" path="res://Assets/UI/Ramon_Info_UI.tres" id="7_ev1n4"]
+[ext_resource type="Texture2D" path="res://Assets/UI/Bubble_Notifications_UI.tres" id="8_a4ml0"]
+[ext_resource type="LabelSettings" path="res://Assets/Fonts/UI_normal_black.tres" id="9_ojyo5"]
+[ext_resource type="Texture2D" path="res://Assets/UI/Icon-Newspaper_UI.tres" id="9_tlf10"]
 [ext_resource type="FontFile" uid="uid://d3umehc1swnb" path="res://Assets/Fonts/Ubuntu/Ubuntu-Bold.ttf" id="9_vbras"]
-[ext_resource type="Texture2D" uid="uid://drcm6ajcgwkux" path="res://Assets/UI/Localization_UI.tres" id="10_yvqfy"]
-[ext_resource type="Texture2D" uid="uid://ceag8dhg7r6bw" path="res://Assets/UI/Bubble_Error_UI.tres" id="11_ca6og"]
-[ext_resource type="Texture2D" uid="uid://ch3dyyc7oel37" path="res://Assets/UI/Icon-Error_UI.tres" id="12_37qjy"]
-[ext_resource type="LabelSettings" uid="uid://c63en1s523r0x" path="res://Assets/Fonts/UI_normal_white.tres" id="12_ddlfk"]
-[ext_resource type="Texture2D" uid="uid://bsjq08p2kdyf2" path="res://Assets/UI/Pause_Bg_UI.tres" id="16_ci8ro"]
-[ext_resource type="LabelSettings" uid="uid://ba323m41pj501" path="res://Assets/Fonts/UI_Big_black.tres" id="16_rbs4y"]
-[ext_resource type="Texture2D" uid="uid://bi8px2iobc06y" path="res://Assets/UI/Button_Basic_UI.tres" id="17_0u6k4"]
+[ext_resource type="Texture2D" path="res://Assets/UI/Localization_UI.tres" id="10_yvqfy"]
+[ext_resource type="Texture2D" path="res://Assets/UI/Bubble_Error_UI.tres" id="11_ca6og"]
+[ext_resource type="Texture2D" path="res://Assets/UI/Icon-Error_UI.tres" id="12_37qjy"]
+[ext_resource type="LabelSettings" path="res://Assets/Fonts/UI_normal_white.tres" id="12_ddlfk"]
+[ext_resource type="Texture2D" path="res://Assets/UI/Pause_Bg_UI.tres" id="16_ci8ro"]
+[ext_resource type="LabelSettings" path="res://Assets/Fonts/UI_Big_black.tres" id="16_rbs4y"]
+[ext_resource type="Texture2D" path="res://Assets/UI/Button_Basic_UI.tres" id="17_0u6k4"]
 [ext_resource type="Texture2D" uid="uid://cwrwby0q6i2br" path="res://Assets/UI/Button_Pressed_UI.tres" id="18_p56ro"]
 [ext_resource type="Texture2D" uid="uid://wmrluepim8c7" path="res://Assets/UI/Button_Hover_UI.tres" id="19_bqr6f"]
-[ext_resource type="Texture2D" uid="uid://y44he6yftj63" path="res://Assets/UI/bubblethink-small_UI.tres" id="21_qwbwa"]
-[ext_resource type="Texture2D" uid="uid://ck6tqf564wxu" path="res://Assets/UI/bubblethink-medium_UI.tres" id="22_34lb0"]
-[ext_resource type="Texture2D" uid="uid://w8pn50881co1" path="res://Assets/UI/bubblethink-Big_UI.tres" id="23_n0bbs"]
-[ext_resource type="LabelSettings" uid="uid://lwrnyu7cbi20" path="res://Assets/Fonts/UI_Big_white.tres" id="24_q1qr3"]
+[ext_resource type="Texture2D" path="res://Assets/UI/bubblethink-small_UI.tres" id="21_qwbwa"]
+[ext_resource type="Texture2D" path="res://Assets/UI/bubblethink-medium_UI.tres" id="22_34lb0"]
+[ext_resource type="Texture2D" path="res://Assets/UI/bubblethink-Big_UI.tres" id="23_n0bbs"]
+[ext_resource type="LabelSettings" path="res://Assets/Fonts/UI_Big_white.tres" id="24_q1qr3"]
 
 [sub_resource type="Curve" id="Curve_llpmj"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.09, 0), 0.0, 0.0, 0, 0, Vector2(0.192412, 0.136364), 0.0, 0.0, 0, 0, Vector2(0.271003, 0.1), 0.0, 0.0, 0, 0, Vector2(0.403794, 0.1), 0.0, 0.0, 0, 0, Vector2(0.46477, 0.0727272), 0.0, 0.0, 0, 0, Vector2(0.705962, 0.672727), 2.51269, 2.51269, 0, 0, Vector2(0.996956, 1), 0.0, 0.0, 0, 0]
@@ -241,9 +241,11 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Debug" type="Label" parent="."]
+[node name="DebugLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="Debug" type="Label" parent="DebugLayer"]
 visible = false
-layout_mode = 0
 offset_right = 242.0
 offset_bottom = 403.0
 label_settings = SubResource("LabelSettings_nxymj")

@@ -2,9 +2,13 @@ extends CharacterBody3D
 
 class_name MainCharacter
 
+@export var UI: Control
+
+@export_group("State Machine")
 @export var stateMachine: StateMachine = null
 @export var isSMActive: bool = true
 
+@export_category("Movement")
 @export_group("Jump")
 @export_subgroup("Basic")
 @export var fallGravityMult: float = 1.7
@@ -36,17 +40,17 @@ class_name MainCharacter
 @export var deadZoneMovement: float = 0.25
 @export var walkingThreshold: float = 0.5
 
-@export_group("Animation")
+@export_category("Animation")
 @export var turnSpeed: float = 10
 @export var animationSpeed: float = 1
 @export var blendTime: float = 0.1
 @export var slowBlendTime: float = 0.3
 @export var defaultEyes: CompressedTexture2D
-@export_subgroup("Blinking")
+@export_group("Blinking")
 @export var blinkChance: float = 0.4
 @export var blinkDuration: float = 0.15
 @export var blinkingEyes: CompressedTexture2D
-@export_subgroup("Idle Action")
+@export_group("Idle Action")
 @export var minimumIdleTime: float = 2
 @export var idleActionChance: float = 0.2
 

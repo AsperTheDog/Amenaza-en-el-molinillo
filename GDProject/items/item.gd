@@ -68,6 +68,5 @@ func _on_interact_body_entered(body):
 
 
 func _on_floorTouch_body_entered(body):
-	print("AAA")
 	if hasSpawned:
 		touchedFloor = true

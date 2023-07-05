@@ -36,4 +36,4 @@ func apply(delta):
 	chara.applyHorizMovement(delta, moveDir)
 	if chara.animationPlayer.assigned_animation not in chara.landingAnimations:
 		var speedDiff = 1 - ((chara.walkingThreshold * chara.runMaxSpeed) - abs(chara.velocity.x)) / (chara.walkingThreshold * chara.runMaxSpeed)
-		chara.animationPlayer.set_speed_scale(lerp(0.0, chara.animationSpeed * 1.2, speedDiff))
+		chara.animationPlayer.set_speed_scale(lerp(0.0, chara.animationSpeed * 1.5, speedDiff))

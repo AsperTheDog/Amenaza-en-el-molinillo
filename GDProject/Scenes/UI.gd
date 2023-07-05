@@ -28,11 +28,11 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_debug"):
 		showDebug = not showDebug
 		if showDebug:
-			$Debug.show()
+			$DebugLayer/Debug.show()
 		else:
-			$Debug.hide()
+			$DebugLayer/Debug.hide()
 	if showDebug:
-		$Debug.processDebug(chara)
+		$DebugLayer/Debug.processDebug(chara)
 
 func doThatsAllFolks(isFadeOut: bool):
 	thatsAllStep = int(not isFadeOut)

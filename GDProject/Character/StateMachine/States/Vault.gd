@@ -6,9 +6,9 @@ var timer: float = 0
 var initialPos: Vector3
 var snapFinished: bool = false
 
-var snapTime = 0.05
-var timeUntilLift = 0.1
-var liftDuration = 0.2
+var snapTime = 0.1
+var timeUntilLift = 0.14
+var liftDuration = 0.25
 var vaultingPosHoriz = 0.0
 
 func onEnter(player: MainCharacter, delta: float):
