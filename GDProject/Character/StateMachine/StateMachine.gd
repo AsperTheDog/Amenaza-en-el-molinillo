@@ -23,5 +23,4 @@ func evaluate(delta):
 		activeState = states[ret]
 		activeStateName = ret
 		activeState.onEnter(chara, delta)
-	else:
-		activeState.apply(delta)
+	activeState.apply(delta)
