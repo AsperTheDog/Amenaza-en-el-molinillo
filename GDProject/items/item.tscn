@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://op85een07yr"]
+
+[ext_resource type="Script" path="res://items/item.gd" id="1_ia8mr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w0khc"]
+size = Vector3(0.0935897, 0.0935341, 0.108529)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ku1y7"]
+size = Vector3(0.466525, 0.458644, 0.472009)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_73i63"]
+radius = 0.103302
+
+[node name="item" type="CharacterBody3D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_ia8mr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_w0khc")
+
+[node name="interact" type="Area3D" parent="."]
+transform = Transform3D(0.486848, 0, -7.45058e-08, 0, 0.486848, 0, 7.45058e-08, 0, 0.486848, 0, 0, 0)
+collision_layer = 16
+collision_mask = 16
+input_ray_pickable = false
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="interact"]
+transform = Transform3D(1, 0, 5.96046e-08, -4.23516e-22, 1, -3.55271e-15, -5.96046e-08, 3.55271e-15, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_ku1y7")
+
+[node name="floorTouch" type="Area3D" parent="."]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floorTouch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("SphereShape3D_73i63")

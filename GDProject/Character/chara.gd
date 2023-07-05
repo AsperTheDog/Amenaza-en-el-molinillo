@@ -279,5 +279,5 @@ func manageFaces():
 		activeEyes = active
 
 func _on_punch_body_entered(body: Node3D):
-	if body.has_method("getPunched"):
-		body.getPunched()
+	if body.get_parent().has_method("getPunched"):
+		body.get_parent().getPunched()

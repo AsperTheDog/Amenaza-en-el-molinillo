@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://b7co442vfn4a5"]
+[gd_scene load_steps=81 format=3 uid="uid://b7co442vfn4a5"]
 
 [ext_resource type="Environment" uid="uid://bt7lbvekdafji" path="res://Enviroments/Enviroment-sunrise.tres" id="1_hmru1"]
 [ext_resource type="Texture2D" uid="uid://mljfjy810dje" path="res://Assets/Models/Characters/Eyes-Open_Mouth-Open.png" id="3_267m2"]
@@ -63,12 +63,11 @@
 [ext_resource type="PackedScene" uid="uid://dwnbraco5hwpg" path="res://Assets/Models/Scene/Vehicles/minitruck.tscn" id="59_2g6cu"]
 [ext_resource type="PackedScene" uid="uid://eb83bpu6mh0" path="res://Assets/Models/Items/item_cheeseburguer.tscn" id="62_yglnw"]
 [ext_resource type="PackedScene" uid="uid://dswswdvs4634f" path="res://Assets/Models/Items/item_jerrycan_v_1.tscn" id="63_krl2w"]
-[ext_resource type="Script" path="res://items/itemAnimation.gd" id="63_y40mm"]
 [ext_resource type="PackedScene" uid="uid://c0msik1e6fxis" path="res://Assets/Models/Items/item_levermachine_v_1.tscn" id="64_6x3om"]
 [ext_resource type="PackedScene" uid="uid://32l0xsrx1w5f" path="res://Assets/Models/Items/item_leversteam_v_1.tscn" id="65_g5qj1"]
 [ext_resource type="PackedScene" uid="uid://dairhsonk6yl3" path="res://Assets/Models/Scene/City/trash_cover_physics.tscn" id="66_ch1vv"]
 [ext_resource type="PackedScene" uid="uid://cejembuwr5p2v" path="res://Assets/Models/Items/item_lever_v_1.tscn" id="66_f25ow"]
-[ext_resource type="PackedScene" uid="uid://dc0ec4yogkt2i" path="res://Assets/Models/Items/item_newspaper_v_1.tscn" id="67_q17gg"]
+[ext_resource type="PackedScene" uid="uid://op85een07yr" path="res://items/item.tscn" id="68_jnedx"]
 [ext_resource type="PackedScene" uid="uid://cs23f68u86f8g" path="res://Assets/Models/Items/item_trash_v_1.tscn" id="68_w4ad8"]
 [ext_resource type="PackedScene" uid="uid://bxryp4uhkt6wg" path="res://Assets/Models/Developer/regla.glb" id="70_m1x68"]
 [ext_resource type="PackedScene" uid="uid://bwu4anuhf4lpi" path="res://Character/characters_ramon.tscn" id="73_f08ue"]
@@ -79,7 +78,7 @@
 [ext_resource type="CameraAttributesPractical" uid="uid://73bot76e0rcf" path="res://Enviroments/camera_pj_practical.tres" id="77_2acpb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_21vss"]
-size = Vector3(113.319, 0.0425731, 3.31054)
+size = Vector3(113.319, 0.0425731, 7.14734)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_l65kj"]
 
@@ -87,8 +86,6 @@ size = Vector3(113.319, 0.0425731, 3.31054)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ytw2h"]
 material = ExtResource("47_tic1o")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_dt8o3"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -107,7 +104,9 @@ shadow_enabled = true
 shadow_blur = 1.5
 
 [node name="rodolfo" parent="." instance=ExtResource("31_hedx5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0608, 0.0770848, -6.91186)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0608, 0.0770848, -6.82162)
+collision_layer = 18
+collision_mask = 18
 defaultEyes = ExtResource("3_267m2")
 blinkChance = 0.4
 blinkingEyes = ExtResource("75_8b8k6")
@@ -121,6 +120,7 @@ blinkingEyes = ExtResource("75_8b8k6")
 [node name="MainCamera" type="Camera3D" parent="." node_paths=PackedStringArray("debugTarget")]
 transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871558, 0, -0.0871558, 0.996195, -14.061, 3.21, 6.887)
 attributes = ExtResource("77_2acpb")
+current = true
 fov = 37.8493
 far = 200.0
 script = ExtResource("76_h64x5")
@@ -131,8 +131,8 @@ debugSpeed = 0.02
 [node name="Hitboxes" type="Node3D" parent="."]
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="Hitboxes"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 35
+collision_mask = 35
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/StaticBody3D3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0220631, -7.07546)
@@ -1449,36 +1449,23 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.0646
 [node name="Items" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.77421, 1.30949, -6.81351)
 
-[node name="Item-Burguer" type="Node3D" parent="Items"]
-
-[node name="item-cheeseburguer" parent="Items/Item-Burguer" instance=ExtResource("62_yglnw")]
-transform = Transform3D(0.704696, 0, 0.709509, 0, 1, 0, -0.709509, 0, 0.704696, 0, 0, 0)
-
-[node name="Area3D" type="Area3D" parent="Items/Item-Burguer/item-cheeseburguer"]
-transform = Transform3D(0.486848, 0, -7.45058e-08, 0, 0.486848, 0, 7.45058e-08, 0, 0.486848, 0, 0, 0)
-input_ray_pickable = false
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Items/Item-Burguer/item-cheeseburguer/Area3D"]
-transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 0, 0, 0)
-shape = SubResource("BoxShape3D_dt8o3")
-
-[node name="ItemAnimator" type="Node" parent="Items/Item-Burguer/item-cheeseburguer"]
-script = ExtResource("63_y40mm")
-
 [node name="item-jerrycan_v1" parent="Items" instance=ExtResource("63_krl2w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.25079, -1.30949, -0.0865998)
-
-[node name="item-newspaper_v1" parent="Items" instance=ExtResource("67_q17gg")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 39.1203, 7.36562, 0.00433779)
-
-[node name="ItemAnimator" type="Node" parent="Items/item-newspaper_v1"]
-script = ExtResource("63_y40mm")
 
 [node name="item-trash_v1" parent="Items" instance=ExtResource("68_w4ad8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5974, -1.30949, -0.0750732)
 
 [node name="item-trash_cover" parent="Items/item-trash_v1" instance=ExtResource("66_ch1vv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.894725, 0)
+
+[node name="item-cheeseburger" parent="Items/item-trash_v1/item-trash_cover" instance=ExtResource("68_jnedx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00154686, 0.163027, 0)
+visible = false
+impulse = 2.0
+sizeSpeed = 0.2
+gravity = 9.8
+
+[node name="modelo" parent="Items/item-trash_v1/item-trash_cover/item-cheeseburger" instance=ExtResource("62_yglnw")]
 
 [node name="item-levermachine_v1" parent="Items" instance=ExtResource("64_6x3om")]
 transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 65.9068, -0.0966597, -0.0859771)
