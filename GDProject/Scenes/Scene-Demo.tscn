@@ -92,6 +92,9 @@ material = ExtResource("47_tic1o")
 
 [node name="Node3D" type="Node3D"]
 
+[node name="UI" parent="." node_paths=PackedStringArray("chara") instance=ExtResource("75_qlyq7")]
+chara = NodePath("../rodolfo")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_hmru1")
 
@@ -114,6 +117,16 @@ transform = Transform3D(-0.180863, 0, -0.983509, 0, 1, 0, 0.983509, 0, -0.180863
 isSMActive = false
 defaultEyes = ExtResource("75_agyt1")
 blinkingEyes = ExtResource("75_8b8k6")
+
+[node name="MainCamera" type="Camera3D" parent="." node_paths=PackedStringArray("debugTarget")]
+transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871558, 0, -0.0871558, 0.996195, -14.061, 3.21, 6.887)
+attributes = ExtResource("77_2acpb")
+fov = 37.8493
+far = 200.0
+script = ExtResource("76_h64x5")
+cameraSpeed = 0.05
+debugTarget = NodePath("../Items/item-levermachine_v1")
+debugSpeed = 0.02
 
 [node name="Hitboxes" type="Node3D" parent="."]
 
@@ -1477,19 +1490,7 @@ transform = Transform3D(1, 0, 0, 0, 0.611527, 0.791224, 0, -0.791224, 0.611527, 
 
 [node name="regla" parent="." instance=ExtResource("70_m1x68")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5342, -0.00077709, -8.86975)
+visible = false
 
 [node name="regla" parent="regla" instance=ExtResource("70_m1x68")]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.338079, 0.355399, 0.0310001)
-
-[node name="UI" parent="." node_paths=PackedStringArray("chara") instance=ExtResource("75_qlyq7")]
-chara = NodePath("../rodolfo")
-
-[node name="MainCamera" type="Camera3D" parent="." node_paths=PackedStringArray("debugTarget")]
-transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871558, 0, -0.0871558, 0.996195, -14.061, 3.21, 6.887)
-attributes = ExtResource("77_2acpb")
-fov = 37.8493
-far = 200.0
-script = ExtResource("76_h64x5")
-cameraSpeed = 0.05
-debugTarget = NodePath("../Items/item-levermachine_v1")
-debugSpeed = 0.02

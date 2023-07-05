@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://ba323m41pj501"]
+
+[ext_resource type="FontFile" uid="uid://d3umehc1swnb" path="res://Assets/Fonts/Ubuntu/Ubuntu-Bold.ttf" id="1_cr4hr"]
+
+[resource]
+font = ExtResource("1_cr4hr")
+font_size = 60
+outline_size = 24
+outline_color = Color(0.0901961, 0.027451, 0.105882, 1)
