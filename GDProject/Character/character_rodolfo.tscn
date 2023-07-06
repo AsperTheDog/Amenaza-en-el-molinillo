@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://cybqp2djw2xu7" path="res://Character/Character.tscn" id="1_cndco"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Air.gd" id="2_6fgtj"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Fall.gd" id="3_ipdy3"]
-[ext_resource type="Script" path="res://Character/StateMachine/States/Idle.gd" id="4_fuhcp"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/JumpRo.gd" id="5_8xk1n"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Run.gd" id="6_bc4yh"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/IdleRo.gd" id="6_ykdfd"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Vault.gd" id="7_cxlya"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/StrongLanding.gd" id="8_jetsj"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Walk.gd" id="9_bik4g"]
@@ -32,7 +32,7 @@ script = ExtResource("2_6fgtj")
 script = ExtResource("3_ipdy3")
 
 [node name="IdleState" type="Node" parent="StateMachine" index="2"]
-script = ExtResource("4_fuhcp")
+script = ExtResource("6_ykdfd")
 
 [node name="JumpState" type="Node" parent="StateMachine" index="3"]
 script = ExtResource("5_8xk1n")

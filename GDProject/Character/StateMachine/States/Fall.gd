@@ -30,7 +30,10 @@ func onExit(_delta: float, transitionTo: String):
 			chara.hasDoubleJumped = true
 	elif transitionTo == "VaultState":
 		chara.isBunnyHopTimerActive = false
-
+	elif transitionTo == "StrongLandState":
+		chara.fallParticles.restart()
+		chara.fallParticles.emitting = true
+		
 func check():
 	if chara.is_on_floor():
 		var strongFallSpeed = chara.strongFallThreshold * chara.maxFallSpeed * Vector3.DOWN.y

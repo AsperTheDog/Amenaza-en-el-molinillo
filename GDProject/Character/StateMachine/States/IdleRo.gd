@@ -1,6 +1,6 @@
 extends State
 
-class_name IdleState
+class_name IdleStateRo
 
 var timer: float = 0
 var isActionBeingPerformed: bool = false

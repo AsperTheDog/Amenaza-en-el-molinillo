@@ -5,8 +5,8 @@
 [ext_resource type="Script" path="res://Character/StateMachine/States/Air.gd" id="2_emhny"]
 [ext_resource type="Texture2D" uid="uid://dshv8poq44exq" path="res://Assets/Models/Characters/Eyes-Closed_Mouth-Small.png" id="3_d0qon"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Fall.gd" id="3_qx6ou"]
-[ext_resource type="Script" path="res://Character/StateMachine/States/Idle.gd" id="4_2yrqe"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/JumpRo.gd" id="5_entf4"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/IdleRa.gd" id="6_45phm"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Run.gd" id="6_vf8qy"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Vault.gd" id="7_4y65x"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/StrongLanding.gd" id="8_bj1uw"]
@@ -21,6 +21,7 @@ collision_layer = 4
 collision_mask = 36
 jumpSpeed = 11.0
 canDoubleJump = false
+animationSpeed = 7.0
 defaultEyes = ExtResource("2_8r42e")
 blinkingEyes = ExtResource("3_d0qon")
 
@@ -31,7 +32,7 @@ script = ExtResource("2_emhny")
 script = ExtResource("3_qx6ou")
 
 [node name="IdleState" type="Node" parent="StateMachine" index="2"]
-script = ExtResource("4_2yrqe")
+script = ExtResource("6_45phm")
 
 [node name="JumpState" type="Node" parent="StateMachine" index="3"]
 script = ExtResource("5_entf4")
