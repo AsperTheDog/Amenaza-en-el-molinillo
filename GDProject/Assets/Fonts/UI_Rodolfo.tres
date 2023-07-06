@@ -1,0 +1,14 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cnxel0e5ng0yc"]
+
+[ext_resource type="FontFile" uid="uid://d3umehc1swnb" path="res://Assets/Fonts/Ubuntu/Ubuntu-Bold.ttf" id="1_e6roh"]
+
+[resource]
+line_spacing = 1.0
+font = ExtResource("1_e6roh")
+font_size = 36
+font_color = Color(0.956863, 0.345098, 0.933333, 1)
+outline_size = 14
+outline_color = Color(0.0901961, 0.054902, 0.121569, 1)
+shadow_size = 3
+shadow_color = Color(0.0901961, 0.0901961, 0.0901961, 0.0941176)
+shadow_offset = Vector2(2, 2)

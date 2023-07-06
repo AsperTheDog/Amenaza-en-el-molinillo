@@ -1,14 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://duhw2468gntjr"]
+[gd_scene load_steps=5 format=3 uid="uid://duhw2468gntjr"]
 
-[ext_resource type="Texture2D" uid="uid://bchb2uogk6g8n" path="res://Assets/UI/Menu-Wallpaper-1.png" id="1_5thf7"]
+[ext_resource type="Texture2D" uid="uid://7rg115riguci" path="res://Assets/UI/Loading-Wallpaper-1.png" id="1_elwgo"]
 [ext_resource type="Texture2D" uid="uid://ymcgkf22yolx" path="res://Assets/UI/Logo_UI.tres" id="2_3pr85"]
-[ext_resource type="Texture2D" uid="uid://bi8px2iobc06y" path="res://Assets/UI/Button_Basic_UI.tres" id="3_bce3j"]
-[ext_resource type="Texture2D" uid="uid://cwrwby0q6i2br" path="res://Assets/UI/Button_Pressed_UI.tres" id="4_3rros"]
-[ext_resource type="Texture2D" uid="uid://wmrluepim8c7" path="res://Assets/UI/Button_Hover_UI.tres" id="4_vs87e"]
-[ext_resource type="FontFile" uid="uid://d3umehc1swnb" path="res://Assets/Fonts/Ubuntu/Ubuntu-Bold.ttf" id="6_arm7l"]
+[ext_resource type="LabelSettings" uid="uid://c63en1s523r0x" path="res://Assets/Fonts/UI_normal_white.tres" id="3_16b8k"]
 
-[sub_resource type="Theme" id="Theme_etrki"]
-default_font = ExtResource("6_arm7l")
+[sub_resource type="Theme" id="Theme_xhg4j"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -19,7 +15,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Background" type="Sprite2D" parent="."]
-texture = ExtResource("1_5thf7")
+texture = ExtResource("1_elwgo")
 centered = false
 
 [node name="Container" type="MarginContainer" parent="."]
@@ -44,123 +40,23 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_3pr85")
 centered = false
 
-[node name="MenuContainer" type="MarginContainer" parent="Container"]
+[node name="InfoContainer" type="BoxContainer" parent="Container"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
-theme_override_constants/margin_left = 16
 
-[node name="BoxContainer" type="BoxContainer" parent="Container/MenuContainer"]
+[node name="Label" type="Label" parent="Container/InfoContainer"]
 layout_mode = 2
+
+[node name="LoadingContainer" type="BoxContainer" parent="Container"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
 vertical = true
 
-[node name="TextureButton" type="TextureButton" parent="Container/MenuContainer/BoxContainer"]
+[node name="Label" type="Label" parent="Container/LoadingContainer"]
 layout_mode = 2
-texture_normal = ExtResource("3_bce3j")
-texture_pressed = ExtResource("4_3rros")
-texture_hover = ExtResource("4_vs87e")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Container/MenuContainer/BoxContainer/TextureButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 55.0
-offset_top = 25.0
-offset_right = 19.0
-offset_bottom = -24.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_etrki")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 2
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/shadow_outline_size = 2
-theme_override_constants/outline_size = 5
-theme_override_font_sizes/normal_font_size = 32
-theme_override_font_sizes/bold_font_size = 32
-theme_override_font_sizes/italics_font_size = 32
-theme_override_font_sizes/bold_italics_font_size = 32
-theme_override_font_sizes/mono_font_size = 32
-text = "Comenzar partida"
-
-[node name="TextureButton2" type="TextureButton" parent="Container/MenuContainer/BoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("3_bce3j")
-texture_pressed = ExtResource("4_3rros")
-texture_hover = ExtResource("4_vs87e")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Container/MenuContainer/BoxContainer/TextureButton2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 111.0
-offset_top = 25.0
-offset_right = 75.0
-offset_bottom = -24.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_etrki")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 2
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/shadow_outline_size = 2
-theme_override_constants/outline_size = 5
-theme_override_font_sizes/normal_font_size = 32
-theme_override_font_sizes/bold_font_size = 32
-theme_override_font_sizes/italics_font_size = 32
-theme_override_font_sizes/bold_italics_font_size = 32
-theme_override_font_sizes/mono_font_size = 32
-text = "Opciones
+theme = SubResource("Theme_xhg4j")
+text = "Cargando...
 "
-
-[node name="TextureButton3" type="TextureButton" parent="Container/MenuContainer/BoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("4_3rros")
-texture_pressed = ExtResource("4_3rros")
-texture_hover = ExtResource("4_vs87e")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Container/MenuContainer/BoxContainer/TextureButton3"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 80.0
-offset_top = 25.0
-offset_right = 44.0
-offset_bottom = -24.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_etrki")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 2
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/shadow_outline_size = 2
-theme_override_constants/outline_size = 5
-theme_override_font_sizes/normal_font_size = 32
-theme_override_font_sizes/bold_font_size = 32
-theme_override_font_sizes/italics_font_size = 32
-theme_override_font_sizes/bold_italics_font_size = 32
-theme_override_font_sizes/mono_font_size = 32
-text = "Salir del juego"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-layout_mode = 2
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1760.0
-offset_top = -96.0
-offset_right = -71.0
-offset_bottom = -71.0
-size_flags_vertical = 8
-bbcode_enabled = true
-text = "[right]Espacio dedicado a texto legal por el propio juego o los derechos de los personajes 2023.[/right]"
-fit_content = true
-scroll_active = false
-text_direction = 1
+label_settings = ExtResource("3_16b8k")
