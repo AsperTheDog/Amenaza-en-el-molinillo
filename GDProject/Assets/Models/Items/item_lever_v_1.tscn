@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cejembuwr5p2v"]
 
 [ext_resource type="PackedScene" uid="uid://cx6e1llxidud3" path="res://Assets/Models/Items/item-lever_v1.glb" id="1_7onax"]
-[ext_resource type="Material" uid="uid://cunl1snm1avpe" path="res://Materials/Items/items_v1.tres" id="2_80tg7"]
+[ext_resource type="Material" uid="uid://b3b81ldc3jd6k" path="res://Materials/Items/items_v1.tres" id="2_80tg7"]
 
 [node name="item-lever_v1" instance=ExtResource("1_7onax")]
 

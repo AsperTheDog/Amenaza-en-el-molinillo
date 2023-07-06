@@ -13,7 +13,7 @@ script = ExtResource("1_ic7uw")
 collision_layer = 9
 gravity_scale = 18.0
 
-[node name="item-trashcover_v1" parent="RigidBody3D" instance=ExtResource("1_ggavs")]
+[node name="modelo" parent="RigidBody3D" instance=ExtResource("1_ggavs")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0611626, 0)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dc0ec4yogkt2i"]
 
 [ext_resource type="PackedScene" uid="uid://dv51wn3d8mfav" path="res://Assets/Models/Items/item-newspaper_v1.glb" id="1_xlh2e"]
-[ext_resource type="Material" uid="uid://cunl1snm1avpe" path="res://Materials/Items/items_v1.tres" id="2_o137w"]
+[ext_resource type="Material" uid="uid://b3b81ldc3jd6k" path="res://Materials/Items/items_v1.tres" id="2_kpoqp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t6id8"]
 size = Vector3(0.678711, 0.185601, 0.60545)
@@ -9,7 +9,7 @@ size = Vector3(0.678711, 0.185601, 0.60545)
 [node name="item-newspaper_v1" instance=ExtResource("1_xlh2e")]
 
 [node name="Newsletter" parent="." index="0"]
-surface_material_override/0 = ExtResource("2_o137w")
+surface_material_override/0 = ExtResource("2_kpoqp")
 
 [node name="Area3D" type="Area3D" parent="Newsletter" index="0"]
 collision_layer = 6

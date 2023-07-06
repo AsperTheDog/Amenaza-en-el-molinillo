@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bihalfhp3ws0e"]
 
 [ext_resource type="PackedScene" uid="uid://bydlwo82f6o27" path="res://Assets/Models/Items/item-trashcover_v1.glb" id="1_373hv"]
-[ext_resource type="Material" uid="uid://cunl1snm1avpe" path="res://Materials/Items/items_v1.tres" id="2_n1y3k"]
+[ext_resource type="Material" uid="uid://b3b81ldc3jd6k" path="res://Materials/Items/items_v1.tres" id="2_n1y3k"]
 
 [node name="item-trashcover_v1" instance=ExtResource("1_373hv")]
 

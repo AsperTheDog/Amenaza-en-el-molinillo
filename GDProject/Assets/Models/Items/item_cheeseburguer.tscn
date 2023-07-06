@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://eb83bpu6mh0"]
 
-[ext_resource type="Material" uid="uid://cunl1snm1avpe" path="res://Materials/Items/items_v1.tres" id="2_33jio"]
+[ext_resource type="Material" uid="uid://b3b81ldc3jd6k" path="res://Materials/Items/items_v1.tres" id="2_33jio"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gejhi"]
 
