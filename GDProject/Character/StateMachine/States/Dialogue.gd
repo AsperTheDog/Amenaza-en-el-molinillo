@@ -1,5 +1,7 @@
 extends State
 
+class_name DialogueState
+
 var dialogue = null
 
 func onEnter(player: MainCharacter, delta: float):
