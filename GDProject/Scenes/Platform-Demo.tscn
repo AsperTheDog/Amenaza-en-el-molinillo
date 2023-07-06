@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bxncqxccuxqmr"]
+[gd_scene load_steps=25 format=3 uid="uid://bxncqxccuxqmr"]
 
 [ext_resource type="PackedScene" uid="uid://bxryp4uhkt6wg" path="res://Assets/Models/Developer/regla.glb" id="2_ewfu7"]
 [ext_resource type="PackedScene" uid="uid://uqvtlmg0b5nn" path="res://Assets/Models/Developer/Test/floor_road_v_1.tscn" id="2_xnkht"]
@@ -20,7 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://bluprmk3vaprr" path="res://Assets/Models/Developer/Test/giantcontainer_v_1.tscn" id="18_l7rrd"]
 [ext_resource type="PackedScene" uid="uid://bqb43g0fj3rc2" path="res://Assets/Models/Developer/Test/cableroll_v_1.tscn" id="19_hmuoy"]
 [ext_resource type="PackedScene" uid="uid://ljjg0kheyihy" path="res://Assets/Models/Developer/Test/wall_skyrting_long_height.tscn" id="20_8gswm"]
-[ext_resource type="PackedScene" uid="uid://bemfpf3tvuute" path="res://Character/characters_rodolfo.tscn" id="21_10eap"]
 
 [sub_resource type="Environment" id="Environment_6hk84"]
 background_energy_multiplier = 0.5
@@ -155,6 +154,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.4332, 0, 0)
 
 [node name="regla4" parent="regla" instance=ExtResource("2_ewfu7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.0856, 0, 0)
-
-[node name="Rodolfo" parent="." instance=ExtResource("21_10eap")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6829, 0.251207, -6.88235)

@@ -2,11 +2,10 @@ extends CharacterBody3D
 
 class_name MainCharacter
 
-@export var UI: Control
+signal startedThinking
+signal stoppedThinking
 
-@export_group("State Machine")
-@export var stateMachine: StateMachine = null
-@export var isSMActive: bool = true
+var game: Node3D
 
 @export_category("Movement")
 @export_group("Jump")
@@ -54,6 +53,8 @@ class_name MainCharacter
 @export var minimumIdleTime: float = 2
 @export var idleActionChance: float = 0.2
 
+var trackInput: bool = false
+
 var animationPlayer: AnimationPlayer
 var runParticles: CPUParticles3D
 var jumpParticles: CPUParticles3D
@@ -95,17 +96,19 @@ var currentAnimation: String
 var activeEyes: CompressedTexture2D
 
 var punchCollider: Area3D
-
-func get_class(): 
-	return "MainCharacter"
 	
+
+# --- SYSTEM ---
+
 func _ready():
+	game = get_parent()
+	
 	# Colliders
-	punchCollider = $modelo/Punch
+	punchCollider = $rotating/Punch
 	punchCollider.body_entered.connect(_on_punch_body_entered)
 	
 	# Animations
-	animationPlayer = $modelo/AnimationPlayer
+	animationPlayer = $rotating/modelo/AnimationPlayer
 	animationPlayer.set_default_blend_time(blendTime)
 	animationPlayer.set_speed_scale(animationSpeed)
 	setAnimationBlendTimes()
@@ -116,13 +119,13 @@ func _ready():
 	flyingAnimationHalftime = flyingAnimationLength / 2
 	
 	# Particles
-	runParticles = $"modelo/particles-run"
-	jumpParticles = $"modelo/particles-jump"
+	runParticles = $"rotating/particles-run"
+	jumpParticles = $"rotating/particles-jump"
 	
 	# Face Animations
-	eyesModel = $"modelo/Character/Armature/Skeleton3D/Eyes"
-	mouthModel = $"modelo/Character/Armature/Skeleton3D/Mouth"
-	for faceAnim in $modelo/FaceAnimations.get_children():
+	eyesModel = $"rotating/modelo/Character/Armature/Skeleton3D/Eyes"
+	mouthModel = $"rotating/modelo/Character/Armature/Skeleton3D/Mouth"
+	for faceAnim in $FaceAnimations.get_children():
 		animMappings[faceAnim.animation] = faceAnim
 	activeEyes = defaultEyes
 	
@@ -132,36 +135,32 @@ func _ready():
 		hasDoubleJumped = true
 	
 	# State Machine
-	stateMachine.setup(self)
-	if isSMActive:
-		$"../MainCamera".setTarget($modelo/CamTarget)
+	$StateMachine.setup(self)
 
 func _process(delta):
 	transform.origin.z = zPos
 	processJumpBuffering(delta)
-	if isSMActive:
-		stateMachine.evaluate(delta)
+	$StateMachine.evaluate(delta)
 	randomlyBlink(delta)
 	if animationPlayer.assigned_animation == "Jump":
 		seekAirAnimation()
 	manageFaces()
 
 
+
+# --- FORCES ---
+
 func setForce(force: Vector3):
 	velocity = force
-
 
 func applyForce(force: Vector3):
 	velocity += force
 
-
 func setVertForce(force: float):
 	velocity.y = force
 
-
 func setHorizForce(force: float):
 	velocity.x = force
-
 
 func applyHorizMovement(delta: float, direction: float):
 	if abs(direction) < deadZoneMovement:
@@ -175,7 +174,6 @@ func applyHorizMovement(delta: float, direction: float):
 	applyForce(movement * Vector3.RIGHT)
 	turn(sign(direction), delta)
 	move_and_slide()
-
 
 func applyHorizMovementAir(delta: float, direction: float):
 	var targetSpeed = direction * runMaxSpeed
@@ -195,12 +193,23 @@ func applyHorizMovementAir(delta: float, direction: float):
 	move_and_slide()
 
 
-func turn(direction: int, delta: float):
-	if direction == 0:
-		return
-	var targetAngle = deg_to_rad(direction * 89)
-	$modelo.rotation.y = lerp_angle($modelo.rotation.y, targetAngle, delta * turnSpeed)
 
+# --- CONTROLS ---
+
+func isThinking():
+	return trackInput and Input.is_action_pressed("Think")
+
+func justPunched():
+	return trackInput and Input.is_action_just_pressed("Punch")
+
+func justJumped():
+	return trackInput and Input.is_action_just_pressed("Jump")
+
+func isJumping():
+	return trackInput and Input.is_action_pressed("Jump")
+
+func getMovingDir():
+	return Input.get_axis("Left", "Right") if trackInput else 0
 
 func getVaultingDirection():
 	if $VaultRayLeft.is_colliding():
@@ -220,6 +229,28 @@ func processJumpBuffering(delta):
 	else:
 		bunnyHopTimer = 0
 	execJumpAction = bunnyHopTimer >= bunnyHopTime
+
+
+
+# --- TURNING ---
+
+func turnFront(delta: float):
+	if $rotating.rotation.y == 0:
+		return
+	$rotating.rotation.y = lerp_angle($rotating.rotation.y, 0, delta * turnSpeed)
+
+func turn(direction: int, delta: float):
+	if direction == 0:
+		return
+	var targetAngle = deg_to_rad(direction * 89)
+	$rotating.rotation.y = lerp_angle($rotating.rotation.y, targetAngle, delta * turnSpeed)
+
+func instantTurn(direction: int):
+	$rotating.rotation.y = deg_to_rad(direction * 89)
+
+
+
+# --- ANIMATION ---
 
 func seekAirAnimation():
 	var seek: float = 0
@@ -281,6 +312,30 @@ func manageFaces():
 	var active = faceAnim.execute(eyesModel, mouthModel, animTimestamp)
 	if active != null:
 		activeEyes = active
+
+
+
+# --- GETTERS ---
+
+func get_class(): 
+	return "MainCharacter"
+
+func getTarget():
+	return $rotating/CamTarget
+
+
+
+# --- STATE MACHINE ---
+
+func forceState(state: String):
+	$StateMachine.transition(state)
+
+func getActiveState():
+	return $StateMachine.activeStateName
+
+
+
+# --- SIGNALS ---
 
 func _on_punch_body_entered(body: Node3D):
 	if body.get_parent().has_method("getPunched"):

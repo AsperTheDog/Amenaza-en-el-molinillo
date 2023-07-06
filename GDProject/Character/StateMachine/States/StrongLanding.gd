@@ -24,13 +24,13 @@ func check():
 		return "IdleState"
 	if chara.strongFallRecoveryTime <= timer and abs(chara.velocity.x) > 1 :
 		return "RunState"
-	if Input.is_action_just_pressed("Jump"):
+	if chara.justJumped():
 		return "JumpInstantState" if chara.isJumpInstant else "JumpState"
 
 func apply(delta):
 	timer += delta
 	if chara.strongFallRecoveryTime <= timer:
-		var moveDir = Input.get_axis("Left", "Right")
+		var moveDir = chara.getMovingDir()
 		chara.applyHorizMovement(delta, moveDir)
 	else:
 		chara.applyHorizMovement(delta, 0)

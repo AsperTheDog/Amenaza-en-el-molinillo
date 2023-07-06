@@ -12,8 +12,8 @@ size = Vector3(0.640362, 0.868464, 1.24256)
 surface_material_override/0 = ExtResource("2_f16qa")
 
 [node name="StaticBody3D4" type="StaticBody3D" parent="PatasMesa" index="0"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PatasMesa/StaticBody3D4" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00118828, 0.431418, -0.00415814)

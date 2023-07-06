@@ -20,14 +20,16 @@ func onExit(_delta: float, _transitionTo: String):
 
 func check():
 	if abs(chara.velocity.x) > 1:
-		var movingDir = abs(Input.get_axis("Left", "Right"))
-		return "WalkState" if movingDir < chara.walkingThreshold else "RunState"
-	if Input.is_action_just_pressed("Jump"):
+		var movingAmount = abs(chara.getMovingDir())
+		return "WalkState" if movingAmount < chara.walkingThreshold else "RunState"
+	if chara.justJumped():
 		return "JumpInstantState" if chara.isJumpInstant else "JumpState"
 	if not chara.is_on_floor():
 		return "FallState" if chara.velocity.y <= 0 else "AirState"
-	if Input.is_action_just_pressed("Punch"):
+	if chara.justPunched():
 		return "PunchGroundState"
+	if chara.isThinking():
+		return "ThinkState"
 	return null
 
 func apply(delta):
@@ -36,6 +38,6 @@ func apply(delta):
 		chara.executeAnimation("IdleAction")
 	else:
 		timer += delta
-	var moveDir = Input.get_axis("Left", "Right")
+	var moveDir = chara.getMovingDir()
 	chara.applyHorizMovement(delta, moveDir)
 	

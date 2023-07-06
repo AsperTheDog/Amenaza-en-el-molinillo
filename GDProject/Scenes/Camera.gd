@@ -16,6 +16,7 @@ func _ready():
 
 func setTarget(nodeTarget):
 	target = nodeTarget
+	trueTarget = target
 	offset.y = global_position.y - target.global_position.y
 	offset.x = 0
 

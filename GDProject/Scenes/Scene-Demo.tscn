@@ -1,7 +1,7 @@
-[gd_scene load_steps=81 format=3 uid="uid://b7co442vfn4a5"]
+[gd_scene load_steps=79 format=3 uid="uid://b7co442vfn4a5"]
 
+[ext_resource type="Script" path="res://Scenes/MainScene.gd" id="1_gm6yh"]
 [ext_resource type="Environment" uid="uid://bt7lbvekdafji" path="res://Enviroments/Enviroment-sunrise.tres" id="1_hmru1"]
-[ext_resource type="Texture2D" uid="uid://mljfjy810dje" path="res://Assets/Models/Characters/Eyes-Open_Mouth-Open.png" id="3_267m2"]
 [ext_resource type="PackedScene" uid="uid://bplkpyps27gl4" path="res://Assets/Models/Scene/Background/mountain_v1.glb" id="3_oac4i"]
 [ext_resource type="PackedScene" uid="uid://b7822i5iwibmg" path="res://Assets/Models/Scene/Background/mountain_v2.glb" id="4_qmpij"]
 [ext_resource type="PackedScene" uid="uid://b3u8qg2yl7eja" path="res://Assets/Models/Scene/Background/mountain_v3.glb" id="5_k8x41"]
@@ -29,7 +29,6 @@
 [ext_resource type="PackedScene" uid="uid://duugcq0f5kiuv" path="res://Assets/Models/Scene/City/grassbox_v_1.tscn" id="28_cpy64"]
 [ext_resource type="PackedScene" uid="uid://w7ueajgut2ao" path="res://Assets/Models/Scene/City/fountain_v_1.tscn" id="29_vup38"]
 [ext_resource type="PackedScene" uid="uid://bfdka1lvht0ye" path="res://Assets/Models/Scene/City/bush_v_1.tscn" id="30_dgdml"]
-[ext_resource type="PackedScene" uid="uid://bemfpf3tvuute" path="res://Character/characters_rodolfo.tscn" id="31_hedx5"]
 [ext_resource type="PackedScene" uid="uid://c1w15oprcrxpr" path="res://Assets/Models/Scene/Construction/cableroll_v_1.tscn" id="32_8ymob"]
 [ext_resource type="PackedScene" uid="uid://tty5b41486n8" path="res://Assets/Models/Scene/Construction/fabricbuild_v_1.tscn" id="33_nmlp2"]
 [ext_resource type="PackedScene" uid="uid://br4wwlyorpqkl" path="res://Assets/Models/Scene/Construction/giantcontainer_v_1.tscn" id="34_tifhq"]
@@ -70,9 +69,8 @@
 [ext_resource type="PackedScene" uid="uid://op85een07yr" path="res://items/item.tscn" id="68_jnedx"]
 [ext_resource type="PackedScene" uid="uid://cs23f68u86f8g" path="res://Assets/Models/Items/item_trash_v_1.tscn" id="68_w4ad8"]
 [ext_resource type="PackedScene" uid="uid://bxryp4uhkt6wg" path="res://Assets/Models/Developer/regla.glb" id="70_m1x68"]
-[ext_resource type="PackedScene" uid="uid://bwu4anuhf4lpi" path="res://Character/characters_ramon.tscn" id="73_f08ue"]
-[ext_resource type="Texture2D" uid="uid://dshv8poq44exq" path="res://Assets/Models/Characters/Eyes-Closed_Mouth-Small.png" id="75_8b8k6"]
-[ext_resource type="Texture2D" uid="uid://cuvhmnynbpcmy" path="res://Assets/Models/Characters/characters-ramon-classic_v1_cara-4.png-cara-4_alpha.png" id="75_agyt1"]
+[ext_resource type="PackedScene" uid="uid://c2hb6a5nl0aw6" path="res://Character/character_ramon.tscn" id="73_geppn"]
+[ext_resource type="PackedScene" uid="uid://cgytm08sbexoe" path="res://Character/character_rodolfo.tscn" id="74_sipe8"]
 [ext_resource type="PackedScene" uid="uid://blcpnk11d3lhx" path="res://Scenes/UI.tscn" id="75_qlyq7"]
 [ext_resource type="Script" path="res://Scenes/Camera.gd" id="76_h64x5"]
 [ext_resource type="CameraAttributesPractical" uid="uid://73bot76e0rcf" path="res://Enviroments/camera_pj_practical.tres" id="77_2acpb"]
@@ -87,35 +85,11 @@ size = Vector3(113.319, 0.0425731, 7.14734)
 [sub_resource type="PlaneMesh" id="PlaneMesh_ytw2h"]
 material = ExtResource("47_tic1o")
 
-[node name="Node3D" type="Node3D"]
+[node name="main" type="Node3D" node_paths=PackedStringArray("chara")]
+script = ExtResource("1_gm6yh")
+chara = NodePath("Rodolfo")
 
-[node name="UI" parent="." node_paths=PackedStringArray("chara") instance=ExtResource("75_qlyq7")]
-chara = NodePath("../rodolfo")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("1_hmru1")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(0.855364, -0.383757, 0.34797, 0, 0.671721, 0.740805, -0.518027, -0.633658, 0.574566, 6.03504, 9.07319, -10.5586)
-light_color = Color(0.960784, 0.898039, 0.823529, 1)
-light_energy = 1.5
-light_bake_mode = 1
-shadow_enabled = true
-shadow_blur = 1.5
-
-[node name="rodolfo" parent="." instance=ExtResource("31_hedx5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.895, 0.0770848, -6.82162)
-collision_layer = 18
-collision_mask = 18
-defaultEyes = ExtResource("3_267m2")
-blinkChance = 0.4
-blinkingEyes = ExtResource("75_8b8k6")
-
-[node name="ramon" parent="." instance=ExtResource("73_f08ue")]
-transform = Transform3D(-0.180863, 0, -0.983509, 0, 1, 0, 0.983509, 0, -0.180863, -12.8918, 0, -8.19709)
-isSMActive = false
-defaultEyes = ExtResource("75_agyt1")
-blinkingEyes = ExtResource("75_8b8k6")
+[node name="UI" parent="." instance=ExtResource("75_qlyq7")]
 
 [node name="MainCamera" type="Camera3D" parent="." node_paths=PackedStringArray("debugTarget")]
 transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871558, 0, -0.0871558, 0.996195, -14.061, 3.21, 6.887)
@@ -128,27 +102,44 @@ cameraSpeed = 0.05
 debugTarget = NodePath("../Items/item-levermachine_v1")
 debugSpeed = 0.02
 
+[node name="Ramon" parent="." instance=ExtResource("73_geppn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0352, 0.159637, -6.98921)
+
+[node name="Rodolfo" parent="." instance=ExtResource("74_sipe8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5545, 0, -6.87262)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_hmru1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.855364, -0.383757, 0.34797, 0, 0.671721, 0.740805, -0.518027, -0.633658, 0.574566, 6.03504, 9.07319, -10.5586)
+light_color = Color(0.960784, 0.898039, 0.823529, 1)
+light_energy = 1.5
+light_bake_mode = 1
+shadow_enabled = true
+shadow_blur = 1.5
+
 [node name="Hitboxes" type="Node3D" parent="."]
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="Hitboxes"]
-collision_layer = 35
-collision_mask = 35
+collision_layer = 71
+collision_mask = 71
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/StaticBody3D3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0220631, -7.07546)
 shape = SubResource("BoxShape3D_21vss")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="Hitboxes"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/StaticBody3D2"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 56.2858, 4.36728, -6.77295)
 shape = SubResource("WorldBoundaryShape3D_l65kj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Hitboxes"]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/StaticBody3D"]
 transform = Transform3D(-0.000185134, 1, -5.09761e-05, -1, -0.000185134, 1.27565e-06, 1.27564e-06, 5.09761e-05, 1, -17.9628, 4.22381, -7.05008)

@@ -24,9 +24,9 @@ func check():
 	if jumped:
 		if chara.velocity.y <= 0:
 			return "FallState"
-		if not Input.is_action_pressed("Jump") and afterAnticTime > 0.05:
+		if not chara.isJumping() and afterAnticTime > 0.05:
 			return "AirState"
-	if chara.getVaultingDirection() != 0 and chara.vaultingDir == Input.get_axis("Left", "Right"):
+	if chara.getVaultingDirection() != 0 and chara.vaultingDir == chara.getMovingDir():
 		return "VaultState"
 	return null
 

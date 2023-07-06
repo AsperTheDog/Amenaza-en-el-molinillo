@@ -16,7 +16,6 @@ func onEnter(player: MainCharacter, delta: float):
 	timer = 0
 	initialPos = chara.global_transform.origin
 	snapFinished = false
-	chara.get_node("modelo").rotation.y = deg_to_rad(chara.vaultingDir * 89)
 	chara.executeAnimation("JumpCorner", -1)
 	chara.animationPlayer.seek(0)
 	vaultingPosHoriz = chara.vaultingPos.x - 0.3 * chara.vaultingDir
@@ -31,12 +30,14 @@ func check():
 func apply(delta):
 	timer += delta
 	if timer < snapTime:
+		chara.turn(chara.vaultingDir, delta)
 		chara.global_transform.origin.y = lerp(initialPos.y, chara.vaultingPos.y - 1.6, timer / snapTime)
 		chara.global_transform.origin.x = lerp(initialPos.x, vaultingPosHoriz, timer / snapTime)
 	elif not snapFinished:
-		snapFinished = true
+		chara.instantTurn(deg_to_rad(chara.vaultingDir * 89))
 		chara.global_transform.origin.y = chara.vaultingPos.y - 1.6
 		chara.global_transform.origin.x = vaultingPosHoriz
+		snapFinished = true
 	if (timer > timeUntilLift):
 		chara.setVertForce(9)
 	else:

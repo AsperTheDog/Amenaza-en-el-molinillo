@@ -1,6 +1,5 @@
 extends Control
 
-@export var chara: MainCharacter
 @export_group("That's all folks")
 @export var thatsAllSpeed: float = 1
 @export var thatsAllCurve: Curve
@@ -10,9 +9,15 @@ var thatsAllFadeOut: bool = true
 var thatsAllStep: float = 0
 
 var showDebug: bool = false
+var chara: MainCharacter
 
 func _ready():
 	doThatsAllFolks(true)
+	get_parent().charaChanged.connect(changeChara)
+	chara = get_parent().chara
+
+func changeChara(newChara: MainCharacter):
+	chara = newChara
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -38,3 +43,9 @@ func doThatsAllFolks(isFadeOut: bool):
 	thatsAllStep = int(not isFadeOut)
 	thatsAllFadeOut = isFadeOut
 	thatsAllExecuting = true
+	
+func showBubble():
+	print("Showing bubble")
+
+func hideBubble():
+	print("Hiding bubble")

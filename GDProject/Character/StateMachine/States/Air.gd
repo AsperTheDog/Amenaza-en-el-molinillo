@@ -19,13 +19,13 @@ func check():
 		return "RunState"
 	if chara.execJumpAction and not chara.hasDoubleJumped:
 		return "JumpInstantState" if chara.isJumpInstant else "JumpState"
-	if chara.getVaultingDirection() != 0 and chara.vaultingDir == Input.get_axis("Left", "Right"):
+	if chara.getVaultingDirection() != 0 and chara.vaultingDir == chara.getMovingDir():
 		return "VaultState"
 	return null
 
 func apply(delta):
-	if Input.is_action_just_pressed("Jump"):
+	if chara.justJumped():
 		chara.isBunnyHopTimerActive = true
 	chara.applyForce(chara.gravity * delta * Vector3.DOWN)
-	var moveDir = Input.get_axis("Left", "Right")
+	var moveDir = chara.getMovingDir()
 	chara.applyHorizMovementAir(delta, moveDir)

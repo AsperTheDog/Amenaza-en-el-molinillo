@@ -1,0 +1,109 @@
+[gd_scene load_steps=19 format=3 uid="uid://cgytm08sbexoe"]
+
+[ext_resource type="PackedScene" uid="uid://cybqp2djw2xu7" path="res://Character/Character.tscn" id="1_cndco"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/Air.gd" id="2_6fgtj"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/Fall.gd" id="3_ipdy3"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/Idle.gd" id="4_fuhcp"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/JumpRo.gd" id="5_8xk1n"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/Run.gd" id="6_bc4yh"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/Vault.gd" id="7_cxlya"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/StrongLanding.gd" id="8_jetsj"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/Walk.gd" id="9_bik4g"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/JumpInstantRo.gd" id="10_ybvfg"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/PunchGroundRo.gd" id="11_jbjgr"]
+[ext_resource type="Script" path="res://Character/FaceAnimation.gd" id="12_usnj3"]
+[ext_resource type="Texture2D" uid="uid://dshv8poq44exq" path="res://Assets/Models/Characters/Eyes-Closed_Mouth-Small.png" id="13_v8ycn"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/Think.gd" id="14_nacff"]
+[ext_resource type="Texture2D" uid="uid://tin14sndqel3" path="res://Assets/Models/Characters/Eyes-Half_Mouth-Smile.png" id="14_tvnhh"]
+[ext_resource type="Texture2D" uid="uid://c2ruchoguqevi" path="res://Assets/Models/Characters/Eyes-Confuse_Mouth-Sad.png" id="15_c1jb8"]
+[ext_resource type="Texture2D" uid="uid://mljfjy810dje" path="res://Assets/Models/Characters/Eyes-Open_Mouth-Open.png" id="16_sfcds"]
+[ext_resource type="PackedScene" uid="uid://b6aowcqbcswti" path="res://Assets/Models/Characters/characters-rodolfo-classic_v1.glb" id="17_rhe5y"]
+
+[node name="Character" instance=ExtResource("1_cndco")]
+collision_layer = 2
+collision_mask = 34
+defaultEyes = ExtResource("16_sfcds")
+blinkingEyes = ExtResource("13_v8ycn")
+
+[node name="AirState" type="Node" parent="StateMachine" index="0"]
+script = ExtResource("2_6fgtj")
+
+[node name="FallState" type="Node" parent="StateMachine" index="1"]
+script = ExtResource("3_ipdy3")
+
+[node name="IdleState" type="Node" parent="StateMachine" index="2"]
+script = ExtResource("4_fuhcp")
+
+[node name="JumpState" type="Node" parent="StateMachine" index="3"]
+script = ExtResource("5_8xk1n")
+
+[node name="RunState" type="Node" parent="StateMachine" index="4"]
+script = ExtResource("6_bc4yh")
+
+[node name="VaultState" type="Node" parent="StateMachine" index="5"]
+script = ExtResource("7_cxlya")
+
+[node name="StrongLandState" type="Node" parent="StateMachine" index="6"]
+script = ExtResource("8_jetsj")
+
+[node name="WalkState" type="Node" parent="StateMachine" index="7"]
+script = ExtResource("9_bik4g")
+
+[node name="JumpInstantState" type="Node" parent="StateMachine" index="8"]
+script = ExtResource("10_ybvfg")
+
+[node name="PunchGroundState" type="Node" parent="StateMachine" index="9"]
+script = ExtResource("11_jbjgr")
+
+[node name="ThinkState" type="Node" parent="StateMachine" index="10"]
+script = ExtResource("14_nacff")
+
+[node name="FallingFloorLongFace" type="Node" parent="FaceAnimations" index="0"]
+script = ExtResource("12_usnj3")
+animation = "FallingFloorLong"
+eyeTimes = Array[float]([0.6, 1.2])
+eyeFaces = Array[CompressedTexture2D]([ExtResource("13_v8ycn"), ExtResource("14_tvnhh")])
+mouthTimes = Array[float]([0.6])
+mouthFaces = Array[CompressedTexture2D]([ExtResource("15_c1jb8")])
+
+[node name="IdleFace" type="Node" parent="FaceAnimations" index="1"]
+script = ExtResource("12_usnj3")
+animation = "Idle"
+eyeTimes = Array[float]([0.0])
+eyeFaces = Array[CompressedTexture2D]([ExtResource("14_tvnhh")])
+mouthTimes = Array[float]([0.0])
+mouthFaces = Array[CompressedTexture2D]([ExtResource("14_tvnhh")])
+
+[node name="RunFace" type="Node" parent="FaceAnimations" index="2"]
+script = ExtResource("12_usnj3")
+animation = "Run"
+eyeTimes = Array[float]([0.0])
+eyeFaces = Array[CompressedTexture2D]([ExtResource("16_sfcds")])
+mouthTimes = Array[float]([0.0])
+mouthFaces = Array[CompressedTexture2D]([ExtResource("16_sfcds")])
+
+[node name="WalkFace" type="Node" parent="FaceAnimations" index="3"]
+script = ExtResource("12_usnj3")
+animation = "Walk"
+eyeTimes = Array[float]([0.0])
+eyeFaces = Array[CompressedTexture2D]([ExtResource("16_sfcds")])
+mouthTimes = Array[float]([0.0])
+mouthFaces = Array[CompressedTexture2D]([ExtResource("14_tvnhh")])
+
+[node name="IdleActionFace" type="Node" parent="FaceAnimations" index="4"]
+script = ExtResource("12_usnj3")
+animation = "IdleAction"
+eyeTimes = Array[float]([0.0, 0.7])
+eyeFaces = Array[CompressedTexture2D]([ExtResource("14_tvnhh"), ExtResource("13_v8ycn")])
+mouthTimes = Array[float]([0.0])
+mouthFaces = Array[CompressedTexture2D]([ExtResource("14_tvnhh")])
+
+[node name="ThinkFace" type="Node" parent="FaceAnimations" index="5"]
+script = ExtResource("12_usnj3")
+animation = "Think"
+eyeTimes = Array[float]([0.0])
+eyeFaces = Array[CompressedTexture2D]([ExtResource("14_tvnhh")])
+mouthTimes = Array[float]([0.0])
+mouthFaces = Array[CompressedTexture2D]([ExtResource("14_tvnhh")])
+
+[node name="modelo" parent="rotating" index="0" instance=ExtResource("17_rhe5y")]

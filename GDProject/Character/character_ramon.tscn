@@ -1,0 +1,60 @@
+[gd_scene load_steps=16 format=3 uid="uid://c2hb6a5nl0aw6"]
+
+[ext_resource type="PackedScene" uid="uid://cybqp2djw2xu7" path="res://Character/Character.tscn" id="1_s5o3a"]
+[ext_resource type="Texture2D" uid="uid://cuvhmnynbpcmy" path="res://Assets/Models/Characters/characters-ramon-classic_v1_cara-4.png-cara-4_alpha.png" id="2_8r42e"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/Air.gd" id="2_emhny"]
+[ext_resource type="Texture2D" uid="uid://dshv8poq44exq" path="res://Assets/Models/Characters/Eyes-Closed_Mouth-Small.png" id="3_d0qon"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/Fall.gd" id="3_qx6ou"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/Idle.gd" id="4_2yrqe"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/JumpRo.gd" id="5_entf4"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/Run.gd" id="6_vf8qy"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/Vault.gd" id="7_4y65x"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/StrongLanding.gd" id="8_bj1uw"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/Walk.gd" id="9_2lgrf"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/JumpInstantRo.gd" id="10_q384g"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/PunchGroundRo.gd" id="11_bxf3s"]
+[ext_resource type="PackedScene" uid="uid://y23nj7a35rdu" path="res://Assets/Models/Characters/characters-ramon-classic_v1.glb" id="12_hqii2"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/Think.gd" id="14_fnkn3"]
+
+[node name="Character" instance=ExtResource("1_s5o3a")]
+collision_layer = 4
+collision_mask = 36
+jumpSpeed = 11.0
+canDoubleJump = false
+defaultEyes = ExtResource("2_8r42e")
+blinkingEyes = ExtResource("3_d0qon")
+
+[node name="AirState" type="Node" parent="StateMachine" index="0"]
+script = ExtResource("2_emhny")
+
+[node name="FallState" type="Node" parent="StateMachine" index="1"]
+script = ExtResource("3_qx6ou")
+
+[node name="IdleState" type="Node" parent="StateMachine" index="2"]
+script = ExtResource("4_2yrqe")
+
+[node name="JumpState" type="Node" parent="StateMachine" index="3"]
+script = ExtResource("5_entf4")
+
+[node name="RunState" type="Node" parent="StateMachine" index="4"]
+script = ExtResource("6_vf8qy")
+
+[node name="VaultState" type="Node" parent="StateMachine" index="5"]
+script = ExtResource("7_4y65x")
+
+[node name="StrongLandState" type="Node" parent="StateMachine" index="6"]
+script = ExtResource("8_bj1uw")
+
+[node name="WalkState" type="Node" parent="StateMachine" index="7"]
+script = ExtResource("9_2lgrf")
+
+[node name="JumpInstantState" type="Node" parent="StateMachine" index="8"]
+script = ExtResource("10_q384g")
+
+[node name="PunchGroundState" type="Node" parent="StateMachine" index="9"]
+script = ExtResource("11_bxf3s")
+
+[node name="ThinkState" type="Node" parent="StateMachine" index="10"]
+script = ExtResource("14_fnkn3")
+
+[node name="modelo" parent="rotating" index="0" instance=ExtResource("12_hqii2")]

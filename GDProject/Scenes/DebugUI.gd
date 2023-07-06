@@ -3,7 +3,7 @@ extends Label
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func processDebug(chara):
 	text = "FPS: " + str(Engine.get_frames_per_second()) \
-	+ "\n\nState: " + chara.stateMachine.activeStateName \
+	+ "\n\nState: " + chara.getActiveState() \
 	+ "\n\nAnimation: " + chara.animationPlayer.current_animation \
 	+ "\nGravity: " + str(snapped(chara.gravity, 0.01)) \
 	+ "\nVelocity: " \

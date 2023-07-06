@@ -35,7 +35,7 @@ func check():
 		return "StrongLandState" if chara.lastTopFallingSpeed <= strongFallSpeed else "RunState"
 	if chara.execJumpAction and not chara.hasDoubleJumped:
 		return "JumpInstantState" if chara.isJumpInstant else "JumpState"
-	if chara.getVaultingDirection() != 0 and chara.vaultingDir == Input.get_axis("Left", "Right"):
+	if chara.getVaultingDirection() != 0 and chara.vaultingDir == chara.getMovingDir():
 		return "VaultState"
 	return null
 
@@ -44,7 +44,7 @@ func apply(delta):
 	var fallingLongThreshold = (chara.maxFallSpeed * 0.8 * Vector3.DOWN).y
 	if chara.animationPlayer.assigned_animation != "FallingJumpLong" and chara.velocity.y <= fallingLongThreshold:
 		chara.executeAnimation("FallingJumpLong", -1, 3)
-	if Input.is_action_just_pressed("Jump"):
+	if chara.justJumped():
 		chara.isBunnyHopTimerActive = true
 	if chara.execJumpAction and not chara.canDoubleJump:
 		chara.isBunnyHopTimerActive = false
@@ -52,5 +52,5 @@ func apply(delta):
 	var newForce = chara.velocity
 	newForce.y = max(newForce.y, -chara.maxFallSpeed)
 	chara.setForce(newForce)
-	var moveDir = Input.get_axis("Left", "Right")
+	var moveDir = chara.getMovingDir()
 	chara.applyHorizMovementAir(delta, moveDir)

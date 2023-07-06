@@ -19,20 +19,22 @@ func onExit(_delta: float, transitionTo: String):
 		
 
 func check():
-	if chara.isBunnyHopTimerActive or Input.is_action_just_pressed("Jump"):
+	if chara.isBunnyHopTimerActive or chara.justJumped():
 		return "JumpInstantState" if chara.isJumpInstant else "JumpState"
 	if abs(chara.velocity.x) < 1:
 		return "IdleState"
-	if abs(Input.get_axis("Left", "Right")) >= chara.walkingThreshold:
+	if abs(chara.getMovingDir()) >= chara.walkingThreshold:
 		return "RunState"
 	if not chara.is_on_floor():
 		return "FallState" if chara.velocity.y <= 0 else "AirState"
 	if Input.is_action_just_pressed("Punch"):
 		return "PunchGroundState"
+	if chara.isThinking():
+		return "ThinkState"
 	return null
 
 func apply(delta):
-	var moveDir = Input.get_axis("Left", "Right")
+	var moveDir = chara.getMovingDir()
 	chara.applyHorizMovement(delta, moveDir)
 	if chara.animationPlayer.assigned_animation not in chara.landingAnimations:
 		var speedDiff = 1 - ((chara.walkingThreshold * chara.runMaxSpeed) - abs(chara.velocity.x)) / (chara.walkingThreshold * chara.runMaxSpeed)

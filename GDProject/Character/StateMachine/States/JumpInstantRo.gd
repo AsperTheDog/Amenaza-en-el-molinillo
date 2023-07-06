@@ -21,13 +21,13 @@ func onExit(_delta: float, transitionTo: String):
 func check():
 	if chara.velocity.y <= 0:
 		return "FallState"
-	if not Input.is_action_pressed("Jump"):
+	if not chara.isJumping():
 		return "AirState"
-	if chara.getVaultingDirection() != 0 and chara.vaultingDir == Input.get_axis("Left", "Right"):
+	if chara.getVaultingDirection() != 0 and chara.vaultingDir == chara.getMovingDir():
 		return "VaultState"
 	return null
 
 func apply(delta):
-	var moveDir = Input.get_axis("Left", "Right")
+	var moveDir = chara.getMovingDir()
 	chara.applyForce(chara.gravity * delta * Vector3.DOWN)
 	chara.applyHorizMovement(delta, moveDir)

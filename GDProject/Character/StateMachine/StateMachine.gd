@@ -16,11 +16,17 @@ func setup(player: MainCharacter):
 	activeState = states[initialState]
 	activeState.onEnter(chara, 1)
 	
-func evaluate(delta):
+func evaluate(delta: float):
 	var ret = activeState.check()
 	if ret != null:
-		activeState.onExit(delta, ret)
-		activeState = states[ret]
-		activeStateName = ret
-		activeState.onEnter(chara, delta)
+		transition(ret, delta)
+	else:
+		activeState.apply(delta)
+
+func transition(state: String, delta: float):
+	activeState.onExit(delta, state)
+	activeState = states[state]
+	activeStateName = state
+	activeState.onEnter(chara, delta)
 	activeState.apply(delta)
+	
