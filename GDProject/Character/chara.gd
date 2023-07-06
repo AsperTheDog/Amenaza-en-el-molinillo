@@ -39,6 +39,9 @@ var game: Node3D
 @export var deadZoneMovement: float = 0.25
 @export var walkingThreshold: float = 0.5
 
+@export_group("Punch")
+@export var upwardsForce: float = 5
+
 @export_category("Animation")
 @export var turnSpeed: float = 10
 @export var animationSpeed: float = 1

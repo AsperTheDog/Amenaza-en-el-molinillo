@@ -21,6 +21,7 @@ collision_layer = 4
 collision_mask = 36
 jumpSpeed = 11.0
 canDoubleJump = false
+upwardsForce = 200.0
 animationSpeed = 7.0
 defaultEyes = ExtResource("2_8r42e")
 blinkingEyes = ExtResource("3_d0qon")
