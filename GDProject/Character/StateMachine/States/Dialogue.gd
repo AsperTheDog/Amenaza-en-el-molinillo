@@ -13,8 +13,7 @@ func onEnter(player: MainCharacter, delta: float):
 	if dialogue != null:
 		dialogue.startDialogue()
 	
-		
-func onExit(delta: float):
+func onExit(delta: float, transitionTo: String):
 	# TODO Release ballon object from memory?
 	# Do nothing
 	return
@@ -22,9 +21,8 @@ func onExit(delta: float):
 func check():
 	if dialogue.hasFinished():
 		return "IdleState"
-	
 	return null
 
 func apply(delta):
-	# Do nothing
+	chara.applyHorizMovement(delta, 0)
 	return

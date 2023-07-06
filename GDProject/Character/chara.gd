@@ -200,6 +200,9 @@ func applyHorizMovementAir(delta: float, direction: float):
 
 # --- CONTROLS ---
 
+func justInteracted():
+	return trackInput and Input.is_action_just_pressed("Interact")
+
 func isThinking():
 	return trackInput and Input.is_action_pressed("Think")
 
