@@ -119,7 +119,7 @@ scale_amount_max = 5.0
 scale_amount_curve = SubResource("Curve_du2rr")
 
 [node name="particles-punch" type="CPUParticles3D" parent="rotating"]
-transform = Transform3D(0.304476, 0, 0, 0, 0.304476, 0, 0, 0, 0.304476, 0, 0, 0)
+transform = Transform3D(0.304476, 0, 0, 0, -1.33091e-08, -0.304476, 0, 0.304476, -1.33091e-08, 0, 0.992245, 0.453684)
 emitting = false
 amount = 12
 lifetime = 2.0

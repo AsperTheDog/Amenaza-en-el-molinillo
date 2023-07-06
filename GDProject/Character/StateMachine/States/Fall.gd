@@ -18,6 +18,8 @@ func onEnter(player: MainCharacter, delta: float):
 func onExit(_delta: float, transitionTo: String):
 	chara.gravity = chara.defaultGravity
 	if transitionTo == "RunState":
+		chara.fallParticles.restart()
+		chara.fallParticles.emitting = true
 		if chara.lastTopFallingSpeed >= chara.lightFallThreshold * chara.maxFallSpeed * Vector3.DOWN.y:
 			chara.executeAnimation("FallingFloorNear" if abs(chara.velocity.x) < 3 else "FallingFloorNearRun")
 		else:

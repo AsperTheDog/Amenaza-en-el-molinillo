@@ -58,6 +58,8 @@ var trackInput: bool = false
 var animationPlayer: AnimationPlayer
 var runParticles: CPUParticles3D
 var jumpParticles: CPUParticles3D
+var fallParticles: CPUParticles3D
+var punchParticles: CPUParticles3D
 
 var zPos: float
 const landingAnimations = [
@@ -121,6 +123,8 @@ func _ready():
 	# Particles
 	runParticles = $"rotating/particles-run"
 	jumpParticles = $"rotating/particles-jump"
+	fallParticles = $"rotating/particles-falling"
+	punchParticles = $"rotating/particles-punch"
 	
 	# Face Animations
 	eyesModel = $"rotating/modelo/Character/Armature/Skeleton3D/Eyes"
@@ -339,4 +343,6 @@ func getActiveState():
 
 func _on_punch_body_entered(body: Node3D):
 	if body.get_parent().has_method("getPunched"):
+		punchParticles.restart()
+		punchParticles.emitting = true
 		body.get_parent().getPunched()
