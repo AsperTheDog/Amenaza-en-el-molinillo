@@ -98,15 +98,15 @@ current = true
 fov = 37.8493
 far = 200.0
 script = ExtResource("76_h64x5")
-cameraSpeed = 0.05
+cameraSpeed = 7.0
 debugTarget = NodePath("../Items/item-levermachine_v1")
-debugSpeed = 0.02
+debugSpeed = 3.5
 
 [node name="Ramon" parent="." instance=ExtResource("73_geppn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0352, 0.159637, -6.98921)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.53819, 0.159637, -6.98921)
 
 [node name="Rodolfo" parent="." instance=ExtResource("74_sipe8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5545, 0, -6.87262)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8477, 0, -6.87262)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_hmru1")

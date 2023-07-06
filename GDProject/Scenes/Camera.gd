@@ -24,7 +24,7 @@ func _process(delta):
 	if target != null:
 		var newPos = trueTarget.global_position + offset
 		newPos.z = global_position.z
-		global_position = lerp(global_position, newPos, trueSpeed)
+		global_position = lerp(global_position, newPos, trueSpeed * delta)
 	if Input.is_action_just_pressed("DebugInput"):
 		debugMode = not debugMode
 		trueSpeed = cameraSpeed if debugMode else debugSpeed
