@@ -7,6 +7,7 @@ signal bubbleHidden
 @export var thatsAllSpeed: float = 1
 @export var thatsAllCurve: Curve
 @export_group("Thinking bubble")
+@export var waitingTime: float = 1
 @export var bubbleAppearSpeed: float = 1
 @export var bubbleDissappearSpeed: float = 1
 @export var bubbleXCurve: Curve
@@ -73,9 +74,9 @@ func showBubble():
 	$"InfoLevel Container/big".scale = Vector2(0, 0)
 	$"InfoLevel Container".show()
 	changeBubbleScale($"InfoLevel Container/small", true)
-	await get_tree().create_timer(1 / bubbleAppearSpeed).timeout
+	await get_tree().create_timer(waitingTime / bubbleAppearSpeed).timeout
 	changeBubbleScale($"InfoLevel Container/medium", true)
-	await get_tree().create_timer(1 / bubbleAppearSpeed).timeout
+	await get_tree().create_timer(waitingTime / bubbleAppearSpeed).timeout
 	changeBubbleScale($"InfoLevel Container/big", true)
 	await get_tree().create_timer(1 / bubbleAppearSpeed).timeout
 	bubbleInProcess = false
@@ -86,9 +87,9 @@ func hideBubble():
 		await bubbleShown
 	bubbleInProcess = true
 	changeBubbleScale($"InfoLevel Container/big", false)
-	await get_tree().create_timer(1 / bubbleDissappearSpeed).timeout
+	await get_tree().create_timer(waitingTime / bubbleDissappearSpeed).timeout
 	changeBubbleScale($"InfoLevel Container/medium", false)
-	await get_tree().create_timer(1 / bubbleDissappearSpeed).timeout
+	await get_tree().create_timer(waitingTime / bubbleDissappearSpeed).timeout
 	changeBubbleScale($"InfoLevel Container/small", false)
 	await get_tree().create_timer(1 / bubbleDissappearSpeed).timeout
 	$"InfoLevel Container".hide()

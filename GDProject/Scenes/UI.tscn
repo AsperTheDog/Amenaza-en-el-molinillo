@@ -81,6 +81,7 @@ grow_vertical = 2
 script = ExtResource("1_knx4a")
 thatsAllSpeed = 0.4
 thatsAllCurve = SubResource("Curve_llpmj")
+waitingTime = 0.6
 bubbleAppearSpeed = 5.0
 bubbleDissappearSpeed = 8.0
 bubbleXCurve = SubResource("Curve_yo2nn")
