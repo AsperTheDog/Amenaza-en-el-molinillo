@@ -77,6 +77,7 @@ func showBubble():
 	changeBubbleScale($"InfoLevel Container/medium", true)
 	await get_tree().create_timer(1 / bubbleAppearSpeed).timeout
 	changeBubbleScale($"InfoLevel Container/big", true)
+	await get_tree().create_timer(1 / bubbleAppearSpeed).timeout
 	bubbleInProcess = false
 	bubbleShown.emit()
 
