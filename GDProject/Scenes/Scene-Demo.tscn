@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://b7co442vfn4a5"]
+[gd_scene load_steps=93 format=3 uid="uid://b7co442vfn4a5"]
 
 [ext_resource type="Script" path="res://Scenes/MainScene.gd" id="1_gm6yh"]
 [ext_resource type="Environment" uid="uid://bt7lbvekdafji" path="res://Enviroments/Enviroment-sunrise.tres" id="1_hmru1"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://byqqv7ru2gool" path="res://Assets/Models/Scene/Ground/floor_road_v_1.tscn" id="6_amxjb"]
 [ext_resource type="PackedScene" uid="uid://cbivejfbjsknp" path="res://Assets/Models/Scene/City/fireguard_v_1.tscn" id="6_dyq5u"]
 [ext_resource type="PackedScene" uid="uid://v2b8gvi7bbyw" path="res://Assets/Models/Scene/City/jerrycan_v_1.tscn" id="7_t8dne"]
+[ext_resource type="PackedScene" uid="uid://c1t0o4ornqg27" path="res://Assets/Models/Scene/Construction/cableroll_v_2.tscn" id="8_haqio"]
 [ext_resource type="PackedScene" uid="uid://bbydseovuksx6" path="res://Assets/Models/Scene/City/mailbox_es_v_1.tscn" id="8_t5dqu"]
 [ext_resource type="PackedScene" uid="uid://cdh2iel1ls7p4" path="res://Assets/Models/Scene/City/sewer_v_1.tscn" id="9_ymfnq"]
 [ext_resource type="PackedScene" uid="uid://b1ifq70lf04ra" path="res://Assets/Models/Scene/City/streetlight_en_v_1.tscn" id="10_f1afg"]
@@ -16,11 +17,14 @@
 [ext_resource type="PackedScene" uid="uid://bourqnlij6081" path="res://Assets/Models/Scene/City/trafficlight_walker_v_1.tscn" id="12_y5tyq"]
 [ext_resource type="PackedScene" uid="uid://dx4njq6fdas5x" path="res://Assets/Models/Scene/City/trafficsing_base_v_1.tscn" id="13_xqcf5"]
 [ext_resource type="PackedScene" uid="uid://f0yuhre1iinv" path="res://Assets/Models/Scene/City/trash_bag_v_1.tscn" id="14_qvniu"]
+[ext_resource type="PackedScene" uid="uid://cnaal7gyp2uon" path="res://Assets/Models/Scene/Construction/pipelinebig_v_2.tscn" id="15_ew43l"]
 [ext_resource type="PackedScene" uid="uid://r3yqkusrdnuw" path="res://Assets/Models/Scene/City/trash_big_v_1.tscn" id="15_ywwjj"]
 [ext_resource type="PackedScene" uid="uid://durwc2toyjrny" path="res://Assets/Models/Scene/City/trash_cover_v_1.tscn" id="16_mxtfv"]
 [ext_resource type="PackedScene" uid="uid://lxa58k22y2ic" path="res://Assets/Models/Scene/City/trash_v_1.tscn" id="17_g0wgi"]
 [ext_resource type="PackedScene" uid="uid://nis4e1gkwv4d" path="res://Assets/Models/Scene/City/trafficsing_walker_v_1.tscn" id="18_f1lfm"]
+[ext_resource type="PackedScene" uid="uid://bhqltrgfyh21w" path="res://Assets/Models/Scene/Construction/table_v_2.tscn" id="19_8bqex"]
 [ext_resource type="PackedScene" uid="uid://tlyxnxu4kqi8" path="res://Assets/Models/Scene/City/wall_wood_v_1.tscn" id="20_t7a2b"]
+[ext_resource type="PackedScene" uid="uid://cnab68rhnd573" path="res://Assets/Models/Scene/Construction/woodbox_v_2.tscn" id="21_qr72y"]
 [ext_resource type="PackedScene" uid="uid://d2xib2ierd41u" path="res://Assets/Models/Scene/City/column_v_1.tscn" id="22_r3f43"]
 [ext_resource type="PackedScene" uid="uid://dhofrxqhed0nx" path="res://Assets/Models/Scene/City/trunk_v_1.tscn" id="24_b7xbm"]
 [ext_resource type="PackedScene" uid="uid://ctfxwb2uvbn1k" path="res://Assets/Models/Scene/City/tree_base_v_1.tscn" id="25_t6noc"]
@@ -39,6 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://ba0rpbur364xs" path="res://Assets/Models/Scene/City/wall_metal_v_1.tscn" id="37_214c6"]
 [ext_resource type="PackedScene" uid="uid://ddsodaubnbwo2" path="res://Assets/Models/Scene/Construction/pipelinebig_v_1.tscn" id="37_gt6ws"]
 [ext_resource type="PackedScene" uid="uid://dro5r0hd6sq6t" path="res://Assets/Models/Scene/Construction/sand_v_1.tscn" id="38_c7e33"]
+[ext_resource type="PackedScene" uid="uid://xq8lo8osq0ix" path="res://Assets/Models/Scene/City/trash_big_v_2.tscn" id="38_n4w1y"]
 [ext_resource type="PackedScene" uid="uid://dgy5hmwgd0yvj" path="res://Assets/Models/Scene/Construction/scaffold_v_1.tscn" id="39_py8gx"]
 [ext_resource type="PackedScene" uid="uid://bnxofsvugjldv" path="res://Assets/Models/Scene/Construction/squadwood_v_1.tscn" id="40_1sp4m"]
 [ext_resource type="PackedScene" uid="uid://crq7vh8bbd62w" path="res://Assets/Models/Scene/Construction/table_v_1.tscn" id="41_8245g"]
@@ -69,7 +74,9 @@
 [ext_resource type="PackedScene" uid="uid://dairhsonk6yl3" path="res://Assets/Models/Scene/City/trash_cover_physics.tscn" id="66_ch1vv"]
 [ext_resource type="PackedScene" uid="uid://cejembuwr5p2v" path="res://Assets/Models/Items/item_lever_v_1.tscn" id="66_f25ow"]
 [ext_resource type="PackedScene" uid="uid://op85een07yr" path="res://items/item.tscn" id="68_jnedx"]
+[ext_resource type="Texture2D" uid="uid://cfa1k4qgg866m" path="res://Assets/Models/Scene/Background/buildings-v2.png" id="68_ot021"]
 [ext_resource type="PackedScene" uid="uid://cs23f68u86f8g" path="res://Assets/Models/Items/item_trash_v_1.tscn" id="68_w4ad8"]
+[ext_resource type="Texture2D" uid="uid://d111algvu2rsh" path="res://Assets/Models/Scene/Background/buildings-v1.png" id="68_xg6fi"]
 [ext_resource type="PackedScene" uid="uid://bxryp4uhkt6wg" path="res://Assets/Models/Developer/regla.glb" id="70_m1x68"]
 [ext_resource type="PackedScene" uid="uid://c2hb6a5nl0aw6" path="res://Character/character_ramon.tscn" id="73_geppn"]
 [ext_resource type="PackedScene" uid="uid://cgytm08sbexoe" path="res://Character/character_rodolfo.tscn" id="74_sipe8"]
@@ -88,6 +95,26 @@ size = Vector3(113.319, 0.0425731, 7.14734)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ytw2h"]
 material = ExtResource("47_tic1o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ggtb"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("68_xg6fi")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3igep"]
+material = SubResource("StandardMaterial3D_0ggtb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5rhkm"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("68_ot021")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6uvtq"]
+material = SubResource("StandardMaterial3D_5rhkm")
 
 [node name="main" type="Node3D" node_paths=PackedStringArray("chara")]
 script = ExtResource("1_gm6yh")
@@ -118,7 +145,7 @@ environment = ExtResource("1_hmru1")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(0.855364, -0.383757, 0.34797, 0, 0.671721, 0.740805, -0.518027, -0.633658, 0.574566, 6.03504, 9.07319, -10.5586)
 light_color = Color(0.960784, 0.898039, 0.823529, 1)
-light_energy = 1.5
+light_energy = 1.2
 light_bake_mode = 1
 shadow_enabled = true
 shadow_blur = 1.5
@@ -151,7 +178,7 @@ shape = SubResource("WorldBoundaryShape3D_2u762")
 
 [node name="Construction-area" type="Node3D" parent="."]
 
-[node name="cableroll_v1" parent="Construction-area" instance=ExtResource("32_8ymob")]
+[node name="cableroll_v5" parent="Construction-area" instance=ExtResource("8_haqio")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9379, 0.414238, -6.90651)
 
 [node name="cableroll_v2" parent="Construction-area" instance=ExtResource("32_8ymob")]
@@ -191,7 +218,7 @@ transform = Transform3D(0.718, 0, 0, 0, 0.718, 0, 0, 0, 0.718, -2.14596, 0.24216
 transform = Transform3D(0.672, 0, 0, 0, 0.672, 0, 0, 0, 0.672, 2.13735, 0.232742, 0.00348234)
 
 [node name="joistbig_v5" parent="Construction-area" instance=ExtResource("35_j8woy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6853, 18.1953, -6.809)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3929, 17.8452, -6.809)
 
 [node name="Corner-hitbox" parent="Construction-area/joistbig_v5" instance=ExtResource("6_7r22e")]
 transform = Transform3D(0.655588, 0, 0, 0, 0.655588, 0, 0, 0, 0.655588, -2.16579, 0.243806, 0)
@@ -220,13 +247,13 @@ transform = Transform3D(0.656, 0, 0, 0, 0.656, 0, 0, 0, 0.656, 2.15814, 0.249238
 [node name="pallet_v1" parent="Construction-area" instance=ExtResource("36_6occc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8818, 0, -6.70657)
 
-[node name="pipelinebig_v1" parent="Construction-area" instance=ExtResource("37_gt6ws")]
+[node name="pipelinebig_v8" parent="Construction-area" instance=ExtResource("15_ew43l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.2401, 0, -6.92136)
 
-[node name="Corner-hitbox" parent="Construction-area/pipelinebig_v1" instance=ExtResource("6_7r22e")]
+[node name="Corner-hitbox" parent="Construction-area/pipelinebig_v8" instance=ExtResource("6_7r22e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.68248, 2.65427, 0)
 
-[node name="Corner-hitbox2" parent="Construction-area/pipelinebig_v1" instance=ExtResource("6_7r22e")]
+[node name="Corner-hitbox2" parent="Construction-area/pipelinebig_v8" instance=ExtResource("6_7r22e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.26258, 2.49362, 0)
 
 [node name="sand_v1" parent="Construction-area" instance=ExtResource("38_c7e33")]
@@ -262,7 +289,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2442, 0, -6.91883)
 [node name="squadwood_v2" parent="Construction-area" instance=ExtResource("40_1sp4m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.883, 0, -6.91883)
 
-[node name="table_v1" parent="Construction-area" instance=ExtResource("41_8245g")]
+[node name="table_v3" parent="Construction-area" instance=ExtResource("19_8bqex")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0616, 0.916337, -6.92574)
 
 [node name="wallmetalsmall_v1" parent="Construction-area" instance=ExtResource("42_quh2r")]
@@ -292,10 +319,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1813, 0, -8.7927)
 [node name="wallmetalsmall_v10" parent="Construction-area" instance=ExtResource("42_quh2r")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 56.5133, 0, -6.87934)
 
-[node name="woodbox_v1" parent="Construction-area" instance=ExtResource("43_7b4r7")]
+[node name="woodbox_v3" parent="Construction-area" instance=ExtResource("21_qr72y")]
 transform = Transform3D(0.999589, -0.0286544, 0, 0.0286544, 0.999589, 0, 0, 0, 1, 22.9611, 1.56362, -6.88244)
 
-[node name="Corner-hitbox2" parent="Construction-area/woodbox_v1" instance=ExtResource("6_7r22e")]
+[node name="Corner-hitbox2" parent="Construction-area/woodbox_v3" instance=ExtResource("6_7r22e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.636017, 0.592166, 0)
 
 [node name="jerrycan_v1" parent="Construction-area" instance=ExtResource("7_t8dne")]
@@ -379,7 +406,7 @@ transform = Transform3D(0.888913, 0, 0.458076, 0, 1, 0, -0.458076, 0, 0.888913, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0213, 0.00566244, -4.85255)
 
 [node name="mailbox-es_v1" parent="City" instance=ExtResource("8_t5dqu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2378, 0, -4.96624)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0560284, 0, -4.96624)
 
 [node name="dialogue" parent="City/mailbox-es_v1" instance=ExtResource("31_n0ogn")]
 dialogue_resource = ExtResource("32_kxagi")
@@ -389,10 +416,13 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.0734825, 0.194927, -1.04813
 shape = SubResource("BoxShape3D_ye4sw")
 
 [node name="sewer_v1" parent="City" instance=ExtResource("9_ymfnq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.60292, 0, -6.17666)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.27525, -0.031039, -5.20998)
+
+[node name="sewer_v3" parent="City" instance=ExtResource("9_ymfnq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3223, -0.031039, -5.20998)
 
 [node name="sewer_v2" parent="City" instance=ExtResource("9_ymfnq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.24903, -0.1457, -1.47312)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.1588, -0.1457, -1.47312)
 
 [node name="streetlight-en_v1" parent="City" instance=ExtResource("10_f1afg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0095, 0, -5.29085)
@@ -442,7 +472,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.75903, 0, -7.47608)
 [node name="trash-big_v1" parent="City" instance=ExtResource("15_ywwjj")]
 transform = Transform3D(0.937889, 0, -0.346936, 0, 1, 0, 0.346936, 0, 0.937889, 6.50619, 0, -8.0555)
 
-[node name="trash-big_v2" parent="City" instance=ExtResource("15_ywwjj")]
+[node name="trash-big_v4" parent="City" instance=ExtResource("38_n4w1y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.06003, 0, -6.89129)
 
 [node name="trash-big_v3" parent="City" instance=ExtResource("15_ywwjj")]
@@ -638,6 +668,26 @@ transform = Transform3D(200, 0, 0, 0, 50, 0, 0, 0, 60, 97.7763, 0, -68.9031)
 mesh = SubResource("PlaneMesh_ytw2h")
 
 [node name="Backgroound" type="Node3D" parent="."]
+
+[node name="Buildings_v1" type="MeshInstance3D" parent="Backgroound"]
+transform = Transform3D(69.5647, 0, 0, 0, -5.10391e-07, -13.9166, 0, 11.6764, -6.08313e-07, 47.033, 14.1677, 8.63334)
+mesh = SubResource("PlaneMesh_3igep")
+
+[node name="Buildings_v2" type="MeshInstance3D" parent="Backgroound"]
+transform = Transform3D(52.7462, 0, 0, 0, -4.22445e-07, -11.5186, 0, 9.66442, -5.03494e-07, -19.672, 11.2251, -92.8844)
+mesh = SubResource("PlaneMesh_3igep")
+
+[node name="Buildings_v3" type="MeshInstance3D" parent="Backgroound"]
+transform = Transform3D(52.7462, 0, 0, 0, -4.22445e-07, -11.5186, 0, 9.66442, -5.03494e-07, 86.2244, 11.2251, -92.8844)
+mesh = SubResource("PlaneMesh_6uvtq")
+
+[node name="Buildings_v4" type="MeshInstance3D" parent="Backgroound"]
+transform = Transform3D(52.7462, 0, 0, 0, -4.22445e-07, -11.5186, 0, 9.66442, -5.03494e-07, 73.7758, 11.2251, -110.145)
+mesh = SubResource("PlaneMesh_3igep")
+
+[node name="Buildings_v5" type="MeshInstance3D" parent="Backgroound"]
+transform = Transform3D(52.7462, 0, 0, 0, -4.22445e-07, -11.5186, 0, 9.66442, -5.03494e-07, -31.9237, 11.2251, -110.145)
+mesh = SubResource("PlaneMesh_6uvtq")
 
 [node name="mountain_v1" parent="Backgroound" instance=ExtResource("3_oac4i")]
 transform = Transform3D(3.29839, 0, 0, 0, 3.29839, 0, 0, 0, 3.29839, -12.7904, 12.8321, -136.342)
@@ -1455,7 +1505,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.77421, 1.30949, -6.81351)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.25079, -1.30949, -0.0865998)
 
 [node name="item-trash_v1" parent="Items" instance=ExtResource("68_w4ad8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5974, -1.30949, -0.0750732)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5974, -1.28736, -0.0750732)
 
 [node name="item-trash_cover" parent="Items/item-trash_v1" instance=ExtResource("66_ch1vv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.894725, 0)

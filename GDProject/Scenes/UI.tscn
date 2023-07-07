@@ -5,7 +5,7 @@
 [ext_resource type="Shader" path="res://Enviroments/thatsAllFolks.gdshader" id="3_xnbue"]
 [ext_resource type="Script" path="res://Scenes/DebugUI.gd" id="4_pve5f"]
 [ext_resource type="Texture2D" uid="uid://bsywa1cplpq1k" path="res://Assets/UI/Rodolfo_Info_UI.tres" id="5_dibkr"]
-[ext_resource type="Theme" uid="uid://cbdbhbqebha6h" path="res://Theme.tres" id="5_ro6a2"]
+[ext_resource type="Theme" uid="uid://cbdbhbqebha6h" path="res://Enviroments/Theme.tres" id="5_ro6a2"]
 [ext_resource type="Texture2D" uid="uid://scdq3idcub1p" path="res://Assets/UI/Ramon_Info_UI.tres" id="7_ev1n4"]
 [ext_resource type="Texture2D" uid="uid://64ab21rkiefg" path="res://Assets/UI/Bubble_Notifications_UI.tres" id="8_a4ml0"]
 [ext_resource type="LabelSettings" uid="uid://ciq7hdntgsuu3" path="res://Assets/Fonts/UI_normal_black.tres" id="9_ojyo5"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cgytm08sbexoe"]
+[gd_scene load_steps=29 format=3 uid="uid://cgytm08sbexoe"]
 
 [ext_resource type="PackedScene" uid="uid://cybqp2djw2xu7" path="res://Character/Character.tscn" id="1_cndco"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Air.gd" id="2_6fgtj"]
@@ -23,6 +23,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_mvcg6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l6y2o"]
+
 [sub_resource type="Curve" id="Curve_ecfmk"]
 min_value = -360.0
 max_value = 360.0
@@ -173,6 +174,7 @@ shape = SubResource("BoxShape3D_mvcg6")
 
 [node name="CollisionShape3D" parent="rotating/Punch" index="0"]
 shape = SubResource("BoxShape3D_l6y2o")
+
 [node name="particles-falling" parent="rotating" index="4"]
 fract_delta = true
 emission_shape = 6
