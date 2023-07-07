@@ -5,5 +5,5 @@
 
 [node name="column_v1" instance=ExtResource("1_ud6d8")]
 
-[node name="Muro exterior001" parent="." index="0"]
+[node name="Muro exterior_001" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_2el1s")

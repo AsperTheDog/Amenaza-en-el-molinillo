@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://byqqv7ru2gool"]
 
 [ext_resource type="PackedScene" uid="uid://dx8lqkutc5ejs" path="res://Assets/Models/Scene/Ground/floor-road_v1.glb" id="1_c6p5t"]
-[ext_resource type="Material" uid="uid://xdtlvidtkjuk" path="res://Materials/Ground/road_v1.tres" id="2_lh6fg"]
+[ext_resource type="Material" uid="uid://cleakoilxj7rx" path="res://Materials/City/road_v2.tres" id="2_1dop8"]
 
 [node name="floor-road_v1" instance=ExtResource("1_c6p5t")]
 
 [node name="Road" parent="." index="0"]
-surface_material_override/0 = ExtResource("2_lh6fg")
+surface_material_override/0 = ExtResource("2_1dop8")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://blcpnk11d3lhx"]
+[gd_scene load_steps=37 format=3 uid="uid://blcpnk11d3lhx"]
 
 [ext_resource type="Script" path="res://Scenes/UI.gd" id="1_knx4a"]
 [ext_resource type="Shader" path="res://Enviroments/Vignette.gdshader" id="1_xqchg"]
@@ -43,18 +43,14 @@ max_value = 1.5
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.605442, 0.981818), 0.0, 0.0, 0, 0, Vector2(0.807256, 0.790909), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.20549, 0.0, 0, 0]
 point_count = 4
 
-[sub_resource type="Curve" id="Curve_butqq"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
 [sub_resource type="Theme" id="Theme_gh0om"]
 default_font = ExtResource("9_vbras")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0owl3"]
 shader = ExtResource("1_xqchg")
 shader_parameter/color = Color(0.0901961, 0.0862745, 0.0901961, 1)
-shader_parameter/multiplier = 0.3
-shader_parameter/softness = 1.2
+shader_parameter/multiplier = 0.2
+shader_parameter/softness = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mbpdr"]
 shader = ExtResource("3_xnbue")
@@ -91,8 +87,6 @@ bubbleAppearSpeed = 5.0
 bubbleDissappearSpeed = 8.0
 bubbleXCurve = SubResource("Curve_yo2nn")
 bubbleYCurve = SubResource("Curve_xvayy")
-pauseFadeSpeed = 10.0
-pauseCurve = SubResource("Curve_butqq")
 
 [node name="PauseLayer" type="CanvasLayer" parent="."]
 layer = 8
@@ -407,7 +401,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="InfoLevel Container" type="BoxContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.53
@@ -423,30 +416,32 @@ grow_vertical = 2
 pivot_offset = Vector2(0, 576)
 
 [node name="small" type="Sprite2D" parent="InfoLevel Container"]
-position = Vector2(17.0001, 576)
+position = Vector2(2.00016, 575)
 texture = ExtResource("21_qwbwa")
-offset = Vector2(0, -14)
+offset = Vector2(14.9999, -13)
 
 [node name="medium" type="Sprite2D" parent="InfoLevel Container"]
-position = Vector2(81.0001, 560)
+position = Vector2(47.0002, 560)
 texture = ExtResource("22_34lb0")
-offset = Vector2(0, -30)
+offset = Vector2(33.9999, -30)
 
 [node name="big" type="Sprite2D" parent="InfoLevel Container"]
-position = Vector2(409, 584)
+position = Vector2(134, 496)
 texture = ExtResource("23_n0bbs")
-offset = Vector2(0, -290)
+offset = Vector2(275, -202)
 
 [node name="MarginContainer" type="MarginContainer" parent="InfoLevel Container/big"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -352.0
-offset_top = -579.0
-offset_right = -352.0
-offset_bottom = -579.0
+offset_left = -77.135
+offset_top = -491.76
+offset_right = -77.135
+offset_bottom = -491.76
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 theme_override_constants/margin_left = 80
 theme_override_constants/margin_top = 104
 theme_override_constants/margin_right = 80
@@ -480,33 +475,33 @@ Tiempo de juego																																																00:00
 "
 label_settings = ExtResource("9_ojyo5")
 
-[node name="Sprite2D4" type="Sprite2D" parent="InfoLevel Container/big"]
-position = Vector2(248, -325)
+[node name="Sprite2D4" type="Sprite2D" parent="InfoLevel Container/big/MarginContainer"]
+position = Vector2(600, 254)
 scale = Vector2(0.427381, 0.427381)
 texture = ExtResource("27_ouwx4")
 
-[node name="Sprite2D5" type="Sprite2D" parent="InfoLevel Container/big"]
-position = Vector2(248, -277)
+[node name="Sprite2D5" type="Sprite2D" parent="InfoLevel Container/big/MarginContainer"]
+position = Vector2(600, 302)
 scale = Vector2(0.427381, 0.427381)
 texture = ExtResource("25_3ki4m")
 
-[node name="Sprite2D6" type="Sprite2D" parent="InfoLevel Container/big"]
-position = Vector2(196.575, -325)
+[node name="Sprite2D6" type="Sprite2D" parent="InfoLevel Container/big/MarginContainer"]
+position = Vector2(548.575, 254)
 scale = Vector2(0.427381, 0.427381)
 texture = ExtResource("27_ouwx4")
 
-[node name="Sprite2D7" type="Sprite2D" parent="InfoLevel Container/big"]
-position = Vector2(196.575, -277)
+[node name="Sprite2D7" type="Sprite2D" parent="InfoLevel Container/big/MarginContainer"]
+position = Vector2(548.575, 302)
 scale = Vector2(0.427381, 0.427381)
 texture = ExtResource("26_ujqkd")
 
-[node name="Sprite2D8" type="Sprite2D" parent="InfoLevel Container/big"]
-position = Vector2(144.575, -325)
+[node name="Sprite2D8" type="Sprite2D" parent="InfoLevel Container/big/MarginContainer"]
+position = Vector2(496.575, 254)
 scale = Vector2(0.427381, 0.427381)
 texture = ExtResource("28_wtg46")
 
-[node name="Sprite2D9" type="Sprite2D" parent="InfoLevel Container/big"]
-position = Vector2(144.575, -277)
+[node name="Sprite2D9" type="Sprite2D" parent="InfoLevel Container/big/MarginContainer"]
+position = Vector2(496.575, 302)
 scale = Vector2(0.427381, 0.427381)
 texture = ExtResource("26_ujqkd")
 
