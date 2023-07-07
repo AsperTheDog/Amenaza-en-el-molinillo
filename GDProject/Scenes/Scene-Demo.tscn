@@ -137,7 +137,7 @@ debugSpeed = 3.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.877, 0.159637, -6.87501)
 
 [node name="Rodolfo" parent="." instance=ExtResource("74_sipe8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8486, 0.0034771, -6.87429)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8486, 0.0559857, -6.87429)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_hmru1")
@@ -145,7 +145,7 @@ environment = ExtResource("1_hmru1")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(0.855364, -0.383757, 0.34797, 0, 0.671721, 0.740805, -0.518027, -0.633658, 0.574566, 6.03504, 9.07319, -10.5586)
 light_color = Color(0.960784, 0.898039, 0.823529, 1)
-light_energy = 1.5
+light_energy = 1.2
 light_bake_mode = 1
 shadow_enabled = true
 shadow_blur = 1.5

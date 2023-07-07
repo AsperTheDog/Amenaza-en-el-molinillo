@@ -164,7 +164,7 @@ mouthFaces = Array[CompressedTexture2D]([ExtResource("14_tvnhh")])
 
 [node name="DialogueFinder" type="Area3D" parent="." index="5"]
 collision_layer = 0
-collision_mask = 16
+collision_mask = 128
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DialogueFinder" index="0"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0124115, 1.02767, -0.00365394)
@@ -192,6 +192,7 @@ transform = Transform3D(-1.33091e-08, -0.304476, 0, -1.33091e-08, 5.81758e-16, -
 emitting = false
 amount = 24
 lifetime = 1.5
+one_shot = true
 preprocess = 1.0
 speed_scale = 4.0
 explosiveness = 1.0

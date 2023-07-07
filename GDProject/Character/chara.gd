@@ -366,6 +366,6 @@ func freezeStateMachine():
 
 func _on_punch_body_entered(body: Node3D):
 	if body.get_parent().has_method("getPunched"):
-		punchParticles.restart()
 		punchParticles.emitting = true
+		punchParticles.restart()
 		body.get_parent().getPunched()

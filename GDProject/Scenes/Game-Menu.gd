@@ -12,6 +12,7 @@ func _ready():
 	fadeInOut(true)
 	$"MainLayer/Container/MenuContainer/BoxContainer/TextureButton".pressed.connect(loadMainGame)
 	$"MainLayer/Container/MenuContainer/BoxContainer/TextureButton3".pressed.connect(quit)
+	$"MainLayer/Container/MenuContainer/BoxContainer/TextureButton".grab_focus()
 
 func fadeInOut(fadeIn: bool):
 	var fade = $"FadeInLayer/ColorRect"

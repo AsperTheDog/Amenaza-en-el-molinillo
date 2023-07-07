@@ -20,7 +20,6 @@ signal thatsAllFinished
 @export_group("Pause Menu")
 @export var pauseFadeSpeed: float = 1
 @export var pauseMaxOpacity: int = 120
-@export var pauseCurve: Curve
 
 var showDebug: bool = false
 var chara: MainCharacter
@@ -37,9 +36,9 @@ func _ready():
 	doThatsAllFolks(true)
 	get_parent().charaChanged.connect(changeChara)
 	chara = get_parent().chara
-	$"InfoLevel Container/small".scale = Vector2(0, 0)
-	$"InfoLevel Container/medium".scale = Vector2(0, 0)
-	$"InfoLevel Container/big".scale = Vector2(0, 0)
+	$"InfoLevelLayer/InfoLevel Container/small".scale = Vector2(0, 0)
+	$"InfoLevelLayer/InfoLevel Container/medium".scale = Vector2(0, 0)
+	$"InfoLevelLayer/InfoLevel Container/big".scale = Vector2(0, 0)
 
 func changeChara(newChara: MainCharacter):
 	chara = newChara
@@ -76,9 +75,9 @@ func setupSignals():
 
 func processBubbleAnimation():
 	bubbleInProcess = true
-	var small = $"InfoLevel Container/small"
-	var medium = $"InfoLevel Container/medium"
-	var big = $"InfoLevel Container/big"
+	var small = $"InfoLevelLayer/InfoLevel Container/small"
+	var medium = $"InfoLevelLayer/InfoLevel Container/medium"
+	var big = $"InfoLevelLayer/InfoLevel Container/big"
 	bubbleStep = clamp(bubbleStep, 0, bubbleWaitingTime * 2 + 1)
 	if bubbleDirection == 1:
 		$"InfoLevel Container".show()
@@ -118,6 +117,7 @@ func hideBubble():
 func pauseGame():
 	pause.emit()
 	fadeInOutPause(true)
+	$"PauseLayer/Pause Container/BoxContainer/Bubble/MarginContainer/BoxContainer/TextureButton".grab_focus()
 
 func resumeGame():
 	fadeInOutPause(false)

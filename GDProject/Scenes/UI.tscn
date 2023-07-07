@@ -49,8 +49,8 @@ default_font = ExtResource("9_vbras")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0owl3"]
 shader = ExtResource("1_xqchg")
 shader_parameter/color = Color(0.0901961, 0.0862745, 0.0901961, 1)
-shader_parameter/multiplier = 0.2
-shader_parameter/softness = 1.0
+shader_parameter/multiplier = 0.3
+shader_parameter/softness = 1.2
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mbpdr"]
 shader = ExtResource("3_xnbue")
@@ -87,9 +87,10 @@ bubbleAppearSpeed = 5.0
 bubbleDissappearSpeed = 8.0
 bubbleXCurve = SubResource("Curve_yo2nn")
 bubbleYCurve = SubResource("Curve_xvayy")
+pauseFadeSpeed = 10.0
 
 [node name="PauseLayer" type="CanvasLayer" parent="."]
-layer = 8
+layer = 15
 visible = false
 
 [node name="Pause Container" type="BoxContainer" parent="PauseLayer"]
@@ -157,6 +158,7 @@ layout_mode = 2
 texture_normal = ExtResource("17_0u6k4")
 texture_pressed = ExtResource("18_p56ro")
 texture_hover = ExtResource("19_bqr6f")
+texture_focused = ExtResource("19_bqr6f")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PauseLayer/Pause Container/BoxContainer/Bubble/MarginContainer/BoxContainer/TextureButton"]
 layout_mode = 1
@@ -190,6 +192,7 @@ layout_mode = 2
 texture_normal = ExtResource("17_0u6k4")
 texture_pressed = ExtResource("18_p56ro")
 texture_hover = ExtResource("19_bqr6f")
+texture_focused = ExtResource("19_bqr6f")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PauseLayer/Pause Container/BoxContainer/Bubble/MarginContainer/BoxContainer/TextureButton2"]
 layout_mode = 1
@@ -223,6 +226,7 @@ layout_mode = 2
 texture_normal = ExtResource("18_p56ro")
 texture_pressed = ExtResource("18_p56ro")
 texture_hover = ExtResource("19_bqr6f")
+texture_focused = ExtResource("19_bqr6f")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PauseLayer/Pause Container/BoxContainer/Bubble/MarginContainer/BoxContainer/TextureButton3"]
 layout_mode = 1
@@ -280,7 +284,7 @@ mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="DebugLayer" type="CanvasLayer" parent="."]
-layer = 10
+layer = 50
 visible = false
 
 [node name="Debug" type="Label" parent="DebugLayer"]
@@ -392,16 +396,11 @@ texture = ExtResource("12_37qjy")
 centered = false
 offset = Vector2(30, 20)
 
-[node name="Dialogic Container" type="BoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="InfoLevelLayer" type="CanvasLayer" parent="."]
+layer = 4
 
-[node name="InfoLevel Container" type="BoxContainer" parent="."]
-layout_mode = 1
+[node name="InfoLevel Container" type="BoxContainer" parent="InfoLevelLayer"]
+visible = false
 anchors_preset = -1
 anchor_left = 0.53
 anchor_top = 0.019
@@ -415,45 +414,43 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(0, 576)
 
-[node name="small" type="Sprite2D" parent="InfoLevel Container"]
-position = Vector2(2.00016, 575)
+[node name="small" type="Sprite2D" parent="InfoLevelLayer/InfoLevel Container"]
+position = Vector2(17.0001, 576)
 texture = ExtResource("21_qwbwa")
-offset = Vector2(14.9999, -13)
+offset = Vector2(0, -14)
 
-[node name="medium" type="Sprite2D" parent="InfoLevel Container"]
-position = Vector2(47.0002, 560)
+[node name="medium" type="Sprite2D" parent="InfoLevelLayer/InfoLevel Container"]
+position = Vector2(81.0001, 560)
 texture = ExtResource("22_34lb0")
-offset = Vector2(33.9999, -30)
+offset = Vector2(0, -30)
 
-[node name="big" type="Sprite2D" parent="InfoLevel Container"]
-position = Vector2(134, 496)
+[node name="big" type="Sprite2D" parent="InfoLevelLayer/InfoLevel Container"]
+position = Vector2(409, 584)
 texture = ExtResource("23_n0bbs")
-offset = Vector2(275, -202)
+offset = Vector2(0, -290)
 
-[node name="MarginContainer" type="MarginContainer" parent="InfoLevel Container/big"]
+[node name="MarginContainer" type="MarginContainer" parent="InfoLevelLayer/InfoLevel Container/big"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -77.135
-offset_top = -491.76
-offset_right = -77.135
-offset_bottom = -491.76
+offset_left = -352.0
+offset_top = -579.0
+offset_right = -352.0
+offset_bottom = -579.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
 theme_override_constants/margin_left = 80
 theme_override_constants/margin_top = 104
 theme_override_constants/margin_right = 80
 theme_override_constants/margin_bottom = 80
 metadata/_edit_use_anchors_ = true
 
-[node name="BoxContainer" type="BoxContainer" parent="InfoLevel Container/big/MarginContainer"]
+[node name="BoxContainer" type="BoxContainer" parent="InfoLevelLayer/InfoLevel Container/big/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 50
 vertical = true
 
-[node name="Label" type="Label" parent="InfoLevel Container/big/MarginContainer/BoxContainer"]
+[node name="Label" type="Label" parent="InfoLevelLayer/InfoLevel Container/big/MarginContainer/BoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 text = "Demo 1-1
@@ -461,47 +458,47 @@ Rodolfo llega tarde"
 label_settings = ExtResource("24_pw254")
 horizontal_alignment = 1
 
-[node name="Label4" type="Label" parent="InfoLevel Container/big/MarginContainer/BoxContainer"]
+[node name="Label4" type="Label" parent="InfoLevelLayer/InfoLevel Container/big/MarginContainer/BoxContainer"]
 layout_mode = 2
 theme = ExtResource("5_ro6a2")
 text = "Periodicos
 Coleccionables"
 label_settings = SubResource("LabelSettings_cjaqj")
 
-[node name="Label3" type="Label" parent="InfoLevel Container/big/MarginContainer/BoxContainer"]
+[node name="Label3" type="Label" parent="InfoLevelLayer/InfoLevel Container/big/MarginContainer/BoxContainer"]
 layout_mode = 2
 text = "Enemigos machacados																																									0/0
 Tiempo de juego																																																00:00
 "
 label_settings = ExtResource("9_ojyo5")
 
-[node name="Sprite2D4" type="Sprite2D" parent="InfoLevel Container/big/MarginContainer"]
-position = Vector2(600, 254)
+[node name="Sprite2D4" type="Sprite2D" parent="InfoLevelLayer/InfoLevel Container/big"]
+position = Vector2(248, -325)
 scale = Vector2(0.427381, 0.427381)
 texture = ExtResource("27_ouwx4")
 
-[node name="Sprite2D5" type="Sprite2D" parent="InfoLevel Container/big/MarginContainer"]
-position = Vector2(600, 302)
+[node name="Sprite2D5" type="Sprite2D" parent="InfoLevelLayer/InfoLevel Container/big"]
+position = Vector2(248, -277)
 scale = Vector2(0.427381, 0.427381)
 texture = ExtResource("25_3ki4m")
 
-[node name="Sprite2D6" type="Sprite2D" parent="InfoLevel Container/big/MarginContainer"]
-position = Vector2(548.575, 254)
+[node name="Sprite2D6" type="Sprite2D" parent="InfoLevelLayer/InfoLevel Container/big"]
+position = Vector2(196.575, -325)
 scale = Vector2(0.427381, 0.427381)
 texture = ExtResource("27_ouwx4")
 
-[node name="Sprite2D7" type="Sprite2D" parent="InfoLevel Container/big/MarginContainer"]
-position = Vector2(548.575, 302)
+[node name="Sprite2D7" type="Sprite2D" parent="InfoLevelLayer/InfoLevel Container/big"]
+position = Vector2(196.575, -277)
 scale = Vector2(0.427381, 0.427381)
 texture = ExtResource("26_ujqkd")
 
-[node name="Sprite2D8" type="Sprite2D" parent="InfoLevel Container/big/MarginContainer"]
-position = Vector2(496.575, 254)
+[node name="Sprite2D8" type="Sprite2D" parent="InfoLevelLayer/InfoLevel Container/big"]
+position = Vector2(144.575, -325)
 scale = Vector2(0.427381, 0.427381)
 texture = ExtResource("28_wtg46")
 
-[node name="Sprite2D9" type="Sprite2D" parent="InfoLevel Container/big/MarginContainer"]
-position = Vector2(496.575, 302)
+[node name="Sprite2D9" type="Sprite2D" parent="InfoLevelLayer/InfoLevel Container/big"]
+position = Vector2(144.575, -277)
 scale = Vector2(0.427381, 0.427381)
 texture = ExtResource("26_ujqkd")
 
@@ -519,3 +516,13 @@ grow_vertical = 2
 [node name="Icon_Localization" type="Sprite2D" parent="locatorLayer/FriendLocalization Container"]
 texture = ExtResource("10_yvqfy")
 offset = Vector2(0, -8)
+
+[node name="DialogueLayer" type="CanvasLayer" parent="."]
+layer = 6
+
+[node name="Dialogic Container" type="BoxContainer" parent="DialogueLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
