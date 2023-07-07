@@ -14,6 +14,7 @@ func _ready():
 	$UI.pause.connect(stopStateMachine)
 	$UI.resume.connect(resumeStateMachine)
 	$UI.quit.connect(quitToTitle)
+	$UI.bubbleHidden.connect(finishedThinking)
 	
 func changeTarget(target: MainCharacter):
 	chara.trackInput = false
@@ -28,6 +29,9 @@ func startThinking():
 
 func stopThinking():
 	$UI.hideBubble()
+
+func finishedThinking():
+	chara.bubbleHidden = true
 
 func stopStateMachine():
 	chara.trackInput = false

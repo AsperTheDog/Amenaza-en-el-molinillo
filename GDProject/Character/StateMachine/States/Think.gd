@@ -5,15 +5,20 @@ class_name ThinkState
 func onEnter(player: MainCharacter, delta: float):
 	super.onEnter(player, delta)
 	chara.executeAnimation("Think")
-	chara.startedThinking.emit()
+	chara.bubbleHidden = false
 	
 func onExit(delta: float, transitionTo: String):
-	chara.stoppedThinking.emit()
+	pass
 
 func check():
-	if not chara.isThinking():
+	if chara.bubbleHidden:
 		return "IdleState"
 
 func apply(delta):
 	chara.applyHorizMovement(delta, 0)
 	chara.turnFront(delta)
+	if not chara.isThinking():
+		chara.stoppedThinking.emit()
+	if chara.justThought():
+		chara.startedThinking.emit()
+	

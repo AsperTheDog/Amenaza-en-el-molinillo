@@ -102,7 +102,10 @@ var activeEyes: CompressedTexture2D
 
 var punchCollider: Area3D
 var dialogueFinder: Area3D
-	
+
+var bubbleHidden: bool = true
+
+
 
 # --- SYSTEM ---
 
@@ -210,6 +213,9 @@ func justInteracted():
 	
 func isThinking():
 	return trackInput and Input.is_action_pressed("Think")
+	
+func justThought():
+	return trackInput and Input.is_action_just_pressed("Think")
 
 func justPunched():
 	return trackInput and Input.is_action_just_pressed("Punch")
