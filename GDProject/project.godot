@@ -41,6 +41,10 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 import/fbx/enabled=false
 
+[gui]
+
+theme/custom="res://Enviroments/Theme.tres"
+
 [input]
 
 ui_accept={

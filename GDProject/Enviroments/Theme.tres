@@ -1,6 +1,24 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cbdbhbqebha6h"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cbdbhbqebha6h"]
 
+[ext_resource type="FontFile" uid="uid://d3umehc1swnb" path="res://Assets/Fonts/Ubuntu/Ubuntu-Bold.ttf" id="1_4nt18"]
 [ext_resource type="FontFile" uid="uid://dvlnp3oaymqw1" path="res://Assets/Fonts/Ubuntu/Ubuntu-Medium.ttf" id="1_bm0th"]
+[ext_resource type="FontFile" uid="uid://x5o02sli6x7c" path="res://Assets/Fonts/Ubuntu/Ubuntu-BoldItalic.ttf" id="2_2xf6u"]
+[ext_resource type="FontFile" uid="uid://8e8knxj3wida" path="res://Assets/Fonts/Ubuntu/Ubuntu-MediumItalic.ttf" id="3_vuih4"]
 
 [resource]
 default_font = ExtResource("1_bm0th")
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 0.317647)
+RichTextLabel/constants/line_separation = 8
+RichTextLabel/constants/outline_size = 16
+RichTextLabel/constants/shadow_offset_x = -3
+RichTextLabel/constants/shadow_offset_y = 3
+RichTextLabel/constants/shadow_outline_size = 12
+RichTextLabel/font_sizes/bold_font_size = 24
+RichTextLabel/font_sizes/bold_italics_font_size = 24
+RichTextLabel/font_sizes/italics_font_size = 24
+RichTextLabel/font_sizes/normal_font_size = 24
+RichTextLabel/fonts/bold_font = ExtResource("1_4nt18")
+RichTextLabel/fonts/bold_italics_font = ExtResource("2_2xf6u")
+RichTextLabel/fonts/italics_font = ExtResource("3_vuih4")
+RichTextLabel/fonts/normal_font = ExtResource("1_bm0th")
