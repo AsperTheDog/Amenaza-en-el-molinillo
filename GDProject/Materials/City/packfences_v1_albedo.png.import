@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxc8dan76wnr"
 path.s3tc="res://.godot/imported/packfences_v1_albedo.png-a58b4bd56f778327bdee097e4becdb11.s3tc.ctex"
-path.etc2="res://.godot/imported/packfences_v1_albedo.png-a58b4bd56f778327bdee097e4becdb11.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Materials/City/packfences_v1_albedo.png"
-dest_files=["res://.godot/imported/packfences_v1_albedo.png-a58b4bd56f778327bdee097e4becdb11.s3tc.ctex", "res://.godot/imported/packfences_v1_albedo.png-a58b4bd56f778327bdee097e4becdb11.etc2.ctex"]
+dest_files=["res://.godot/imported/packfences_v1_albedo.png-a58b4bd56f778327bdee097e4becdb11.s3tc.ctex"]
 
 [params]
 

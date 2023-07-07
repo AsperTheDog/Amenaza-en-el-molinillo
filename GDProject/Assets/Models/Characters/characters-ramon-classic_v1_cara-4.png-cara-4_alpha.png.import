@@ -4,9 +4,8 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cuvhmnynbpcmy"
 path.s3tc="res://.godot/imported/characters-ramon-classic_v1_cara-4.png-cara-4_alpha.png-98795b1b7afceae2e577956c749dcfe0.s3tc.ctex"
-path.etc2="res://.godot/imported/characters-ramon-classic_v1_cara-4.png-cara-4_alpha.png-98795b1b7afceae2e577956c749dcfe0.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -14,7 +13,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://Assets/Models/Characters/characters-ramon-classic_v1_cara-4.png-cara-4_alpha.png"
-dest_files=["res://.godot/imported/characters-ramon-classic_v1_cara-4.png-cara-4_alpha.png-98795b1b7afceae2e577956c749dcfe0.s3tc.ctex", "res://.godot/imported/characters-ramon-classic_v1_cara-4.png-cara-4_alpha.png-98795b1b7afceae2e577956c749dcfe0.etc2.ctex"]
+dest_files=["res://.godot/imported/characters-ramon-classic_v1_cara-4.png-cara-4_alpha.png-98795b1b7afceae2e577956c749dcfe0.s3tc.ctex"]
 
 [params]
 

@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cmd1rdpuojak"
 path.s3tc="res://.godot/imported/construction-area_v1_heightmap.png-816f55b566bc8b4c881fc2ff3c8385e2.s3tc.ctex"
-path.etc2="res://.godot/imported/construction-area_v1_heightmap.png-816f55b566bc8b4c881fc2ff3c8385e2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Materials/City/construction-area_v1_heightmap.png"
-dest_files=["res://.godot/imported/construction-area_v1_heightmap.png-816f55b566bc8b4c881fc2ff3c8385e2.s3tc.ctex", "res://.godot/imported/construction-area_v1_heightmap.png-816f55b566bc8b4c881fc2ff3c8385e2.etc2.ctex"]
+dest_files=["res://.godot/imported/construction-area_v1_heightmap.png-816f55b566bc8b4c881fc2ff3c8385e2.s3tc.ctex"]
 
 [params]
 

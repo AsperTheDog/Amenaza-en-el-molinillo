@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://tin14sndqel3"
 path.s3tc="res://.godot/imported/Eyes-Half_Mouth-Smile.png-87a4bf71a58e82f14aec3591cfc3d026.s3tc.ctex"
-path.etc2="res://.godot/imported/Eyes-Half_Mouth-Smile.png-87a4bf71a58e82f14aec3591cfc3d026.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Models/Characters/Eyes-Half_Mouth-Smile.png"
-dest_files=["res://.godot/imported/Eyes-Half_Mouth-Smile.png-87a4bf71a58e82f14aec3591cfc3d026.s3tc.ctex", "res://.godot/imported/Eyes-Half_Mouth-Smile.png-87a4bf71a58e82f14aec3591cfc3d026.etc2.ctex"]
+dest_files=["res://.godot/imported/Eyes-Half_Mouth-Smile.png-87a4bf71a58e82f14aec3591cfc3d026.s3tc.ctex"]
 
 [params]
 

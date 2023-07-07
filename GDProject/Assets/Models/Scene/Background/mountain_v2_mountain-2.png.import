@@ -4,9 +4,8 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqh08f8f85wc3"
 path.s3tc="res://.godot/imported/mountain_v2_mountain-2.png-39309f07cf53dd05d04374b75525c9fc.s3tc.ctex"
-path.etc2="res://.godot/imported/mountain_v2_mountain-2.png-39309f07cf53dd05d04374b75525c9fc.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -14,7 +13,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://Assets/Models/Scene/Background/mountain_v2_mountain-2.png"
-dest_files=["res://.godot/imported/mountain_v2_mountain-2.png-39309f07cf53dd05d04374b75525c9fc.s3tc.ctex", "res://.godot/imported/mountain_v2_mountain-2.png-39309f07cf53dd05d04374b75525c9fc.etc2.ctex"]
+dest_files=["res://.godot/imported/mountain_v2_mountain-2.png-39309f07cf53dd05d04374b75525c9fc.s3tc.ctex"]
 
 [params]
 

@@ -4,9 +4,8 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cckxb1x6q55vx"
 path.s3tc="res://.godot/imported/characters-rodolfo-classic_v1_Eyes-Open_Mouth-Open.png-a1a3af347a07bf15fc9a728cd69302c7.s3tc.ctex"
-path.etc2="res://.godot/imported/characters-rodolfo-classic_v1_Eyes-Open_Mouth-Open.png-a1a3af347a07bf15fc9a728cd69302c7.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -14,7 +13,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://Assets/Models/Characters/characters-rodolfo-classic_v1_Eyes-Open_Mouth-Open.png"
-dest_files=["res://.godot/imported/characters-rodolfo-classic_v1_Eyes-Open_Mouth-Open.png-a1a3af347a07bf15fc9a728cd69302c7.s3tc.ctex", "res://.godot/imported/characters-rodolfo-classic_v1_Eyes-Open_Mouth-Open.png-a1a3af347a07bf15fc9a728cd69302c7.etc2.ctex"]
+dest_files=["res://.godot/imported/characters-rodolfo-classic_v1_Eyes-Open_Mouth-Open.png-a1a3af347a07bf15fc9a728cd69302c7.s3tc.ctex"]
 
 [params]
 

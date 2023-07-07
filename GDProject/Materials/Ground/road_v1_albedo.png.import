@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6j0p5g3ku0gl"
 path.s3tc="res://.godot/imported/road_v1_albedo.png-1172c48be83a23536035bad95e78a61b.s3tc.ctex"
-path.etc2="res://.godot/imported/road_v1_albedo.png-1172c48be83a23536035bad95e78a61b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Materials/Ground/road_v1_albedo.png"
-dest_files=["res://.godot/imported/road_v1_albedo.png-1172c48be83a23536035bad95e78a61b.s3tc.ctex", "res://.godot/imported/road_v1_albedo.png-1172c48be83a23536035bad95e78a61b.etc2.ctex"]
+dest_files=["res://.godot/imported/road_v1_albedo.png-1172c48be83a23536035bad95e78a61b.s3tc.ctex"]
 
 [params]
 

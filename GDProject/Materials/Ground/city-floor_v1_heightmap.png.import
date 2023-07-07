@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2afpiyf7i78j"
 path.s3tc="res://.godot/imported/city-floor_v1_heightmap.png-a1ccfaaa775014f64863658428a1f135.s3tc.ctex"
-path.etc2="res://.godot/imported/city-floor_v1_heightmap.png-a1ccfaaa775014f64863658428a1f135.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Materials/Ground/city-floor_v1_heightmap.png"
-dest_files=["res://.godot/imported/city-floor_v1_heightmap.png-a1ccfaaa775014f64863658428a1f135.s3tc.ctex", "res://.godot/imported/city-floor_v1_heightmap.png-a1ccfaaa775014f64863658428a1f135.etc2.ctex"]
+dest_files=["res://.godot/imported/city-floor_v1_heightmap.png-a1ccfaaa775014f64863658428a1f135.s3tc.ctex"]
 
 [params]
 

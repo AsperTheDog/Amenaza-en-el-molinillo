@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://mqnrhxqoye05"
 path.s3tc="res://.godot/imported/build-bg_v1_normal.png-a43e0337b3e4c86f1ab6f72ff94b9263.s3tc.ctex"
-path.etc2="res://.godot/imported/build-bg_v1_normal.png-a43e0337b3e4c86f1ab6f72ff94b9263.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Materials/City/build-bg_v1_normal.png"
-dest_files=["res://.godot/imported/build-bg_v1_normal.png-a43e0337b3e4c86f1ab6f72ff94b9263.s3tc.ctex", "res://.godot/imported/build-bg_v1_normal.png-a43e0337b3e4c86f1ab6f72ff94b9263.etc2.ctex"]
+dest_files=["res://.godot/imported/build-bg_v1_normal.png-a43e0337b3e4c86f1ab6f72ff94b9263.s3tc.ctex"]
 
 [params]
 

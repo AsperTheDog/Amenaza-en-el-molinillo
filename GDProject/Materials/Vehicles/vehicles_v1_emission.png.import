@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfofrn2a1u1r0"
 path.s3tc="res://.godot/imported/vehicles_v1_emission.png-7b31674ab70fa073735ec3339a501158.s3tc.ctex"
-path.etc2="res://.godot/imported/vehicles_v1_emission.png-7b31674ab70fa073735ec3339a501158.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Materials/Vehicles/vehicles_v1_emission.png"
-dest_files=["res://.godot/imported/vehicles_v1_emission.png-7b31674ab70fa073735ec3339a501158.s3tc.ctex", "res://.godot/imported/vehicles_v1_emission.png-7b31674ab70fa073735ec3339a501158.etc2.ctex"]
+dest_files=["res://.godot/imported/vehicles_v1_emission.png-7b31674ab70fa073735ec3339a501158.s3tc.ctex"]
 
 [params]
 

@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://7mvnniyht0ag"
 path.s3tc="res://.godot/imported/build-bg_v1_heightmap.png-83b82165259c47abe93e76bc4ee720d9.s3tc.ctex"
-path.etc2="res://.godot/imported/build-bg_v1_heightmap.png-83b82165259c47abe93e76bc4ee720d9.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Materials/City/build-bg_v1_heightmap.png"
-dest_files=["res://.godot/imported/build-bg_v1_heightmap.png-83b82165259c47abe93e76bc4ee720d9.s3tc.ctex", "res://.godot/imported/build-bg_v1_heightmap.png-83b82165259c47abe93e76bc4ee720d9.etc2.ctex"]
+dest_files=["res://.godot/imported/build-bg_v1_heightmap.png-83b82165259c47abe93e76bc4ee720d9.s3tc.ctex"]
 
 [params]
 
