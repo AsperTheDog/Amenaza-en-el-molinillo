@@ -11,5 +11,5 @@ func startDialogue() -> void:
 	get_tree().current_scene.add_child(balloon)
 	balloon.start(dialogue_resource, dialogue_start)
  
-func hasFinished() -> bool:
+func stoppedDialogue() -> bool:
 	return balloon == null || balloon.dialogueFinished

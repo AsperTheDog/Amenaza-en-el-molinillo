@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cgytm08sbexoe"]
+[gd_scene load_steps=20 format=3 uid="uid://cgytm08sbexoe"]
 
 [ext_resource type="PackedScene" uid="uid://cybqp2djw2xu7" path="res://Character/Character.tscn" id="1_cndco"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Air.gd" id="2_6fgtj"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://Character/StateMachine/States/Think.gd" id="14_nacff"]
 [ext_resource type="Texture2D" uid="uid://tin14sndqel3" path="res://Assets/Models/Characters/Eyes-Half_Mouth-Smile.png" id="14_tvnhh"]
 [ext_resource type="Texture2D" uid="uid://c2ruchoguqevi" path="res://Assets/Models/Characters/Eyes-Confuse_Mouth-Sad.png" id="15_c1jb8"]
+[ext_resource type="Script" path="res://Character/StateMachine/States/Dialogue.gd" id="15_xk80w"]
 [ext_resource type="Texture2D" uid="uid://mljfjy810dje" path="res://Assets/Models/Characters/Eyes-Open_Mouth-Open.png" id="16_sfcds"]
 [ext_resource type="PackedScene" uid="uid://b6aowcqbcswti" path="res://Assets/Models/Characters/characters-rodolfo-classic_v1.glb" id="17_rhe5y"]
 
@@ -58,6 +59,9 @@ script = ExtResource("11_jbjgr")
 
 [node name="ThinkState" type="Node" parent="StateMachine" index="10"]
 script = ExtResource("14_nacff")
+
+[node name="DialogueState" type="Node" parent="StateMachine" index="11"]
+script = ExtResource("15_xk80w")
 
 [node name="FallingFloorLongFace" type="Node" parent="FaceAnimations" index="0"]
 script = ExtResource("12_usnj3")

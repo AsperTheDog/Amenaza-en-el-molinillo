@@ -11,15 +11,14 @@ func onEnter(player: MainCharacter, delta: float):
 		dialogue = dialogues[0]
 	
 	if dialogue != null:
-		dialogue.startDialogue()
+		dialogue.startDialogue.emit()
 	
-func onExit(delta: float, transitionTo: String):
-	# TODO Release ballon object from memory?
-	# Do nothing
+func onExit(_delta: float, _transitionTo: String):
+	chara.stoppedDialogue.emit()
 	return
 
 func check():
-	if dialogue.hasFinished():
+	if dialogue.stoppedDialogue():
 		return "IdleState"
 	return null
 
