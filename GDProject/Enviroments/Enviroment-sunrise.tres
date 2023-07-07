@@ -1,8 +1,8 @@
 [gd_resource type="Environment" load_steps=5 format=3 uid="uid://bt7lbvekdafji"]
 
 [sub_resource type="Gradient" id="Gradient_4tj0a"]
-offsets = PackedFloat32Array(0, 0.105919, 0.88162, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.209965, 0.0685847, 0.0299011, 1, 0.95673, 0.860243, 0.809004, 1, 1, 1, 1, 1)
+offsets = PackedFloat32Array(0, 0.105919, 0.483193, 0.88162, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.124849, 1.19785e-05, 0.124991, 1, 0.586595, 0.385874, 0.424088, 1, 0.95673, 0.860243, 0.809004, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_8odt0"]
 gradient = SubResource("Gradient_4tj0a")
@@ -28,17 +28,15 @@ tonemap_mode = 2
 ssr_enabled = true
 ssao_enabled = true
 ssil_enabled = true
-sdfgi_use_occlusion = true
-sdfgi_read_sky_light = false
-sdfgi_bounce_feedback = 0.1
-sdfgi_energy = 9.0
+sdfgi_enabled = true
+sdfgi_energy = 2.0
 glow_enabled = true
 glow_normalized = true
 fog_enabled = true
 fog_light_color = Color(1, 0.894118, 0.831373, 1)
 fog_light_energy = 0.03
 fog_sun_scatter = 0.04
-fog_density = 0.015
+fog_density = 0.02
 fog_aerial_perspective = 0.5
 fog_sky_affect = 0.0
 volumetric_fog_density = 0.02

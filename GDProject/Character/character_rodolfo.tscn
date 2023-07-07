@@ -23,6 +23,52 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_mvcg6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l6y2o"]
+[sub_resource type="Curve" id="Curve_ecfmk"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0.019685, -360), 0.0, -1323.47, 0, 0, Vector2(1, 360), -1205.59, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_js83s"]
+curve = SubResource("Curve_ecfmk")
+
+[sub_resource type="Curve" id="Curve_d16s0"]
+_data = [Vector2(0, 0.0105263), 0.0, 0.121531, 0, 0, Vector2(0.645012, 0.884211), -4.04637, -4.04637, 0, 0, Vector2(0.774942, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_i2fxy"]
+curve = SubResource("Curve_d16s0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6u74t"]
+lifetime_randomness = 0.5
+particle_flag_align_y = true
+direction = Vector3(90, 0, 90)
+spread = 90.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 5.0
+angular_velocity_min = 1.0
+angular_velocity_max = 5.0
+angular_velocity_curve = SubResource("CurveTexture_js83s")
+damping_max = 0.5
+scale_min = 0.0
+scale_max = 0.75
+scale_curve = SubResource("CurveTexture_i2fxy")
+turbulence_enabled = true
+turbulence_noise_scale = 5.0
+turbulence_initial_displacement_max = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s5glv"]
+albedo_color = Color(0.768627, 0.482353, 1, 1)
+roughness = 0.0
+emission_enabled = true
+emission = Color(0.537255, 0.00392157, 0.890196, 1)
+emission_energy_multiplier = 100.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_v2gs8"]
+material = SubResource("StandardMaterial3D_s5glv")
+radius = 0.025
+height = 0.3
 
 [node name="Character" instance=ExtResource("1_cndco")]
 collision_layer = 2
@@ -127,3 +173,27 @@ shape = SubResource("BoxShape3D_mvcg6")
 
 [node name="CollisionShape3D" parent="rotating/Punch" index="0"]
 shape = SubResource("BoxShape3D_l6y2o")
+[node name="particles-falling" parent="rotating" index="4"]
+fract_delta = true
+emission_shape = 6
+emission_ring_axis = Vector3(0.25, 2, 0.25)
+emission_ring_height = 0.0
+emission_ring_radius = 2.0
+emission_ring_inner_radius = 1.0
+direction = Vector3(0, 0, 0)
+spread = 90.0
+initial_velocity_max = 4.0
+scale_amount_max = 4.0
+
+[node name="particles-punch2" type="GPUParticles3D" parent="rotating" index="5"]
+transform = Transform3D(-1.33091e-08, -0.304476, 0, -1.33091e-08, 5.81758e-16, -0.304476, 0.304476, -1.33091e-08, -1.33091e-08, 0, 0.992245, 0.529712)
+emitting = false
+amount = 24
+lifetime = 1.5
+preprocess = 1.0
+speed_scale = 4.0
+explosiveness = 1.0
+randomness = 0.5
+visibility_aabb = AABB(-2.63482, -1.3891, -2.14298, 5.26965, 2.77821, 4.28597)
+process_material = SubResource("ParticleProcessMaterial_6u74t")
+draw_pass_1 = SubResource("SphereMesh_v2gs8")

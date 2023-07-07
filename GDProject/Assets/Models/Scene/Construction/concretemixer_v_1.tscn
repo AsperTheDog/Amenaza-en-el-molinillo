@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://dn1naery0nktj"]
 
 [ext_resource type="PackedScene" uid="uid://vu84all5e8nv" path="res://Assets/Models/Scene/Construction/concretemixer_v1.glb" id="1_us671"]
-[ext_resource type="Material" uid="uid://fqicphn27oyf" path="res://Materials/City/construction-area_v1.tres" id="2_icnry"]
+[ext_resource type="Material" path="res://Materials/Ground/construction-area_v2.tres" id="2_c6dhq"]
 
 [node name="concretemixer_v1" instance=ExtResource("1_us671")]
 
 [node name="Hormigonera" parent="." index="0"]
-surface_material_override/0 = ExtResource("2_icnry")
+surface_material_override/0 = ExtResource("2_c6dhq")

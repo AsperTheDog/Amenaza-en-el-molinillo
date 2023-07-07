@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://xq8lo8osq0ix"]
+
+[ext_resource type="PackedScene" uid="uid://cj0waxd7kvfdi" path="res://Assets/Models/Scene/City/trash-big_v1.glb" id="1_olc3n"]
+[ext_resource type="Material" path="res://Materials/City/sings_v2.tres" id="2_8kly4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iiyya"]
+size = Vector3(1.58384, 1.31663, 1)
+
+[node name="trash-big_v1" instance=ExtResource("1_olc3n")]
+
+[node name="Basurero" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_8kly4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661261, 0)
+shape = SubResource("BoxShape3D_iiyya")

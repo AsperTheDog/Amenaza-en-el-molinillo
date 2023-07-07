@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dgy5hmwgd0yvj"]
 
 [ext_resource type="PackedScene" uid="uid://dqkqkdnw447em" path="res://Assets/Models/Scene/Construction/scaffold_v1.glb" id="1_y8t0h"]
-[ext_resource type="Material" uid="uid://fqicphn27oyf" path="res://Materials/City/construction-area_v1.tres" id="2_la65p"]
+[ext_resource type="Material" path="res://Materials/Ground/construction-area_v2.tres" id="2_6car4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nogh0"]
 size = Vector3(4.76457, 0.118656, 1.36744)
@@ -9,7 +9,7 @@ size = Vector3(4.76457, 0.118656, 1.36744)
 [node name="scaffold_v1" instance=ExtResource("1_y8t0h")]
 
 [node name="Andamios" parent="." index="0"]
-surface_material_override/0 = ExtResource("2_la65p")
+surface_material_override/0 = ExtResource("2_6car4")
 
 [node name="StaticBody3D4" type="StaticBody3D" parent="Andamios" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.30112, 0)

@@ -1,6 +1,0 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cbdbhbqebha6h"]
-
-[ext_resource type="FontFile" uid="uid://dvlnp3oaymqw1" path="res://Assets/Fonts/Ubuntu/Ubuntu-Medium.ttf" id="1_bm0th"]
-
-[resource]
-default_font = ExtResource("1_bm0th")

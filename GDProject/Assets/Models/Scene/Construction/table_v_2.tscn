@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhqltrgfyh21w"]
+
+[ext_resource type="PackedScene" uid="uid://c4jbowsi5fcwr" path="res://Assets/Models/Scene/Construction/table_v1.glb" id="1_rlmxa"]
+[ext_resource type="Material" path="res://Materials/Ground/construction-area_v2.tres" id="2_phpty"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s1c0h"]
+size = Vector3(3.04624, 0.0647029, 0.741751)
+
+[node name="table_v1" instance=ExtResource("1_rlmxa")]
+
+[node name="Tabla" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_phpty")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="." index="1"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D4" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00505662, -0.0155473, 0.390624)
+shape = SubResource("BoxShape3D_s1c0h")

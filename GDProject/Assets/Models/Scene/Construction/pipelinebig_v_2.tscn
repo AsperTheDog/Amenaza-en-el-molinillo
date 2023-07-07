@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnaal7gyp2uon"]
+
+[ext_resource type="PackedScene" uid="uid://kcqlbd1tcyl" path="res://Assets/Models/Scene/Construction/pipelinebig_v1.glb" id="1_lj54v"]
+[ext_resource type="Material" path="res://Materials/Ground/construction-area_v2.tres" id="2_7ssyx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p3akd"]
+size = Vector3(3.95311, 0.31154, 1.23636)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_02eac"]
+size = Vector3(0.288016, 3.18873, 1)
+
+[node name="pipelinebig_v1" instance=ExtResource("1_lj54v")]
+
+[node name="TuberiaGigante" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_7ssyx")
+surface_material_override/1 = ExtResource("2_7ssyx")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.128649, 0)
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D4" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28745, 6.49691e-05, -0.00415814)
+shape = SubResource("BoxShape3D_p3akd")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D4" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28745, 2.36309, -0.00415814)
+shape = SubResource("BoxShape3D_p3akd")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D4" index="2"]
+transform = Transform3D(-9.55541e-09, 0.154575, 0.154575, 0, 0.154575, -0.154575, -0.218602, -6.7567e-09, -6.7567e-09, -1.85822, -0.167908, -0.00415814)
+shape = SubResource("BoxShape3D_02eac")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D4" index="3"]
+transform = Transform3D(-9.55541e-09, -0.154575, -0.154575, 0, 0.154575, -0.154575, 0.218602, -6.7567e-09, -6.7567e-09, 2.43348, -0.167908, -0.00415814)
+shape = SubResource("BoxShape3D_02eac")
