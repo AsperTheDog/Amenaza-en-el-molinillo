@@ -219,7 +219,7 @@ func isJumping():
 	return trackInput and Input.is_action_pressed("Jump")
 
 func getMovingDir():
-	return Input.get_axis("Left", "Right") if trackInput else 0
+	return Input.get_axis("Left", "Right") if trackInput else 0.0
 
 func getVaultingDirection():
 	if $VaultRayLeft.is_colliding():
@@ -243,6 +243,14 @@ func processJumpBuffering(delta):
 
 
 # --- TURNING ---
+
+func turnFrontAsync():
+	var count = 0
+	while count < turnSpeed:
+		var delta = get_process_delta_time()
+		$rotating.rotation.y = lerp_angle($rotating.rotation.y, 0, delta * turnSpeed)
+		count += delta
+		await get_tree().process_frame
 
 func turnFront(delta: float):
 	if $rotating.rotation.y == 0:
@@ -343,7 +351,8 @@ func forceState(state: String):
 func getActiveState():
 	return $StateMachine.activeStateName
 
-
+func freezeStateMachine():
+	$StateMachine.freeze()
 
 # --- SIGNALS ---
 

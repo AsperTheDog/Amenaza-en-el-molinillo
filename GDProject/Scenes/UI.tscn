@@ -4,25 +4,25 @@
 [ext_resource type="Shader" path="res://Enviroments/Vignette.gdshader" id="1_xqchg"]
 [ext_resource type="Shader" path="res://Enviroments/thatsAllFolks.gdshader" id="3_xnbue"]
 [ext_resource type="Script" path="res://Scenes/DebugUI.gd" id="4_pve5f"]
-[ext_resource type="Texture2D" path="res://Assets/UI/Rodolfo_Info_UI.tres" id="5_dibkr"]
+[ext_resource type="Texture2D" uid="uid://bsywa1cplpq1k" path="res://Assets/UI/Rodolfo_Info_UI.tres" id="5_dibkr"]
 [ext_resource type="Theme" uid="uid://cbdbhbqebha6h" path="res://Theme.tres" id="5_ro6a2"]
-[ext_resource type="Texture2D" path="res://Assets/UI/Ramon_Info_UI.tres" id="7_ev1n4"]
-[ext_resource type="Texture2D" path="res://Assets/UI/Bubble_Notifications_UI.tres" id="8_a4ml0"]
-[ext_resource type="LabelSettings" path="res://Assets/Fonts/UI_normal_black.tres" id="9_ojyo5"]
-[ext_resource type="Texture2D" path="res://Assets/UI/Icon-Newspaper_UI.tres" id="9_tlf10"]
+[ext_resource type="Texture2D" uid="uid://scdq3idcub1p" path="res://Assets/UI/Ramon_Info_UI.tres" id="7_ev1n4"]
+[ext_resource type="Texture2D" uid="uid://64ab21rkiefg" path="res://Assets/UI/Bubble_Notifications_UI.tres" id="8_a4ml0"]
+[ext_resource type="LabelSettings" uid="uid://ciq7hdntgsuu3" path="res://Assets/Fonts/UI_normal_black.tres" id="9_ojyo5"]
+[ext_resource type="Texture2D" uid="uid://c4jt06rnisl1j" path="res://Assets/UI/Icon-Newspaper_UI.tres" id="9_tlf10"]
 [ext_resource type="FontFile" uid="uid://d3umehc1swnb" path="res://Assets/Fonts/Ubuntu/Ubuntu-Bold.ttf" id="9_vbras"]
-[ext_resource type="Texture2D" path="res://Assets/UI/Localization_UI.tres" id="10_yvqfy"]
-[ext_resource type="Texture2D" path="res://Assets/UI/Bubble_Error_UI.tres" id="11_ca6og"]
-[ext_resource type="Texture2D" path="res://Assets/UI/Icon-Error_UI.tres" id="12_37qjy"]
-[ext_resource type="LabelSettings" path="res://Assets/Fonts/UI_normal_white.tres" id="12_ddlfk"]
-[ext_resource type="Texture2D" path="res://Assets/UI/Pause_Bg_UI.tres" id="16_ci8ro"]
-[ext_resource type="LabelSettings" path="res://Assets/Fonts/UI_Big_black.tres" id="16_rbs4y"]
-[ext_resource type="Texture2D" path="res://Assets/UI/Button_Basic_UI.tres" id="17_0u6k4"]
+[ext_resource type="Texture2D" uid="uid://drcm6ajcgwkux" path="res://Assets/UI/Localization_UI.tres" id="10_yvqfy"]
+[ext_resource type="Texture2D" uid="uid://ceag8dhg7r6bw" path="res://Assets/UI/Bubble_Error_UI.tres" id="11_ca6og"]
+[ext_resource type="Texture2D" uid="uid://ch3dyyc7oel37" path="res://Assets/UI/Icon-Error_UI.tres" id="12_37qjy"]
+[ext_resource type="LabelSettings" uid="uid://c63en1s523r0x" path="res://Assets/Fonts/UI_normal_white.tres" id="12_ddlfk"]
+[ext_resource type="Texture2D" uid="uid://bsjq08p2kdyf2" path="res://Assets/UI/Pause_Bg_UI.tres" id="16_ci8ro"]
+[ext_resource type="LabelSettings" uid="uid://ba323m41pj501" path="res://Assets/Fonts/UI_Big_black.tres" id="16_rbs4y"]
+[ext_resource type="Texture2D" uid="uid://bi8px2iobc06y" path="res://Assets/UI/Button_Basic_UI.tres" id="17_0u6k4"]
 [ext_resource type="Texture2D" uid="uid://cwrwby0q6i2br" path="res://Assets/UI/Button_Pressed_UI.tres" id="18_p56ro"]
 [ext_resource type="Texture2D" uid="uid://wmrluepim8c7" path="res://Assets/UI/Button_Hover_UI.tres" id="19_bqr6f"]
-[ext_resource type="Texture2D" path="res://Assets/UI/bubblethink-small_UI.tres" id="21_qwbwa"]
-[ext_resource type="Texture2D" path="res://Assets/UI/bubblethink-medium_UI.tres" id="22_34lb0"]
-[ext_resource type="Texture2D" path="res://Assets/UI/bubblethink-Big_UI.tres" id="23_n0bbs"]
+[ext_resource type="Texture2D" uid="uid://y44he6yftj63" path="res://Assets/UI/bubblethink-small_UI.tres" id="21_qwbwa"]
+[ext_resource type="Texture2D" uid="uid://ck6tqf564wxu" path="res://Assets/UI/bubblethink-medium_UI.tres" id="22_34lb0"]
+[ext_resource type="Texture2D" uid="uid://w8pn50881co1" path="res://Assets/UI/bubblethink-Big_UI.tres" id="23_n0bbs"]
 [ext_resource type="LabelSettings" uid="uid://cnxel0e5ng0yc" path="res://Assets/Fonts/UI_Rodolfo.tres" id="24_pw254"]
 [ext_resource type="Texture2D" uid="uid://bqb2p7rr8qqm8" path="res://Assets/UI/Icon_Colletions_NotFound_UI.tres" id="25_3ki4m"]
 [ext_resource type="Texture2D" uid="uid://bwkm03h5a5mj2" path="res://Assets/UI/Icon_Colletions_UI.tres" id="26_ujqkd"]
@@ -78,6 +78,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_force_pass_scroll_events = false
 script = ExtResource("1_knx4a")
 thatsAllSpeed = 0.4
 thatsAllCurve = SubResource("Curve_llpmj")
@@ -87,32 +88,35 @@ bubbleDissappearSpeed = 8.0
 bubbleXCurve = SubResource("Curve_yo2nn")
 bubbleYCurve = SubResource("Curve_xvayy")
 
-[node name="Pause Container" type="BoxContainer" parent="."]
+[node name="PauseLayer" type="CanvasLayer" parent="."]
+layer = 8
 visible = false
-layout_mode = 1
+
+[node name="Pause Container" type="BoxContainer" parent="PauseLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="ColorRect" parent="Pause Container"]
+[node name="Background" type="ColorRect" parent="PauseLayer/Pause Container"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 color = Color(0.705882, 0.2, 0.764706, 0.470588)
 
-[node name="BoxContainer" type="BoxContainer" parent="Pause Container"]
+[node name="BoxContainer" type="BoxContainer" parent="PauseLayer/Pause Container"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 
-[node name="Bubble" type="Sprite2D" parent="Pause Container/BoxContainer"]
+[node name="Bubble" type="Sprite2D" parent="PauseLayer/Pause Container/BoxContainer"]
 self_modulate = Color(0.705882, 0.2, 0.764706, 1)
 texture = ExtResource("16_ci8ro")
 centered = false
 offset = Vector2(-800, -590)
 
-[node name="MarginContainer" type="MarginContainer" parent="Pause Container/BoxContainer/Bubble"]
+[node name="MarginContainer" type="MarginContainer" parent="PauseLayer/Pause Container/BoxContainer/Bubble"]
 clip_contents = true
 anchors_preset = 15
 anchor_right = 1.0
@@ -128,11 +132,11 @@ theme_override_constants/margin_top = 110
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 80
 
-[node name="BoxContainer" type="BoxContainer" parent="Pause Container/BoxContainer/Bubble/MarginContainer"]
+[node name="BoxContainer" type="BoxContainer" parent="PauseLayer/Pause Container/BoxContainer/Bubble/MarginContainer"]
 layout_mode = 2
 vertical = true
 
-[node name="Pause" type="Label" parent="Pause Container/BoxContainer/Bubble/MarginContainer/BoxContainer"]
+[node name="Pause" type="Label" parent="PauseLayer/Pause Container/BoxContainer/Bubble/MarginContainer/BoxContainer"]
 clip_contents = true
 layout_mode = 2
 size_flags_vertical = 0
@@ -141,19 +145,19 @@ text = "Pausa
 "
 label_settings = ExtResource("16_rbs4y")
 
-[node name="Text" type="Label" parent="Pause Container/BoxContainer/Bubble/MarginContainer/BoxContainer"]
+[node name="Text" type="Label" parent="PauseLayer/Pause Container/BoxContainer/Bubble/MarginContainer/BoxContainer"]
 layout_mode = 2
 size_flags_vertical = 6
 text = "Rodolfo necesita un momento."
 label_settings = ExtResource("12_ddlfk")
 
-[node name="TextureButton" type="TextureButton" parent="Pause Container/BoxContainer/Bubble/MarginContainer/BoxContainer"]
+[node name="TextureButton" type="TextureButton" parent="PauseLayer/Pause Container/BoxContainer/Bubble/MarginContainer/BoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("17_0u6k4")
 texture_pressed = ExtResource("18_p56ro")
 texture_hover = ExtResource("19_bqr6f")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Pause Container/BoxContainer/Bubble/MarginContainer/BoxContainer/TextureButton"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PauseLayer/Pause Container/BoxContainer/Bubble/MarginContainer/BoxContainer/TextureButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -164,6 +168,7 @@ offset_right = 72.0
 offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = SubResource("Theme_gh0om")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -179,13 +184,13 @@ theme_override_font_sizes/mono_font_size = 32
 text = "Continuar
 "
 
-[node name="TextureButton2" type="TextureButton" parent="Pause Container/BoxContainer/Bubble/MarginContainer/BoxContainer"]
+[node name="TextureButton2" type="TextureButton" parent="PauseLayer/Pause Container/BoxContainer/Bubble/MarginContainer/BoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("17_0u6k4")
 texture_pressed = ExtResource("18_p56ro")
 texture_hover = ExtResource("19_bqr6f")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Pause Container/BoxContainer/Bubble/MarginContainer/BoxContainer/TextureButton2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PauseLayer/Pause Container/BoxContainer/Bubble/MarginContainer/BoxContainer/TextureButton2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -196,6 +201,7 @@ offset_right = 81.0
 offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = SubResource("Theme_gh0om")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -211,13 +217,13 @@ theme_override_font_sizes/mono_font_size = 32
 text = "Opciones
 "
 
-[node name="TextureButton3" type="TextureButton" parent="Pause Container/BoxContainer/Bubble/MarginContainer/BoxContainer"]
+[node name="TextureButton3" type="TextureButton" parent="PauseLayer/Pause Container/BoxContainer/Bubble/MarginContainer/BoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("18_p56ro")
 texture_pressed = ExtResource("18_p56ro")
 texture_hover = ExtResource("19_bqr6f")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Pause Container/BoxContainer/Bubble/MarginContainer/BoxContainer/TextureButton3"]
+[node name="RichTextLabel" type="RichTextLabel" parent="PauseLayer/Pause Container/BoxContainer/Bubble/MarginContainer/BoxContainer/TextureButton3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -228,6 +234,7 @@ offset_right = 44.0
 offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = SubResource("Theme_gh0om")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -254,10 +261,11 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="thatsAllFolksLayer" type="CanvasLayer" parent="."]
-layer = 2
+layer = 9
 
 [node name="ThatsAllFolks" type="ColorRect" parent="thatsAllFolksLayer"]
 material = SubResource("ShaderMaterial_mbpdr")
@@ -267,59 +275,64 @@ anchor_right = 1.0
 anchor_bottom = 1.4429
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="DebugLayer" type="CanvasLayer" parent="."]
 layer = 10
+visible = false
 
 [node name="Debug" type="Label" parent="DebugLayer"]
-visible = false
 offset_right = 242.0
 offset_bottom = 403.0
 label_settings = SubResource("LabelSettings_nxymj")
 script = ExtResource("4_pve5f")
 
-[node name="UI Container" type="MarginContainer" parent="."]
-layout_mode = 1
+[node name="UI layer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="UI Container" type="MarginContainer" parent="UI layer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = ExtResource("5_ro6a2")
 theme_override_constants/margin_left = 64
 theme_override_constants/margin_top = 64
 theme_override_constants/margin_right = 64
 theme_override_constants/margin_bottom = 64
 
-[node name="CharactersInfo Container" type="BoxContainer" parent="UI Container"]
+[node name="CharactersInfo Container" type="BoxContainer" parent="UI layer/UI Container"]
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("5_ro6a2")
 theme_override_constants/separation = 8
 alignment = 2
 vertical = true
 
-[node name="Rodolfo Info" type="Sprite2D" parent="UI Container/CharactersInfo Container"]
+[node name="Rodolfo Info" type="Sprite2D" parent="UI layer/UI Container/CharactersInfo Container"]
 texture = ExtResource("5_dibkr")
 centered = false
 
-[node name="Ramon Info" type="Sprite2D" parent="UI Container/CharactersInfo Container"]
+[node name="Ramon Info" type="Sprite2D" parent="UI layer/UI Container/CharactersInfo Container"]
 texture = ExtResource("7_ev1n4")
 centered = false
 offset = Vector2(10, 150)
 
-[node name="Notifications Container" type="BoxContainer" parent="UI Container"]
+[node name="Notifications Container" type="BoxContainer" parent="UI layer/UI Container"]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 
-[node name="Bubble" type="Sprite2D" parent="UI Container/Notifications Container"]
+[node name="Bubble" type="Sprite2D" parent="UI layer/UI Container/Notifications Container"]
 texture = ExtResource("8_a4ml0")
 centered = false
 offset = Vector2(-610, 10)
 
-[node name="Text" type="Label" parent="UI Container/Notifications Container/Bubble"]
+[node name="Text" type="Label" parent="UI layer/UI Container/Notifications Container/Bubble"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -337,24 +350,24 @@ autowrap_mode = 2
 clip_text = true
 max_lines_visible = 3
 
-[node name="Icon" type="Sprite2D" parent="UI Container/Notifications Container/Bubble"]
+[node name="Icon" type="Sprite2D" parent="UI layer/UI Container/Notifications Container/Bubble"]
 position = Vector2(-610, 10)
 texture = ExtResource("9_tlf10")
 centered = false
 offset = Vector2(30, 20)
 
-[node name="Error Container" type="BoxContainer" parent="UI Container"]
+[node name="Error Container" type="BoxContainer" parent="UI layer/UI Container"]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 
-[node name="Bubble" type="Sprite2D" parent="UI Container/Error Container"]
+[node name="Bubble" type="Sprite2D" parent="UI layer/UI Container/Error Container"]
 texture = ExtResource("11_ca6og")
 centered = false
 offset = Vector2(-610, 10)
 
-[node name="Text" type="Label" parent="UI Container/Error Container/Bubble"]
+[node name="Text" type="Label" parent="UI layer/UI Container/Error Container/Bubble"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -372,24 +385,11 @@ autowrap_mode = 2
 clip_text = true
 max_lines_visible = 3
 
-[node name="Icon" type="Sprite2D" parent="UI Container/Error Container/Bubble"]
+[node name="Icon" type="Sprite2D" parent="UI layer/UI Container/Error Container/Bubble"]
 position = Vector2(-610, 10)
 texture = ExtResource("12_37qjy")
 centered = false
 offset = Vector2(30, 20)
-
-[node name="FriendLocalization Container" type="BoxContainer" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Icon_Localization" type="Sprite2D" parent="FriendLocalization Container"]
-texture = ExtResource("10_yvqfy")
-offset = Vector2(0, -8)
 
 [node name="Dialogic Container" type="BoxContainer" parent="."]
 layout_mode = 1
@@ -502,3 +502,18 @@ texture = ExtResource("28_wtg46")
 position = Vector2(144.575, -277)
 scale = Vector2(0.427381, 0.427381)
 texture = ExtResource("26_ujqkd")
+
+[node name="locatorLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="FriendLocalization Container" type="BoxContainer" parent="locatorLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon_Localization" type="Sprite2D" parent="locatorLayer/FriendLocalization Container"]
+texture = ExtResource("10_yvqfy")
+offset = Vector2(0, -8)

@@ -1,7 +1,13 @@
 extends Control
 
+signal pause
+signal resume
+signal quit
+
 signal bubbleShown
 signal bubbleHidden
+
+signal thatsAllFinished
 
 @export_group("That's all folks")
 @export var thatsAllSpeed: float = 1
@@ -13,16 +19,15 @@ signal bubbleHidden
 @export var bubbleXCurve: Curve
 @export var bubbleYCurve: Curve
 
-var thatsAllExecuting: bool = true
-var thatsAllFadeOut: bool = true
-var thatsAllStep: float = 0
-
 var showDebug: bool = false
 var chara: MainCharacter
 
 var bubbleInProcess: bool = false
 
+var pauseShown: bool = false
+
 func _ready():
+	setupSignals()
 	doThatsAllFolks(true)
 	get_parent().charaChanged.connect(changeChara)
 	chara = get_parent().chara
@@ -32,28 +37,36 @@ func changeChara(newChara: MainCharacter):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if thatsAllExecuting:
-		if thatsAllFadeOut:
-			thatsAllStep += delta * thatsAllSpeed
-		else:
-			thatsAllStep -= delta * thatsAllSpeed
-		var value = thatsAllCurve.sample(clamp(thatsAllStep, 0, 1))
-		$thatsAllFolksLayer/ThatsAllFolks.material.set("shader_parameter/threshold", value)
-		if thatsAllStep < 0 or thatsAllStep > 1:
-			thatsAllExecuting = false
 	if Input.is_action_just_pressed("ui_debug"):
 		showDebug = not showDebug
 		if showDebug:
-			$DebugLayer/Debug.show()
+			$DebugLayer.show()
 		else:
-			$DebugLayer/Debug.hide()
+			$DebugLayer.hide()
 	if showDebug:
 		$DebugLayer/Debug.processDebug(chara)
+	if Input.is_action_just_pressed("Pause"):
+		if pauseShown:
+			resumeGame()
+		else:
+			$PauseLayer.show()
+			pause.emit()
+			pauseShown = true
 
-func doThatsAllFolks(isFadeOut: bool):
-	thatsAllStep = int(not isFadeOut)
-	thatsAllFadeOut = isFadeOut
-	thatsAllExecuting = true
+func doThatsAllFolks(fadeIn: bool):
+	var rect = $thatsAllFolksLayer/ThatsAllFolks
+	var counter = 0 if fadeIn else 1
+	while (counter < 1 and fadeIn) or (counter > 0 and not fadeIn):
+		var value = thatsAllCurve.sample(clamp(counter, 0, 1))
+		rect.material.set("shader_parameter/threshold", value)
+		counter += thatsAllSpeed * get_process_delta_time() * (int(fadeIn) * 2 - 1)
+		await get_tree().process_frame
+	thatsAllFinished.emit()
+
+func setupSignals():
+	$"PauseLayer/Pause Container/BoxContainer/Bubble/MarginContainer/BoxContainer/TextureButton".pressed.connect(resumeGame)
+	$"PauseLayer/Pause Container/BoxContainer/Bubble/MarginContainer/BoxContainer/TextureButton3".pressed.connect(quitToTitle)
+	
 
 func changeBubbleScale(bubble: Sprite2D, appear: bool):
 	var counter = 0 if appear else 1
@@ -95,3 +108,12 @@ func hideBubble():
 	$"InfoLevel Container".hide()
 	bubbleInProcess = false
 	bubbleHidden.emit()
+
+func resumeGame():
+	pauseShown = false
+	$PauseLayer.hide()
+	resume.emit()
+
+func quitToTitle():
+	$PauseLayer.hide()
+	quit.emit()

@@ -8,6 +8,7 @@ var chara: MainCharacter = null
 
 var activeState: State = null
 var activeStateName = ""
+var frozen = false
 
 func setup(player: MainCharacter):
 	chara = player
@@ -17,6 +18,8 @@ func setup(player: MainCharacter):
 	activeState.onEnter(chara, 1)
 	
 func evaluate(delta: float):
+	if frozen:
+		return
 	var ret = activeState.check()
 	if ret != null:
 		transition(ret, delta)
@@ -30,3 +33,5 @@ func transition(state: String, delta: float):
 	activeState.onEnter(chara, delta)
 	activeState.apply(delta)
 	
+func freeze():
+	frozen = true
