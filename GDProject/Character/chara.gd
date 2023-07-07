@@ -62,7 +62,7 @@ var animationPlayer: AnimationPlayer
 var runParticles: CPUParticles3D
 var jumpParticles: CPUParticles3D
 var fallParticles: CPUParticles3D
-var punchParticles: CPUParticles3D
+var punchParticles: GPUParticles3D
 
 var zPos: float
 const landingAnimations = [
@@ -129,7 +129,7 @@ func _ready():
 	runParticles = $"rotating/particles-run"
 	jumpParticles = $"rotating/particles-jump"
 	fallParticles = $"rotating/particles-falling"
-	punchParticles = $"rotating/particles-punch"
+	punchParticles = $"rotating/particles-punch2"
 	
 	# Face Animations
 	eyesModel = $"rotating/modelo/Character/Armature/Skeleton3D/Eyes"
