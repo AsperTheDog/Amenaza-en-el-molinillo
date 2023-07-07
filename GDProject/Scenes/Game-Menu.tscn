@@ -19,6 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h65co")
+fadeInSpeed = 0.2
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 
