@@ -80,7 +80,7 @@ func processBubbleAnimation():
 	var big = $"InfoLevelLayer/InfoLevel Container/big"
 	bubbleStep = clamp(bubbleStep, 0, bubbleWaitingTime * 2 + 1)
 	if bubbleDirection == 1:
-		$"InfoLevel Container".show()
+		$"InfoLevelLayer/InfoLevel Container".show()
 	while bubbleStep >= 0 and bubbleStep <= bubbleWaitingTime * 2 + 1:		
 		if bubbleStep >= 0 and bubbleStep <= 1:
 			small.scale = Vector2(bubbleXCurve.sample(bubbleStep), bubbleYCurve.sample(bubbleStep))
