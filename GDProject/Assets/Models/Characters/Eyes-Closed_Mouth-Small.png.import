@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dshv8poq44exq"
 path.s3tc="res://.godot/imported/Eyes-Closed_Mouth-Small.png-30f983185f6beb3b2b28922d59bf3440.s3tc.ctex"
+path.etc2="res://.godot/imported/Eyes-Closed_Mouth-Small.png-30f983185f6beb3b2b28922d59bf3440.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Models/Characters/Eyes-Closed_Mouth-Small.png"
-dest_files=["res://.godot/imported/Eyes-Closed_Mouth-Small.png-30f983185f6beb3b2b28922d59bf3440.s3tc.ctex"]
+dest_files=["res://.godot/imported/Eyes-Closed_Mouth-Small.png-30f983185f6beb3b2b28922d59bf3440.s3tc.ctex", "res://.godot/imported/Eyes-Closed_Mouth-Small.png-30f983185f6beb3b2b28922d59bf3440.etc2.ctex"]
 
 [params]
 

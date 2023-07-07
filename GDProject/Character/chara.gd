@@ -101,6 +101,7 @@ var currentAnimation: String
 var activeEyes: CompressedTexture2D
 
 var punchCollider: Area3D
+var dialogueFinder: Area3D
 	
 
 # --- SYSTEM ---
@@ -111,6 +112,7 @@ func _ready():
 	# Colliders
 	punchCollider = $rotating/Punch
 	punchCollider.body_entered.connect(_on_punch_body_entered)
+	dialogueFinder= $DialogueFinder
 	
 	# Animations
 	animationPlayer = $rotating/modelo/AnimationPlayer
@@ -205,7 +207,7 @@ func applyHorizMovementAir(delta: float, direction: float):
 
 func justInteracted():
 	return trackInput and Input.is_action_just_pressed("Interact")
-
+	
 func isThinking():
 	return trackInput and Input.is_action_pressed("Think")
 

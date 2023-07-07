@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b51murh1u1fwn"
 path.s3tc="res://.godot/imported/characters-ramon-classic_v1_Rodolfo_Metallic.png-Rodolfo_Roughness.png-282aa7e95c18f37a6412b2ecacfb1f4f.s3tc.ctex"
+path.etc2="res://.godot/imported/characters-ramon-classic_v1_Rodolfo_Metallic.png-Rodolfo_Roughness.png-282aa7e95c18f37a6412b2ecacfb1f4f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://Assets/Models/Characters/characters-ramon-classic_v1_Rodolfo_Metallic.png-Rodolfo_Roughness.png"
-dest_files=["res://.godot/imported/characters-ramon-classic_v1_Rodolfo_Metallic.png-Rodolfo_Roughness.png-282aa7e95c18f37a6412b2ecacfb1f4f.s3tc.ctex"]
+dest_files=["res://.godot/imported/characters-ramon-classic_v1_Rodolfo_Metallic.png-Rodolfo_Roughness.png-282aa7e95c18f37a6412b2ecacfb1f4f.s3tc.ctex", "res://.godot/imported/characters-ramon-classic_v1_Rodolfo_Metallic.png-Rodolfo_Roughness.png-282aa7e95c18f37a6412b2ecacfb1f4f.etc2.ctex"]
 
 [params]
 

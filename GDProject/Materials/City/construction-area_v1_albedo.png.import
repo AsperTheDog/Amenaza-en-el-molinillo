@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c83hkx423s0hq"
 path.s3tc="res://.godot/imported/construction-area_v1_albedo.png-451aceb55680278dc7255b27c8bee740.s3tc.ctex"
+path.etc2="res://.godot/imported/construction-area_v1_albedo.png-451aceb55680278dc7255b27c8bee740.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Materials/City/construction-area_v1_albedo.png"
-dest_files=["res://.godot/imported/construction-area_v1_albedo.png-451aceb55680278dc7255b27c8bee740.s3tc.ctex"]
+dest_files=["res://.godot/imported/construction-area_v1_albedo.png-451aceb55680278dc7255b27c8bee740.s3tc.ctex", "res://.godot/imported/construction-area_v1_albedo.png-451aceb55680278dc7255b27c8bee740.etc2.ctex"]
 
 [params]
 

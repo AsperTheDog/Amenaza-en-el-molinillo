@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2qbx42c06b43"
-path="res://.godot/imported/rodolfo-pose-default.png-056b1c3af167a9843f6508587b820c89.ctex"
+path="res://.godot/imported/rodolfo-pose-default.png-83b30986f403e631a5a7db1e1b76df9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Poses/Rodolfo/rodolfo-pose-default.png"
-dest_files=["res://.godot/imported/rodolfo-pose-default.png-056b1c3af167a9843f6508587b820c89.ctex"]
+source_file="res://Assets/Sprites/Poses/rodolfo-pose-default.png"
+dest_files=["res://.godot/imported/rodolfo-pose-default.png-83b30986f403e631a5a7db1e1b76df9a.ctex"]
 
 [params]
 

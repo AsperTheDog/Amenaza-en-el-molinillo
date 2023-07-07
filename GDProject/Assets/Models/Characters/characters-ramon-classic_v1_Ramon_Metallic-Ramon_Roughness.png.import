@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dafoilshqbh10"
 path.s3tc="res://.godot/imported/characters-ramon-classic_v1_Ramon_Metallic-Ramon_Roughness.png-15ab40038ef2de39e5ab5b4b7f2ac37d.s3tc.ctex"
+path.etc2="res://.godot/imported/characters-ramon-classic_v1_Ramon_Metallic-Ramon_Roughness.png-15ab40038ef2de39e5ab5b4b7f2ac37d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://Assets/Models/Characters/characters-ramon-classic_v1_Ramon_Metallic-Ramon_Roughness.png"
-dest_files=["res://.godot/imported/characters-ramon-classic_v1_Ramon_Metallic-Ramon_Roughness.png-15ab40038ef2de39e5ab5b4b7f2ac37d.s3tc.ctex"]
+dest_files=["res://.godot/imported/characters-ramon-classic_v1_Ramon_Metallic-Ramon_Roughness.png-15ab40038ef2de39e5ab5b4b7f2ac37d.s3tc.ctex", "res://.godot/imported/characters-ramon-classic_v1_Ramon_Metallic-Ramon_Roughness.png-15ab40038ef2de39e5ab5b4b7f2ac37d.etc2.ctex"]
 
 [params]
 

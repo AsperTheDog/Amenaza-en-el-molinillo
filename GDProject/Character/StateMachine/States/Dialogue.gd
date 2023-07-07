@@ -11,10 +11,10 @@ func onEnter(player: MainCharacter, delta: float):
 		dialogue = dialogues[0]
 	
 	if dialogue != null:
-		dialogue.startDialogue.emit()
+		dialogue.startDialogue()
 	
 func onExit(_delta: float, _transitionTo: String):
-	chara.stoppedDialogue.emit()
+	
 	return
 
 func check():

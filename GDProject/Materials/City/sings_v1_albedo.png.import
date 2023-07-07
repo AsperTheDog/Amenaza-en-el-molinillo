@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgkktxp8qnnll"
 path.s3tc="res://.godot/imported/sings_v1_albedo.png-79194a69cdd424e106434e0d81751830.s3tc.ctex"
+path.etc2="res://.godot/imported/sings_v1_albedo.png-79194a69cdd424e106434e0d81751830.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Materials/City/sings_v1_albedo.png"
-dest_files=["res://.godot/imported/sings_v1_albedo.png-79194a69cdd424e106434e0d81751830.s3tc.ctex"]
+dest_files=["res://.godot/imported/sings_v1_albedo.png-79194a69cdd424e106434e0d81751830.s3tc.ctex", "res://.godot/imported/sings_v1_albedo.png-79194a69cdd424e106434e0d81751830.etc2.ctex"]
 
 [params]
 

@@ -20,9 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://mljfjy810dje" path="res://Assets/Models/Characters/Eyes-Open_Mouth-Open.png" id="16_sfcds"]
 [ext_resource type="PackedScene" uid="uid://b6aowcqbcswti" path="res://Assets/Models/Characters/characters-rodolfo-classic_v1.glb" id="17_rhe5y"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_l6y2o"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_mvcg6"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_uepmr"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_l6y2o"]
 
 [node name="Character" instance=ExtResource("1_cndco")]
 collision_layer = 2
@@ -66,15 +66,6 @@ script = ExtResource("14_nacff")
 
 [node name="DialogueState" type="Node" parent="StateMachine" index="11"]
 script = ExtResource("15_xk80w")
-
-[node name="CollisionShape3D" parent="." index="1"]
-visible = false
-
-[node name="VaultRayLeft" parent="." index="2"]
-visible = false
-
-[node name="VaultRayRight" parent="." index="3"]
-visible = false
 
 [node name="FallingFloorLongFace" type="Node" parent="FaceAnimations" index="0"]
 script = ExtResource("12_usnj3")
@@ -124,32 +115,15 @@ eyeFaces = Array[CompressedTexture2D]([ExtResource("14_tvnhh")])
 mouthTimes = Array[float]([0.0])
 mouthFaces = Array[CompressedTexture2D]([ExtResource("14_tvnhh")])
 
+[node name="DialogueFinder" type="Area3D" parent="." index="5"]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DialogueFinder" index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0124115, 1.02767, -0.00365394)
+shape = SubResource("BoxShape3D_mvcg6")
+
 [node name="modelo" parent="rotating" index="0" instance=ExtResource("17_rhe5y")]
 
-[node name="CamTarget" parent="rotating" index="1"]
-visible = false
-
-[node name="Punch" parent="rotating" index="2"]
-visible = false
-
 [node name="CollisionShape3D" parent="rotating/Punch" index="0"]
-visible = false
 shape = SubResource("BoxShape3D_l6y2o")
-
-[node name="particles-jump" parent="rotating" index="3"]
-visible = false
-
-[node name="particles-falling" parent="rotating" index="4"]
-visible = false
-
-[node name="particles-punch" parent="rotating" index="5"]
-visible = false
-
-[node name="particles-run" parent="rotating" index="6"]
-visible = false
-
-[node name="DialogueFinder" type="Area3D" parent="rotating" index="7"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="rotating/DialogueFinder" index="0"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0124115, 1.02767, -0.00365394)
-shape = SubResource("BoxShape3D_uepmr")

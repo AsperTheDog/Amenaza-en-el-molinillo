@@ -30,6 +30,8 @@ func check():
 		return "PunchGroundState"
 	if chara.isThinking():
 		return "ThinkState"
+	if chara.justInteracted() and chara.dialogueFinder.has_overlapping_areas(): 
+		return "DialogueState"
 	return null
 
 func apply(delta):
