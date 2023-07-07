@@ -82,20 +82,22 @@ func processBubbleAnimation():
 	bubbleStep = clamp(bubbleStep, 0, bubbleWaitingTime * 2 + 1)
 	if bubbleDirection == 1:
 		$"InfoLevel Container".show()
-	while bubbleStep >= 0 and bubbleStep <= bubbleWaitingTime * 2 + 1:
-		if small.scale.x <= 0.05:
-			small.scale = Vector2(0, 0)
-		if medium.scale.x <= 0.05:
-			medium.scale = Vector2(0, 0)
-		if big.scale.x <= 0.05:
-			big.scale = Vector2(0, 0)
-		
+	while bubbleStep >= 0 and bubbleStep <= bubbleWaitingTime * 2 + 1:		
 		if bubbleStep >= 0 and bubbleStep <= 1:
 			small.scale = Vector2(bubbleXCurve.sample(bubbleStep), bubbleYCurve.sample(bubbleStep))
+		else:
+			var trueSize = 0 if bubbleStep < 0 else 1
+			small.scale = Vector2(trueSize, trueSize)
 		if bubbleStep >= bubbleWaitingTime and bubbleStep <= bubbleWaitingTime + 1:
 			medium.scale = Vector2(bubbleXCurve.sample(bubbleStep - bubbleWaitingTime), bubbleYCurve.sample(bubbleStep - bubbleWaitingTime))
+		else:
+			var trueSize = 0 if bubbleStep < bubbleWaitingTime else 1
+			medium.scale = Vector2(trueSize, trueSize)
 		if bubbleStep >= bubbleWaitingTime * 2 and bubbleStep <= bubbleWaitingTime * 2 + 1:
 			big.scale = Vector2(bubbleXCurve.sample(bubbleStep - bubbleWaitingTime * 2), bubbleYCurve.sample(bubbleStep - bubbleWaitingTime * 2))
+		else:
+			var trueSize = 0 if bubbleStep < bubbleWaitingTime * 2 else 1
+			big.scale = Vector2(trueSize, trueSize)
 		bubbleStep += get_process_delta_time() * bubbleAppearSpeed * bubbleDirection
 		await get_tree().process_frame
 	if bubbleDirection == -1:
