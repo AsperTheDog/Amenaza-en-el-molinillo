@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://b7co442vfn4a5"]
+[gd_scene load_steps=80 format=3 uid="uid://b7co442vfn4a5"]
 
 [ext_resource type="Script" path="res://Scenes/MainScene.gd" id="1_gm6yh"]
 [ext_resource type="Environment" uid="uid://bt7lbvekdafji" path="res://Enviroments/Enviroment-sunrise.tres" id="1_hmru1"]
@@ -82,6 +82,8 @@ size = Vector3(113.319, 0.0425731, 7.14734)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2u762"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_c8f6i"]
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_ytw2h"]
 material = ExtResource("47_tic1o")
 
@@ -106,7 +108,7 @@ debugSpeed = 3.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.877, 0.159637, -6.87501)
 
 [node name="Rodolfo" parent="." instance=ExtResource("74_sipe8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8477, 0, -6.87262)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8486, 0.0034771, -6.87429)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_hmru1")
@@ -372,10 +374,16 @@ transform = Transform3D(0.888913, 0, 0.458076, 0, 1, 0, -0.458076, 0, 0.888913, 
 [node name="City" type="Node3D" parent="."]
 
 [node name="fireguard_v1" parent="City" instance=ExtResource("6_dyq5u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0213, 0, -4.85249)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0213, 0.00566244, -4.85255)
 
 [node name="mailbox-es_v1" parent="City" instance=ExtResource("8_t5dqu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2378, 0, -4.96624)
+
+[node name="Dialogue" type="Area3D" parent="City/mailbox-es_v1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="City/mailbox-es_v1/Dialogue"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.279966, 1.00022, -0.946519)
+shape = SubResource("BoxShape3D_c8f6i")
 
 [node name="sewer_v1" parent="City" instance=ExtResource("9_ymfnq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.60292, 0, -6.17666)
