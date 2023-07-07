@@ -19,6 +19,7 @@ signal thatsAllFinished
 @export var bubbleYCurve: Curve
 @export_group("Pause Menu")
 @export var pauseFadeSpeed: float = 1
+@export var pauseMaxOpacity: int = 120
 @export var pauseCurve: Curve
 
 var showDebug: bool = false
@@ -29,6 +30,7 @@ var bubbleStep: float = 0
 var bubbleDirection: int = 0
 
 var pauseShown: bool = false
+var pauseFading: bool = false
 
 func _ready():
 	setupSignals()
@@ -52,13 +54,11 @@ func _process(delta):
 			$DebugLayer.hide()
 	if showDebug:
 		$DebugLayer/Debug.processDebug(chara)
-	if Input.is_action_just_pressed("Pause"):
+	if Input.is_action_just_pressed("Pause") and not pauseFading:
 		if pauseShown:
 			resumeGame()
 		else:
-			$PauseLayer.show()
-			pause.emit()
-			pauseShown = true
+			pauseGame()
 
 func doThatsAllFolks(fadeIn: bool):
 	var rect = $thatsAllFolksLayer/ThatsAllFolks
@@ -73,17 +73,6 @@ func doThatsAllFolks(fadeIn: bool):
 func setupSignals():
 	$"PauseLayer/Pause Container/BoxContainer/Bubble/MarginContainer/BoxContainer/TextureButton".pressed.connect(resumeGame)
 	$"PauseLayer/Pause Container/BoxContainer/Bubble/MarginContainer/BoxContainer/TextureButton3".pressed.connect(quitToTitle)
-	
-
-func changeBubbleScale(bubble: Sprite2D, appear: bool):
-	var counter = 0 if appear else 1
-	var speed = bubbleAppearSpeed if appear else bubbleDissappearSpeed
-	while (counter < 1 and appear) or (counter > 0 and not appear):
-		bubble.scale = Vector2(bubbleXCurve.sample(counter), bubbleYCurve.sample(counter))
-		counter += get_process_delta_time() * (int(appear) * 2 - 1) * speed
-		await get_tree().process_frame
-	var objective = 1 if appear else 0
-	bubble.scale = Vector2(objective, objective)
 
 func processBubbleAnimation():
 	bubbleInProcess = true
@@ -124,16 +113,36 @@ func hideBubble():
 	if not bubbleInProcess:
 		processBubbleAnimation()
 
+func pauseGame():
+	pause.emit()
+	fadeInOutPause(true)
+
 func resumeGame():
-	pauseShown = false
-	$PauseLayer.hide()
+	fadeInOutPause(false)
 	resume.emit()
 
 func quitToTitle():
-	$PauseLayer.hide()
+	fadeInOutPause(false)
 	quit.emit()
 
 func fadeInOutPause(fadeIn: bool):
-	var pause
-	var count = 0 if fadeIn else 1
+	pauseFading = true
+	var background = $"PauseLayer/Pause Container/Background"
+	var pauseBlock = $"PauseLayer/Pause Container/BoxContainer/"
+	var pauseText = $"PauseLayer/Pause Container/BoxContainer/Bubble/MarginContainer"
+	var counter = 0 if fadeIn else 1
+	if fadeIn:
+		background.color.a = 0
+		$PauseLayer.show()
+		pauseShown = true
+	while (counter < 1 and fadeIn) or (counter > 0 and not fadeIn):
+		var value = ease(clamp(counter, 0, 1), 0.4)
+		pauseBlock.scale = Vector2(value, value)
+		background.color.a = ease(clamp(counter, 0, 1), 0.4) * (pauseMaxOpacity / 255.0)
+		counter += pauseFadeSpeed * get_process_delta_time() * (int(fadeIn) * 2 - 1)
+		await get_tree().process_frame
+	if not fadeIn:
+		$PauseLayer.hide()
+		pauseShown = false
+	pauseFading = false
 	
