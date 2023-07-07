@@ -100,7 +100,7 @@ func processBubbleAnimation():
 		bubbleStep += get_process_delta_time() * bubbleAppearSpeed * bubbleDirection
 		await get_tree().process_frame
 	if bubbleDirection == -1:
-		$"InfoLevel Container".hide()
+		$"InfoLevelLayer/InfoLevel Container".hide()
 		bubbleHidden.emit()
 	bubbleInProcess = false
 
