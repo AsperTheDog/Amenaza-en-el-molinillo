@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqhawtqe7uh2t"]
+
+[ext_resource type="PackedScene" uid="uid://nbb2kka7f58s" path="res://Assets/Models/Scene/ModularBuildings/coating-simple-garaje.glb" id="1_4op4i"]
+[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_kfttl"]
+
+[node name="coating-simple-garaje" instance=ExtResource("1_4op4i")]
+
+[node name="Coating Simple Garaje_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_kfttl")

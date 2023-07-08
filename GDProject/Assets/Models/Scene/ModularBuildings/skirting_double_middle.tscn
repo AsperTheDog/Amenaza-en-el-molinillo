@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://djxca08di0wuy"]
+
+[ext_resource type="PackedScene" uid="uid://bfruwt5uhslk4" path="res://Assets/Models/Scene/ModularBuildings/skirting-double-middle.glb" id="1_7udoh"]
+[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_k3e5q"]
+
+[node name="skirting-double-middle" instance=ExtResource("1_7udoh")]
+
+[node name="Skirting Double Middle_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_k3e5q")

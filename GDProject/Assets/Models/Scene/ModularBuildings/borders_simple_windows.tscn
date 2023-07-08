@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ciwj0lrgjwi4h"]
+
+[ext_resource type="PackedScene" uid="uid://gx7ywox4r3yp" path="res://Assets/Models/Scene/ModularBuildings/borders-simple-windows.glb" id="1_f0p1j"]
+[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_pj633"]
+
+[node name="borders-simple-windows" instance=ExtResource("1_f0p1j")]
+
+[node name="Borders Simple Windows_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_pj633")

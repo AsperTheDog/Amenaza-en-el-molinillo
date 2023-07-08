@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsja6qmm0idiv"]
+
+[ext_resource type="PackedScene" uid="uid://bnd6w8polmj3o" path="res://Assets/Models/Scene/ModularBuildings/skirting-big-middlealt.glb" id="1_ls72c"]
+[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_eoof1"]
+
+[node name="skirting-big-middlealt" instance=ExtResource("1_ls72c")]
+
+[node name="Skirting Big MiddleAlt_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_eoof1")

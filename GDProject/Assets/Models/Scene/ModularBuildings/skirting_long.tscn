@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnnekmisqi20h"]
+
+[ext_resource type="PackedScene" uid="uid://dsu70whd8uwil" path="res://Assets/Models/Scene/ModularBuildings/skirting-long.glb" id="1_xqfcb"]
+[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_r6nsm"]
+
+[node name="skirting-long" instance=ExtResource("1_xqfcb")]
+
+[node name="Skirting Long_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_r6nsm")

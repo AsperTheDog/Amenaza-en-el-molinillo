@@ -1,0 +1,161 @@
+[gd_scene load_steps=19 format=3 uid="uid://wr3am1xkf426"]
+
+[ext_resource type="Script" path="res://Scenes/MainScene.gd" id="1_3om1c"]
+[ext_resource type="PackedScene" uid="uid://blcpnk11d3lhx" path="res://Scenes/UI.tscn" id="2_nf5jt"]
+[ext_resource type="CameraAttributesPractical" uid="uid://73bot76e0rcf" path="res://Enviroments/camera_pj_practical.tres" id="3_3430x"]
+[ext_resource type="Script" path="res://Scenes/Camera.gd" id="4_4fovd"]
+[ext_resource type="PackedScene" uid="uid://c2hb6a5nl0aw6" path="res://Character/character_ramon.tscn" id="5_0b0c0"]
+[ext_resource type="PackedScene" uid="uid://cgytm08sbexoe" path="res://Character/character_rodolfo.tscn" id="6_ci7uu"]
+[ext_resource type="Environment" uid="uid://bt7lbvekdafji" path="res://Enviroments/Enviroment-sunrise.tres" id="7_s14yk"]
+[ext_resource type="PackedScene" uid="uid://bxryp4uhkt6wg" path="res://Assets/Models/Developer/regla.glb" id="8_5whd4"]
+[ext_resource type="PackedScene" uid="uid://s6ixlnrdoux5" path="res://Assets/Models/Scene/ModularBuildings/foundation_basic.tscn" id="11_f7wny"]
+[ext_resource type="PackedScene" uid="uid://bj1lmy280yvq" path="res://Assets/Models/Scene/ModularBuildings/wall_windows_normal.tscn" id="11_utgw7"]
+[ext_resource type="PackedScene" uid="uid://bpno8urvmercd" path="res://Assets/Models/Scene/ModularBuildings/skirting_simple_middle.tscn" id="12_ab030"]
+[ext_resource type="PackedScene" uid="uid://ciwj0lrgjwi4h" path="res://Assets/Models/Scene/ModularBuildings/borders_simple_windows.tscn" id="14_any8v"]
+[ext_resource type="PackedScene" uid="uid://byqqv7ru2gool" path="res://Assets/Models/Scene/Ground/floor_road_v_1.tscn" id="59_jy6ai"]
+[ext_resource type="Material" uid="uid://cvcqlnyd0mus" path="res://Materials/Ground/city-floor_v1.tres" id="60_wmg14"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_21vss"]
+size = Vector3(296, 0.0425731, 7.14734)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_l65kj"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2u762"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ytw2h"]
+material = ExtResource("60_wmg14")
+
+[node name="main" type="Node3D" node_paths=PackedStringArray("chara")]
+script = ExtResource("1_3om1c")
+chara = NodePath("Rodolfo")
+
+[node name="UI" parent="." instance=ExtResource("2_nf5jt")]
+
+[node name="MainCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871558, 0, -0.0871558, 0.996195, -14.061, 3.21, 6.887)
+attributes = ExtResource("3_3430x")
+current = true
+fov = 37.8493
+far = 200.0
+script = ExtResource("4_4fovd")
+cameraSpeed = 7.0
+debugSpeed = 3.5
+
+[node name="Ramon" parent="." instance=ExtResource("5_0b0c0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.877, 0.159637, -6.87501)
+visible = false
+
+[node name="Rodolfo" parent="." instance=ExtResource("6_ci7uu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8486, 0.0559857, -6.87429)
+visible = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("7_s14yk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.855364, -0.383757, 0.34797, 0, 0.671721, 0.740805, -0.518027, -0.633658, 0.574566, 6.03504, 9.07319, -10.5586)
+light_color = Color(0.960784, 0.898039, 0.823529, 1)
+light_energy = 1.2
+light_bake_mode = 1
+shadow_enabled = true
+shadow_blur = 1.5
+
+[node name="Hitboxes" type="Node3D" parent="."]
+visible = false
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Hitboxes"]
+collision_layer = 71
+collision_mask = 71
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96.4963, -0.0220631, -7.07546)
+shape = SubResource("BoxShape3D_21vss")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Hitboxes"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/StaticBody3D2"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 231.13, 4.36728, -6.77295)
+shape = SubResource("WorldBoundaryShape3D_l65kj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Hitboxes"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitboxes/StaticBody3D"]
+transform = Transform3D(-0.000185134, 1, -5.09761e-05, -1, -0.000185134, 1.27565e-06, 1.27564e-06, 5.09761e-05, 1, -35.6017, 4.22381, -7.05008)
+shape = SubResource("WorldBoundaryShape3D_2u762")
+
+[node name="regla" parent="." instance=ExtResource("8_5whd4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5342, -0.00077709, -8.86975)
+visible = false
+
+[node name="regla" parent="regla" instance=ExtResource("8_5whd4")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.338079, 0.355399, 0.0310001)
+
+[node name="Ground" type="Node3D" parent="."]
+visible = false
+
+[node name="floor-world" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(200, 0, 0, 0, 50, 0, 0, 0, 60, 97.7763, 0, -9.9031)
+mesh = SubResource("PlaneMesh_ytw2h")
+
+[node name="Road" type="Node3D" parent="Ground"]
+visible = false
+
+[node name="floor-road_v1" parent="Ground/Road" instance=ExtResource("59_jy6ai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0)
+
+[node name="floor-road_v5" parent="Ground/Road" instance=ExtResource("59_jy6ai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.9349, 0, 0)
+
+[node name="floor-road_v2" parent="Ground/Road" instance=ExtResource("59_jy6ai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.97444, 0, 0)
+
+[node name="floor-road_v3" parent="Ground/Road" instance=ExtResource("59_jy6ai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.887, 0, 0)
+
+[node name="floor-road_v4" parent="Ground/Road" instance=ExtResource("59_jy6ai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.8729, 0, 0)
+
+[node name="floor-road_v6" parent="Ground/Road" instance=ExtResource("59_jy6ai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.8588, 0, 0)
+
+[node name="floor-road_v7" parent="Ground/Road" instance=ExtResource("59_jy6ai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.8447, 0, 0)
+
+[node name="floor-road_v8" parent="Ground/Road" instance=ExtResource("59_jy6ai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.8306, 0, 0)
+
+[node name="floor-road_v9" parent="Ground/Road" instance=ExtResource("59_jy6ai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116.816, 0, 0)
+
+[node name="floor-road_v10" parent="Ground/Road" instance=ExtResource("59_jy6ai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.802, 0, 0)
+
+[node name="floor-road_v11" parent="Ground/Road" instance=ExtResource("59_jy6ai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 152.788, 0, 0)
+
+[node name="floor-road_v12" parent="Ground/Road" instance=ExtResource("59_jy6ai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.774, 0, 0)
+
+[node name="floor-road_v13" parent="Ground/Road" instance=ExtResource("59_jy6ai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 188.76, 0, 0)
+
+[node name="floor-road_v14" parent="Ground/Road" instance=ExtResource("59_jy6ai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 206.746, 0, 0)
+
+[node name="floor-road_v15" parent="Ground/Road" instance=ExtResource("59_jy6ai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 224.732, 0, 0)
+
+[node name="ModularBuildings" type="Node3D" parent="."]
+
+[node name="foundation-basic" parent="ModularBuildings" instance=ExtResource("11_f7wny")]
+
+[node name="wall-windows-normal" parent="ModularBuildings" instance=ExtResource("11_utgw7")]
+
+[node name="skirting-simple-middle" parent="ModularBuildings" instance=ExtResource("12_ab030")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="borders-simple-windows" parent="ModularBuildings" instance=ExtResource("14_any8v")]

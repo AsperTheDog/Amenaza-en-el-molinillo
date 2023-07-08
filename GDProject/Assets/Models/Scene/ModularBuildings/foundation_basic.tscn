@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://s6ixlnrdoux5"]
+
+[ext_resource type="PackedScene" uid="uid://h3n2jd2584x4" path="res://Assets/Models/Scene/ModularBuildings/foundation-basic.glb" id="1_ua1jt"]
+[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_m54y8"]
+
+[node name="foundation-basic" instance=ExtResource("1_ua1jt")]
+
+[node name="Foundation Basic_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_m54y8")

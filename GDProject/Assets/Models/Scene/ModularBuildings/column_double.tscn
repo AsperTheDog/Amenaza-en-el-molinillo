@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct2e6gu70cvta"]
+
+[ext_resource type="PackedScene" uid="uid://dmpigrlbhw6g0" path="res://Assets/Models/Scene/ModularBuildings/column-double.glb" id="1_d5o37"]
+[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_2b6f1"]
+
+[node name="column-double" instance=ExtResource("1_d5o37")]
+
+[node name="Column Double_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_2b6f1")

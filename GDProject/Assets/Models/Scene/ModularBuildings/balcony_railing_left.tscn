@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyo7ru0vqgumn"]
+
+[ext_resource type="PackedScene" uid="uid://bgnn3p717m427" path="res://Assets/Models/Scene/ModularBuildings/balcony-railing-left.glb" id="1_801ap"]
+[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_rtxo5"]
+
+[node name="balcony-railing-left" instance=ExtResource("1_801ap")]
+
+[node name="Balcony Railing Left_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_rtxo5")

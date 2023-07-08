@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://brk0204l1xbug"]
+
+[ext_resource type="PackedScene" uid="uid://dx6yg8qxgbf4x" path="res://Assets/Models/Scene/ModularBuildings/borders-doublelines-windows-bottom.glb" id="1_pd5c4"]
+[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_lr34o"]
+
+[node name="borders-doublelines-windows-bottom" instance=ExtResource("1_pd5c4")]
+
+[node name="Borders DoubleLines WindowsBottom_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_lr34o")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://iitts1hjcjun"]
+
+[ext_resource type="PackedScene" uid="uid://cc8h5lxdseami" path="res://Assets/Models/Scene/ModularBuildings/skirting-big-corner.glb" id="1_no56q"]
+[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_8kelr"]
+
+[node name="skirting-big-corner" instance=ExtResource("1_no56q")]
+
+[node name="Skirting Big Corner_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_8kelr")

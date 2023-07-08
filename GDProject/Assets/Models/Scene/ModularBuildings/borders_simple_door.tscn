@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbe060mb6q3v0"]
+
+[ext_resource type="PackedScene" uid="uid://lea7vx3ydejh" path="res://Assets/Models/Scene/ModularBuildings/borders-simple-door.glb" id="1_lwyxy"]
+[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_kih10"]
+
+[node name="borders-simple-door" instance=ExtResource("1_lwyxy")]
+
+[node name="Borders Simple Door_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_kih10")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4s2sao5vydil"]
+
+[ext_resource type="PackedScene" uid="uid://c6k11j6venm7e" path="res://Assets/Models/Scene/ModularBuildings/wall-windows-big.glb" id="1_x2maf"]
+[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_rv1rh"]
+
+[node name="wall-windows-big" instance=ExtResource("1_x2maf")]
+
+[node name="Wall Windows Big_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_rv1rh")

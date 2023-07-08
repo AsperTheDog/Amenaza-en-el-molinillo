@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsgxfdpfcake3"]
+
+[ext_resource type="PackedScene" uid="uid://cvsvwd8pqmxrv" path="res://Assets/Models/Scene/ModularBuildings/borders-simple-windows-garaje.glb" id="1_d1udb"]
+[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_2rbra"]
+
+[node name="borders-simple-windows-garaje" instance=ExtResource("1_d1udb")]
+
+[node name="Borders Simple Windows Garaje_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_2rbra")

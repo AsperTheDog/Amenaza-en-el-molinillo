@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://iv1rfe4ld0nn"]
+
+[ext_resource type="PackedScene" uid="uid://bsxg1v8qsw6hg" path="res://Assets/Models/Scene/ModularBuildings/corner-column-doublelines.glb" id="1_fg6i5"]
+[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_kclol"]
+
+[node name="corner-column-doublelines" instance=ExtResource("1_fg6i5")]
+
+[node name="CornerColumn DoubleLines_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_kclol")

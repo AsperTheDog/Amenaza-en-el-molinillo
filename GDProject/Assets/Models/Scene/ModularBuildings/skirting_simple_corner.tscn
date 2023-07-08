@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfqbbqnukkble"]
+
+[ext_resource type="PackedScene" uid="uid://cpfwu3ffmu5cl" path="res://Assets/Models/Scene/ModularBuildings/skirting-simple-corner.glb" id="1_hqur3"]
+[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_qdlsl"]
+
+[node name="skirting-simple-corner" instance=ExtResource("1_hqur3")]
+
+[node name="Skirting Simple Corner_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_qdlsl")

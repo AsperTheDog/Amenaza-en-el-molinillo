@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://3oprxyefmqlo"]
+
+[ext_resource type="PackedScene" uid="uid://buqs8nwkimtu1" path="res://Assets/Models/Scene/ModularBuildings/corner-column-simple.glb" id="1_8k13m"]
+[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_paikv"]
+
+[node name="corner-column-simple" instance=ExtResource("1_8k13m")]
+
+[node name="CornerColumn Simple_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_paikv")

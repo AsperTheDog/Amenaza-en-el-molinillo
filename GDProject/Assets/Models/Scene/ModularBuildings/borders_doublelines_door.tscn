@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://jy7tj00pp447"]
+
+[ext_resource type="PackedScene" uid="uid://bfmnx7v8x2loa" path="res://Assets/Models/Scene/ModularBuildings/borders-doublelines-door.glb" id="1_q8fdl"]
+[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_s7p43"]
+
+[node name="borders-doublelines-door" instance=ExtResource("1_q8fdl")]
+
+[node name="Borders DoubleLines Door_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_s7p43")

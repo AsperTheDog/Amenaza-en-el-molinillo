@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx75br3fe6hp3"]
+
+[ext_resource type="PackedScene" uid="uid://cxb2eb7sh46wh" path="res://Assets/Models/Scene/ModularBuildings/balcony-right.glb" id="1_ghi6c"]
+[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_s05ss"]
+
+[node name="balcony-right" instance=ExtResource("1_ghi6c")]
+
+[node name="Balcony Right_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_s05ss")

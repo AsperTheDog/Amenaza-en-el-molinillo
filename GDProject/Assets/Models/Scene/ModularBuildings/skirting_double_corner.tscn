@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ucwl7pm3qby6"]
+
+[ext_resource type="PackedScene" uid="uid://782b6gl51nxk" path="res://Assets/Models/Scene/ModularBuildings/skirting-double-corner.glb" id="1_vneck"]
+[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_1562r"]
+
+[node name="skirting-double-corner" instance=ExtResource("1_vneck")]
+
+[node name="Skirting Double Corner_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_1562r")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg01vr2n803p1"]
+
+[ext_resource type="PackedScene" uid="uid://bram436f8007o" path="res://Assets/Models/Scene/ModularBuildings/borders-doublelines-garaje-top.glb" id="1_v63cg"]
+[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_1hcwt"]
+
+[node name="borders-doublelines-garaje-top" instance=ExtResource("1_v63cg")]
+
+[node name="Borders DoubleLines GarajeTop_001" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_1hcwt")
