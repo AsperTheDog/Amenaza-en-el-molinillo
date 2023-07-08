@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ccqay4jvq61mf"]
 
 [ext_resource type="PackedScene" uid="uid://cuiope08x3gh5" path="res://Assets/Models/Scene/Construction/joistbig_v1.glb" id="1_ctxxs"]
-[ext_resource type="Material" path="res://Materials/Ground/construction-area_v2.tres" id="2_s24ja"]
+[ext_resource type="Material" uid="uid://by5jrxnbo8pm3" path="res://Materials/Ground/construction-area_v2.tres" id="2_s24ja"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8sv2l"]
 size = Vector3(4.32148, 0.567765, 0.477445)

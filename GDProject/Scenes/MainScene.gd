@@ -15,13 +15,22 @@ func _ready():
 	$UI.resume.connect(resumeStateMachine)
 	$UI.quit.connect(quitToTitle)
 	$UI.bubbleHidden.connect(finishedThinking)
-	
-func changeTarget(target: MainCharacter):
+
+func setTemporaryTarget(target: Node3D, time: float, moveSpeedMult: float = 1):
+	chara.trackInput = false
+	%MainCamera.setSpeedMult(moveSpeedMult)
+	%MainCamera.setTarget(target)
+	await get_tree().create_timer(time).timeout
+	%MainCamera.setSpeedMult(1)
+	%MainCamera.setTarget(chara.getTarget())
+	chara.trackInput = true
+
+func changeCharacter(target: MainCharacter):
 	chara.trackInput = false
 	chara.forceState("FallState")
 	chara = target
 	chara.trackInput = true
-	$MainCamera.setTarget(chara.getTarget())
+	%MainCamera.setTarget(chara.getTarget())
 	charaChanged.emit(chara)
 
 func startThinking():

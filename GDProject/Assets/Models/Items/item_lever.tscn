@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbn46c4o8fmej"]
+
+[ext_resource type="Script" path="res://interaction/item_lever.gd" id="1_a5x2v"]
+[ext_resource type="PackedScene" uid="uid://c0msik1e6fxis" path="res://Assets/Models/Items/item_levermachine_v_1.tscn" id="2_6o5o7"]
+[ext_resource type="PackedScene" uid="uid://32l0xsrx1w5f" path="res://Assets/Models/Items/item_leversteam_v_1.tscn" id="3_tjql1"]
+[ext_resource type="PackedScene" uid="uid://cejembuwr5p2v" path="res://Assets/Models/Items/item_lever_v_1.tscn" id="4_opj2q"]
+
+[sub_resource type="Curve" id="Curve_hxvvn"]
+min_value = 0.5
+max_value = 2.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.220513, 2), 0.0, 0.0, 0, 0, Vector2(0.548718, 1.6747), -2.51721, -2.51721, 0, 0, Vector2(0.830769, 0.807229), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_txw6b"]
+size = Vector3(0.467093, 0.743094, 0.936558)
+
+[node name="item_lever" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_a5x2v")
+scaleDelay = 0.8
+scaleCurve = SubResource("Curve_hxvvn")
+animationSpeed = 8.0
+
+[node name="item-levermachine_v1" parent="." instance=ExtResource("2_6o5o7")]
+
+[node name="item-leversteam_v1" parent="." instance=ExtResource("3_tjql1")]
+
+[node name="item-lever_v1" parent="." instance=ExtResource("4_opj2q")]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.352545, 0.223959)
+shape = SubResource("BoxShape3D_txw6b")

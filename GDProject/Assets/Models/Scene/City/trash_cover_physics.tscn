@@ -1,16 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://dairhsonk6yl3"]
 
 [ext_resource type="PackedScene" uid="uid://bihalfhp3ws0e" path="res://Assets/Models/Items/item_trashcover_v_1.tscn" id="1_ggavs"]
-[ext_resource type="Script" path="res://Assets/Models/Scene/City/trash_cover_physics.gd" id="1_ic7uw"]
+[ext_resource type="Script" path="res://interaction/trash_cover_physics.gd" id="1_res0f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ff625"]
 size = Vector3(0.773681, 0.12285, 0.765464)
 
 [node name="item-trash_cover" type="Node3D"]
-script = ExtResource("1_ic7uw")
+script = ExtResource("1_res0f")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 collision_layer = 9
+input_ray_pickable = false
 gravity_scale = 18.0
 
 [node name="modelo" parent="RigidBody3D" instance=ExtResource("1_ggavs")]

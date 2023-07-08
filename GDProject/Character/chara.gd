@@ -114,7 +114,8 @@ func _ready():
 	
 	# Colliders
 	punchCollider = $rotating/Punch
-	punchCollider.body_entered.connect(_on_punch_body_entered)
+	punchCollider.body_entered.connect(_on_punch_entered)
+	punchCollider.area_entered.connect(_on_punch_entered)
 	dialogueFinder= $DialogueFinder
 	
 	# Animations
@@ -372,9 +373,10 @@ func freezeStateMachine():
 
 # --- SIGNALS ---
 
-func _on_punch_body_entered(body: Node3D):
-	if body.get_parent().has_method("getPunched"):
-		body.get_parent().getPunched()
+func _on_punch_entered(obj: Node3D):
+	print("ENTER")
+	if obj.get_parent().has_method("getPunched"):
+		obj.get_parent().getPunched()
 		punchParticles.restart()
 		punchParticles.set_emitting(true)
 		await get_tree().create_timer(0.2).timeout
