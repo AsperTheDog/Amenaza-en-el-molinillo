@@ -34,7 +34,7 @@ func apply(delta):
 		chara.global_transform.origin.y = lerp(initialPos.y, chara.vaultingPos.y - 1.6, timer / snapTime)
 		chara.global_transform.origin.x = lerp(initialPos.x, vaultingPosHoriz, timer / snapTime)
 	elif not snapFinished:
-		chara.instantTurn(deg_to_rad(chara.vaultingDir * 89))
+		chara.instantTurn(chara.vaultingDir)
 		chara.global_transform.origin.y = chara.vaultingPos.y - 1.6
 		chara.global_transform.origin.x = vaultingPosHoriz
 		snapFinished = true

@@ -122,7 +122,7 @@ func _ready():
 	animationPlayer.set_default_blend_time(blendTime)
 	animationPlayer.set_speed_scale(animationSpeed)
 	setAnimationBlendTimes()
-	if animationPlayer.get_animation("Jump") != null:
+	if "Jump" in animationPlayer.get_animation_list():
 		flyingAnimationLength = animationPlayer.get_animation("Jump").length
 	else:
 		flyingAnimationLength = 1
@@ -289,29 +289,37 @@ func seekAirAnimation():
 	animationPlayer.seek(seek)
 
 func executeAnimation(animation: String, blend = null, speedMult: float = 1):
+	if animation not in animationPlayer.get_animation_list():
+		return
 	if blend == null:
 		animationPlayer.play(animation)
 	else:
 		animationPlayer.play(animation, blend, speedMult)
 	
 func queueAnimation(animation: String, clearQueue: bool = true):
+	if animation not in animationPlayer.get_animation_list():
+		return
 	if clearQueue:
 		animationPlayer.clear_queue()
 	animationPlayer.queue(animation)
-		
+
+func setBlendTime(from: String, to: String, time: float):
+	if from in animationPlayer.get_animation_list() and to in animationPlayer.get_animation_list():
+		animationPlayer.set_blend_time(from, to, time)
+
 func setAnimationBlendTimes():
-	animationPlayer.set_blend_time("Run", "Idle", blendTime)
-	animationPlayer.set_blend_time("Run", "Walk", blendTime)
-	animationPlayer.set_blend_time("FallingFloor", "Run", blendTime * 2)
-	animationPlayer.set_blend_time("FallingFloor", "Walk", blendTime * 2)
-	animationPlayer.set_blend_time("FallingFloor", "Idle", slowBlendTime)
-	animationPlayer.set_blend_time("FallingFloorNear", "Run", blendTime * 2)
-	animationPlayer.set_blend_time("FallingFloorNear", "Walk", blendTime * 2)
-	animationPlayer.set_blend_time("FallingFloorNear", "Idle", slowBlendTime)
-	animationPlayer.set_blend_time("IdleAction", "Walk", blendTime / 3)
-	animationPlayer.set_blend_time("IdleAction", "Run", blendTime / 3)
-	animationPlayer.set_blend_time("IdleAction", "Idle", blendTime / 3)
-	animationPlayer.set_blend_time("IdleAction", "Jump", blendTime / 3)
+	setBlendTime("Run", "Idle", blendTime)
+	setBlendTime("Run", "Walk", blendTime)
+	setBlendTime("FallingFloor", "Run", blendTime * 2)
+	setBlendTime("FallingFloor", "Walk", blendTime * 2)
+	setBlendTime("FallingFloor", "Idle", slowBlendTime)
+	setBlendTime("FallingFloorNear", "Run", blendTime * 2)
+	setBlendTime("FallingFloorNear", "Walk", blendTime * 2)
+	setBlendTime("FallingFloorNear", "Idle", slowBlendTime)
+	setBlendTime("IdleAction", "Walk", blendTime / 3)
+	setBlendTime("IdleAction", "Run", blendTime / 3)
+	setBlendTime("IdleAction", "Idle", blendTime / 3)
+	setBlendTime("IdleAction", "Jump", blendTime / 3)
 	
 func randomlyBlink(delta):
 	if blinking:

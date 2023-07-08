@@ -39,8 +39,8 @@ func stopStateMachine():
 func resumeStateMachine():
 	chara.trackInput = true
 
-func setBlackScreen(set: bool):
-	$UI/thatsAllFolksLayer/ThatsAllFolks.material.set("shader_parameter/threshold", 0 if set else 1)
+func setBlackScreen(doSet: bool):
+	$UI/thatsAllFolksLayer/ThatsAllFolks.material.set("shader_parameter/threshold", 0 if doSet else 1)
 	
 func quitToTitle():
 	chara.freezeStateMachine()

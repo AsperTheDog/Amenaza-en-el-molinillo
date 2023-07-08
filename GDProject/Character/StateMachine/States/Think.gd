@@ -7,7 +7,7 @@ func onEnter(player: MainCharacter, delta: float):
 	chara.executeAnimation("Think")
 	chara.bubbleHidden = false
 	
-func onExit(delta: float, transitionTo: String):
+func onExit(_delta: float, _transitionTo: String):
 	pass
 
 func check():

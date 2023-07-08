@@ -85,7 +85,7 @@
 [ext_resource type="CameraAttributesPractical" uid="uid://73bot76e0rcf" path="res://Enviroments/camera_pj_practical.tres" id="77_2acpb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ws2b"]
-size = Vector3(1, 1.80603, 1.83406)
+size = Vector3(1, 1.80603, 2.19783)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_21vss"]
 size = Vector3(113.319, 0.0425731, 7.14734)
@@ -142,7 +142,7 @@ dialogue_resource = ExtResource("7_s27ox")
 dialogue_start = "endRamon"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="endRamon/dialogue"]
-transform = Transform3D(0.867462, 0, -0.497504, 0, 1, 0, 0.497504, 0, 0.867462, -0.0480099, 0.488032, 0.419922)
+transform = Transform3D(0.867462, 0, -0.497504, 0, 1, 0, 0.497504, 0, 0.867462, -0.143539, 0.488032, 0.586483)
 shape = SubResource("BoxShape3D_3ws2b")
 
 [node name="Ramon" parent="." instance=ExtResource("73_geppn")]

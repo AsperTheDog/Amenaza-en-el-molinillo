@@ -44,7 +44,7 @@ func changeChara(newChara: MainCharacter):
 	chara = newChara
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("ui_debug"):
 		showDebug = not showDebug
 		if showDebug:
@@ -131,7 +131,6 @@ func fadeInOutPause(fadeIn: bool):
 	pauseFading = true
 	var background = $"PauseLayer/Pause Container/Background"
 	var pauseBlock = $"PauseLayer/Pause Container/BoxContainer/"
-	var pauseText = $"PauseLayer/Pause Container/BoxContainer/Bubble/MarginContainer"
 	var counter = 0 if fadeIn else 1
 	if fadeIn:
 		background.color.a = 0
