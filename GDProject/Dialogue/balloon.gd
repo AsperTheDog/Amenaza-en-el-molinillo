@@ -1,12 +1,17 @@
 extends Control
 
 
-var balloon: Control
-var margin: MarginContainer
-var character_label: Label
-var dialogue_label: RichTextLabel
-var responses_menu: VBoxContainer
-var response_template: RichTextLabel
+@export var balloon: TextureRect
+@export var margin: MarginContainer
+@export var character_label: RichTextLabel
+@export var dialogue_label: RichTextLabel
+@export var responses_menu: VBoxContainer
+@export var response_template: RichTextLabel
+
+var characterFigures: Dictionary = {}
+var figureOriginalPos: float = 0
+var figureFlippedPos: float = 0
+var flipCharacter: bool = false
 
 ## The dialogue resource
 var resource: DialogueResource
@@ -40,8 +45,25 @@ var dialogue_line: DialogueLine:
 		dialogue_line = next_dialogue_line
 		
 		character_label.visible = not dialogue_line.character.is_empty()
-		character_label.text = tr(dialogue_line.character, "dialogue")
+		var characterInfo = tr(dialogue_line.character, "dialogue")
+		var character = characterInfo.split("|")[0]
+		character_label.text = "[b]" + characterInfo.split("|")[0] + "[/b]"
+		flipCharacter = characterInfo.split("|")[1] != "l"
 		
+		for fig in characterFigures.values():
+			fig.hide()
+		if character in characterFigures:
+			var figure = characterFigures[character]
+			dialogue_label.set(
+				"theme_override_colors/font_outline_color",
+				figure.get_meta("color"))
+			character_label.set(
+				"theme_override_colors/font_outline_color",
+				figure.get_meta("color"))
+			figure.scale.x = - (int(flipCharacter) * 2 - 1)
+			figure.global_position.x = figureFlippedPos if flipCharacter else figureOriginalPos
+			figure.show()
+			
 		dialogue_label.modulate.a = 0
 		dialogue_label.custom_minimum_size.x = dialogue_label.get_parent().size.x - 1
 		dialogue_label.dialogue_line = dialogue_line
@@ -86,19 +108,19 @@ var dialogue_line: DialogueLine:
 
 
 func _ready() -> void:
-	balloon = $Balloon
-	margin = $Balloon/Dialogue/Background/Margin
-	character_label = $Balloon/Character
-	dialogue_label = $Balloon/Dialogue/Background/Margin/DialogueLabel
-	responses_menu = $Balloon/Dialogue/Background/Margin/Responses
-	response_template = %Balloon/Dialogue/Background/Margin/ResponseTemplate
-	print(margin.get_children())
+	var sprites = get_node("CharacterSprites").get_children()
+	for sprite in sprites:
+		characterFigures[sprite.name] = sprite
+	if sprites.size() != 0:
+		figureOriginalPos = sprites[0].global_position.x
+		figureFlippedPos = size.x
+		
 	response_template.hide()
 	balloon.hide()
+	balloon.gui_input.connect(_on_balloon_gui_input)
 	# balloon.custom_minimum_size.x = balloon.get_viewport_rect().size.x
 	
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
-
 
 func _unhandled_input(_event: InputEvent) -> void:
 	# Only the balloon is allowed to handle input while it's showing

@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ummnp0d1tn3x" path="res://Assets/Behavior/Corner-hitbox.tscn" id="6_7r22e"]
 [ext_resource type="PackedScene" uid="uid://byqqv7ru2gool" path="res://Assets/Models/Scene/Ground/floor_road_v_1.tscn" id="6_amxjb"]
 [ext_resource type="PackedScene" uid="uid://cbivejfbjsknp" path="res://Assets/Models/Scene/City/fireguard_v_1.tscn" id="6_dyq5u"]
+[ext_resource type="Resource" uid="uid://en6dcc4xm4kh" path="res://Dialogue/main.dialogue" id="7_s27ox"]
 [ext_resource type="PackedScene" uid="uid://v2b8gvi7bbyw" path="res://Assets/Models/Scene/City/jerrycan_v_1.tscn" id="7_t8dne"]
 [ext_resource type="PackedScene" uid="uid://c1t0o4ornqg27" path="res://Assets/Models/Scene/Construction/cableroll_v_2.tscn" id="8_haqio"]
 [ext_resource type="PackedScene" uid="uid://bbydseovuksx6" path="res://Assets/Models/Scene/City/mailbox_es_v_1.tscn" id="8_t5dqu"]
@@ -35,7 +36,6 @@
 [ext_resource type="PackedScene" uid="uid://bfdka1lvht0ye" path="res://Assets/Models/Scene/City/bush_v_1.tscn" id="30_dgdml"]
 [ext_resource type="PackedScene" uid="uid://cswjech3hp4li" path="res://Dialogue/dialogue.tscn" id="31_n0ogn"]
 [ext_resource type="PackedScene" uid="uid://c1w15oprcrxpr" path="res://Assets/Models/Scene/Construction/cableroll_v_1.tscn" id="32_8ymob"]
-[ext_resource type="Resource" uid="uid://en6dcc4xm4kh" path="res://Dialogue/main.dialogue" id="32_kxagi"]
 [ext_resource type="PackedScene" uid="uid://tty5b41486n8" path="res://Assets/Models/Scene/Construction/fabricbuild_v_1.tscn" id="33_nmlp2"]
 [ext_resource type="PackedScene" uid="uid://br4wwlyorpqkl" path="res://Assets/Models/Scene/Construction/giantcontainer_v_1.tscn" id="34_tifhq"]
 [ext_resource type="PackedScene" uid="uid://ccqay4jvq61mf" path="res://Assets/Models/Scene/Construction/joistbig_v_1.tscn" id="35_j8woy"]
@@ -84,14 +84,15 @@
 [ext_resource type="Script" path="res://Scenes/Camera.gd" id="76_h64x5"]
 [ext_resource type="CameraAttributesPractical" uid="uid://73bot76e0rcf" path="res://Enviroments/camera_pj_practical.tres" id="77_2acpb"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ws2b"]
+size = Vector3(1, 1.80603, 1.83406)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_21vss"]
 size = Vector3(113.319, 0.0425731, 7.14734)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_l65kj"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2u762"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ye4sw"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ytw2h"]
 material = ExtResource("47_tic1o")
@@ -132,6 +133,17 @@ script = ExtResource("76_h64x5")
 cameraSpeed = 7.0
 debugTarget = NodePath("../Items/item-levermachine_v1")
 debugSpeed = 3.5
+
+[node name="endRamon" parent="." instance=ExtResource("73_geppn")]
+transform = Transform3D(0.510813, 0, -0.859692, 0, 1, 0, 0.859692, 0, 0.510813, 53.5296, 12.5176, -6.84096)
+
+[node name="dialogue" parent="endRamon" instance=ExtResource("31_n0ogn")]
+dialogue_resource = ExtResource("7_s27ox")
+dialogue_start = "endRamon"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="endRamon/dialogue"]
+transform = Transform3D(0.867462, 0, -0.497504, 0, 1, 0, 0.497504, 0, 0.867462, -0.0480099, 0.488032, 0.419922)
+shape = SubResource("BoxShape3D_3ws2b")
 
 [node name="Ramon" parent="." instance=ExtResource("73_geppn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.877, 0.159637, -6.87501)
@@ -414,13 +426,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0213, 0.00566244, -4.85255
 
 [node name="mailbox-es_v1" parent="City" instance=ExtResource("8_t5dqu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0560284, 0, -4.96624)
-
-[node name="dialogue" parent="City/mailbox-es_v1" instance=ExtResource("31_n0ogn")]
-dialogue_resource = ExtResource("32_kxagi")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="City/mailbox-es_v1/dialogue"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.0734825, 0.194927, -1.04813)
-shape = SubResource("BoxShape3D_ye4sw")
 
 [node name="sewer_v1" parent="City" instance=ExtResource("9_ymfnq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.27525, -0.031039, -5.20998)

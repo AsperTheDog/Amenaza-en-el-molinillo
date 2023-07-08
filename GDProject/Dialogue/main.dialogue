@@ -1,9 +1,21 @@
 ~ mailbox
 
-Rodolfo: Un buzon 
-Buzon: Y que esperabas?
-Rodolfo: ...
+Rodolfo|l: Un buzon 
+Ramon|r: Y que esperabas?
+Rodolfo|l: ...
  - A tu madre
  - Puedo mear?
+
+=> END
+
+~ endRamon
+
+Ramon|r: ¡Rodolfo! ¿Se puede saber dónde te habías metido?
+Rodolfo|l: ¡Ramon! no te vas a creer lo que ha pasado
+Rodolfo|l: ¡Acabo de encontrarme una hamburguesota en un cubo de basura! ¿Cómo puede la gente dejar una delicia así tirada? ¡Si está casi entera!
+Ramon|r: Rodolfo acaba de empezar la mañana y ya me estas poniendo de los nervios, anda vamonos que hay mucho que hacer
+Rodolfo|r: ...
+ - A tope
+ - Dame un momento que voy a mirar otra vez a ver si encuentro pataticas fritas
 
 => END

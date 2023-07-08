@@ -7,12 +7,14 @@ signal fadeOutFinished
 
 var mainGameScene = preload("res://Scenes/Scene-Demo.tscn")
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	fadeInOut(true)
 	$"MainLayer/Container/MenuContainer/BoxContainer/TextureButton".pressed.connect(loadMainGame)
 	$"MainLayer/Container/MenuContainer/BoxContainer/TextureButton3".pressed.connect(quit)
 	$"MainLayer/Container/MenuContainer/BoxContainer/TextureButton".grab_focus()
+
 
 func fadeInOut(fadeIn: bool):
 	var fade = $"FadeInLayer/ColorRect"
@@ -25,14 +27,17 @@ func fadeInOut(fadeIn: bool):
 	fade.color = Color(0, 0, 0, 0 if fadeIn else 1)
 	fadeOutFinished.emit()
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
 
 func loadMainGame():
 	fadeInOut(false)
 	await fadeOutFinished
 	get_tree().change_scene_to_packed(mainGameScene)
+
 
 func quit():
 	get_tree().quit()

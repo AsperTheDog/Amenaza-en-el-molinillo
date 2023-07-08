@@ -188,7 +188,6 @@ text_direction = 1
 
 [node name="FadeInLayer" type="CanvasLayer" parent="."]
 layer = 3
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="FadeInLayer"]
 offset_right = 1921.0

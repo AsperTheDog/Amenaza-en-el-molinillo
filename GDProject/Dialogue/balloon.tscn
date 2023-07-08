@@ -1,10 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=13 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://Dialogue/balloon.gd" id="1_7fdp3"]
 [ext_resource type="Theme" uid="uid://cbdbhbqebha6h" path="res://Enviroments/Theme.tres" id="1_b21qu"]
 [ext_resource type="Texture2D" uid="uid://cv88vrvw6wwr5" path="res://Assets/UI/UI-Map.png" id="1_n3vub"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="2_fn5n8"]
-[ext_resource type="LabelSettings" uid="uid://cnxel0e5ng0yc" path="res://Assets/Fonts/UI_Rodolfo.tres" id="2_kftsb"]
 [ext_resource type="Texture2D" uid="uid://b2qbx42c06b43" path="res://Assets/Sprites/Poses/rodolfo-pose-default.png" id="2_pv6u8"]
 [ext_resource type="Texture2D" uid="uid://dyotjheaxnxye" path="res://Assets/Sprites/Poses/Ramon/ramon-pose-default.png" id="3_q1d8o"]
 
@@ -38,30 +37,38 @@ region = Rect2(0, 1723, 363, 325)
 atlas = ExtResource("1_n3vub")
 region = Rect2(1699, 1723, 349, 325)
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" node_paths=PackedStringArray("balloon", "margin", "character_label", "dialogue_label", "responses_menu", "response_template")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_b21qu")
 script = ExtResource("1_7fdp3")
+balloon = NodePath("Balloon/Dialogue")
+margin = NodePath("Balloon/Dialogue/Background/Margin")
+character_label = NodePath("Balloon/Character")
+dialogue_label = NodePath("Balloon/Dialogue/Background/Margin/DialogueLabel")
+responses_menu = NodePath("Balloon/Dialogue/Background/Margin/MarginContainer/Responses")
+response_template = NodePath("Balloon/Dialogue/Background/Margin/ResponseTemplate")
 
 [node name="Balloon" type="Control" parent="."]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+mouse_filter = 1
 
-[node name="Character" type="Label" parent="Balloon"]
+[node name="Character" type="RichTextLabel" parent="Balloon"]
 layout_mode = 0
-offset_left = 389.0
-offset_top = 730.0
-offset_right = 943.0
-offset_bottom = 772.0
+offset_left = 447.0
+offset_top = 688.0
+offset_right = 1001.0
+offset_bottom = 730.0
 rotation = -0.0122354
 theme = ExtResource("1_b21qu")
-text = "RODOLFO MASCARPONE"
-label_settings = ExtResource("2_kftsb")
+theme_override_font_sizes/bold_font_size = 37
+bbcode_enabled = true
+text = "Rodolfo"
+scroll_active = false
 
 [node name="Dialogue" type="TextureRect" parent="Balloon"]
 layout_mode = 1
@@ -70,9 +77,9 @@ anchor_left = 0.198
 anchor_top = 0.708
 anchor_right = 0.761
 anchor_bottom = 0.948
-offset_left = 372.58
-offset_top = 736.68
-offset_right = 1509.06
+offset_left = 434.32
+offset_top = 727.08
+offset_right = 1593.32
 offset_bottom = 1005.08
 grow_horizontal = 2
 grow_vertical = 0
@@ -88,6 +95,7 @@ offset_left = 20.0
 offset_top = 19.0
 offset_right = -19.0
 offset_bottom = -18.0
+mouse_filter = 0
 texture = SubResource("AtlasTexture_nb8ga")
 
 [node name="Margin" type="MarginContainer" parent="Balloon/Dialogue/Background"]
@@ -104,13 +112,10 @@ theme_override_constants/margin_bottom = 50
 
 [node name="DialogueLabel" type="RichTextLabel" parent="Balloon/Dialogue/Background/Margin"]
 layout_mode = 2
+mouse_filter = 1
 theme = ExtResource("1_b21qu")
 text = "AAAAPUNTA... CINCO... utredocinco! Si acabo y empiezo en el número 5 ¿Cuaaaal viene justo antes del 1 caballero sessi??"
 script = ExtResource("2_fn5n8")
-
-[node name="Responses" type="VBoxContainer" parent="Balloon/Dialogue/Background/Margin"]
-layout_mode = 2
-theme_override_constants/separation = 2
 
 [node name="ResponseTemplate" type="RichTextLabel" parent="Balloon/Dialogue/Background/Margin"]
 unique_name_in_owner = true
@@ -127,58 +132,71 @@ shortcut_keys_enabled = false
 meta_underlined = false
 hint_underlined = false
 
-[node name="Rodolfo" type="TextureRect" parent="Balloon"]
+[node name="MarginContainer" type="MarginContainer" parent="Balloon/Dialogue/Background/Margin"]
+layout_mode = 2
+theme_override_constants/margin_top = 45
+
+[node name="Responses" type="VBoxContainer" parent="Balloon/Dialogue/Background/Margin/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="CharacterSprites" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+mouse_filter = 2
+
+[node name="Rodolfo" type="TextureRect" parent="CharacterSprites"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -1.0
+offset_top = 755.0
+offset_right = 362.0
+offset_bottom = 1080.0
+grow_vertical = 0
+mouse_filter = 2
+texture = SubResource("AtlasTexture_tqx5l")
+metadata/color = Color(0.737255, 0.25098, 0.65098, 1)
+
+[node name="Sprite" type="TextureRect" parent="CharacterSprites/Rodolfo"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.457
 anchor_right = 0.275
 anchor_bottom = 1.0
-offset_left = -82.0
-offset_top = 475.72
-offset_right = 931.0
-offset_bottom = 1478.0
-scale = Vector2(0.596276, 0.596276)
+offset_top = -422.525
+offset_right = 1024.0
+offset_bottom = 601.475
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
 texture = ExtResource("2_pv6u8")
 
-[node name="PurpleBG" type="TextureRect" parent="Balloon/Rodolfo"]
-z_index = -1
+[node name="Ramon" type="TextureRect" parent="CharacterSprites"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.138
-anchor_right = 1.0
-anchor_bottom = 0.953
-offset_left = -101.062
-offset_top = 375.665
-offset_right = -620.75
-offset_bottom = -275.207
-scale = Vector2(1.93642, 1.93642)
-texture = SubResource("AtlasTexture_tqx5l")
+anchor_right = 0.849
+anchor_bottom = 0.958
+offset_top = 753.0
+offset_right = -1281.08
+offset_bottom = 43.36
+mouse_filter = 2
+texture = SubResource("AtlasTexture_3u4ep")
+flip_h = true
+metadata/color = Color(0.760784, 0.45098, 0.0509804, 1)
 
-[node name="Ramon" type="TextureRect" parent="Balloon"]
+[node name="Sprite" type="TextureRect" parent="CharacterSprites/Ramon"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.729
 anchor_top = 0.456
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1369.84
-offset_top = 474.76
-offset_right = 2383.0
-offset_bottom = 1477.0
+offset_left = -285.421
+offset_top = -418.2
+offset_right = 738.579
+offset_bottom = 605.799
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.599968, 0.599968)
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
 texture = ExtResource("3_q1d8o")
-
-[node name="yellowBG" type="TextureRect" parent="Balloon/Ramon"]
-z_index = -1
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.849
-anchor_bottom = 0.958
-offset_left = 286.682
-offset_top = 386.687
-offset_right = -233.694
-offset_bottom = -269.305
-scale = Vector2(1.94615, 1.94615)
-texture = SubResource("AtlasTexture_3u4ep")
+flip_h = true
