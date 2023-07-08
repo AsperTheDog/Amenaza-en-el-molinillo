@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://wr3am1xkf426"]
+[gd_scene load_steps=24 format=3 uid="uid://wr3am1xkf426"]
 
 [ext_resource type="Script" path="res://Scenes/MainScene.gd" id="1_3om1c"]
 [ext_resource type="PackedScene" uid="uid://blcpnk11d3lhx" path="res://Scenes/UI.tscn" id="2_nf5jt"]
@@ -8,10 +8,15 @@
 [ext_resource type="PackedScene" uid="uid://cgytm08sbexoe" path="res://Character/character_rodolfo.tscn" id="6_ci7uu"]
 [ext_resource type="Environment" uid="uid://bt7lbvekdafji" path="res://Enviroments/Enviroment-sunrise.tres" id="7_s14yk"]
 [ext_resource type="PackedScene" uid="uid://bxryp4uhkt6wg" path="res://Assets/Models/Developer/regla.glb" id="8_5whd4"]
-[ext_resource type="PackedScene" uid="uid://s6ixlnrdoux5" path="res://Assets/Models/Scene/ModularBuildings/foundation_basic.tscn" id="11_f7wny"]
+[ext_resource type="PackedScene" uid="uid://bnssp383m6a7j" path="res://Assets/Models/Scene/ModularBuildings/wall.tscn" id="11_mn36p"]
 [ext_resource type="PackedScene" uid="uid://bj1lmy280yvq" path="res://Assets/Models/Scene/ModularBuildings/wall_windows_normal.tscn" id="11_utgw7"]
 [ext_resource type="PackedScene" uid="uid://bpno8urvmercd" path="res://Assets/Models/Scene/ModularBuildings/skirting_simple_middle.tscn" id="12_ab030"]
-[ext_resource type="PackedScene" uid="uid://ciwj0lrgjwi4h" path="res://Assets/Models/Scene/ModularBuildings/borders_simple_windows.tscn" id="14_any8v"]
+[ext_resource type="PackedScene" uid="uid://b4s2sao5vydil" path="res://Assets/Models/Scene/ModularBuildings/wall_windows_big.tscn" id="15_yl58j"]
+[ext_resource type="PackedScene" uid="uid://dyrf7tnhhvscd" path="res://Assets/Models/Scene/ModularBuildings/skirting_hollow_middle.tscn" id="17_5bs75"]
+[ext_resource type="PackedScene" uid="uid://ddh7fypbnjfb2" path="res://Assets/Models/Scene/ModularBuildings/wall_garaje.tscn" id="18_2pk5a"]
+[ext_resource type="PackedScene" uid="uid://djxca08di0wuy" path="res://Assets/Models/Scene/ModularBuildings/skirting_double_middle.tscn" id="18_yy6g8"]
+[ext_resource type="PackedScene" uid="uid://bakyp2p1orb2t" path="res://Assets/Models/Scene/ModularBuildings/skirting_doublelines_middle.tscn" id="19_ynr4x"]
+[ext_resource type="PackedScene" uid="uid://bxkqxxwxoppm" path="res://Assets/Models/Scene/ModularBuildings/wall_door.tscn" id="21_cn71s"]
 [ext_resource type="PackedScene" uid="uid://byqqv7ru2gool" path="res://Assets/Models/Scene/Ground/floor_road_v_1.tscn" id="59_jy6ai"]
 [ext_resource type="Material" uid="uid://cvcqlnyd0mus" path="res://Materials/Ground/city-floor_v1.tres" id="60_wmg14"]
 
@@ -149,13 +154,141 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 206.746, 0, 0)
 [node name="floor-road_v15" parent="Ground/Road" instance=ExtResource("59_jy6ai")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 224.732, 0, 0)
 
-[node name="ModularBuildings" type="Node3D" parent="."]
+[node name="ModularBuilding 1" type="Node3D" parent="."]
 
-[node name="foundation-basic" parent="ModularBuildings" instance=ExtResource("11_f7wny")]
+[node name="wall" parent="ModularBuilding 1" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
 
-[node name="wall-windows-normal" parent="ModularBuildings" instance=ExtResource("11_utgw7")]
-
-[node name="skirting-simple-middle" parent="ModularBuildings" instance=ExtResource("12_ab030")]
+[node name="skirting-simple-middle" parent="ModularBuilding 1/wall" instance=ExtResource("12_ab030")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
-[node name="borders-simple-windows" parent="ModularBuildings" instance=ExtResource("14_any8v")]
+[node name="wall2" parent="ModularBuilding 1" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+
+[node name="skirting-simple-middle" parent="ModularBuilding 1/wall2" instance=ExtResource("12_ab030")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall3" parent="ModularBuilding 1" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="skirting-simple-middle" parent="ModularBuilding 1/wall3" instance=ExtResource("12_ab030")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall-windows-normal2" parent="ModularBuilding 1" instance=ExtResource("11_utgw7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="skirting-simple-middle" parent="ModularBuilding 1/wall-windows-normal2" instance=ExtResource("12_ab030")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall-windows-big" parent="ModularBuilding 1" instance=ExtResource("15_yl58j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="skirting-simple-middle" parent="ModularBuilding 1/wall-windows-big" instance=ExtResource("12_ab030")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall-garaje" parent="ModularBuilding 1" instance=ExtResource("18_2pk5a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+
+[node name="skirting-simple-middle" parent="ModularBuilding 1/wall-garaje" instance=ExtResource("12_ab030")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall-door" parent="ModularBuilding 1" instance=ExtResource("21_cn71s")]
+
+[node name="skirting-simple-middle" parent="ModularBuilding 1/wall-door" instance=ExtResource("12_ab030")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="ModularBuilding 2" type="Node3D" parent="."]
+visible = false
+
+[node name="wall-windows-normal" parent="ModularBuilding 2" instance=ExtResource("11_utgw7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="skirting-hollow-middle" parent="ModularBuilding 2/wall-windows-normal" instance=ExtResource("17_5bs75")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall-windows-big" parent="ModularBuilding 2" instance=ExtResource("15_yl58j")]
+
+[node name="skirting-hollow-middle" parent="ModularBuilding 2/wall-windows-big" instance=ExtResource("17_5bs75")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall-garaje" parent="ModularBuilding 2" instance=ExtResource("18_2pk5a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+
+[node name="skirting-hollow-middle" parent="ModularBuilding 2/wall-garaje" instance=ExtResource("17_5bs75")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall-door" parent="ModularBuilding 2" instance=ExtResource("21_cn71s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="skirting-hollow-middle" parent="ModularBuilding 2/wall-door" instance=ExtResource("17_5bs75")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall" parent="ModularBuilding 2" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="skirting-hollow-middle" parent="ModularBuilding 2/wall" instance=ExtResource("17_5bs75")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="ModularBuilding 3" type="Node3D" parent="."]
+visible = false
+
+[node name="wall-windows-normal" parent="ModularBuilding 3" instance=ExtResource("11_utgw7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="skirting-double-middle" parent="ModularBuilding 3/wall-windows-normal" instance=ExtResource("18_yy6g8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall-windows-big" parent="ModularBuilding 3" instance=ExtResource("15_yl58j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="skirting-double-middle" parent="ModularBuilding 3/wall-windows-big" instance=ExtResource("18_yy6g8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall-garaje" parent="ModularBuilding 3" instance=ExtResource("18_2pk5a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="skirting-double-middle" parent="ModularBuilding 3/wall-garaje" instance=ExtResource("18_yy6g8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall-door" parent="ModularBuilding 3" instance=ExtResource("21_cn71s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+
+[node name="skirting-double-middle" parent="ModularBuilding 3/wall-door" instance=ExtResource("18_yy6g8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall" parent="ModularBuilding 3" instance=ExtResource("11_mn36p")]
+
+[node name="skirting-double-middle" parent="ModularBuilding 3/wall" instance=ExtResource("18_yy6g8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="ModularBuilding 4" type="Node3D" parent="."]
+visible = false
+
+[node name="wall-windows-normal" parent="ModularBuilding 4" instance=ExtResource("11_utgw7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="skirting-doublelines-middle" parent="ModularBuilding 4/wall-windows-normal" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall-windows-big" parent="ModularBuilding 4" instance=ExtResource("15_yl58j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="skirting-doublelines-middle" parent="ModularBuilding 4/wall-windows-big" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall-garaje" parent="ModularBuilding 4" instance=ExtResource("18_2pk5a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="skirting-doublelines-middle" parent="ModularBuilding 4/wall-garaje" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall-door" parent="ModularBuilding 4" instance=ExtResource("21_cn71s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+
+[node name="skirting-doublelines-middle" parent="ModularBuilding 4/wall-door" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall" parent="ModularBuilding 4" instance=ExtResource("11_mn36p")]
+
+[node name="skirting-doublelines-middle" parent="ModularBuilding 4/wall" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
