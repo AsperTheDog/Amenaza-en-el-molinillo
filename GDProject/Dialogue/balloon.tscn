@@ -1,72 +1,124 @@
-[gd_scene load_steps=5 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=14 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://Dialogue/balloon.gd" id="1_7fdp3"]
+[ext_resource type="Theme" uid="uid://cbdbhbqebha6h" path="res://Enviroments/Theme.tres" id="1_b21qu"]
+[ext_resource type="Texture2D" uid="uid://cv88vrvw6wwr5" path="res://Assets/UI/UI-Map.png" id="1_n3vub"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_label.gd" id="2_fn5n8"]
+[ext_resource type="LabelSettings" uid="uid://cnxel0e5ng0yc" path="res://Assets/Fonts/UI_Rodolfo.tres" id="2_kftsb"]
+[ext_resource type="Texture2D" uid="uid://b2qbx42c06b43" path="res://Assets/Sprites/Poses/rodolfo-pose-default.png" id="2_pv6u8"]
+[ext_resource type="Texture2D" uid="uid://dyotjheaxnxye" path="res://Assets/Sprites/Poses/Ramon/ramon-pose-default.png" id="3_q1d8o"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5d24i"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7sgn"]
+atlas = ExtResource("1_n3vub")
+region = Rect2(440, 1747, 1159, 278)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nb8ga"]
+atlas = ExtResource("1_n3vub")
+region = Rect2(880, 1045, 1120, 241)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ukkf"]
 content_margin_left = 40.0
 content_margin_top = 5.0
 content_margin_right = 5.0
 content_margin_bottom = 5.0
 bg_color = Color(1, 1, 1, 0.25098)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oj3c8"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nsnev"]
 content_margin_left = 40.0
 content_margin_top = 5.0
 content_margin_right = 5.0
 content_margin_bottom = 5.0
 draw_center = false
 
-[node name="Balloon" type="CanvasLayer"]
-layer = 100
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqx5l"]
+atlas = ExtResource("1_n3vub")
+region = Rect2(0, 1723, 363, 325)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3u4ep"]
+atlas = ExtResource("1_n3vub")
+region = Rect2(1699, 1723, 349, 325)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_7fdp3")
 
-[node name="Balloon" type="ColorRect" parent="."]
-color = Color(0, 0, 0, 1)
+[node name="Balloon" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Margin" type="MarginContainer" parent="Balloon"]
+[node name="Character" type="Label" parent="Balloon"]
 layout_mode = 0
-anchor_right = 1.0
-offset_bottom = 119.0
+offset_left = 389.0
+offset_top = 730.0
+offset_right = 943.0
+offset_bottom = 772.0
+rotation = -0.0122354
+theme = ExtResource("1_b21qu")
+text = "RODOLFO MASCARPONE"
+label_settings = ExtResource("2_kftsb")
+
+[node name="Dialogue" type="TextureRect" parent="Balloon"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.198
+anchor_top = 0.708
+anchor_right = 0.761
+anchor_bottom = 0.948
+offset_left = 372.58
+offset_top = 736.68
+offset_right = 1509.06
+offset_bottom = 1005.08
 grow_horizontal = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 10
-metadata/_edit_layout_mode = 1
+grow_vertical = 0
+scale = Vector2(0.932852, 0.932852)
+texture = SubResource("AtlasTexture_v7sgn")
 
-[node name="VBox" type="VBoxContainer" parent="Balloon/Margin"]
+[node name="Background" type="TextureRect" parent="Balloon/Dialogue"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 19.0
+offset_right = -19.0
+offset_bottom = -18.0
+texture = SubResource("AtlasTexture_nb8ga")
+
+[node name="Margin" type="MarginContainer" parent="Balloon/Dialogue/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 50
+
+[node name="DialogueLabel" type="RichTextLabel" parent="Balloon/Dialogue/Background/Margin"]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme = ExtResource("1_b21qu")
+text = "AAAAPUNTA... CINCO... utredocinco! Si acabo y empiezo en el número 5 ¿Cuaaaal viene justo antes del 1 caballero sessi??"
+script = ExtResource("2_fn5n8")
 
-[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/Margin/VBox"]
-modulate = Color(1, 1, 1, 0.501961)
-layout_mode = 2
-mouse_filter = 1
-theme_override_font_sizes/normal_font_size = 40
-theme_override_font_sizes/bold_font_size = 40
-theme_override_font_sizes/italics_font_size = 40
-theme_override_font_sizes/bold_italics_font_size = 40
-theme_override_font_sizes/mono_font_size = 40
-bbcode_enabled = true
-text = "Character"
-fit_content = true
-scroll_active = false
-
-[node name="Responses" type="VBoxContainer" parent="Balloon/Margin/VBox"]
+[node name="Responses" type="VBoxContainer" parent="Balloon/Dialogue/Background/Margin"]
 layout_mode = 2
 theme_override_constants/separation = 2
 
-[node name="ResponseTemplate" type="RichTextLabel" parent="Balloon/Margin/VBox"]
+[node name="ResponseTemplate" type="RichTextLabel" parent="Balloon/Dialogue/Background/Margin"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 40
-theme_override_font_sizes/bold_font_size = 40
-theme_override_font_sizes/italics_font_size = 40
-theme_override_font_sizes/bold_italics_font_size = 40
-theme_override_font_sizes/mono_font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxFlat_5d24i")
-theme_override_styles/normal = SubResource("StyleBoxFlat_oj3c8")
+theme_override_font_sizes/normal_font_size = 23
+theme_override_styles/focus = SubResource("StyleBoxFlat_0ukkf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nsnev")
 bbcode_enabled = true
 text = "Response"
 fit_content = true
@@ -75,23 +127,58 @@ shortcut_keys_enabled = false
 meta_underlined = false
 hint_underlined = false
 
-[node name="DialogueLabel" type="RichTextLabel" parent="Balloon/Margin/VBox"]
-layout_mode = 2
-mouse_filter = 1
-theme_override_font_sizes/normal_font_size = 40
-theme_override_font_sizes/bold_font_size = 40
-theme_override_font_sizes/italics_font_size = 40
-theme_override_font_sizes/bold_italics_font_size = 40
-theme_override_font_sizes/mono_font_size = 40
-bbcode_enabled = true
-text = "Dialogue"
-fit_content = true
-scroll_active = false
-shortcut_keys_enabled = false
-meta_underlined = false
-hint_underlined = false
-deselect_on_focus_loss_enabled = false
-script = ExtResource("2_fn5n8")
+[node name="Rodolfo" type="TextureRect" parent="Balloon"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.457
+anchor_right = 0.275
+anchor_bottom = 1.0
+offset_left = -82.0
+offset_top = 475.72
+offset_right = 931.0
+offset_bottom = 1478.0
+scale = Vector2(0.596276, 0.596276)
+texture = ExtResource("2_pv6u8")
 
-[connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
-[connection signal="resized" from="Balloon/Margin" to="." method="_on_margin_resized"]
+[node name="PurpleBG" type="TextureRect" parent="Balloon/Rodolfo"]
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.138
+anchor_right = 1.0
+anchor_bottom = 0.953
+offset_left = -101.062
+offset_top = 375.665
+offset_right = -620.75
+offset_bottom = -275.207
+scale = Vector2(1.93642, 1.93642)
+texture = SubResource("AtlasTexture_tqx5l")
+
+[node name="Ramon" type="TextureRect" parent="Balloon"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.729
+anchor_top = 0.456
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1369.84
+offset_top = 474.76
+offset_right = 2383.0
+offset_bottom = 1477.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.599968, 0.599968)
+texture = ExtResource("3_q1d8o")
+
+[node name="yellowBG" type="TextureRect" parent="Balloon/Ramon"]
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.849
+anchor_bottom = 0.958
+offset_left = 286.682
+offset_top = 386.687
+offset_right = -233.694
+offset_bottom = -269.305
+scale = Vector2(1.94615, 1.94615)
+texture = SubResource("AtlasTexture_3u4ep")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c2hb6a5nl0aw6"]
+[gd_scene load_steps=24 format=3 uid="uid://c2hb6a5nl0aw6"]
 
 [ext_resource type="PackedScene" uid="uid://cybqp2djw2xu7" path="res://Character/Character.tscn" id="1_s5o3a"]
 [ext_resource type="Texture2D" uid="uid://cuvhmnynbpcmy" path="res://Assets/Models/Characters/characters-ramon-classic_v1_cara-4.png-cara-4_alpha.png" id="2_8r42e"]
@@ -15,6 +15,55 @@
 [ext_resource type="Script" path="res://Character/StateMachine/States/PunchGroundRo.gd" id="11_bxf3s"]
 [ext_resource type="PackedScene" uid="uid://y23nj7a35rdu" path="res://Assets/Models/Characters/characters-ramon-classic_v1.glb" id="12_hqii2"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Think.gd" id="14_fnkn3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7shsg"]
+
+[sub_resource type="Curve" id="Curve_u54jk"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0.019685, -360), 0.0, -1323.47, 0, 0, Vector2(1, 360), -1205.59, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_js83s"]
+curve = SubResource("Curve_u54jk")
+
+[sub_resource type="Curve" id="Curve_sndqq"]
+_data = [Vector2(0, 0.0105263), 0.0, 0.121531, 0, 0, Vector2(0.645012, 0.884211), -4.04637, -4.04637, 0, 0, Vector2(0.774942, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_i2fxy"]
+curve = SubResource("Curve_sndqq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8io8c"]
+lifetime_randomness = 0.5
+particle_flag_align_y = true
+direction = Vector3(90, 0, 90)
+spread = 90.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 5.0
+angular_velocity_min = 1.0
+angular_velocity_max = 5.0
+angular_velocity_curve = SubResource("CurveTexture_js83s")
+damping_max = 0.5
+scale_min = 0.0
+scale_max = 0.75
+scale_curve = SubResource("CurveTexture_i2fxy")
+turbulence_enabled = true
+turbulence_noise_scale = 5.0
+turbulence_initial_displacement_max = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s5glv"]
+albedo_color = Color(0.768627, 0.482353, 1, 1)
+roughness = 0.0
+emission_enabled = true
+emission = Color(0.537255, 0.00392157, 0.890196, 1)
+emission_energy_multiplier = 100.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_45vpt"]
+material = SubResource("StandardMaterial3D_s5glv")
+radius = 0.025
+height = 0.3
 
 [node name="Character" instance=ExtResource("1_s5o3a")]
 collision_layer = 4
@@ -59,4 +108,25 @@ script = ExtResource("11_bxf3s")
 [node name="ThinkState" type="Node" parent="StateMachine" index="10"]
 script = ExtResource("14_fnkn3")
 
+[node name="DialogueFinder" type="Area3D" parent="." index="5"]
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DialogueFinder" index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0124115, 1.02767, -0.00365394)
+shape = SubResource("BoxShape3D_7shsg")
+
 [node name="modelo" parent="rotating" index="0" instance=ExtResource("12_hqii2")]
+
+[node name="particles-punch2" type="GPUParticles3D" parent="rotating" index="5"]
+transform = Transform3D(-1.33091e-08, -0.304476, 0, -1.33091e-08, 5.81758e-16, -0.304476, 0.304476, -1.33091e-08, -1.33091e-08, 0, 0.992245, 0.529712)
+emitting = false
+amount = 24
+lifetime = 1.5
+preprocess = 1.0
+speed_scale = 4.0
+explosiveness = 1.0
+randomness = 0.5
+visibility_aabb = AABB(-2.63482, -1.3891, -2.14298, 5.26965, 2.77821, 4.28597)
+process_material = SubResource("ParticleProcessMaterial_8io8c")
+draw_pass_1 = SubResource("SphereMesh_45vpt")

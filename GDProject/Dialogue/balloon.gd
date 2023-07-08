@@ -1,12 +1,12 @@
-extends CanvasLayer
+extends Control
 
 
-@onready var balloon: ColorRect = $Balloon
-@onready var margin: MarginContainer = $Balloon/Margin
-@onready var character_label: RichTextLabel = $Balloon/Margin/VBox/CharacterLabel
-@onready var dialogue_label := $Balloon/Margin/VBox/DialogueLabel
-@onready var responses_menu: VBoxContainer = $Balloon/Margin/VBox/Responses
-@onready var response_template: RichTextLabel = %ResponseTemplate
+var balloon: Control
+var margin: MarginContainer
+var character_label: Label
+var dialogue_label: RichTextLabel
+var responses_menu: VBoxContainer
+var response_template: RichTextLabel
 
 ## The dialogue resource
 var resource: DialogueResource
@@ -86,9 +86,16 @@ var dialogue_line: DialogueLine:
 
 
 func _ready() -> void:
+	balloon = $Balloon
+	margin = $Balloon/Dialogue/Background/Margin
+	character_label = $Balloon/Character
+	dialogue_label = $Balloon/Dialogue/Background/Margin/DialogueLabel
+	responses_menu = $Balloon/Dialogue/Background/Margin/Responses
+	response_template = %Balloon/Dialogue/Background/Margin/ResponseTemplate
+	print(margin.get_children())
 	response_template.hide()
 	balloon.hide()
-	balloon.custom_minimum_size.x = balloon.get_viewport_rect().size.x
+	# balloon.custom_minimum_size.x = balloon.get_viewport_rect().size.x
 	
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
 
