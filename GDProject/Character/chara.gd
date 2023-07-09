@@ -352,9 +352,6 @@ func manageFaces():
 
 # --- GETTERS ---
 
-func get_class(): 
-	return "MainCharacter"
-
 func getTarget():
 	return $rotating/CamTarget
 
@@ -363,7 +360,7 @@ func getTarget():
 # --- STATE MACHINE ---
 
 func forceState(state: String):
-	$StateMachine.transition(state)
+	$StateMachine.transition(state, get_process_delta_time())
 
 func getActiveState():
 	return $StateMachine.activeStateName

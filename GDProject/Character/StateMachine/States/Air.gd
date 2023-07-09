@@ -4,6 +4,8 @@ class_name AirState
 
 func onEnter(player: MainCharacter, delta: float):
 	super.onEnter(player, delta)
+	if chara.animationPlayer.assigned_animation != "Jump":
+		chara.executeAnimation("Jump")
 	
 func onExit(_delta: float, transitionTo: String):
 	if transitionTo == "JumpInstantState" or transitionTo == "JumpState":

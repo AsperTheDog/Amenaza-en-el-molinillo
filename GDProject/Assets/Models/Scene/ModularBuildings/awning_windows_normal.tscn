@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://5wb3cq3d04gp"]
 
 [ext_resource type="PackedScene" uid="uid://n64n0mul3oay" path="res://Assets/Models/Scene/ModularBuildings/awning-windows-normal.glb" id="1_g8b4p"]
-[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_y6gtb"]
+[ext_resource type="Material" uid="uid://d2dupdqjoxqay" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_y6gtb"]
 
 [node name="awning-windows-normal" instance=ExtResource("1_g8b4p")]
 

@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://d0fw5nsv284ps"]
+
+[ext_resource type="Script" path="res://interaction/awning-bouncy.gd" id="1_rejql"]
+[ext_resource type="Texture2D" uid="uid://dppbrhyeptu4e" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1_albedo.png" id="1_xlrj7"]
+[ext_resource type="Texture2D" uid="uid://bx7fv3wh1bo1h" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1_orm.png" id="2_w6ppa"]
+[ext_resource type="Texture2D" uid="uid://dtijkpard1xnt" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1_heightmap.png" id="3_p0oid"]
+[ext_resource type="Texture2D" uid="uid://83ib3aiwk6d1" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1_normal.png" id="4_2npvn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mqb0x"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_1g2t6"]
+_surfaces = [{
+"aabb": AABB(-0.6, 1.57529, 1.5, 1.20001, 0.453334, 2.34115),
+"format": 4097,
+"index_count": 36,
+"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 0, 0, 3, 0, 2, 0, 1, 0, 4, 0, 5, 0, 1, 0, 2, 0, 4, 0, 8, 0, 6, 0, 9, 0, 8, 0, 7, 0, 6, 0, 11, 0, 7, 0, 8, 0, 11, 0, 10, 0, 7, 0, 13, 0, 10, 0, 11, 0, 13, 0, 12, 0, 10, 0, 5, 0, 12, 0, 13, 0, 5, 0, 4, 0, 12, 0),
+"primitive": 3,
+"vertex_count": 14,
+"vertex_data": PackedByteArray(148, 153, 25, 63, 27, 163, 201, 63, 46, 213, 117, 64, 148, 153, 25, 63, 37, 25, 234, 63, 45, 213, 117, 64, 156, 153, 25, 191, 37, 25, 234, 63, 45, 213, 117, 64, 156, 153, 25, 191, 27, 163, 201, 63, 46, 213, 117, 64, 155, 153, 25, 191, 37, 25, 234, 63, 83, 145, 38, 64, 151, 153, 25, 63, 37, 25, 234, 63, 83, 145, 38, 64, 153, 153, 25, 191, 248, 212, 1, 64, 251, 255, 191, 63, 153, 153, 25, 191, 249, 212, 1, 64, 64, 222, 208, 63, 151, 153, 25, 63, 249, 212, 1, 64, 64, 222, 208, 63, 151, 153, 25, 63, 248, 212, 1, 64, 251, 255, 191, 63, 153, 153, 25, 191, 139, 26, 248, 63, 197, 238, 235, 63, 151, 153, 25, 63, 139, 26, 248, 63, 197, 238, 235, 63, 155, 153, 25, 191, 67, 251, 238, 63, 92, 68, 14, 64, 151, 153, 25, 63, 67, 251, 238, 63, 92, 68, 14, 64)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_eer47"]
+resource_name = "awning-windows-normal_Awning Windows Normal"
+_surfaces = [{
+"aabb": AABB(-0.6, 1.57529, 1.5, 1.20001, 0.453334, 2.34115),
+"attribute_data": PackedByteArray(19, 182, 79, 63, 110, 237, 93, 63, 7, 182, 79, 63, 63, 194, 90, 63, 7, 182, 79, 63, 63, 194, 90, 63, 164, 183, 64, 63, 122, 194, 90, 63, 164, 183, 64, 63, 122, 194, 90, 63, 176, 183, 64, 63, 168, 237, 93, 63, 104, 183, 64, 63, 228, 72, 75, 63, 203, 181, 79, 63, 169, 72, 75, 63, 50, 183, 64, 63, 142, 43, 61, 63, 56, 183, 64, 63, 22, 209, 62, 63, 154, 181, 79, 63, 219, 208, 62, 63, 148, 181, 79, 63, 83, 43, 61, 63, 66, 183, 64, 63, 134, 176, 65, 63, 165, 181, 79, 63, 76, 176, 65, 63, 86, 183, 64, 63, 66, 132, 70, 63, 184, 181, 79, 63, 7, 132, 70, 63),
+"format": 4119,
+"index_count": 36,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 5, 0, 3, 0, 2, 0, 6, 0, 7, 0, 2, 0, 4, 0, 6, 0, 10, 0, 8, 0, 11, 0, 10, 0, 9, 0, 8, 0, 13, 0, 9, 0, 10, 0, 13, 0, 12, 0, 9, 0, 15, 0, 12, 0, 13, 0, 15, 0, 14, 0, 12, 0, 7, 0, 14, 0, 15, 0, 7, 0, 6, 0, 14, 0),
+"material": SubResource("StandardMaterial3D_mqb0x"),
+"primitive": 3,
+"vertex_count": 16,
+"vertex_data": PackedByteArray(148, 153, 25, 63, 27, 163, 201, 63, 46, 213, 117, 64, 255, 127, 255, 127, 253, 255, 254, 191, 148, 153, 25, 63, 37, 25, 234, 63, 45, 213, 117, 64, 255, 127, 255, 127, 253, 255, 254, 191, 148, 153, 25, 63, 37, 25, 234, 63, 45, 213, 117, 64, 255, 127, 255, 255, 253, 255, 255, 191, 156, 153, 25, 191, 37, 25, 234, 63, 45, 213, 117, 64, 255, 127, 255, 127, 253, 255, 254, 191, 156, 153, 25, 191, 37, 25, 234, 63, 45, 213, 117, 64, 255, 127, 255, 255, 253, 255, 255, 191, 156, 153, 25, 191, 27, 163, 201, 63, 46, 213, 117, 64, 255, 127, 255, 127, 253, 255, 254, 191, 155, 153, 25, 191, 37, 25, 234, 63, 83, 145, 38, 64, 255, 127, 228, 249, 252, 255, 255, 191, 151, 153, 25, 63, 37, 25, 234, 63, 83, 145, 38, 64, 255, 127, 228, 249, 252, 255, 255, 191, 153, 153, 25, 191, 248, 212, 1, 64, 251, 255, 191, 63, 255, 127, 255, 255, 253, 255, 255, 191, 153, 153, 25, 191, 249, 212, 1, 64, 64, 222, 208, 63, 255, 127, 64, 234, 252, 255, 255, 191, 151, 153, 25, 63, 249, 212, 1, 64, 64, 222, 208, 63, 255, 127, 64, 234, 252, 255, 255, 191, 151, 153, 25, 63, 248, 212, 1, 64, 251, 255, 191, 63, 255, 127, 255, 255, 253, 255, 255, 191, 153, 153, 25, 191, 139, 26, 248, 63, 197, 238, 235, 63, 255, 127, 49, 226, 252, 255, 254, 191, 151, 153, 25, 63, 139, 26, 248, 63, 197, 238, 235, 63, 255, 127, 49, 226, 252, 255, 254, 191, 155, 153, 25, 191, 67, 251, 238, 63, 92, 68, 14, 64, 255, 127, 229, 239, 252, 255, 255, 191, 151, 153, 25, 63, 67, 251, 238, 63, 92, 68, 14, 64, 255, 127, 229, 239, 252, 255, 255, 191)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_1g2t6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bp8oe"]
+albedo_color = Color(0, 1, 1, 1)
+albedo_texture = ExtResource("1_xlrj7")
+roughness_texture = ExtResource("2_w6ppa")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("4_2npvn")
+ao_enabled = true
+ao_texture = ExtResource("2_w6ppa")
+heightmap_enabled = true
+heightmap_scale = -0.1
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("3_p0oid")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_15org"]
+size = Vector3(1.1822, 0.124278, 2.05188)
+
+[node name="awning-bouncy" type="Node3D"]
+script = ExtResource("1_rejql")
+
+[node name="Awning Windows Normal_001" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_eer47")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_bp8oe")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0103098, 1.85524, 2.71314)
+shape = SubResource("BoxShape3D_15org")
