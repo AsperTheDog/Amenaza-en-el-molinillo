@@ -1,12 +1,58 @@
-[gd_scene load_steps=9 format=3 uid="uid://blpxpw5garw4i"]
+[gd_scene load_steps=19 format=3 uid="uid://blpxpw5garw4i"]
 
 [ext_resource type="Script" path="res://Scenes/Game-Menu.gd" id="1_h65co"]
 [ext_resource type="Texture2D" uid="uid://bchb2uogk6g8n" path="res://Assets/UI/Menu-Wallpaper-1.png" id="1_jcpp1"]
 [ext_resource type="Texture2D" uid="uid://ymcgkf22yolx" path="res://Assets/UI/Logo_UI.tres" id="2_1fqya"]
+[ext_resource type="Texture2D" uid="uid://brnkej4kc7ykn" path="res://Assets/UI/Bg-Lines_UI.tres" id="3_jq44k"]
 [ext_resource type="Texture2D" uid="uid://bi8px2iobc06y" path="res://Assets/UI/Button_Basic_UI.tres" id="3_p5636"]
 [ext_resource type="Texture2D" uid="uid://cwrwby0q6i2br" path="res://Assets/UI/Button_Pressed_UI.tres" id="4_a7ny0"]
 [ext_resource type="Texture2D" uid="uid://wmrluepim8c7" path="res://Assets/UI/Button_Hover_UI.tres" id="5_60836"]
+[ext_resource type="PackedScene" uid="uid://baj3ygw0wptmy" path="res://Assets/UI/ramon_icon_deco_ui_animate.tscn" id="5_mtsgx"]
 [ext_resource type="FontFile" uid="uid://d3umehc1swnb" path="res://Assets/Fonts/Ubuntu/Ubuntu-Bold.ttf" id="6_mdo1l"]
+[ext_resource type="PackedScene" uid="uid://dhgrpq7nsbjjh" path="res://Assets/UI/rodolfo_icon_deco_ui_animate.tscn" id="6_pmg3k"]
+[ext_resource type="Texture2D" uid="uid://c3l7762lxkhqr" path="res://Assets/UI/Menu-Wallpaper-2.png" id="7_rj1sq"]
+[ext_resource type="Texture2D" uid="uid://cgv28yqd7pjj5" path="res://Assets/UI/Logo-Demo_UI.tres" id="9_6vv05"]
+[ext_resource type="AudioStream" uid="uid://bp6qvbv15iq3q" path="res://Assets/Audio/Music/60_Seconds_Ready_For_Mischief_David_Renda.mp3" id="11_kd6ve"]
+
+[sub_resource type="Animation" id="Animation_csse4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-227.111, -53.274)]
+}
+
+[sub_resource type="Animation" id="Animation_5m4g3"]
+resource_name = "icons_rodolforamon_animate"
+length = 2.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9999, 1, 2.1999, 2.2, 2.2001, 2.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-227.111, -61.7143), Vector2(-227.111, -61.7143), Vector2(-100, -61.714), Vector2(-100, -61.714), Vector2(-227.111, -61.7143), Vector2(-227.111, -61.7143), Vector2(-227.111, -61.7143)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ofpb3"]
+_data = {
+"RESET": SubResource("Animation_csse4"),
+"icons_rodolforamon_animate": SubResource("Animation_5m4g3")
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_1jor7"]
 
 [sub_resource type="Theme" id="Theme_lcsdt"]
 default_font = ExtResource("6_mdo1l")
@@ -21,10 +67,491 @@ grow_vertical = 2
 script = ExtResource("1_h65co")
 fadeInSpeed = 0.2
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_kd6ve")
+autoplay = true
+
 [node name="BackgroundLayer" type="CanvasLayer" parent="."]
 
 [node name="Background" type="Sprite2D" parent="BackgroundLayer"]
 texture = ExtResource("1_jcpp1")
+centered = false
+
+[node name="Bg-linesUi" type="Sprite2D" parent="BackgroundLayer"]
+self_modulate = Color(0.760784, 0.45098, 0.0509804, 0.862745)
+position = Vector2(958.722, 102)
+scale = Vector2(1.608, -1.608)
+texture = ExtResource("3_jq44k")
+
+[node name="Node2D2" type="Node2D" parent="BackgroundLayer/Bg-linesUi"]
+modulate = Color(0.905882, 0.572549, 0.133333, 1)
+position = Vector2(10.0401, 48.4701)
+rotation = 0.0872665
+scale = Vector2(0.544154, -0.544154)
+
+[node name="IconsDeco" type="Node2D" parent="BackgroundLayer/Bg-linesUi/Node2D2"]
+position = Vector2(-227.111, -53.274)
+
+[node name="RamonIconDecoUi2" parent="BackgroundLayer/Bg-linesUi/Node2D2/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(-1114.36, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi2" parent="BackgroundLayer/Bg-linesUi/Node2D2/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(-995.111, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi3" parent="BackgroundLayer/Bg-linesUi/Node2D2/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(-872.555, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi3" parent="BackgroundLayer/Bg-linesUi/Node2D2/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(-753.306, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi4" parent="BackgroundLayer/Bg-linesUi/Node2D2/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(-634.84, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi4" parent="BackgroundLayer/Bg-linesUi/Node2D2/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(-515.591, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi5" parent="BackgroundLayer/Bg-linesUi/Node2D2/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(-393.035, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi5" parent="BackgroundLayer/Bg-linesUi/Node2D2/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(-273.786, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi6" parent="BackgroundLayer/Bg-linesUi/Node2D2/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(-150.269, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi6" parent="BackgroundLayer/Bg-linesUi/Node2D2/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(-31.02, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi7" parent="BackgroundLayer/Bg-linesUi/Node2D2/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(91.5366, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi7" parent="BackgroundLayer/Bg-linesUi/Node2D2/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(210.785, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi8" parent="BackgroundLayer/Bg-linesUi/Node2D2/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(329.251, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi8" parent="BackgroundLayer/Bg-linesUi/Node2D2/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(448.5, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi9" parent="BackgroundLayer/Bg-linesUi/Node2D2/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(571.056, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi9" parent="BackgroundLayer/Bg-linesUi/Node2D2/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(690.305, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi10" parent="BackgroundLayer/Bg-linesUi/Node2D2/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(809.732, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi10" parent="BackgroundLayer/Bg-linesUi/Node2D2/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(928.98, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi11" parent="BackgroundLayer/Bg-linesUi/Node2D2/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(1051.54, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi11" parent="BackgroundLayer/Bg-linesUi/Node2D2/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(1170.79, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi12" parent="BackgroundLayer/Bg-linesUi/Node2D2/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(1289.25, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi12" parent="BackgroundLayer/Bg-linesUi/Node2D2/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(1408.5, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi13" parent="BackgroundLayer/Bg-linesUi/Node2D2/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(1531.06, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi13" parent="BackgroundLayer/Bg-linesUi/Node2D2/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(1650.3, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BackgroundLayer/Bg-linesUi/Node2D2/IconsDeco"]
+autoplay = "icons_rodolforamon_animate"
+libraries = {
+"": SubResource("AnimationLibrary_ofpb3")
+}
+
+[node name="Node2D3" type="Node2D" parent="BackgroundLayer/Bg-linesUi"]
+modulate = Color(0.905882, 0.572549, 0.133333, 1)
+position = Vector2(-18.4092, -21.1884)
+rotation = 0.0872665
+scale = Vector2(0.544154, -0.544154)
+
+[node name="IconsDeco" type="Node2D" parent="BackgroundLayer/Bg-linesUi/Node2D3"]
+position = Vector2(-227.111, -53.274)
+
+[node name="RamonIconDecoUi2" parent="BackgroundLayer/Bg-linesUi/Node2D3/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(-1114.36, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi2" parent="BackgroundLayer/Bg-linesUi/Node2D3/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(-995.111, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi3" parent="BackgroundLayer/Bg-linesUi/Node2D3/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(-872.555, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi3" parent="BackgroundLayer/Bg-linesUi/Node2D3/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(-753.306, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi4" parent="BackgroundLayer/Bg-linesUi/Node2D3/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(-634.84, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi4" parent="BackgroundLayer/Bg-linesUi/Node2D3/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(-515.591, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi5" parent="BackgroundLayer/Bg-linesUi/Node2D3/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(-393.035, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi5" parent="BackgroundLayer/Bg-linesUi/Node2D3/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(-273.786, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi6" parent="BackgroundLayer/Bg-linesUi/Node2D3/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(-150.269, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi6" parent="BackgroundLayer/Bg-linesUi/Node2D3/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(-31.02, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi7" parent="BackgroundLayer/Bg-linesUi/Node2D3/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(91.5366, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi7" parent="BackgroundLayer/Bg-linesUi/Node2D3/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(210.785, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi8" parent="BackgroundLayer/Bg-linesUi/Node2D3/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(329.251, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi8" parent="BackgroundLayer/Bg-linesUi/Node2D3/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(448.5, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi9" parent="BackgroundLayer/Bg-linesUi/Node2D3/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(571.056, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi9" parent="BackgroundLayer/Bg-linesUi/Node2D3/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(690.305, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi10" parent="BackgroundLayer/Bg-linesUi/Node2D3/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(809.732, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi10" parent="BackgroundLayer/Bg-linesUi/Node2D3/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(928.98, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi11" parent="BackgroundLayer/Bg-linesUi/Node2D3/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(1051.54, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi11" parent="BackgroundLayer/Bg-linesUi/Node2D3/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(1170.79, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi12" parent="BackgroundLayer/Bg-linesUi/Node2D3/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(1289.25, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi12" parent="BackgroundLayer/Bg-linesUi/Node2D3/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(1408.5, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi13" parent="BackgroundLayer/Bg-linesUi/Node2D3/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(1531.06, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi13" parent="BackgroundLayer/Bg-linesUi/Node2D3/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(1650.3, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BackgroundLayer/Bg-linesUi/Node2D3/IconsDeco"]
+autoplay = "icons_rodolforamon_animate"
+libraries = {
+"": SubResource("AnimationLibrary_ofpb3")
+}
+
+[node name="Sprite2D2" type="Sprite2D" parent="BackgroundLayer"]
+modulate = Color(0.133333, 0.133333, 0.133333, 1)
+position = Vector2(1102.54, 136.042)
+rotation = -0.0872665
+scale = Vector2(1.608, 1.608)
+texture = SubResource("CanvasTexture_1jor7")
+region_enabled = true
+region_rect = Rect2(0, 0, 2000, 6)
+
+[node name="Bg-linesUi2" type="Sprite2D" parent="BackgroundLayer"]
+self_modulate = Color(0.611765, 0.137255, 0.666667, 0.862745)
+position = Vector2(959.428, 956)
+scale = Vector2(1.608, 1.608)
+texture = ExtResource("3_jq44k")
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundLayer/Bg-linesUi2"]
+modulate = Color(0.133333, 0.133333, 0.133333, 1)
+position = Vector2(0, -29.8507)
+rotation = 0.0872665
+texture = SubResource("CanvasTexture_1jor7")
+region_enabled = true
+region_rect = Rect2(0, 0, 2000, 6)
+
+[node name="Node2D4" type="Node2D" parent="BackgroundLayer/Bg-linesUi2"]
+modulate = Color(0.780392, 0.282353, 0.839216, 1)
+position = Vector2(43.7305, 52.2388)
+rotation = 0.0872665
+scale = Vector2(0.544154, 0.544154)
+
+[node name="IconsDeco" type="Node2D" parent="BackgroundLayer/Bg-linesUi2/Node2D4"]
+position = Vector2(-227.111, -53.274)
+
+[node name="RamonIconDecoUi2" parent="BackgroundLayer/Bg-linesUi2/Node2D4/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(-1114.36, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi2" parent="BackgroundLayer/Bg-linesUi2/Node2D4/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(-995.111, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi3" parent="BackgroundLayer/Bg-linesUi2/Node2D4/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(-872.555, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi3" parent="BackgroundLayer/Bg-linesUi2/Node2D4/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(-753.306, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi4" parent="BackgroundLayer/Bg-linesUi2/Node2D4/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(-634.84, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi4" parent="BackgroundLayer/Bg-linesUi2/Node2D4/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(-515.591, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi5" parent="BackgroundLayer/Bg-linesUi2/Node2D4/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(-393.035, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi5" parent="BackgroundLayer/Bg-linesUi2/Node2D4/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(-273.786, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi6" parent="BackgroundLayer/Bg-linesUi2/Node2D4/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(-150.269, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi6" parent="BackgroundLayer/Bg-linesUi2/Node2D4/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(-31.02, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi7" parent="BackgroundLayer/Bg-linesUi2/Node2D4/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(91.5366, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi7" parent="BackgroundLayer/Bg-linesUi2/Node2D4/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(210.785, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi8" parent="BackgroundLayer/Bg-linesUi2/Node2D4/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(329.251, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi8" parent="BackgroundLayer/Bg-linesUi2/Node2D4/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(448.5, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi9" parent="BackgroundLayer/Bg-linesUi2/Node2D4/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(571.056, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi9" parent="BackgroundLayer/Bg-linesUi2/Node2D4/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(690.305, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi10" parent="BackgroundLayer/Bg-linesUi2/Node2D4/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(809.732, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi10" parent="BackgroundLayer/Bg-linesUi2/Node2D4/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(928.98, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi11" parent="BackgroundLayer/Bg-linesUi2/Node2D4/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(1051.54, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi11" parent="BackgroundLayer/Bg-linesUi2/Node2D4/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(1170.79, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi12" parent="BackgroundLayer/Bg-linesUi2/Node2D4/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(1289.25, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi12" parent="BackgroundLayer/Bg-linesUi2/Node2D4/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(1408.5, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi13" parent="BackgroundLayer/Bg-linesUi2/Node2D4/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(1531.06, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi13" parent="BackgroundLayer/Bg-linesUi2/Node2D4/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(1650.3, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BackgroundLayer/Bg-linesUi2/Node2D4/IconsDeco"]
+autoplay = "icons_rodolforamon_animate"
+libraries = {
+"": SubResource("AnimationLibrary_ofpb3")
+}
+
+[node name="Node2D5" type="Node2D" parent="BackgroundLayer/Bg-linesUi2"]
+modulate = Color(0.780392, 0.282353, 0.839216, 1)
+position = Vector2(15.2811, 121.897)
+rotation = 0.0872665
+scale = Vector2(0.544154, 0.544154)
+
+[node name="IconsDeco" type="Node2D" parent="BackgroundLayer/Bg-linesUi2/Node2D5"]
+position = Vector2(-227.111, -53.274)
+
+[node name="RamonIconDecoUi2" parent="BackgroundLayer/Bg-linesUi2/Node2D5/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(-1114.36, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi2" parent="BackgroundLayer/Bg-linesUi2/Node2D5/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(-995.111, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi3" parent="BackgroundLayer/Bg-linesUi2/Node2D5/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(-872.555, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi3" parent="BackgroundLayer/Bg-linesUi2/Node2D5/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(-753.306, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi4" parent="BackgroundLayer/Bg-linesUi2/Node2D5/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(-634.84, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi4" parent="BackgroundLayer/Bg-linesUi2/Node2D5/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(-515.591, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi5" parent="BackgroundLayer/Bg-linesUi2/Node2D5/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(-393.035, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi5" parent="BackgroundLayer/Bg-linesUi2/Node2D5/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(-273.786, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi6" parent="BackgroundLayer/Bg-linesUi2/Node2D5/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(-150.269, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi6" parent="BackgroundLayer/Bg-linesUi2/Node2D5/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(-31.02, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi7" parent="BackgroundLayer/Bg-linesUi2/Node2D5/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(91.5366, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi7" parent="BackgroundLayer/Bg-linesUi2/Node2D5/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(210.785, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi8" parent="BackgroundLayer/Bg-linesUi2/Node2D5/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(329.251, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi8" parent="BackgroundLayer/Bg-linesUi2/Node2D5/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(448.5, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi9" parent="BackgroundLayer/Bg-linesUi2/Node2D5/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(571.056, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi9" parent="BackgroundLayer/Bg-linesUi2/Node2D5/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(690.305, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi10" parent="BackgroundLayer/Bg-linesUi2/Node2D5/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(809.732, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi10" parent="BackgroundLayer/Bg-linesUi2/Node2D5/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(928.98, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi11" parent="BackgroundLayer/Bg-linesUi2/Node2D5/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(1051.54, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi11" parent="BackgroundLayer/Bg-linesUi2/Node2D5/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(1170.79, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi12" parent="BackgroundLayer/Bg-linesUi2/Node2D5/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(1289.25, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi12" parent="BackgroundLayer/Bg-linesUi2/Node2D5/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(1408.5, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="RamonIconDecoUi13" parent="BackgroundLayer/Bg-linesUi2/Node2D5/IconsDeco" instance=ExtResource("5_mtsgx")]
+position = Vector2(1531.06, 0)
+scale = Vector2(0.273108, 0.273108)
+
+[node name="RodolfoIconDecoUi13" parent="BackgroundLayer/Bg-linesUi2/Node2D5/IconsDeco" instance=ExtResource("6_pmg3k")]
+position = Vector2(1650.3, 0)
+scale = Vector2(0.207025, 0.207025)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BackgroundLayer/Bg-linesUi2/Node2D5/IconsDeco"]
+autoplay = "icons_rodolforamon_animate"
+libraries = {
+"": SubResource("AnimationLibrary_ofpb3")
+}
+
+[node name="Background2" type="Sprite2D" parent="BackgroundLayer"]
+texture = ExtResource("7_rj1sq")
 centered = false
 
 [node name="MainLayer" type="CanvasLayer" parent="."]
@@ -51,11 +578,16 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_1fqya")
 centered = false
 
+[node name="Sprite2D" type="Sprite2D" parent="MainLayer/Container/LogoContainer/Sprite2D"]
+position = Vector2(540, 390)
+texture = ExtResource("9_6vv05")
+
 [node name="MenuContainer" type="MarginContainer" parent="MainLayer/Container"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
-theme_override_constants/margin_left = 16
+theme_override_constants/margin_left = 96
+theme_override_constants/margin_bottom = 32
 
 [node name="BoxContainer" type="VBoxContainer" parent="MainLayer/Container/MenuContainer"]
 layout_mode = 2
@@ -109,10 +641,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 111.0
-offset_top = 25.0
-offset_right = 75.0
-offset_bottom = -24.0
+offset_left = 115.0
+offset_top = 23.0
+offset_right = 79.0
+offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -135,7 +667,7 @@ scroll_active = false
 [node name="TextureButton3" type="TextureButton" parent="MainLayer/Container/MenuContainer/BoxContainer"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../TextureButton2")
-texture_normal = ExtResource("4_a7ny0")
+texture_normal = ExtResource("3_p5636")
 texture_pressed = ExtResource("4_a7ny0")
 texture_hover = ExtResource("5_60836")
 texture_focused = ExtResource("5_60836")
@@ -174,14 +706,17 @@ anchor_top = 0.934
 anchor_right = 0.928
 anchor_bottom = 0.934
 offset_left = -1621.76
-offset_top = -24.72
+offset_top = -12.72
 offset_right = -0.76001
-offset_bottom = 0.279968
+offset_bottom = 14.28
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_vertical = 8
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_font_size = 16
 bbcode_enabled = true
-text = "[right]Espacio dedicado a texto legal por el propio juego o los derechos de los personajes 2023.[/right]"
+text = "[center]Un videojuego de [b]Numae Games™[/b].  Los personajes [b]Rodolfo Mascarpone[/b] y [b]Ramón Cazanuecos[/b] pertenecen a [b]Borja Pavón[/b] y [b]The Catacroquer[/b] respectivamente.[/center]"
 fit_content = true
 scroll_active = false
 text_direction = 1

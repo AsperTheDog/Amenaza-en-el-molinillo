@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2f2oqo1rygp4"]
+
+[ext_resource type="PackedScene" uid="uid://booa5afs6khng" path="res://Assets/Models/Items/item-radio_v1.glb" id="1_72bhi"]
+[ext_resource type="Material" uid="uid://bc2no7p02wury" path="res://Materials/Items/items_v1.tres" id="2_m7sx6"]
+[ext_resource type="PackedScene" uid="uid://dg57jvarxio7v" path="res://Assets/Models/Items/item_radio_speaker_v_1.tscn" id="3_xuxt4"]
+[ext_resource type="Texture2D" uid="uid://cmedv2dobq0pj" path="res://Materials/Items/sound_v1.png" id="4_e0klw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hkj3a"]
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+albedo_color = Color(0, 0.239216, 0.831373, 1)
+albedo_texture = ExtResource("4_e0klw")
+emission_enabled = true
+emission = Color(0, 0.47451, 0.886275, 1)
+emission_energy_multiplier = 5.0
+emission_operator = 1
+emission_texture = ExtResource("4_e0klw")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cm1gm"]
+material = SubResource("StandardMaterial3D_hkj3a")
+size = Vector2(0.2, 0.2)
+orientation = 2
+
+[sub_resource type="Curve" id="Curve_so2pe"]
+max_value = 5.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.179872, 0), 0.0, 0.0, 0, 0, Vector2(0.267666, 1.94737), 0.0, 0.0, 0, 0, Vector2(0.396146, 0.947369), 0.0, 0.0, 0, 0, Vector2(0.85439, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -13.2348, 0.0, 0, 0]
+point_count = 6
+
+[node name="item-radio_v1" instance=ExtResource("1_72bhi")]
+
+[node name="Radio" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_m7sx6")
+
+[node name="item-radio-speaker_v1" parent="." index="1" instance=ExtResource("3_xuxt4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.296106, 0.193913, 0.132345)
+
+[node name="item-radio-speaker_v2" parent="." index="2" instance=ExtResource("3_xuxt4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.292479, 0.193913, 0.132404)
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." index="3"]
+transform = Transform3D(0.780686, 0, 0, 0, 0.780686, 0, 0, 0, 0.780686, 0.26744, 0.561899, 0)
+amount = 5
+speed_scale = 0.5
+explosiveness = 0.1
+randomness = 0.3
+mesh = SubResource("PlaneMesh_cm1gm")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 0.3, 0.3)
+gravity = Vector3(0, 5, 0)
+scale_amount_curve = SubResource("Curve_so2pe")

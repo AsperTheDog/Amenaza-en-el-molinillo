@@ -1,0 +1,36 @@
+[gd_resource type="AudioBusLayout" load_steps=5 format=3 uid="uid://df7v2ip68vss"]
+
+[sub_resource type="AudioEffectBandPassFilter" id="AudioEffectBandPassFilter_uorvm"]
+resource_name = "BandPassFilter"
+
+[sub_resource type="AudioEffectHighPassFilter" id="AudioEffectHighPassFilter_70y8d"]
+resource_name = "HighPassFilter"
+
+[sub_resource type="AudioEffectAmplify" id="AudioEffectAmplify_5f6cj"]
+resource_name = "Amplify"
+volume_db = 20.0
+
+[sub_resource type="AudioEffectEQ" id="AudioEffectEQ_il5wb"]
+resource_name = "EQ"
+band_db/32_hz = -60.0
+band_db/100_hz = -60.0
+band_db/320_hz = -60.0
+band_db/1000_hz = 8.8
+band_db/3200_hz = -15.2
+band_db/10000_hz = 8.8
+
+[resource]
+bus/1/name = &"Radio"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = 0.0
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectBandPassFilter_uorvm")
+bus/1/effect/0/enabled = true
+bus/1/effect/1/effect = SubResource("AudioEffectHighPassFilter_70y8d")
+bus/1/effect/1/enabled = true
+bus/1/effect/2/effect = SubResource("AudioEffectAmplify_5f6cj")
+bus/1/effect/2/enabled = true
+bus/1/effect/3/effect = SubResource("AudioEffectEQ_il5wb")
+bus/1/effect/3/enabled = true

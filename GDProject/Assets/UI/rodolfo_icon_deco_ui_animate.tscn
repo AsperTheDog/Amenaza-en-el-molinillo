@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhgrpq7nsbjjh"]
+
+[ext_resource type="Texture2D" uid="uid://cd4r7ddy1kdeo" path="res://Assets/UI/Rodolfo_IconDeco_UI.tres" id="1_em6ei"]
+
+[sub_resource type="Animation" id="Animation_tnat4"]
+resource_name = "icon-rodolfo-menu-animation"
+length = 2.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.8, 0.9, 1.1, 1.2, 1.9, 2, 2.2, 2.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.4, 0.4), Vector2(0.3, 0.3), Vector2(0.3, 0.3), Vector2(0.2, 0.2), Vector2(0.6, 0.6), Vector2(0.455, 0.455), Vector2(0.455, 0.455), Vector2(0.6, 0.6), Vector2(0.2, 0.2), Vector2(0.4, 0.4)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_145o0"]
+_data = {
+"icon-rodolfo-menu-animation": SubResource("Animation_tnat4")
+}
+
+[node name="RodolfoIconDecoUi" type="Sprite2D"]
+scale = Vector2(0.455, 0.455)
+texture = ExtResource("1_em6ei")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "icon-rodolfo-menu-animation"
+libraries = {
+"": SubResource("AnimationLibrary_145o0")
+}

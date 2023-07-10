@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://baj3ygw0wptmy"]
+
+[ext_resource type="Texture2D" uid="uid://63bda58jfapn" path="res://Assets/UI/Ramon_IconDeco_UI.tres" id="1_xqubk"]
+
+[sub_resource type="Animation" id="Animation_tt3e5"]
+resource_name = "icon-ramon-menu-animation"
+length = 2.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.8, 0.9, 1.1, 1.2, 1.3, 2, 2.1, 2.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.6, 0.6), Vector2(0.45518, 0.45518), Vector2(0.45518, 0.45518), Vector2(0.6, 0.6), Vector2(0.2, 0.2), Vector2(0.4, 0.4), Vector2(0.3, 0.3), Vector2(0.3, 0.3), Vector2(0.2, 0.2), Vector2(0.6, 0.6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_06lyw"]
+_data = {
+"icon-ramon-menu-animation": SubResource("Animation_tt3e5")
+}
+
+[node name="RamonIconDecoUi" type="Sprite2D"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xqubk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "icon-ramon-menu-animation"
+libraries = {
+"": SubResource("AnimationLibrary_06lyw")
+}
