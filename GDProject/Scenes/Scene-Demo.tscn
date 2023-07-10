@@ -451,6 +451,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0560284, 0, -4.96624)
 [node name="sewer_v1" parent="City" instance=ExtResource("9_ymfnq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.27525, -0.031039, -5.20998)
 
+[node name="sewer_v4" parent="City" instance=ExtResource("9_ymfnq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.0644, -0.031039, -5.20998)
+
+[node name="sewer_v5" parent="City" instance=ExtResource("9_ymfnq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.6174, -0.031039, -5.20998)
+
 [node name="sewer_v3" parent="City" instance=ExtResource("9_ymfnq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3223, -0.031039, -5.20998)
 

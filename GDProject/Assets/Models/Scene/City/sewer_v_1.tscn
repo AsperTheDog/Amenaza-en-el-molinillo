@@ -1,9 +1,42 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdh2iel1ls7p4"]
+[gd_scene load_steps=7 format=3 uid="uid://cdh2iel1ls7p4"]
 
 [ext_resource type="PackedScene" uid="uid://dwwye4x22ogk7" path="res://Assets/Models/Scene/City/sewer_v1.glb" id="1_6fedj"]
 [ext_resource type="Material" uid="uid://cr8tfh2f1wgns" path="res://Materials/City/sings_v1.tres" id="2_p5y8e"]
+[ext_resource type="Texture2D" uid="uid://ctmd4b2ansqf5" path="res://Assets/Effects/vfx-smoke.png" id="3_jags3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x4ljm"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.196078)
+albedo_texture = ExtResource("3_jags3")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4naf2"]
+material = SubResource("StandardMaterial3D_x4ljm")
+size = Vector2(0.5, 0.5)
+orientation = 2
+
+[sub_resource type="Curve" id="Curve_jxasd"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.241379, 1), 0.0, 0.0, 0, 0, Vector2(0.639847, 0.884211), -1.37368, -1.37368, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [node name="sewer_v1" instance=ExtResource("1_6fedj")]
 
 [node name="Alcantarilla" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_p5y8e")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="Alcantarilla" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0489939, 0.131874)
+amount = 15
+speed_scale = 0.5
+explosiveness = 0.1
+randomness = 0.3
+lifetime_randomness = 0.3
+mesh = SubResource("PlaneMesh_4naf2")
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 0.05, 0.3)
+gravity = Vector3(0, 5, 0)
+tangential_accel_max = 5.0
+damping_min = 1.0
+damping_max = 3.0
+angle_max = 20.0
+scale_amount_curve = SubResource("Curve_jxasd")
+color = Color(1, 1, 1, 0.698039)
