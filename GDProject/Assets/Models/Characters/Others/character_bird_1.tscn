@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2l4tw5ehd1a5"]
+
+[ext_resource type="PackedScene" uid="uid://c0tbwmvy7e6au" path="res://Assets/Models/Characters/Others/character-bird-1.glb" id="1_g8fv6"]
+
+[node name="character-bird-1" instance=ExtResource("1_g8fv6")]
+
+[node name="Skeleton3D" parent="Bird/Armature" index="0"]
+bones/1/position = Vector3(0.739766, -0.15249, -0.877458)
+bones/1/rotation = Quaternion(0.978159, -0.00469018, -0.173065, -0.11503)
+bones/2/rotation = Quaternion(-0.15279, 0.00526296, 0.170783, 0.973376)
+bones/3/position = Vector3(0.300191, 0.0219071, -0.137877)
+bones/3/rotation = Quaternion(0.584729, 0.468653, 0.520081, 0.409845)
+bones/4/position = Vector3(-0.739765, -0.15249, -0.877458)
+bones/4/rotation = Quaternion(-0.978159, -0.00469009, -0.173065, 0.11503)
+bones/5/rotation = Quaternion(-0.15279, -0.00526302, -0.170783, 0.973376)
+bones/6/position = Vector3(-0.300191, 0.0219727, -0.138494)
+bones/6/rotation = Quaternion(0.580088, -0.473805, -0.52483, 0.404426)
+bones/7/rotation = Quaternion(0.126474, 0, 0, 0.99197)
+bones/8/rotation = Quaternion(-0.207766, -0.00981173, 0.000435192, 0.978129)
+bones/9/rotation = Quaternion(-0.451011, -0.264655, 0.14202, 0.840462)
+bones/10/rotation = Quaternion(0.0140769, 0.00217717, -0.00979566, 0.999851)
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "IdleAction2"

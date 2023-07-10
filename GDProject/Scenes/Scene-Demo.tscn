@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=3 uid="uid://b7co442vfn4a5"]
+[gd_scene load_steps=100 format=3 uid="uid://b7co442vfn4a5"]
 
 [ext_resource type="Script" path="res://Scenes/MainScene.gd" id="1_gm6yh"]
 [ext_resource type="Environment" uid="uid://bt7lbvekdafji" path="res://Enviroments/Enviroment-sunrise.tres" id="1_hmru1"]
@@ -88,6 +88,7 @@
 [ext_resource type="Texture2D" uid="uid://bi8px2iobc06y" path="res://Assets/UI/Button_Basic_UI.tres" id="85_6o6e4"]
 [ext_resource type="AudioStream" uid="uid://bjlpe4uulm63w" path="res://Assets/Audio/Music/MundoSatelite-v1.mp3" id="85_c3vm8"]
 [ext_resource type="PackedScene" uid="uid://c2f2oqo1rygp4" path="res://Assets/Models/Items/item_radio_v_1.tscn" id="86_tois8"]
+[ext_resource type="PackedScene" uid="uid://b2l4tw5ehd1a5" path="res://Assets/Models/Characters/Others/character_bird_1.tscn" id="89_sb5ts"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ws2b"]
 size = Vector3(1, 1.80603, 2.19783)
@@ -1584,3 +1585,12 @@ material = SubResource("ShaderMaterial_gjt4r")
 position = Vector2(1013, 541)
 scale = Vector2(5.745, 13.945)
 texture = ExtResource("85_6o6e4")
+
+[node name="character-bird-2" parent="." instance=ExtResource("89_sb5ts")]
+transform = Transform3D(0.0584944, 0, -0.0811074, 0, 0.1, 0, 0.0811074, 0, 0.0584944, 6.77006, 1.32559, -7.91961)
+
+[node name="character-bird-3" parent="." instance=ExtResource("89_sb5ts")]
+transform = Transform3D(0.0890642, 0, 0.0454706, 0, 0.1, 0, -0.0454706, 0, 0.0890642, 6.04904, 1.32559, -8.24879)
+
+[node name="character-bird-4" parent="." instance=ExtResource("89_sb5ts")]
+transform = Transform3D(0.0652059, 0, 0.0758168, 0, 0.1, 0, -0.0758168, 0, 0.0652059, 7.95295, 0.89859, 0.576171)
