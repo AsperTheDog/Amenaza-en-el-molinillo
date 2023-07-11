@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=3 uid="uid://b7co442vfn4a5"]
+[gd_scene load_steps=106 format=3 uid="uid://b7co442vfn4a5"]
 
 [ext_resource type="Script" path="res://Scenes/MainScene.gd" id="1_gm6yh"]
 [ext_resource type="Environment" uid="uid://bt7lbvekdafji" path="res://Enviroments/Enviroment-sunrise.tres" id="1_hmru1"]
@@ -91,6 +91,10 @@
 [ext_resource type="AudioStream" uid="uid://bjlpe4uulm63w" path="res://Assets/Audio/Music/MundoSatelite-v1.mp3" id="85_c3vm8"]
 [ext_resource type="PackedScene" uid="uid://c2f2oqo1rygp4" path="res://Assets/Models/Items/item_radio_v_1.tscn" id="86_tois8"]
 [ext_resource type="PackedScene" uid="uid://b2l4tw5ehd1a5" path="res://Assets/Models/Characters/Others/character_bird_1.tscn" id="89_sb5ts"]
+[ext_resource type="PackedScene" uid="uid://cn0l0rpnt2g7f" path="res://Assets/Models/Scene/City/cone_v_1.tscn" id="92_5x3ou"]
+[ext_resource type="PackedScene" uid="uid://duqtxdmwclsvw" path="res://Assets/Models/Scene/City/phone_poster_v_1.tscn" id="93_wqx45"]
+[ext_resource type="PackedScene" uid="uid://cjgiwgtc2y0jg" path="res://Assets/Models/Scene/City/phone_cable_v_2.tscn" id="94_n10xh"]
+[ext_resource type="PackedScene" uid="uid://brpq30x3xqpyu" path="res://Assets/Models/Scene/City/phone_cable_v_1.tscn" id="95_0e15r"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ws2b"]
 size = Vector3(1, 1.80603, 2.19783)
@@ -448,6 +452,24 @@ transform = Transform3D(0.888913, 0, 0.458076, 0, 1, 0, -0.458076, 0, 0.888913, 
 
 [node name="signalcaution_v1" parent="Construction-area" instance=ExtResource("37_55psn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.9026, 1.93696, -8.77617)
+
+[node name="cone_v1" parent="Construction-area" instance=ExtResource("92_5x3ou")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8185, -0.000776613, -4.54656)
+
+[node name="cone_v3" parent="Construction-area" instance=ExtResource("92_5x3ou")]
+transform = Transform3D(0.818551, 0, -0.574434, 0, 1, 0, 0.574434, 0, 0.818551, 13.7829, -0.116622, -2.52538)
+
+[node name="cone_v4" parent="Construction-area" instance=ExtResource("92_5x3ou")]
+transform = Transform3D(0.437806, 0, -0.899069, 0, 1, 0, 0.899069, 0, 0.437806, 13.2057, -0.116622, -1.52153)
+
+[node name="cone_v5" parent="Construction-area" instance=ExtResource("92_5x3ou")]
+transform = Transform3D(-0.763074, 0, -0.646311, 0, 1, 0, 0.646311, 0, -0.763074, 14.9897, -0.116622, -0.450602)
+
+[node name="cone_v6" parent="Construction-area" instance=ExtResource("92_5x3ou")]
+transform = Transform3D(-0.196408, 0, 0.980522, 0, 1, 0, -0.980522, 0, -0.196408, 14.4744, -0.116622, -1.20849)
+
+[node name="cone_v2" parent="Construction-area" instance=ExtResource("92_5x3ou")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.4638, -0.000776613, -4.79155)
 
 [node name="City" type="Node3D" parent="."]
 
@@ -1583,6 +1605,44 @@ autoplay = true
 stream = ExtResource("85_c3vm8")
 bus = &"Radio"
 
+[node name="Pajaros" type="Node3D" parent="."]
+
+[node name="character-bird-2" parent="Pajaros" instance=ExtResource("89_sb5ts")]
+transform = Transform3D(0.115155, 0, 0.0337524, 0, 0.12, 0, -0.0337524, 0, 0.115155, 6.77575, 1.32559, -7.94459)
+
+[node name="character-bird-5" parent="Pajaros" instance=ExtResource("89_sb5ts")]
+transform = Transform3D(0.084, 0, -0.0856972, 0, 0.12, 0, 0.0856972, 0, 0.084, 13.3298, 0.79341, -7.22378)
+
+[node name="character-bird-6" parent="Pajaros" instance=ExtResource("89_sb5ts")]
+transform = Transform3D(0.084, 0, -0.0856972, 0, 0.12, 0, 0.0856972, 0, 0.084, 10.8344, 2.40382, -8.90962)
+
+[node name="character-bird-7" parent="Pajaros" instance=ExtResource("89_sb5ts")]
+transform = Transform3D(-0.0848454, 0, 0.0848603, 0, 0.12, 0, -0.0848603, 0, -0.0848454, 10.234, 2.40382, -8.90962)
+
+[node name="character-bird-9" parent="Pajaros" instance=ExtResource("89_sb5ts")]
+transform = Transform3D(0.11996, 0, 0.00309521, 0, 0.12, 0, -0.00309521, 0, 0.11996, 12.0607, 2.40382, -8.90962)
+
+[node name="character-bird-10" parent="Pajaros" instance=ExtResource("89_sb5ts")]
+transform = Transform3D(0.0613966, 0, 0.103104, 0, 0.12, 0, -0.103104, 0, 0.0613966, 11.677, 2.40382, -8.90962)
+
+[node name="character-bird-11" parent="Pajaros" instance=ExtResource("89_sb5ts")]
+transform = Transform3D(0.115995, 0, -0.0307426, 0, 0.12, 0, 0.0307426, 0, 0.115995, 13.0086, 2.40382, -8.90962)
+
+[node name="character-bird-12" parent="Pajaros" instance=ExtResource("89_sb5ts")]
+transform = Transform3D(0.0934246, 0, 0.0753116, 0, 0.12, 0, -0.0753116, 0, 0.0934246, 12.8271, 2.40382, -8.90962)
+
+[node name="character-bird-13" parent="Pajaros" instance=ExtResource("89_sb5ts")]
+transform = Transform3D(0.0934246, 0, 0.0753116, 0, 0.12, 0, -0.0753116, 0, 0.0934246, 12.7524, 3.51504, -5.093)
+
+[node name="character-bird-8" parent="Pajaros" instance=ExtResource("89_sb5ts")]
+transform = Transform3D(-0.0958224, 0, -0.0722362, 0, 0.12, 0, 0.0722362, 0, -0.0958224, 11.6756, 0.00386649, -4.82747)
+
+[node name="character-bird-3" parent="Pajaros" instance=ExtResource("89_sb5ts")]
+transform = Transform3D(0.0898747, 0, -0.0795144, 0, 0.12, 0, 0.0795144, 0, 0.0898747, 6.20184, 1.32559, -8.11361)
+
+[node name="character-bird-4" parent="Pajaros" instance=ExtResource("89_sb5ts")]
+transform = Transform3D(0.0782471, 0, 0.0909802, 0, 0.12, 0, -0.0909802, 0, 0.0782471, 7.95295, 0.89859, 0.576171)
+
 [node name="awning-bouncy" parent="." instance=ExtResource("83_hg2pr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.3894, 4.95943, -9.38651)
 bounceForce = 15.0
@@ -1594,38 +1654,50 @@ position = Vector2(1013, 541)
 scale = Vector2(5.745, 13.945)
 texture = ExtResource("85_6o6e4")
 
-[node name="character-bird-2" parent="." instance=ExtResource("89_sb5ts")]
-transform = Transform3D(0.115155, 0, 0.0337524, 0, 0.12, 0, -0.0337524, 0, 0.115155, 6.77575, 1.32559, -7.94459)
+[node name="phone-poster_v1" parent="." instance=ExtResource("93_wqx45")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.109, -0.000776136, -8.25321)
 
-[node name="character-bird-5" parent="." instance=ExtResource("89_sb5ts")]
-transform = Transform3D(0.084, 0, -0.0856972, 0, 0.12, 0, 0.0856972, 0, 0.084, 13.3298, 0.79341, -7.22378)
+[node name="phone-cable_v2" parent="phone-poster_v1" instance=ExtResource("94_n10xh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0804577, 5.54811, -0.443496)
 
-[node name="character-bird-6" parent="." instance=ExtResource("89_sb5ts")]
-transform = Transform3D(0.084, 0, -0.0856972, 0, 0.12, 0, 0.0856972, 0, 0.084, 10.8344, 2.40382, -8.90962)
+[node name="phone-cable_v1" parent="phone-poster_v1" instance=ExtResource("95_0e15r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0800304, 5.54778, 0.436664)
 
-[node name="character-bird-7" parent="." instance=ExtResource("89_sb5ts")]
-transform = Transform3D(-0.0848454, 0, 0.0848603, 0, 0.12, 0, -0.0848603, 0, -0.0848454, 10.234, 2.40382, -8.90962)
+[node name="phone-poster_v2" parent="." instance=ExtResource("93_wqx45")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.57049, -0.000776136, -8.25321)
 
-[node name="character-bird-9" parent="." instance=ExtResource("89_sb5ts")]
-transform = Transform3D(0.11996, 0, 0.00309521, 0, 0.12, 0, -0.00309521, 0, 0.11996, 12.0607, 2.40382, -8.90962)
+[node name="phone-cable_v2" parent="phone-poster_v2" instance=ExtResource("94_n10xh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0804577, 5.54811, -0.443496)
 
-[node name="character-bird-10" parent="." instance=ExtResource("89_sb5ts")]
-transform = Transform3D(0.0613966, 0, 0.103104, 0, 0.12, 0, -0.103104, 0, 0.0613966, 11.677, 2.40382, -8.90962)
+[node name="phone-cable_v1" parent="phone-poster_v2" instance=ExtResource("95_0e15r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0800304, 5.54778, 0.436664)
 
-[node name="character-bird-11" parent="." instance=ExtResource("89_sb5ts")]
-transform = Transform3D(0.115995, 0, -0.0307426, 0, 0.12, 0, 0.0307426, 0, 0.115995, 13.0086, 2.40382, -8.90962)
+[node name="phone-poster_v3" parent="." instance=ExtResource("93_wqx45")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9483, -0.000776136, -8.25321)
 
-[node name="character-bird-12" parent="." instance=ExtResource("89_sb5ts")]
-transform = Transform3D(0.0934246, 0, 0.0753116, 0, 0.12, 0, -0.0753116, 0, 0.0934246, 12.8271, 2.40382, -8.90962)
+[node name="phone-cable_v2" parent="phone-poster_v3" instance=ExtResource("94_n10xh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0804577, 5.54811, -0.443496)
 
-[node name="character-bird-13" parent="." instance=ExtResource("89_sb5ts")]
-transform = Transform3D(0.0934246, 0, 0.0753116, 0, 0.12, 0, -0.0753116, 0, 0.0934246, 12.7524, 3.51504, -5.093)
+[node name="phone-cable_v1" parent="phone-poster_v3" instance=ExtResource("95_0e15r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0800304, 5.54778, 0.436664)
 
-[node name="character-bird-8" parent="." instance=ExtResource("89_sb5ts")]
-transform = Transform3D(-0.0958224, 0, -0.0722362, 0, 0.12, 0, 0.0722362, 0, -0.0958224, 11.6756, 0.00386649, -4.82747)
+[node name="phone-poster_v4" parent="." instance=ExtResource("93_wqx45")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.4752, -0.000776136, -8.25321)
 
-[node name="character-bird-3" parent="." instance=ExtResource("89_sb5ts")]
-transform = Transform3D(0.0898747, 0, -0.0795144, 0, 0.12, 0, 0.0795144, 0, 0.0898747, 6.20184, 1.32559, -8.11361)
+[node name="phone-cable_v2" parent="phone-poster_v4" instance=ExtResource("94_n10xh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0804577, 5.54811, -0.443496)
 
-[node name="character-bird-4" parent="." instance=ExtResource("89_sb5ts")]
-transform = Transform3D(0.0782471, 0, 0.0909802, 0, 0.12, 0, -0.0909802, 0, 0.0782471, 7.95295, 0.89859, 0.576171)
+[node name="phone-cable_v1" parent="phone-poster_v4" instance=ExtResource("95_0e15r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0800304, 5.54778, 0.436664)
+
+[node name="phone-poster_v5" parent="." instance=ExtResource("93_wqx45")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.9936, -0.000776136, -8.25321)
+
+[node name="phone-cable_v2" parent="phone-poster_v5" instance=ExtResource("94_n10xh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0804577, 5.54811, -0.443496)
+
+[node name="phone-cable_v1" parent="phone-poster_v5" instance=ExtResource("95_0e15r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0800304, 5.54778, 0.436664)
+
+[node name="phone-poster_v6" parent="." instance=ExtResource("93_wqx45")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.5318, -0.000776136, -8.25321)

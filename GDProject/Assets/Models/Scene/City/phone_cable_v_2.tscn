@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjgiwgtc2y0jg"]
+
+[ext_resource type="PackedScene" uid="uid://c1ol5u8yrn87i" path="res://Assets/Models/Scene/City/phone-cable_v2.glb" id="1_nlok4"]
+[ext_resource type="Material" uid="uid://dvp4vnolm1spb" path="res://Materials/City/street-elements_v1.tres" id="2_fgpw3"]
+
+[node name="phone-cable_v2" instance=ExtResource("1_nlok4")]
+
+[node name="cable 1" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_fgpw3")

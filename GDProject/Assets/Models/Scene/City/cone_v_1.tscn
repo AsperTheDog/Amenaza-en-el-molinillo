@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn0l0rpnt2g7f"]
+
+[ext_resource type="PackedScene" uid="uid://ckxkflbwmrjwh" path="res://Assets/Models/Scene/City/cone_v1.glb" id="1_bysxk"]
+[ext_resource type="Material" path="res://Materials/City/street-elements_v1.tres" id="2_660w2"]
+
+[node name="cone_v1" instance=ExtResource("1_bysxk")]
+
+[node name="Cono" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_660w2")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://duqtxdmwclsvw"]
+
+[ext_resource type="PackedScene" uid="uid://8sbowoxcu07h" path="res://Assets/Models/Scene/City/phone-poster_v1.glb" id="1_vhp1r"]
+[ext_resource type="Material" uid="uid://dvp4vnolm1spb" path="res://Materials/City/street-elements_v1.tres" id="2_1kqtp"]
+
+[node name="phone-poster_v1" instance=ExtResource("1_vhp1r")]
+
+[node name="Poste telefono" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_1kqtp")
