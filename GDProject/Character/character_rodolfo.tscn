@@ -75,6 +75,7 @@ collision_mask = 34
 upwardsForce = 6.0
 defaultEyes = ExtResource("16_sfcds")
 blinkingEyes = ExtResource("13_v8ycn")
+minimumIdleTime = 6.0
 
 [node name="AirState" type="Node" parent="StateMachine" index="0"]
 script = ExtResource("2_6fgtj")

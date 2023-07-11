@@ -377,7 +377,6 @@ func freezeStateMachine():
 # --- SIGNALS ---
 
 func _on_punch_entered(obj: Node3D):
-	print("ENTER")
 	if obj.get_parent().has_method("getPunched"):
 		obj.get_parent().getPunched()
 		punchParticles.restart()

@@ -91,10 +91,10 @@
 [ext_resource type="AudioStream" uid="uid://bjlpe4uulm63w" path="res://Assets/Audio/Music/MundoSatelite-v1.mp3" id="85_c3vm8"]
 [ext_resource type="PackedScene" uid="uid://c2f2oqo1rygp4" path="res://Assets/Models/Items/item_radio_v_1.tscn" id="86_tois8"]
 [ext_resource type="PackedScene" uid="uid://b2l4tw5ehd1a5" path="res://Assets/Models/Characters/Others/character_bird_1.tscn" id="89_sb5ts"]
-[ext_resource type="PackedScene" uid="uid://cn0l0rpnt2g7f" path="res://Assets/Models/Scene/City/cone_v_1.tscn" id="92_5x3ou"]
-[ext_resource type="PackedScene" uid="uid://duqtxdmwclsvw" path="res://Assets/Models/Scene/City/phone_poster_v_1.tscn" id="93_wqx45"]
-[ext_resource type="PackedScene" uid="uid://cjgiwgtc2y0jg" path="res://Assets/Models/Scene/City/phone_cable_v_2.tscn" id="94_n10xh"]
-[ext_resource type="PackedScene" uid="uid://brpq30x3xqpyu" path="res://Assets/Models/Scene/City/phone_cable_v_1.tscn" id="95_0e15r"]
+[ext_resource type="PackedScene" path="res://Assets/Models/Scene/City/cone_v_1.tscn" id="92_5x3ou"]
+[ext_resource type="PackedScene" path="res://Assets/Models/Scene/City/phone_poster_v_1.tscn" id="93_wqx45"]
+[ext_resource type="PackedScene" path="res://Assets/Models/Scene/City/phone_cable_v_2.tscn" id="94_n10xh"]
+[ext_resource type="PackedScene" path="res://Assets/Models/Scene/City/phone_cable_v_1.tscn" id="95_0e15r"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ws2b"]
 size = Vector3(1, 1.80603, 2.19783)
@@ -1594,12 +1594,11 @@ transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -
 activation = NodePath("../../Construction-area/joistbig_v3")
 
 [node name="item-radio_v1" parent="Items" instance=ExtResource("86_tois8")]
-transform = Transform3D(0.925342, 0, -0.379133, 0, 1, 0, 0.379133, 0, 0.925342, 26.3022, -1.30949, -1.30776)
+transform = Transform3D(0.680913, 0, -0.732364, 0, 1, 0, 0.732364, 0, 0.680913, 23.0473, -0.476946, 0.0332193)
 
 [node name="RadioChannel1" type="AudioStreamPlayer3D" parent="Items/item-radio_v1"]
 transform = Transform3D(0.925342, 0, 0.379133, 0, 1, 0, -0.379133, 0, 0.925342, -0.00238514, 0.225212, 0.0297089)
 stream = ExtResource("10_fs13l")
-autoplay = true
 
 [node name="RadioChannel2" type="AudioStreamPlayer3D" parent="Items/item-radio_v1"]
 stream = ExtResource("85_c3vm8")

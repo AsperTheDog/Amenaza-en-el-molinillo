@@ -74,6 +74,7 @@ upwardsForce = 200.0
 animationSpeed = 7.0
 defaultEyes = ExtResource("2_8r42e")
 blinkingEyes = ExtResource("3_d0qon")
+minimumIdleTime = 6.0
 
 [node name="AirState" type="Node" parent="StateMachine" index="0"]
 script = ExtResource("2_emhny")
