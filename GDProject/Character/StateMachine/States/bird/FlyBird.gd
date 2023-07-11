@@ -3,7 +3,8 @@ class_name FlyBirdState
 
 func onEnter(player: Bird, delta: float):
 	super.onEnter(player, delta)
-	chara.animationPlayer.play("Run")
+	chara.animationPlayer.play("Run", -1, 2)
+	chara.velocity = 10 * chara.flyDirection
 	
 func onExit(delta: float, transitionTo: String):
 	if transitionTo == "IdleState":

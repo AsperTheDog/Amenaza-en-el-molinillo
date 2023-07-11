@@ -71,7 +71,7 @@ func _process(_delta):
 			pauseGame()
 
 func _input(event: InputEvent):
-	if event is InputEventKey:
+	if event is InputEventKey or event is InputEventMouse:
 		lastDevice = DEVICES.PC
 	else:
 		if Input.get_joy_name(event.device).to_lower().contains("ps"):
