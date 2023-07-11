@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cybqp2djw2xu7"]
+[gd_scene load_steps=10 format=3 uid="uid://cybqp2djw2xu7"]
 
 [ext_resource type="ArrayMesh" uid="uid://d0d3cchtomsg1" path="res://Assets/Effects/smoke-particle.obj" id="1_oy813"]
 [ext_resource type="Script" path="res://Character/chara.gd" id="1_vbbxu"]
 [ext_resource type="Script" path="res://Character/StateMachine/StateMachine.gd" id="2_hcviy"]
+[ext_resource type="AudioStream" uid="uid://crq47fny2oy7l" path="res://Assets/Audio/Sounds/sfx-punch-short-1.mp3" id="3_xd2ur"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2s6ek"]
 size = Vector3(0.508796, 1.76588, 0.510057)
@@ -74,6 +75,10 @@ monitorable = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="rotating/Punch"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.353114, 1.13362, -0.446941)
 shape = SubResource("BoxShape3D_8k1nb")
+
+[node name="hit" type="AudioStreamPlayer" parent="rotating/Punch"]
+stream = ExtResource("3_xd2ur")
+volume_db = -7.74
 
 [node name="particles-jump" type="CPUParticles3D" parent="rotating"]
 transform = Transform3D(0.304476, 0, 0, 0, 0.304476, 0, 0, 0, 0.304476, 0, 0, 0)

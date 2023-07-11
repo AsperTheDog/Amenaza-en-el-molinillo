@@ -45,10 +45,11 @@ func nextChannel():
 	
 func getPunched():
 	if lastTimePunched <= punchCooldown:
-		return
+		return false
 	lastTimePunched = 0
 	bounce()
 	nextChannel()
+	return true
 
 func bounce():
 	var count = 0

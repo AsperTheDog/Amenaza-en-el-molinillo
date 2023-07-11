@@ -10,3 +10,7 @@ func bounce(body: Node3D):
 		body.hasDoubleJumped = false
 		body.forceState("AirState")
 		body.setVertForce(bounceForce)
+		if bounceForce > 20:
+			$Audio/bounceStrong.play()
+		else:
+			$Audio/bounce.play()

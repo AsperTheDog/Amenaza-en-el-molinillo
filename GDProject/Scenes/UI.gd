@@ -203,3 +203,10 @@ func displayInteractionSign():
 			$InteractLayer/Control/Sticker.texture = psSticker
 		var pos = owner.getScreenPos(activeInteractions[0].get_node("interactionPoint").global_position)
 		$InteractLayer/Control.position = pos
+
+func focusChangeEvent():
+	$Audio/changeFocus.play()
+
+func buttonPressEvent():
+	$Audio/changeFocus.stop()
+	$Audio/press.play()

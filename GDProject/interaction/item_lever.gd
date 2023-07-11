@@ -8,15 +8,22 @@ extends Node3D
 @export var animationSpeed: float = 1
 
 var interactedMaterial: BaseMaterial3D = preload("res://Materials/Items/items_interacted_v1.tres")
+var lastInteracted: float = 0
+
+func _process(delta):
+	lastInteracted += delta
 
 func getPunched():
+	if lastInteracted <= 0.2:
+		return false
+	lastInteracted = 0
 	interactAnimation()
+	$hit.play()
 	$"item-levermachine_v1/LeverMachine".set_surface_override_material(0, interactedMaterial)
 	$"item-leversteam_v1/LeverSteam".set_surface_override_material(0, interactedMaterial)
 	$"item-lever_v1/Lever".set_surface_override_material(0, interactedMaterial)
-	await get_tree().create_timer((1 / animationSpeed) * 3).timeout
-	if activation != null and activation.has_method("activate"):
-		activation.activate()
+	triggerActivation()
+	return true
 
 func interactAnimation():
 	var count = 0
@@ -27,3 +34,8 @@ func interactAnimation():
 		scale = scaleCurve.sample(sizeCount / 2) * scaleAmount * Vector3.ONE
 		count += get_process_delta_time() * animationSpeed
 		await get_tree().process_frame
+
+func triggerActivation():
+	await get_tree().create_timer((1 / animationSpeed) * 3).timeout
+	if activation != null and activation.has_method("activate"):
+		activation.activate()

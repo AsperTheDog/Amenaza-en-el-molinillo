@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://d0fw5nsv284ps"]
+[gd_scene load_steps=13 format=3 uid="uid://d0fw5nsv284ps"]
 
 [ext_resource type="Script" path="res://interaction/awning-bouncy.gd" id="1_rejql"]
 [ext_resource type="Texture2D" uid="uid://dppbrhyeptu4e" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1_albedo.png" id="1_xlrj7"]
 [ext_resource type="Texture2D" uid="uid://bx7fv3wh1bo1h" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1_orm.png" id="2_w6ppa"]
 [ext_resource type="Texture2D" uid="uid://dtijkpard1xnt" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1_heightmap.png" id="3_p0oid"]
 [ext_resource type="Texture2D" uid="uid://83ib3aiwk6d1" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1_normal.png" id="4_2npvn"]
+[ext_resource type="AudioStream" uid="uid://dn20ib2yc8a83" path="res://Assets/Audio/Sounds/sfx-bouncing-3.mp3" id="6_myfn8"]
+[ext_resource type="AudioStream" uid="uid://bsrlx0ou5iy4x" path="res://Assets/Audio/Sounds/sfx-bouncing-1.mp3" id="7_eu0yw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mqb0x"]
 
@@ -70,3 +72,13 @@ collision_mask = 7
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0103098, 1.85524, 2.71314)
 shape = SubResource("BoxShape3D_15org")
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="bounce" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("6_myfn8")
+volume_db = -9.674
+
+[node name="bounceStrong" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("7_eu0yw")
+volume_db = -11.126

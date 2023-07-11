@@ -378,11 +378,12 @@ func freezeStateMachine():
 
 func _on_punch_entered(obj: Node3D):
 	if obj.get_parent().has_method("getPunched"):
-		obj.get_parent().getPunched()
-		punchParticles.restart()
-		punchParticles.set_emitting(true)
-		await get_tree().create_timer(0.2).timeout
-		punchParticles.set_emitting(false)
+		if obj.get_parent().getPunched():
+			$rotating/Punch/hit.play()
+			punchParticles.restart()
+			punchParticles.set_emitting(true)
+			await get_tree().create_timer(0.2).timeout
+			punchParticles.set_emitting(false)
 		
 func _on_interaction_enter(obj: Node3D):
 	enableInteraction.emit(obj)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=3 uid="uid://b7co442vfn4a5"]
+[gd_scene load_steps=108 format=3 uid="uid://b7co442vfn4a5"]
 
 [ext_resource type="Script" path="res://Scenes/MainScene.gd" id="1_gm6yh"]
 [ext_resource type="Environment" uid="uid://bt7lbvekdafji" path="res://Enviroments/Enviroment-sunrise.tres" id="1_hmru1"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://durwc2toyjrny" path="res://Assets/Models/Scene/City/trash_cover_v_1.tscn" id="16_mxtfv"]
 [ext_resource type="Script" path="res://interaction/crane_move.gd" id="17_b4fd7"]
 [ext_resource type="PackedScene" uid="uid://lxa58k22y2ic" path="res://Assets/Models/Scene/City/trash_v_1.tscn" id="17_g0wgi"]
+[ext_resource type="AudioStream" uid="uid://kq2olt8bdpvc" path="res://Assets/Audio/Sounds/sfx-gears-spinning-1.mp3" id="18_c85fh"]
 [ext_resource type="PackedScene" uid="uid://nis4e1gkwv4d" path="res://Assets/Models/Scene/City/trafficsing_walker_v_1.tscn" id="18_f1lfm"]
 [ext_resource type="PackedScene" uid="uid://bhqltrgfyh21w" path="res://Assets/Models/Scene/Construction/table_v_2.tscn" id="19_8bqex"]
 [ext_resource type="PackedScene" uid="uid://tlyxnxu4kqi8" path="res://Assets/Models/Scene/City/wall_wood_v_1.tscn" id="20_t7a2b"]
@@ -105,6 +106,10 @@ size = Vector3(117.498, 0.0425731, 7.14734)
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_l65kj"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2u762"]
+
+[sub_resource type="Curve" id="Curve_4rnmw"]
+_data = [Vector2(0, 0.0120481), 0.0, 4.91238, 0, 0, Vector2(0.0974359, 1), 0.0, 0.0, 0, 0, Vector2(0.897436, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -4.91238, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ytw2h"]
 material = ExtResource("47_tic1o")
@@ -283,6 +288,7 @@ target = NodePath("MoveTarget")
 camTarget = NodePath("CamTarget")
 focusTime = 3.0
 moveSpeed = 0.2
+volumeCurve = SubResource("Curve_4rnmw")
 
 [node name="Corner-hitbox" parent="Construction-area/joistbig_v3" instance=ExtResource("6_7r22e")]
 transform = Transform3D(0.655588, 0, 0, 0, 0.655588, 0, 0, 0, 0.655588, -2.16579, 0.243806, 0)
@@ -296,6 +302,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.50355, 0)
 [node name="CamTarget" type="Node3D" parent="Construction-area/joistbig_v3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.6311, 0)
 top_level = true
+
+[node name="moveSound" type="AudioStreamPlayer" parent="Construction-area/joistbig_v3"]
+stream = ExtResource("18_c85fh")
+volume_db = -10.158
 
 [node name="pallet_v1" parent="Construction-area" instance=ExtResource("36_6occc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8818, 0, -6.70657)
