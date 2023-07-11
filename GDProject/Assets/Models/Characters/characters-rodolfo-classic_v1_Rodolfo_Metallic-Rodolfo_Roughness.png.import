@@ -2,13 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds4avn3mo0o07"
+uid="uid://cgc2rd0ihhgft"
 path.s3tc="res://.godot/imported/characters-rodolfo-classic_v1_Rodolfo_Metallic-Rodolfo_Roughness.png-2978b665606651d9836ee9018dc5586e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 

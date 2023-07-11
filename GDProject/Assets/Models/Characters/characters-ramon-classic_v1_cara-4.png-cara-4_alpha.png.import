@@ -2,13 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuvhmnynbpcmy"
+uid="uid://bmoi7soedt350"
 path.s3tc="res://.godot/imported/characters-ramon-classic_v1_cara-4.png-cara-4_alpha.png-98795b1b7afceae2e577956c749dcfe0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 

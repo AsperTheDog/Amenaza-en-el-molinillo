@@ -2,13 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqgasok6xrbq7"
+uid="uid://cwg0rt4q3wshi"
 path.s3tc="res://.godot/imported/characters-rodolfo-classic_v1_Rodolfo_Base_color.png-c800e2c3f33a9721fe704a9447497cb5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 

@@ -2,13 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvci4snbblqcf"
+uid="uid://b0dtxgq3y5ytm"
 path.s3tc="res://.godot/imported/characters-ramon-classic_v1_Ramon_Normal_OpenGL.png-569d5639868679dcdba88b29d9807ab8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 
@@ -25,8 +24,8 @@ compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://Assets/Models/Characters/characters-ramon-classic_v1_Ramon_Normal_OpenGL.png"
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

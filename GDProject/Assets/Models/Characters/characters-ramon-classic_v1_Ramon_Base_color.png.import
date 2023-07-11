@@ -2,13 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yiyffh2fdikb"
+uid="uid://b61yd785fpcx1"
 path.s3tc="res://.godot/imported/characters-ramon-classic_v1_Ramon_Base_color.png-f085348fa201233730c04cb80cf3de55.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 

@@ -1595,10 +1595,37 @@ scale = Vector2(5.745, 13.945)
 texture = ExtResource("85_6o6e4")
 
 [node name="character-bird-2" parent="." instance=ExtResource("89_sb5ts")]
-transform = Transform3D(0.0959629, 0, 0.028127, 0, 0.1, 0, -0.028127, 0, 0.0959629, 6.77575, 1.32559, -7.94459)
+transform = Transform3D(0.115155, 0, 0.0337524, 0, 0.12, 0, -0.0337524, 0, 0.115155, 6.77575, 1.32559, -7.94459)
+
+[node name="character-bird-5" parent="." instance=ExtResource("89_sb5ts")]
+transform = Transform3D(0.084, 0, -0.0856972, 0, 0.12, 0, 0.0856972, 0, 0.084, 13.3298, 0.79341, -7.22378)
+
+[node name="character-bird-6" parent="." instance=ExtResource("89_sb5ts")]
+transform = Transform3D(0.084, 0, -0.0856972, 0, 0.12, 0, 0.0856972, 0, 0.084, 10.8344, 2.40382, -8.90962)
+
+[node name="character-bird-7" parent="." instance=ExtResource("89_sb5ts")]
+transform = Transform3D(-0.0848454, 0, 0.0848603, 0, 0.12, 0, -0.0848603, 0, -0.0848454, 10.234, 2.40382, -8.90962)
+
+[node name="character-bird-9" parent="." instance=ExtResource("89_sb5ts")]
+transform = Transform3D(0.11996, 0, 0.00309521, 0, 0.12, 0, -0.00309521, 0, 0.11996, 12.0607, 2.40382, -8.90962)
+
+[node name="character-bird-10" parent="." instance=ExtResource("89_sb5ts")]
+transform = Transform3D(0.0613966, 0, 0.103104, 0, 0.12, 0, -0.103104, 0, 0.0613966, 11.677, 2.40382, -8.90962)
+
+[node name="character-bird-11" parent="." instance=ExtResource("89_sb5ts")]
+transform = Transform3D(0.115995, 0, -0.0307426, 0, 0.12, 0, 0.0307426, 0, 0.115995, 13.0086, 2.40382, -8.90962)
+
+[node name="character-bird-12" parent="." instance=ExtResource("89_sb5ts")]
+transform = Transform3D(0.0934246, 0, 0.0753116, 0, 0.12, 0, -0.0753116, 0, 0.0934246, 12.8271, 2.40382, -8.90962)
+
+[node name="character-bird-13" parent="." instance=ExtResource("89_sb5ts")]
+transform = Transform3D(0.0934246, 0, 0.0753116, 0, 0.12, 0, -0.0753116, 0, 0.0934246, 12.7524, 3.51504, -5.093)
+
+[node name="character-bird-8" parent="." instance=ExtResource("89_sb5ts")]
+transform = Transform3D(-0.0958224, 0, -0.0722362, 0, 0.12, 0, 0.0722362, 0, -0.0958224, 11.6756, 0.00386649, -4.82747)
 
 [node name="character-bird-3" parent="." instance=ExtResource("89_sb5ts")]
-transform = Transform3D(0.0748956, 0, -0.066262, 0, 0.1, 0, 0.066262, 0, 0.0748956, 6.20184, 1.32559, -8.11361)
+transform = Transform3D(0.0898747, 0, -0.0795144, 0, 0.12, 0, 0.0795144, 0, 0.0898747, 6.20184, 1.32559, -8.11361)
 
 [node name="character-bird-4" parent="." instance=ExtResource("89_sb5ts")]
-transform = Transform3D(0.0652059, 0, 0.0758168, 0, 0.1, 0, -0.0758168, 0, 0.0652059, 7.95295, 0.89859, 0.576171)
+transform = Transform3D(0.0782471, 0, 0.0909802, 0, 0.12, 0, -0.0909802, 0, 0.0782471, 7.95295, 0.89859, 0.576171)
