@@ -1,6 +1,7 @@
 extends CharacterBody3D
 class_name Bird
 
+@export var maximumHeight: float = 1000
 @export var minimumIdleTime: float = 2
 @export var idleActionChance: float = 0.2
 @export var flyAcceleration: float = 20
