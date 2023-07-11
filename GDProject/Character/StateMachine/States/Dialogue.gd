@@ -16,10 +16,13 @@ func onEnter(player: MainCharacter, delta: float):
 		var diagPos = dialogue.global_position
 		if charaPos.distance_squared_to(closestPos) > charaPos.distance_squared_to(diagPos):
 			closest = dialogue
+	chara.canInteract = false
 	closest.startDialogue()
+	if chara.animationPlayer.assigned_animation != "Idle":
+		chara.queueAnimation("Idle")
 	
 func onExit(_delta: float, _transitionTo: String):
-	pass
+	chara.canInteract = true
 
 func check():
 	if closest.stoppedDialogue():

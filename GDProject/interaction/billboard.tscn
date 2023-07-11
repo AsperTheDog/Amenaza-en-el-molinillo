@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmsmm8qou1svm"]
+
+[ext_resource type="Script" path="res://interaction/interactionBillboard.gd" id="1_b13je"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_b13je")
+
+[node name="label" type="Label3D" parent="."]
+text = "Press         to "
+
+[node name="ControlButton" type="Sprite3D" parent="."]

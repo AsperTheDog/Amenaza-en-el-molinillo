@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cybqp2djw2xu7"]
+[gd_scene load_steps=9 format=3 uid="uid://cybqp2djw2xu7"]
 
 [ext_resource type="ArrayMesh" uid="uid://d0d3cchtomsg1" path="res://Assets/Effects/smoke-particle.obj" id="1_oy813"]
 [ext_resource type="Script" path="res://Character/chara.gd" id="1_vbbxu"]
@@ -6,6 +6,8 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2s6ek"]
 size = Vector3(0.508796, 1.76588, 0.510057)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4p8ce"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8k1nb"]
 size = Vector3(1.48056, 0.973576, 0.830714)
@@ -47,6 +49,14 @@ collide_with_areas = true
 collide_with_bodies = false
 
 [node name="FaceAnimations" type="Node" parent="."]
+
+[node name="DialogueFinder" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DialogueFinder"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0124115, 1.02767, -0.00365394)
+shape = SubResource("BoxShape3D_4p8ce")
 
 [node name="rotating" type="Node3D" parent="."]
 
@@ -167,3 +177,8 @@ linear_accel_curve = SubResource("Curve_vc6th")
 damping_max = 10.94
 scale_amount_max = 5.0
 scale_amount_curve = SubResource("Curve_du2rr")
+
+[connection signal="area_entered" from="DialogueFinder" to="." method="_on_interaction_enter"]
+[connection signal="area_exited" from="DialogueFinder" to="." method="_on_interaction_exit"]
+[connection signal="area_entered" from="rotating/Punch" to="." method="_on_punch_entered"]
+[connection signal="body_entered" from="rotating/Punch" to="." method="_on_punch_entered"]

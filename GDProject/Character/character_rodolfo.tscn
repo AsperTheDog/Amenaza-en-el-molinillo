@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cgytm08sbexoe"]
+[gd_scene load_steps=28 format=3 uid="uid://cgytm08sbexoe"]
 
 [ext_resource type="PackedScene" uid="uid://cybqp2djw2xu7" path="res://Character/Character.tscn" id="1_cndco"]
 [ext_resource type="Script" path="res://Character/StateMachine/States/Air.gd" id="2_6fgtj"]
@@ -19,8 +19,6 @@
 [ext_resource type="Script" path="res://Character/StateMachine/States/Dialogue.gd" id="15_xk80w"]
 [ext_resource type="Texture2D" uid="uid://mljfjy810dje" path="res://Assets/Models/Characters/Eyes-Open_Mouth-Open.png" id="16_sfcds"]
 [ext_resource type="PackedScene" uid="uid://b6aowcqbcswti" path="res://Assets/Models/Characters/characters-rodolfo-classic_v1.glb" id="17_rhe5y"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_mvcg6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l6y2o"]
 
@@ -161,14 +159,6 @@ eyeTimes = Array[float]([0.0])
 eyeFaces = Array[CompressedTexture2D]([ExtResource("14_tvnhh")])
 mouthTimes = Array[float]([0.0])
 mouthFaces = Array[CompressedTexture2D]([ExtResource("14_tvnhh")])
-
-[node name="DialogueFinder" type="Area3D" parent="." index="5"]
-collision_layer = 0
-collision_mask = 128
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DialogueFinder" index="0"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0124115, 1.02767, -0.00365394)
-shape = SubResource("BoxShape3D_mvcg6")
 
 [node name="modelo" parent="rotating" index="0" instance=ExtResource("17_rhe5y")]
 

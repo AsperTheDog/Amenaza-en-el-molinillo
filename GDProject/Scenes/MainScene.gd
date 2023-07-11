@@ -9,12 +9,14 @@ func _ready():
 	setBlackScreen(true)
 	chara.trackInput = true
 	$MainCamera.setTarget(chara.getTarget())
-	chara.startedThinking.connect(startThinking)
-	chara.stoppedThinking.connect(stopThinking)
+	chara.startedThinking.connect($UI.showBubble)
+	chara.stoppedThinking.connect($UI.hideBubble)
 	$UI.pause.connect(stopStateMachine)
 	$UI.resume.connect(resumeStateMachine)
 	$UI.quit.connect(quitToTitle)
 	$UI.bubbleHidden.connect(finishedThinking)
+	chara.enableInteraction.connect($UI.manageInteractionEnter)
+	chara.disableInteraction.connect($UI.manageInteractionExit)
 
 func setTemporaryTarget(target: Node3D, time: float, moveSpeedMult: float = 1):
 	chara.trackInput = false
@@ -32,12 +34,6 @@ func changeCharacter(target: MainCharacter):
 	chara.trackInput = true
 	%MainCamera.setTarget(chara.getTarget())
 	charaChanged.emit(chara)
-
-func startThinking():
-	$UI.showBubble()
-
-func stopThinking():
-	$UI.hideBubble()
 
 func finishedThinking():
 	chara.bubbleHidden = true
@@ -58,3 +54,7 @@ func quitToTitle():
 	$UI.doThatsAllFolks(false)
 	await $UI.thatsAllFinished
 	get_tree().change_scene_to_packed(mainMenu)
+
+func getScreenPos(pos3D: Vector3):
+	return $MainCamera.unproject_position(pos3D)
+	

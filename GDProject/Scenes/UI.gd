@@ -31,6 +31,19 @@ var bubbleDirection: int = 0
 var pauseShown: bool = false
 var pauseFading: bool = false
 
+var activeInteractions: Array[Node3D] = []
+
+var xboxSticker = preload("res://Assets/UI/buttonXBOX-Y.tres")
+var psSticker = preload("res://Assets/UI/buttonPS-triangle.tres")
+var pcSticker = preload("res://Assets/UI/buttonPC-E.tres")
+var lastDevice: DEVICES = DEVICES.PC
+
+enum DEVICES {
+	PC,
+	XBOX,
+	PS
+}
+
 func _ready():
 	setupSignals()
 	doThatsAllFolks(true)
@@ -40,11 +53,9 @@ func _ready():
 	$"InfoLevelLayer/InfoLevel Container/medium".scale = Vector2(0, 0)
 	$"InfoLevelLayer/InfoLevel Container/big".scale = Vector2(0, 0)
 
-func changeChara(newChara: MainCharacter):
-	chara = newChara
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	displayInteractionSign()
 	if Input.is_action_just_pressed("ui_debug"):
 		showDebug = not showDebug
 		if showDebug:
@@ -59,6 +70,18 @@ func _process(_delta):
 		else:
 			pauseGame()
 
+func _input(event: InputEvent):
+	if event is InputEventKey:
+		lastDevice = DEVICES.PC
+	else:
+		if Input.get_joy_name(event.device).to_lower().contains("ps"):
+			lastDevice = DEVICES.PS
+		else:
+			lastDevice = DEVICES.XBOX
+
+func changeChara(newChara: MainCharacter):
+	chara = newChara
+	
 func doThatsAllFolks(fadeIn: bool):
 	var rect = $thatsAllFolksLayer/ThatsAllFolks
 	var counter = 0 if fadeIn else 1
@@ -146,4 +169,37 @@ func fadeInOutPause(fadeIn: bool):
 		$PauseLayer.hide()
 		pauseShown = false
 	pauseFading = false
+
+func isPosToCharaShortest(a, b):
+	var distA = chara.getInteractionPos().distance_squared_to(a.global_position)
+	var distB = chara.getInteractionPos().distance_squared_to(b.global_position)
+	return distA < distB
+
+func manageInteractionEnter(newInteraction: Node3D):
+	activeInteractions.append(newInteraction)
+	activeInteractions.sort_custom(isPosToCharaShortest)
 	
+func manageInteractionExit(newInteraction: Node3D):
+	activeInteractions.erase(newInteraction)
+	activeInteractions.sort_custom(isPosToCharaShortest)
+
+func displayInteractionSign():
+	if activeInteractions.size() == 0 or not chara.canInteract:
+		$InteractLayer/Control.hide()
+	else:
+		$InteractLayer/Control.show()
+		if activeInteractions[0].get_node("interactionPoint") == null:
+			var errMsg = "Could not find any Node3D called 'interactionPoint' in interaction Area3D called " + activeInteractions[0].name
+			if activeInteractions[0].get_parent() != null:
+				errMsg += " with parent " + activeInteractions[0].get_parent().name
+			else:
+				errMsg += " with no parent"
+			push_error(errMsg + ". Make sure to add it to the Area3D")
+		if lastDevice == DEVICES.PC:
+			$InteractLayer/Control/Sticker.texture = pcSticker
+		elif lastDevice == DEVICES.XBOX:
+			$InteractLayer/Control/Sticker.texture = xboxSticker
+		elif lastDevice == DEVICES.PS:
+			$InteractLayer/Control/Sticker.texture = psSticker
+		var pos = owner.getScreenPos(activeInteractions[0].get_node("interactionPoint").global_position)
+		$InteractLayer/Control.position = pos

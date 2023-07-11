@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b2l4tw5ehd1a5"]
+[gd_scene load_steps=20 format=3 uid="uid://b2l4tw5ehd1a5"]
 
 [ext_resource type="Script" path="res://Character/bird.gd" id="1_wv1xs"]
 [ext_resource type="Texture2D" uid="uid://bqss2yb6hacgc" path="res://Assets/Models/Characters/Others/character-bird-1_Bird_Base_color.png" id="2_22vaj"]
@@ -605,6 +605,9 @@ _data = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_7o5ye"]
 radius = 29.612
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_2eoc2"]
+radius = 120.56
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_e4ien"]
 radius = 0.322373
 
@@ -730,13 +733,24 @@ monitorable = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FleeArea"]
 shape = SubResource("SphereShape3D_7o5ye")
 
+[node name="RespawnArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 6
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RespawnArea"]
+shape = SubResource("SphereShape3D_2eoc2")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.195336, 1.32512, 0)
 shape = SubResource("SphereShape3D_e4ien")
 disabled = true
 
-[node name="localRespawnNotifier" type="VisibleOnScreenNotifier3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75864, 0)
-aabb = AABB(-1.46381, -1.71992, -2.40218, 2.92762, 3.43983, 4.27994)
+[node name="isVisible" type="Node3D" parent="."]
+top_level = true
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="isVisible"]
 
 [connection signal="body_entered" from="FleeArea" to="." method="_on_flee_area_body_entered"]
+[connection signal="body_entered" from="RespawnArea" to="." method="_on_respawn_area_body_entered"]
+[connection signal="body_exited" from="RespawnArea" to="." method="_on_respawn_area_body_exited"]

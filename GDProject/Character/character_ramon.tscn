@@ -108,11 +108,11 @@ script = ExtResource("11_bxf3s")
 [node name="ThinkState" type="Node" parent="StateMachine" index="10"]
 script = ExtResource("14_fnkn3")
 
-[node name="DialogueFinder" type="Area3D" parent="." index="5"]
+[node name="DialogueFinder2" type="Area3D" parent="." index="5"]
 collision_layer = 0
 collision_mask = 128
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DialogueFinder" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DialogueFinder2" index="0"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0124115, 1.02767, -0.00365394)
 shape = SubResource("BoxShape3D_7shsg")
 

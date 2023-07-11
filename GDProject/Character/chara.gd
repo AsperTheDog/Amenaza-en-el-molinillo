@@ -5,6 +5,9 @@ class_name MainCharacter
 signal startedThinking
 signal stoppedThinking
 
+signal enableInteraction(object: Node3D)
+signal disableInteraction(object: Node3D)
+
 var game: Node3D
 
 @export_category("Movement")
@@ -102,10 +105,9 @@ var activeEyes: CompressedTexture2D
 
 var punchCollider: Area3D
 var dialogueFinder: Area3D
+var canInteract: bool = true
 
 var bubbleHidden: bool = true
-
-
 
 # --- SYSTEM ---
 
@@ -114,8 +116,6 @@ func _ready():
 	
 	# Colliders
 	punchCollider = $rotating/Punch
-	punchCollider.body_entered.connect(_on_punch_entered)
-	punchCollider.area_entered.connect(_on_punch_entered)
 	dialogueFinder= $DialogueFinder
 	
 	# Animations
@@ -355,6 +355,12 @@ func manageFaces():
 func getTarget():
 	return $rotating/CamTarget
 
+func getName():
+	return "MainCharacter"
+
+func getInteractionPos():
+	return $DialogueFinder.global_position
+
 
 
 # --- STATE MACHINE ---
@@ -379,3 +385,8 @@ func _on_punch_entered(obj: Node3D):
 		await get_tree().create_timer(0.2).timeout
 		punchParticles.set_emitting(false)
 		
+func _on_interaction_enter(obj: Node3D):
+	enableInteraction.emit(obj)
+
+func _on_interaction_exit(obj: Node3D):
+	disableInteraction.emit(obj)

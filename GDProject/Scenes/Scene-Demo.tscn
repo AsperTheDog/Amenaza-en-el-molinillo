@@ -159,6 +159,9 @@ dialogue_start = "endRamon"
 transform = Transform3D(0.867462, 0, -0.497504, 0, 1, 0, 0.497504, 0, 0.867462, -0.143539, 0.488032, 0.586483)
 shape = SubResource("BoxShape3D_3ws2b")
 
+[node name="interactionPoint" type="Node3D" parent="endRamon/dialogue"]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 1.9909, 0)
+
 [node name="Ramon" parent="." instance=ExtResource("73_geppn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.877, 0.159637, -6.87501)
 visible = false
@@ -1592,10 +1595,23 @@ scale = Vector2(5.745, 13.945)
 texture = ExtResource("85_6o6e4")
 
 [node name="character-bird-2" parent="." instance=ExtResource("89_sb5ts")]
-transform = Transform3D(0.0584944, 0, -0.0811074, 0, 0.1, 0, 0.0811074, 0, 0.0584944, 6.77006, 1.32559, -7.91961)
+transform = Transform3D(0.0959629, 0, 0.028127, 0, 0.1, 0, -0.028127, 0, 0.0959629, 6.77575, 1.32559, -7.94459)
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="character-bird-2"]
+transform = Transform3D(0.0959629, 0, 0.028127, 0, 0.1, 0, -0.028127, 0, 0.0959629, 6.76922, 1.50691, -7.96689)
+top_level = true
+aabb = AABB(-1.33627, -1.42861, -1.43635, 2.67254, 2.85721, 2.8727)
 
 [node name="character-bird-3" parent="." instance=ExtResource("89_sb5ts")]
-transform = Transform3D(0.0890642, 0, 0.0454706, 0, 0.1, 0, -0.0454706, 0, 0.0890642, 6.04904, 1.32559, -8.24879)
+transform = Transform3D(0.0748956, 0, -0.066262, 0, 0.1, 0, 0.066262, 0, 0.0748956, 6.20184, 1.32559, -8.11361)
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="character-bird-3"]
+transform = Transform3D(0.0748956, 0, -0.066262, 0, 0.1, 0, 0.066262, 0, 0.0748956, 6.20184, 1.48107, -8.11361)
+top_level = true
 
 [node name="character-bird-4" parent="." instance=ExtResource("89_sb5ts")]
-transform = Transform3D(0.040313, 0, 0.0915142, 0, 0.1, 0, -0.0915142, 0, 0.040313, 10.0126, 1.39867, 0.703615)
+transform = Transform3D(0.0652059, 0, 0.0758168, 0, 0.1, 0, -0.0758168, 0, 0.0652059, 7.95295, 0.89859, 0.576171)
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="character-bird-4"]
+transform = Transform3D(0.0652059, 0, 0.0758168, 0, 0.1, 0, -0.0758168, 0, 0.0652059, 7.95295, 1.07337, 0.576171)
+top_level = true

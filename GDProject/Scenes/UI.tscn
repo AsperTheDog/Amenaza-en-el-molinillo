@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://blcpnk11d3lhx"]
+[gd_scene load_steps=39 format=3 uid="uid://blcpnk11d3lhx"]
 
 [ext_resource type="Script" path="res://Scenes/UI.gd" id="1_knx4a"]
 [ext_resource type="Shader" path="res://Enviroments/Vignette.gdshader" id="1_xqchg"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://bwkm03h5a5mj2" path="res://Assets/UI/Icon_Colletions_UI.tres" id="26_ujqkd"]
 [ext_resource type="Texture2D" uid="uid://cslquhudkvris" path="res://Assets/UI/Icon_Newspaper_NotFound_UI.tres" id="27_ouwx4"]
 [ext_resource type="Texture2D" uid="uid://pis5svg1rpj4" path="res://Assets/UI/Icon_Newspaper_UI.tres" id="28_wtg46"]
+[ext_resource type="Texture2D" uid="uid://cv88vrvw6wwr5" path="res://Assets/UI/UI-Map.png" id="29_c8uy8"]
 
 [sub_resource type="Curve" id="Curve_llpmj"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.09, 0), 0.0, 0.0, 0, 0, Vector2(0.192412, 0.136364), 0.0, 0.0, 0, 0, Vector2(0.271003, 0.1), 0.0, 0.0, 0, 0, Vector2(0.403794, 0.1), 0.0, 0.0, 0, 0, Vector2(0.46477, 0.0727272), 0.0, 0.0, 0, 0, Vector2(0.705962, 0.672727), 2.51269, 2.51269, 0, 0, Vector2(0.996956, 1), 0.0, 0.0, 0, 0]
@@ -70,6 +71,10 @@ font_color = Color(0.0901961, 0.054902, 0.121569, 1)
 shadow_size = 3
 shadow_color = Color(0.0901961, 0.0901961, 0.0901961, 0.0941176)
 shadow_offset = Vector2(2, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxneh"]
+atlas = ExtResource("29_c8uy8")
+region = Rect2(745, 1357, 75, 75)
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -526,3 +531,28 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="InteractLayer" type="CanvasLayer" parent="."]
+layer = 7
+
+[node name="Control" type="Control" parent="InteractLayer"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Label" type="Label" parent="InteractLayer/Control"]
+layout_mode = 1
+offset_left = -80.0
+offset_top = -10.0
+offset_right = 80.0
+offset_bottom = 12.0
+text = "Press           to interact"
+horizontal_alignment = 1
+
+[node name="Sticker" type="TextureRect" parent="InteractLayer/Control"]
+layout_mode = 1
+offset_left = -36.0
+offset_top = -16.0
+offset_right = 39.0
+offset_bottom = 59.0
+scale = Vector2(0.443334, 0.443334)
+texture = SubResource("AtlasTexture_yxneh")
