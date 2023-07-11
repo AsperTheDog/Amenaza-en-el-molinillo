@@ -15,7 +15,7 @@ func check():
 		return "IdleState"
 
 func apply(delta):
-	if chara.get_node("localRespawnNotifier").is_on_screen():
+	if chara.get_node("LocalRespawnNotifier").is_on_screen():
 		var finalSpeed = chara.flyDirection
 		finalSpeed.x += chara.global_transform.basis.z.x
 		finalSpeed *= chara.flyAcceleration * delta

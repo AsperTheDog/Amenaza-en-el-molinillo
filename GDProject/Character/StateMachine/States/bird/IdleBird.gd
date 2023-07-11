@@ -6,7 +6,7 @@ var isActionBeingPerformed: bool = false
 
 func onEnter(player: Bird, delta: float):
 	super.onEnter(player, delta)
-	chara.animationPlayer.queue("Idle")
+	chara.animationPlayer.play("Idle")
 	chara.shouldFly = false
 	timer = 0
 	isActionBeingPerformed = false

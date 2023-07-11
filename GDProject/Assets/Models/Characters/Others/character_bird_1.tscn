@@ -735,7 +735,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.195336, 1.32512, 0)
 shape = SubResource("SphereShape3D_e4ien")
 disabled = true
 
-[node name="localRespawnNotifier" type="VisibleOnScreenNotifier3D" parent="."]
+[node name="RespawnNotifier" type="VisibleOnScreenNotifier3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.51728, 0)
+aabb = AABB(-1.46381, -1.71992, -2.40218, 2.92762, 3.43983, 4.27994)
+
+[node name="LocalRespawnNotifier" type="VisibleOnScreenNotifier3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75864, 0)
 aabb = AABB(-1.46381, -1.71992, -2.40218, 2.92762, 3.43983, 4.27994)
 

@@ -28,4 +28,5 @@ func getName():
 	return "Bird"
 	
 func canBirdRespawn():
-	return not $localRespawnNotifier.is_on_screen() and not $VisibleOnScreenNotifier3D.is_on_screen()
+	$RespawnNotifier.global_position = initialPos
+	return not $LocalRespawnNotifier.is_on_screen() and not $RespawnNotifier.is_on_screen()
