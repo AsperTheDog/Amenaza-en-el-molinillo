@@ -1,10 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://cs23f68u86f8g"]
+[gd_scene load_steps=8 format=3 uid="uid://cs23f68u86f8g"]
 
 [ext_resource type="PackedScene" uid="uid://ce2ky5xstdl7n" path="res://Assets/Models/Items/item-trash_v1.glb" id="1_6oudv"]
-[ext_resource type="Material" uid="uid://b3b81ldc3jd6k" path="res://Materials/Items/items_v1.tres" id="2_6isxs"]
+[ext_resource type="Material" uid="uid://bc2no7p02wury" path="res://Materials/Items/items_v1.tres" id="2_6isxs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i3dau"]
 size = Vector3(0.74143, 0.888132, 0.755397)
+
+[sub_resource type="Gradient" id="Gradient_p8b43"]
+offsets = PackedFloat32Array(0, 0.541237, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.912371, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qdief"]
+gradient = SubResource("Gradient_p8b43")
+fill = 1
+fill_from = Vector2(0.5, 0.475)
+fill_to = Vector2(0.854701, 0.205128)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_53wf5"]
+transparency = 1
+albedo_texture = SubResource("GradientTexture2D_qdief")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_g4nhe"]
+material = SubResource("StandardMaterial3D_53wf5")
+size = Vector2(0.06, 0.06)
+orientation = 2
 
 [node name="item-trash_v1" instance=ExtResource("1_6oudv")]
 
@@ -18,3 +37,22 @@ collision_mask = 7
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.447003, 0)
 shape = SubResource("BoxShape3D_i3dau")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="StaticBody3D/CollisionShape3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0348007, 0.692557, 0.00745302)
+amount = 10
+lifetime = 10.0
+preprocess = 5.0
+explosiveness = 0.2
+randomness = 0.5
+lifetime_randomness = 0.5
+mesh = SubResource("PlaneMesh_g4nhe")
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+spread = 0.0
+gravity = Vector3(0, 1, 0)
+radial_accel_min = -100.0
+radial_accel_max = 5.0
+tangential_accel_max = 5.0
+damping_min = 1.0
+damping_max = 2.0

@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://eyiv1remw3l5"]
+
+[ext_resource type="PackedScene" uid="uid://cj0waxd7kvfdi" path="res://Assets/Models/Scene/City/trash-big_v1.glb" id="1_3ylak"]
+[ext_resource type="Material" uid="uid://cr8tfh2f1wgns" path="res://Materials/City/sings_v1.tres" id="2_kx02e"]
+
+[sub_resource type="Gradient" id="Gradient_p8b43"]
+offsets = PackedFloat32Array(0, 0.541237, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.912371, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lyfpj"]
+gradient = SubResource("Gradient_p8b43")
+fill = 1
+fill_from = Vector2(0.5, 0.475)
+fill_to = Vector2(0.854701, 0.205128)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_53wf5"]
+transparency = 1
+albedo_texture = SubResource("GradientTexture2D_lyfpj")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ndrem"]
+material = SubResource("StandardMaterial3D_53wf5")
+size = Vector2(0.06, 0.06)
+orientation = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iiyya"]
+size = Vector3(1.58384, 1.31663, 1)
+
+[node name="trash-big_v1" instance=ExtResource("1_3ylak")]
+
+[node name="Basurero" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_kx02e")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19722, 1.37889, 0.66812)
+amount = 10
+lifetime = 10.0
+preprocess = 5.0
+explosiveness = 0.2
+randomness = 0.5
+lifetime_randomness = 0.5
+mesh = SubResource("PlaneMesh_ndrem")
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+spread = 0.0
+gravity = Vector3(0, 1, 0)
+radial_accel_min = -100.0
+radial_accel_max = 5.0
+tangential_accel_max = 5.0
+damping_min = 1.0
+damping_max = 2.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661261, 0)
+shape = SubResource("BoxShape3D_iiyya")
