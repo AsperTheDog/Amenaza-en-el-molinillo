@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://tty5b41486n8"]
 
 [ext_resource type="PackedScene" uid="uid://j6efgb1wu5mt" path="res://Assets/Models/Scene/Construction/fabricbuild_v1.glb" id="1_yettg"]
-[ext_resource type="Material" uid="uid://fqicphn27oyf" path="res://Materials/City/construction-area_v1.tres" id="2_wugn7"]
+[ext_resource type="Material" uid="uid://by5jrxnbo8pm3" path="res://Materials/Ground/construction-area_v2.tres" id="2_rnxri"]
 
 [node name="fabricbuild_v1" instance=ExtResource("1_yettg")]
 
 [node name="CubreEdificio" parent="." index="0"]
-surface_material_override/0 = ExtResource("2_wugn7")
+surface_material_override/0 = ExtResource("2_rnxri")

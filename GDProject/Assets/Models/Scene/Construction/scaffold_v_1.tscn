@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dgy5hmwgd0yvj"]
 
 [ext_resource type="PackedScene" uid="uid://dqkqkdnw447em" path="res://Assets/Models/Scene/Construction/scaffold_v1.glb" id="1_y8t0h"]
-[ext_resource type="Material" path="res://Materials/Ground/construction-area_v2.tres" id="2_6car4"]
+[ext_resource type="Material" uid="uid://by5jrxnbo8pm3" path="res://Materials/Ground/construction-area_v2.tres" id="2_6car4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nogh0"]
 size = Vector3(4.76457, 0.118656, 1.36744)

@@ -10,6 +10,7 @@
 cull_mode = 1
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.5
 grow = true
 grow_amount = 0.01
 
@@ -23,7 +24,7 @@ metallic_texture_channel = 2
 roughness_texture = ExtResource("2_byu4o")
 roughness_texture_channel = 1
 emission_enabled = true
-emission_energy_multiplier = 10.0
+emission_energy_multiplier = 5.0
 emission_texture = ExtResource("3_1r2ar")
 normal_enabled = true
 normal_texture = ExtResource("5_7dr35")

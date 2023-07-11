@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://cvctd5tquutpf"]
 
 [ext_resource type="PackedScene" uid="uid://jt40cxyomshv" path="res://Assets/Models/Scene/Construction/signalconstruction_v1.glb" id="1_nsmmc"]
-[ext_resource type="Material" uid="uid://fqicphn27oyf" path="res://Materials/City/construction-area_v1.tres" id="2_2b12n"]
+[ext_resource type="Material" uid="uid://by5jrxnbo8pm3" path="res://Materials/Ground/construction-area_v2.tres" id="2_d2tto"]
 
 [node name="signalconstruction_v1" instance=ExtResource("1_nsmmc")]
 
 [node name="SeñalObras" parent="." index="0"]
-surface_material_override/0 = ExtResource("2_2b12n")
+surface_material_override/0 = ExtResource("2_d2tto")

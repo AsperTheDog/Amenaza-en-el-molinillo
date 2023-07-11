@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=3 uid="uid://b7co442vfn4a5"]
+[gd_scene load_steps=102 format=3 uid="uid://b7co442vfn4a5"]
 
 [ext_resource type="Script" path="res://Scenes/MainScene.gd" id="1_gm6yh"]
 [ext_resource type="Environment" uid="uid://bt7lbvekdafji" path="res://Enviroments/Enviroment-sunrise.tres" id="1_hmru1"]
@@ -42,6 +42,7 @@
 [ext_resource type="PackedScene" uid="uid://br4wwlyorpqkl" path="res://Assets/Models/Scene/Construction/giantcontainer_v_1.tscn" id="34_tifhq"]
 [ext_resource type="PackedScene" uid="uid://ccqay4jvq61mf" path="res://Assets/Models/Scene/Construction/joistbig_v_1.tscn" id="35_j8woy"]
 [ext_resource type="PackedScene" uid="uid://bbie6ecos56eh" path="res://Assets/Models/Scene/Construction/pallet_v_1.tscn" id="36_6occc"]
+[ext_resource type="PackedScene" uid="uid://dw4qp0du35nme" path="res://Assets/Models/Scene/Construction/signalcaution_v_1.tscn" id="37_55psn"]
 [ext_resource type="PackedScene" uid="uid://ba0rpbur364xs" path="res://Assets/Models/Scene/City/wall_metal_v_1.tscn" id="37_214c6"]
 [ext_resource type="PackedScene" uid="uid://ddsodaubnbwo2" path="res://Assets/Models/Scene/Construction/pipelinebig_v_1.tscn" id="37_gt6ws"]
 [ext_resource type="PackedScene" uid="uid://dro5r0hd6sq6t" path="res://Assets/Models/Scene/Construction/sand_v_1.tscn" id="38_c7e33"]
@@ -83,7 +84,7 @@
 [ext_resource type="PackedScene" uid="uid://blcpnk11d3lhx" path="res://Scenes/UI.tscn" id="75_qlyq7"]
 [ext_resource type="Script" path="res://Scenes/Camera.gd" id="76_h64x5"]
 [ext_resource type="CameraAttributesPractical" uid="uid://73bot76e0rcf" path="res://Enviroments/camera_pj_practical.tres" id="77_2acpb"]
-[ext_resource type="PackedScene" path="res://Assets/Models/Items/item_lever.tscn" id="81_bexvt"]
+[ext_resource type="PackedScene" uid="uid://bmhikfmfqvm7k" path="res://Assets/Models/Items/item_lever.tscn" id="81_bexvt"]
 [ext_resource type="PackedScene" uid="uid://d0fw5nsv284ps" path="res://Assets/Models/Scene/ModularBuildings/awning-bouncy.tscn" id="83_hg2pr"]
 [ext_resource type="Shader" path="res://Scenes/VFX-Camera.gdshader" id="84_bg2t3"]
 [ext_resource type="Texture2D" uid="uid://bi8px2iobc06y" path="res://Assets/UI/Button_Basic_UI.tres" id="85_6o6e4"]
@@ -169,7 +170,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8486, 0.0559857, -6.87429
 environment = ExtResource("1_hmru1")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(0.855364, -0.383757, 0.34797, 0, 0.671721, 0.740805, -0.518027, -0.633658, 0.574566, 6.03504, 9.07319, -10.5586)
+transform = Transform3D(0.866025, -0.377355, 0.32803, 0, 0.656059, 0.75471, -0.5, -0.653598, 0.568164, 6.03504, 9.07319, -10.5586)
 light_color = Color(0.960784, 0.898039, 0.823529, 1)
 light_energy = 1.2
 light_bake_mode = 1
@@ -353,16 +354,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.6575, 0, -8.7927)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.0731, 0, -8.7927)
 
 [node name="wallmetalsmall_v6" parent="Construction-area" instance=ExtResource("42_quh2r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.3519, 0, -8.7927)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.0504, 0, -8.7927)
 
 [node name="wallmetalsmall_v7" parent="Construction-area" instance=ExtResource("42_quh2r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.7739, 0, -8.7927)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.4724, 0, -8.7927)
 
 [node name="wallmetalsmall_v9" parent="Construction-area" instance=ExtResource("42_quh2r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1813, 0, -8.7927)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.8798, 0, -8.7927)
 
 [node name="woodbox_v3" parent="Construction-area" instance=ExtResource("21_qr72y")]
-transform = Transform3D(0.999589, -0.0286544, 0, 0.0286544, 0.999589, 0, 0, 0, 1, 22.9611, 1.56362, -6.88244)
+transform = Transform3D(-4.36943e-08, 1.22049e-09, 1, 0.0279216, 0.99961, 0, -0.99961, 0.0279216, -4.37114e-08, 22.9611, 1.56362, -6.88244)
 
 [node name="Corner-hitbox2" parent="Construction-area/woodbox_v3" instance=ExtResource("6_7r22e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.636017, 0.592166, 0)
@@ -431,16 +432,19 @@ transform = Transform3D(0.96997, 0, -0.243226, 0, 1, 0, 0.243226, 0, 0.96997, 24
 transform = Transform3D(1.07054, 0, 0, 0, 1.07054, 0, 0, 0, 1.07054, 46.2317, 3.84856, -9.32071)
 
 [node name="signalbase_v1" parent="Construction-area" instance=ExtResource("55_kc2d0")]
-transform = Transform3D(0.898557, 0, -0.438857, 0, 1, 0, 0.438857, 0, 0.898557, 14.3332, 0, -4.69578)
+transform = Transform3D(0.898557, 0, -0.438857, 0, 1, 0, 0.438857, 0, 0.898557, 14.22, 0, -4.69578)
 
 [node name="signalconstruction_v1" parent="Construction-area/signalbase_v1" instance=ExtResource("56_1nu0n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00372696, 1.11898, 0.0603809)
 
 [node name="table_v2" parent="Construction-area" instance=ExtResource("41_8245g")]
-transform = Transform3D(-0.0209424, -2.12806e-09, 0.999781, -0.985352, -0.169281, -0.0206401, 0.169244, -0.985568, 0.00354515, 46.7479, 1.5524, -8.4038)
+transform = Transform3D(-0.0209424, -2.12806e-09, 0.999781, -0.985352, -0.169281, -0.0206401, 0.169244, -0.985568, 0.00354515, 46.9655, 1.5524, -8.4038)
 
 [node name="woodbox_v2" parent="Construction-area" instance=ExtResource("43_7b4r7")]
 transform = Transform3D(0.888913, 0, 0.458076, 0, 1, 0, -0.458076, 0, 0.888913, 45.2119, 0.611248, -5.0089)
+
+[node name="signalcaution_v1" parent="Construction-area" instance=ExtResource("37_55psn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.9026, 1.93696, -8.77617)
 
 [node name="City" type="Node3D" parent="."]
 
@@ -711,7 +715,7 @@ mesh = SubResource("PlaneMesh_ytw2h")
 [node name="Backgroound" type="Node3D" parent="."]
 
 [node name="Buildings_v1" type="MeshInstance3D" parent="Backgroound"]
-transform = Transform3D(69.5647, 0, 0, 0, -5.10391e-07, -13.9166, 0, 11.6764, -6.08313e-07, 47.033, 13.9481, 8.63334)
+transform = Transform3D(-69.5223, -0.4075, 0, -1.06121e-07, 5.10081e-07, -13.9166, 2.42777, -11.6693, -6.08314e-07, 34.1765, 13.9481, 8.63334)
 mesh = SubResource("PlaneMesh_3igep")
 
 [node name="Buildings_v2" type="MeshInstance3D" parent="Backgroound"]
@@ -1561,7 +1565,7 @@ gravity = 9.8
 [node name="modelo" parent="Items/item-trash_v1/item-trash_cover/item-cheeseburger" instance=ExtResource("62_yglnw")]
 
 [node name="item_lever" parent="Items" node_paths=PackedStringArray("activation") instance=ExtResource("81_bexvt")]
-transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 67.4175, 0.381078, -0.0425692)
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 67.6671, 0.381078, -0.0425692)
 activation = NodePath("../../Construction-area/joistbig_v3")
 
 [node name="item-radio_v1" parent="Items" instance=ExtResource("86_tois8")]
@@ -1594,4 +1598,4 @@ transform = Transform3D(0.0584944, 0, -0.0811074, 0, 0.1, 0, 0.0811074, 0, 0.058
 transform = Transform3D(0.0890642, 0, 0.0454706, 0, 0.1, 0, -0.0454706, 0, 0.0890642, 6.04904, 1.32559, -8.24879)
 
 [node name="character-bird-4" parent="." instance=ExtResource("89_sb5ts")]
-transform = Transform3D(0.0652059, 0, 0.0758168, 0, 0.1, 0, -0.0758168, 0, 0.0652059, 7.95295, 0.89859, 0.576171)
+transform = Transform3D(0.040313, 0, 0.0915142, 0, 0.1, 0, -0.0915142, 0, 0.040313, 10.0126, 1.39867, 0.703615)

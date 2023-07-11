@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://c2yv8vqdq3gps" path="res://Materials/City/construction-area_v2_normal.png" id="4_p3k4m"]
 
 [resource]
+transparency = 2
+alpha_scissor_threshold = 0.43
+alpha_antialiasing_mode = 2
+alpha_antialiasing_edge = 0.3
 albedo_texture = ExtResource("1_5ewr8")
 metallic_texture = ExtResource("2_hmhfp")
 metallic_texture_channel = 2
