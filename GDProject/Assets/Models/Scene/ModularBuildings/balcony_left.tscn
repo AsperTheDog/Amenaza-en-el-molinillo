@@ -1,9 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdktw64fch7ok"]
+[gd_scene load_steps=4 format=3 uid="uid://cdktw64fch7ok"]
 
 [ext_resource type="PackedScene" uid="uid://lmp6vpcrw6kn" path="res://Assets/Models/Scene/ModularBuildings/balcony-left.glb" id="1_atatj"]
-[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_0ohpg"]
+[ext_resource type="Material" uid="uid://d2dupdqjoxqay" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_0ohpg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6qc13"]
+size = Vector3(2.78945, 0.123714, 2.53044)
 
 [node name="balcony-left" instance=ExtResource("1_atatj")]
 
 [node name="Balcony Left _001" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_0ohpg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Balcony Left _001" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Balcony Left _001/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0965912, 0.0621272, 2.76448)
+shape = SubResource("BoxShape3D_6qc13")

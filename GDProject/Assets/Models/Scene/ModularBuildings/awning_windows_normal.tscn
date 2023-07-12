@@ -1,9 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://5wb3cq3d04gp"]
+[gd_scene load_steps=4 format=3 uid="uid://5wb3cq3d04gp"]
 
 [ext_resource type="PackedScene" uid="uid://n64n0mul3oay" path="res://Assets/Models/Scene/ModularBuildings/awning-windows-normal.glb" id="1_g8b4p"]
 [ext_resource type="Material" uid="uid://d2dupdqjoxqay" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_y6gtb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_itp3k"]
+size = Vector3(1.18647, 0.0884941, 1.66286)
 
 [node name="awning-windows-normal" instance=ExtResource("1_g8b4p")]
 
 [node name="Awning Windows Normal_001" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_y6gtb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Awning Windows Normal_001" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Awning Windows Normal_001/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.78268, 3)
+shape = SubResource("BoxShape3D_itp3k")

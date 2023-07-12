@@ -1,9 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://d36gxewlcu5bj"]
+[gd_scene load_steps=4 format=3 uid="uid://d36gxewlcu5bj"]
 
 [ext_resource type="PackedScene" uid="uid://ct1y32xxhug3a" path="res://Assets/Models/Scene/ModularBuildings/balcony-railing-right.glb" id="1_a1j4l"]
-[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_1eftc"]
+[ext_resource type="Material" uid="uid://d2dupdqjoxqay" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_1eftc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_shbe4"]
+size = Vector3(0.154962, 0.686235, 2.36061)
 
 [node name="balcony-railing-right" instance=ExtResource("1_a1j4l")]
 
 [node name="Balcony Railing Right_001" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_1eftc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.420614, 0)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22498, 0.0425987, 2.83537)
+shape = SubResource("BoxShape3D_shbe4")
