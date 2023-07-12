@@ -13,6 +13,8 @@ surface_material_override/0 = ExtResource("2_rtxo5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Balcony Railing Left_001" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.420614, 0)
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Balcony Railing Left_001/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.22681, 0.0425987, 2.83537)

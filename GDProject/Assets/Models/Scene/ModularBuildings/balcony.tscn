@@ -4,7 +4,7 @@
 [ext_resource type="Material" uid="uid://d2dupdqjoxqay" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_vooxj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kajvu"]
-size = Vector3(2.60891, 0.123714, 2.53044)
+size = Vector3(2.52038, 0.123714, 2.53044)
 
 [node name="balcony" instance=ExtResource("1_pkhaw")]
 
@@ -12,6 +12,8 @@ size = Vector3(2.60891, 0.123714, 2.53044)
 surface_material_override/0 = ExtResource("2_vooxj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Balcony_001" index="0"]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Balcony_001/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0621272, 2.76448)

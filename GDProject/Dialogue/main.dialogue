@@ -1,11 +1,20 @@
-~ mailbox
+~ ramonFence
 
-Rodolfo|l: Un buzon 
-Ramon|r: Y que esperabas?
-Rodolfo|l: ...
- - A tu madre
- - Puedo mear?
+Ramón|r: ¡Rodolfo, Ahí estás! ¿Se puede saber dónde te habías metido?
+Rodolfo|l: Ramón entiéndeme, cubos de basura como el que he usado para la siesta no se encuentra todos los días !!Como mucho uno cada dos!!
+Ramón|r: Que siii, QUE SIII
+Ramón|r: Ya estás viniendo aquí al otro lado de la valla
+Rodolfo|l: ¿Pero tú has visto esta valla Ramón? ¿Cómo pretendes que salte esto?
+Ramón|r: Pues saltando, por ejemplo
+Rodolfo|l: Si, PA TI voy a saltar yo eso!
+Ramón|r: Pues te buscas la vida, que tenemos trabajo.
+Rodolfo|l: Espera, tengo una idea, usaré mis poderes psíquicos para abrirme camino...
+# Activa el toldo
+Ramón|r: Hostia! ¿Eso cómo lo has hecho?
+Rodolfo|l: En un caso hipotético en el que esto fuera un juego y estuviera hecho por desarrolladores con tiempo limitado, esta sería la manera en la que camuflarían el hecho de que no tienen animaciones para que muevas un dedo, Ramón.
+Ramón|r: Lo que tu digas Rodolfo, yo me voy a mear.
 
+	
 => END
 
 ~ endRamon
@@ -14,7 +23,7 @@ Ramon|r: ¡Rodolfo! ¿Se puede saber dónde te habías metido?
 Rodolfo|l: ¡Ramon! no te vas a creer lo que ha pasado
 Rodolfo|l: ¡Acabo de encontrarme una hamburguesota en un cubo de basura! ¿Cómo puede la gente dejar una delicia así tirada? ¡Si está casi entera!
 Ramon|r: Rodolfo acaba de empezar la mañana y ya me estas poniendo de los nervios, anda vamonos que hay mucho que hacer
-Rodolfo|r: ...
+Rodolfo|l: ...
  - A tope
  - Dame un momento que voy a mirar otra vez a ver si encuentro pataticas fritas
 

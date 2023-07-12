@@ -70,7 +70,7 @@ collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0103098, 1.85524, 2.71314)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0103098, 1.98121, 2.71314)
 shape = SubResource("BoxShape3D_15org")
 
 [node name="Audio" type="Node" parent="."]

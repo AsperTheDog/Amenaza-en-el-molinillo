@@ -7,6 +7,8 @@ func _ready():
 
 func bounce(body: Node3D):
 	if body.has_method("setVertForce"):
+		body.jumpParticles.restart()
+		body.jumpParticles.emitting = true
 		body.hasDoubleJumped = false
 		body.forceState("AirState")
 		body.setVertForce(bounceForce)

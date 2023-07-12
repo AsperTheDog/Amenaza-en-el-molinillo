@@ -12,6 +12,8 @@ size = Vector3(1.18647, 0.0884941, 1.66286)
 surface_material_override/0 = ExtResource("2_y6gtb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Awning Windows Normal_001" index="0"]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Awning Windows Normal_001/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.78268, 3)

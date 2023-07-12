@@ -28,7 +28,6 @@ tonemap_mode = 2
 ssr_enabled = true
 ssao_enabled = true
 ssil_enabled = true
-sdfgi_enabled = true
 sdfgi_use_occlusion = true
 sdfgi_energy = 3.0
 glow_enabled = true
