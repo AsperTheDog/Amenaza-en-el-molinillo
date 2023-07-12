@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://dojpy50xb11sd" path="res://Assets/Models/Scene/ModularBuildings/awning_garaje_closed.tscn" id="20_pjktw"]
 [ext_resource type="PackedScene" uid="uid://ummnp0d1tn3x" path="res://Assets/Behavior/Corner-hitbox.tscn" id="21_42aha"]
 [ext_resource type="PackedScene" uid="uid://bxkqxxwxoppm" path="res://Assets/Models/Scene/ModularBuildings/wall_door.tscn" id="21_cn71s"]
-[ext_resource type="PackedScene" uid="uid://d0fw5nsv284ps" path="res://Assets/Models/Scene/ModularBuildings/awning-bouncy.tscn" id="22_wdpmg"]
+[ext_resource type="PackedScene" uid="uid://d0fw5nsv284ps" path="res://Assets/Models/Scene/ModularBuildings/GlbOriginalFiles/awning-bouncy.tscn" id="22_wdpmg"]
 [ext_resource type="PackedScene" uid="uid://cdktw64fch7ok" path="res://Assets/Models/Scene/ModularBuildings/balcony_left.tscn" id="23_3ive0"]
 [ext_resource type="PackedScene" uid="uid://dx75br3fe6hp3" path="res://Assets/Models/Scene/ModularBuildings/balcony_right.tscn" id="24_db0lx"]
 [ext_resource type="PackedScene" uid="uid://dyo7ru0vqgumn" path="res://Assets/Models/Scene/ModularBuildings/balcony_railing_left.tscn" id="24_rivef"]
@@ -50,7 +50,7 @@ material = ExtResource("60_wmg14")
 [sub_resource type="BoxMesh" id="BoxMesh_aqpjv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5cxwu"]
-size = Vector3(3.9961, 6.5771, 0.231198)
+size = Vector3(3.9961, 10.1789, 0.231198)
 
 [node name="main" type="Node3D" node_paths=PackedStringArray("chara")]
 script = ExtResource("1_3om1c")
@@ -66,6 +66,8 @@ fov = 37.8493
 far = 200.0
 script = ExtResource("4_4fovd")
 cameraSpeed = 7.0
+height = 2.0
+length = 7.0
 
 [node name="Ramon" parent="." instance=ExtResource("5_0b0c0")]
 transform = Transform3D(0.359459, 0, -0.933161, 0, 1, 0, 0.933161, 0, 0.359459, -13.6548, 0.159637, -6.87501)
@@ -799,14 +801,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 6, -11)
 [node name="skirting-double-middle" parent="EdificiosAltos/wall72" instance=ExtResource("18_yy6g8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
-[node name="awning-windows-normal" parent="EdificiosAltos/wall72" instance=ExtResource("29_7lk02")]
-
-[node name="Corner-hitbox" parent="EdificiosAltos/wall72/awning-windows-normal" instance=ExtResource("21_42aha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.592323, 1.83442, 2.79232)
-
-[node name="Corner-hitbox2" parent="EdificiosAltos/wall72/awning-windows-normal" instance=ExtResource("21_42aha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.581711, 1.82183, 2.86828)
-
 [node name="wall73" parent="EdificiosAltos" instance=ExtResource("11_mn36p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 6, -11)
 
@@ -983,6 +977,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 9, -11)
 
 [node name="skirting-double-middle" parent="EdificiosAltos/wall96" instance=ExtResource("18_yy6g8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="awning-windows-normal" parent="EdificiosAltos/wall96" instance=ExtResource("29_7lk02")]
+
+[node name="Corner-hitbox" parent="EdificiosAltos/wall96/awning-windows-normal" instance=ExtResource("21_42aha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.592323, 1.83442, 2.79232)
+
+[node name="Corner-hitbox2" parent="EdificiosAltos/wall96/awning-windows-normal" instance=ExtResource("21_42aha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.581711, 1.82183, 2.86828)
 
 [node name="wall97" parent="EdificiosAltos" instance=ExtResource("11_mn36p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 9, -11)
@@ -1241,6 +1243,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52, 15, -11)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
 [node name="awning-windows-normal" parent="EdificiosAltos/wall133" instance=ExtResource("29_7lk02")]
+
+[node name="Corner-hitbox" parent="EdificiosAltos/wall133/awning-windows-normal" instance=ExtResource("21_42aha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.592323, 1.83442, 2.79232)
+
+[node name="Corner-hitbox2" parent="EdificiosAltos/wall133/awning-windows-normal" instance=ExtResource("21_42aha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.581711, 1.82183, 2.86828)
 
 [node name="wall134" parent="EdificiosAltos" instance=ExtResource("11_mn36p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, 15, -11)
@@ -1769,10 +1777,13 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15, 0
 [node name="wallmetalsmall_v2" parent="wallmetalsmall_v1" instance=ExtResource("31_kk434")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.59077, 0)
 
+[node name="wallmetalsmall_v2" parent="wallmetalsmall_v1/wallmetalsmall_v2" instance=ExtResource("31_kk434")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.59077, 0)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="wallmetalsmall_v1"]
 collision_layer = 7
 collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wallmetalsmall_v1/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.47542, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.17948, 0)
 shape = SubResource("BoxShape3D_5cxwu")
