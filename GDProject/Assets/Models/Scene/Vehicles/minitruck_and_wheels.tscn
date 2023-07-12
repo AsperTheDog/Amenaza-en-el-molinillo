@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvli3l61y8n23"]
+
+[ext_resource type="PackedScene" uid="uid://dwnbraco5hwpg" path="res://Assets/Models/Scene/Vehicles/minitruck.tscn" id="1_ccyib"]
+[ext_resource type="PackedScene" uid="uid://um2vftdk6a40" path="res://Assets/Models/Scene/Vehicles/wheel_car_v_1.tscn" id="2_hjj23"]
+
+[node name="minitruck-and-wheels" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 49.4052, -0.140891, -1.24487)
+
+[node name="minitruck" parent="." instance=ExtResource("1_ccyib")]
+
+[node name="wheel_car_v1" parent="minitruck" instance=ExtResource("2_hjj23")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11926, 0.33812, 2.03233)
+
+[node name="wheel_car_v2" parent="minitruck" instance=ExtResource("2_hjj23")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11926, 0.33812, -1.93983)
+
+[node name="wheel_car_v3" parent="minitruck" instance=ExtResource("2_hjj23")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.06466, 0.33812, -1.93983)
+
+[node name="wheel_car_v4" parent="minitruck" instance=ExtResource("2_hjj23")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.06466, 0.33812, 2.03233)

@@ -1,0 +1,391 @@
+[gd_scene load_steps=17 format=3 uid="uid://chg4mberbifyx"]
+
+[ext_resource type="PackedScene" uid="uid://bnssp383m6a7j" path="res://Assets/Models/Scene/ModularBuildings/wall.tscn" id="1_taaki"]
+[ext_resource type="PackedScene" uid="uid://bakyp2p1orb2t" path="res://Assets/Models/Scene/ModularBuildings/skirting_doublelines_middle.tscn" id="2_ninh7"]
+[ext_resource type="PackedScene" uid="uid://ifon2jci8q8b" path="res://Assets/Models/Scene/ModularBuildings/awning_garaje.tscn" id="3_b2ogt"]
+[ext_resource type="PackedScene" uid="uid://ummnp0d1tn3x" path="res://Assets/Behavior/Corner-hitbox.tscn" id="4_tj1di"]
+[ext_resource type="PackedScene" uid="uid://cdktw64fch7ok" path="res://Assets/Models/Scene/ModularBuildings/balcony_left.tscn" id="5_863cn"]
+[ext_resource type="PackedScene" uid="uid://dyo7ru0vqgumn" path="res://Assets/Models/Scene/ModularBuildings/balcony_railing_left.tscn" id="6_5kk2f"]
+[ext_resource type="PackedScene" uid="uid://dx75br3fe6hp3" path="res://Assets/Models/Scene/ModularBuildings/balcony_right.tscn" id="7_xeu1l"]
+[ext_resource type="PackedScene" uid="uid://d36gxewlcu5bj" path="res://Assets/Models/Scene/ModularBuildings/balcony_railing_right.tscn" id="8_v6hji"]
+[ext_resource type="PackedScene" uid="uid://r3yqkusrdnuw" path="res://Assets/Models/Scene/City/trash_big_v_1.tscn" id="9_b4har"]
+[ext_resource type="PackedScene" uid="uid://bvli3l61y8n23" path="res://Assets/Models/Scene/Vehicles/minitruck_and_wheels.tscn" id="10_fxpvr"]
+[ext_resource type="PackedScene" uid="uid://dt7yajhh5q0q4" path="res://Assets/Models/Scene/ModularBuildings/ceiling_ground.tscn" id="11_0a667"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xwiuf"]
+size = Vector3(2.5435, 1.70215, 4.06887)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ci58i"]
+size = Vector3(2.5435, 1.70215, 0.892185)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rmquq"]
+size = Vector3(2.5435, 0.66167, 1.27699)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_imgks"]
+size = Vector3(1, 1.69183, 2.08571)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kfmty"]
+size = Vector3(2.04986, 0.457327, 1)
+
+[node name="InteriorBuilding" type="Node3D"]
+
+[node name="wall2" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -10)
+
+[node name="skirting-doublelines-middle" parent="wall2" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall3" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -10)
+
+[node name="skirting-doublelines-middle" parent="wall3" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall4" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -10)
+
+[node name="skirting-doublelines-middle" parent="wall4" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall5" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -10)
+
+[node name="skirting-doublelines-middle" parent="wall5" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall6" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, -10)
+
+[node name="skirting-doublelines-middle" parent="wall6" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall7" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -10)
+
+[node name="skirting-doublelines-middle" parent="wall7" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall8" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3, -10)
+
+[node name="skirting-doublelines-middle" parent="wall8" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall9" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 3, -10)
+
+[node name="skirting-doublelines-middle" parent="wall9" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="awning-garaje" parent="wall9" instance=ExtResource("3_b2ogt")]
+
+[node name="Corner-hitbox2" parent="wall9/awning-garaje" instance=ExtResource("4_tj1di")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17221, 1.86889, 2.86828)
+
+[node name="Corner-hitbox" parent="wall9/awning-garaje" instance=ExtResource("4_tj1di")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15097, 1.84792, 2.79232)
+
+[node name="wall10" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 3, -10)
+
+[node name="skirting-doublelines-middle" parent="wall10" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall11" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 3, -10)
+
+[node name="skirting-doublelines-middle" parent="wall11" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall12" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 3, -10)
+
+[node name="skirting-doublelines-middle" parent="wall12" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall13" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 3, -10)
+
+[node name="skirting-doublelines-middle" parent="wall13" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall14" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 6, -10)
+
+[node name="skirting-doublelines-middle" parent="wall14" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall15" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 6, -10)
+
+[node name="skirting-doublelines-middle" parent="wall15" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall16" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 6, -10)
+
+[node name="skirting-doublelines-middle" parent="wall16" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall17" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 6, -10)
+
+[node name="skirting-doublelines-middle" parent="wall17" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="balcony-left" parent="wall17" instance=ExtResource("5_863cn")]
+
+[node name="balcony-railing-left" parent="wall17/balcony-left" instance=ExtResource("6_5kk2f")]
+
+[node name="Corner-hitbox" parent="wall17/balcony-left/balcony-railing-left" instance=ExtResource("4_tj1di")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31515, 0.80715, 2.79232)
+
+[node name="wall18" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 6, -10)
+
+[node name="skirting-doublelines-middle" parent="wall18" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="balcony-right" parent="wall18" instance=ExtResource("7_xeu1l")]
+
+[node name="balcony-railing-right" parent="wall18/balcony-right" instance=ExtResource("8_v6hji")]
+
+[node name="Corner-hitbox2" parent="wall18/balcony-right/balcony-railing-right" instance=ExtResource("4_tj1di")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33712, 0.803783, 2.86828)
+
+[node name="wall19" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 6, -10)
+
+[node name="skirting-doublelines-middle" parent="wall19" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="trash-big_v1" parent="." instance=ExtResource("9_b4har")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -7)
+
+[node name="minitruck-and-wheels" parent="." instance=ExtResource("10_fxpvr")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, -7)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="minitruck-and-wheels"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="minitruck-and-wheels/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.94078, -1.56834)
+shape = SubResource("BoxShape3D_xwiuf")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="minitruck-and-wheels/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 1.05323, 0.623366)
+shape = SubResource("BoxShape3D_ci58i")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="minitruck-and-wheels/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.805049, -0.593208, 0, 0.593208, 0.805049, 0, 1.259, 1.387)
+shape = SubResource("BoxShape3D_rmquq")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="minitruck-and-wheels/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0.491369, 1.87631)
+shape = SubResource("BoxShape3D_imgks")
+
+[node name="Corner-hitbox" parent="minitruck-and-wheels" instance=ExtResource("4_tj1di")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2.768, -3.58567)
+
+[node name="wall20" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 27, 0, -7)
+
+[node name="skirting-doublelines-middle" parent="wall20" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall21" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 27, 3, -7)
+
+[node name="skirting-doublelines-middle" parent="wall21" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall22" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 27, 6, -7)
+
+[node name="skirting-doublelines-middle" parent="wall22" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="Corner-hitbox2" parent="wall22/skirting-doublelines-middle" instance=ExtResource("4_tj1di")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.278918, 0.598166, 1.96699)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="wall22/skirting-doublelines-middle"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall22/skirting-doublelines-middle/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.103465, 0.316782, 1.57399)
+shape = SubResource("BoxShape3D_kfmty")
+
+[node name="wall40" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39, 0, -7)
+
+[node name="skirting-doublelines-middle" parent="wall40" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall41" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39, 3, -7)
+
+[node name="skirting-doublelines-middle" parent="wall41" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall42" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39, 6, -7)
+
+[node name="skirting-doublelines-middle" parent="wall42" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="wall42/skirting-doublelines-middle"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall42/skirting-doublelines-middle/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.103465, 0.316782, 1.48832)
+shape = SubResource("BoxShape3D_kfmty")
+
+[node name="wall47" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39, 15, -7)
+
+[node name="skirting-doublelines-middle" parent="wall47" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall23" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 27, 15, -7)
+
+[node name="skirting-doublelines-middle" parent="wall23" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="ceiling-ground" parent="wall23" instance=ExtResource("11_0a667")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.4555, 0)
+
+[node name="ceiling-ground2" parent="wall23" instance=ExtResource("11_0a667")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -5.4555, 0)
+
+[node name="ceiling-ground3" parent="wall23" instance=ExtResource("11_0a667")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -5.4555, 0)
+
+[node name="ceiling-ground4" parent="wall23" instance=ExtResource("11_0a667")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -5.4555, 0)
+
+[node name="ceiling-ground5" parent="wall23" instance=ExtResource("11_0a667")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -5.4555, 0)
+
+[node name="wall43" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 30, 15, -7)
+
+[node name="skirting-doublelines-middle" parent="wall43" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall44" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 33, 15, -7)
+
+[node name="skirting-doublelines-middle" parent="wall44" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall45" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 36, 15, -7)
+
+[node name="skirting-doublelines-middle" parent="wall45" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall46" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 39, 15, -7)
+
+[node name="skirting-doublelines-middle" parent="wall46" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall25" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 27, 6, -7)
+
+[node name="skirting-doublelines-middle" parent="wall25" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall26" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 27, 3, -7)
+
+[node name="skirting-doublelines-middle" parent="wall26" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall27" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 27, 0, -7)
+
+[node name="skirting-doublelines-middle" parent="wall27" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall28" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 30, 6, -7)
+
+[node name="skirting-doublelines-middle" parent="wall28" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall29" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 30, 3, -7)
+
+[node name="skirting-doublelines-middle" parent="wall29" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall30" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 30, 0, -7)
+
+[node name="skirting-doublelines-middle" parent="wall30" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall31" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 33, 6, -7)
+
+[node name="skirting-doublelines-middle" parent="wall31" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall32" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 33, 3, -7)
+
+[node name="skirting-doublelines-middle" parent="wall32" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall33" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 33, 0, -7)
+
+[node name="skirting-doublelines-middle" parent="wall33" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall34" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 36, 6, -7)
+
+[node name="skirting-doublelines-middle" parent="wall34" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall35" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 36, 3, -7)
+
+[node name="skirting-doublelines-middle" parent="wall35" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall36" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 36, 0, -7)
+
+[node name="skirting-doublelines-middle" parent="wall36" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall37" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 39, 6, -7)
+
+[node name="skirting-doublelines-middle" parent="wall37" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall38" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 39, 3, -7)
+
+[node name="skirting-doublelines-middle" parent="wall38" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall39" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 39, 0, -7)
+
+[node name="skirting-doublelines-middle" parent="wall39" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall24" parent="." instance=ExtResource("1_taaki")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 27, 15, -7)
+
+[node name="skirting-doublelines-middle" parent="wall24" instance=ExtResource("2_ninh7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)

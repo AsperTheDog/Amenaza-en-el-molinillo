@@ -1,0 +1,1543 @@
+[gd_scene load_steps=17 format=3 uid="uid://c362y78evjub4"]
+
+[ext_resource type="PackedScene" uid="uid://bnssp383m6a7j" path="res://Assets/Models/Scene/ModularBuildings/wall.tscn" id="1_epkx4"]
+[ext_resource type="PackedScene" uid="uid://djxca08di0wuy" path="res://Assets/Models/Scene/ModularBuildings/skirting_double_middle.tscn" id="2_ly6pd"]
+[ext_resource type="PackedScene" uid="uid://ddh7fypbnjfb2" path="res://Assets/Models/Scene/ModularBuildings/wall_garaje.tscn" id="3_0scob"]
+[ext_resource type="PackedScene" uid="uid://ifon2jci8q8b" path="res://Assets/Models/Scene/ModularBuildings/awning_garaje.tscn" id="4_vpdq6"]
+[ext_resource type="PackedScene" uid="uid://ummnp0d1tn3x" path="res://Assets/Behavior/Corner-hitbox.tscn" id="5_mlgnn"]
+[ext_resource type="PackedScene" uid="uid://dojpy50xb11sd" path="res://Assets/Models/Scene/ModularBuildings/awning_garaje_closed.tscn" id="6_r5f7h"]
+[ext_resource type="PackedScene" uid="uid://d0fw5nsv284ps" path="res://Assets/Models/Scene/ModularBuildings/GlbOriginalFiles/awning-bouncy.tscn" id="7_b03p0"]
+[ext_resource type="PackedScene" uid="uid://cdktw64fch7ok" path="res://Assets/Models/Scene/ModularBuildings/balcony_left.tscn" id="8_ymsc2"]
+[ext_resource type="PackedScene" uid="uid://dyo7ru0vqgumn" path="res://Assets/Models/Scene/ModularBuildings/balcony_railing_left.tscn" id="9_mksf6"]
+[ext_resource type="PackedScene" uid="uid://dx75br3fe6hp3" path="res://Assets/Models/Scene/ModularBuildings/balcony_right.tscn" id="10_fxuyu"]
+[ext_resource type="PackedScene" uid="uid://d36gxewlcu5bj" path="res://Assets/Models/Scene/ModularBuildings/balcony_railing_right.tscn" id="11_ypwyw"]
+[ext_resource type="PackedScene" uid="uid://b45uj3a0l2x8p" path="res://Assets/Models/Scene/ModularBuildings/balcony.tscn" id="12_303b2"]
+[ext_resource type="PackedScene" uid="uid://dkpkihfs62ww6" path="res://Assets/Models/Scene/ModularBuildings/balcony_railing.tscn" id="13_pshcg"]
+[ext_resource type="PackedScene" uid="uid://5wb3cq3d04gp" path="res://Assets/Models/Scene/ModularBuildings/awning_windows_normal.tscn" id="14_j15c1"]
+[ext_resource type="PackedScene" uid="uid://k6u2nfwda81n" path="res://Assets/Models/Scene/Construction/wallmetalsmall_v_1.tscn" id="15_lvqkd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5cxwu"]
+size = Vector3(3.9961, 10.1789, 0.231198)
+
+[node name="EdificiosAltos" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="wall2" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85, 0, -11)
+
+[node name="skirting-double-middle" parent="wall2" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall3" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82, 0, -11)
+
+[node name="skirting-double-middle" parent="wall3" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall4" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79, 0, -11)
+
+[node name="skirting-double-middle" parent="wall4" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall5" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76, 0, -11)
+
+[node name="skirting-double-middle" parent="wall5" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall6" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73, 0, -11)
+
+[node name="skirting-double-middle" parent="wall6" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall7" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, -11)
+
+[node name="skirting-double-middle" parent="wall7" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall8" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67, 0, -11)
+
+[node name="skirting-double-middle" parent="wall8" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall9" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -11)
+
+[node name="skirting-double-middle" parent="wall9" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall10" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61, 0, -11)
+
+[node name="skirting-double-middle" parent="wall10" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall11" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 0, -11)
+
+[node name="skirting-double-middle" parent="wall11" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall12" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 0, -11)
+
+[node name="skirting-double-middle" parent="wall12" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall13" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52, 0, -11)
+
+[node name="skirting-double-middle" parent="wall13" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall14" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, 0, -11)
+
+[node name="skirting-double-middle" parent="wall14" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall15" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 0, -11)
+
+[node name="skirting-double-middle" parent="wall15" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall16" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43, 0, -11)
+
+[node name="skirting-double-middle" parent="wall16" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall-garaje" parent="." instance=ExtResource("3_0scob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -11)
+
+[node name="skirting-double-middle" parent="wall-garaje" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="awning-garaje" parent="wall-garaje" instance=ExtResource("4_vpdq6")]
+
+[node name="Corner-hitbox2" parent="wall-garaje/awning-garaje" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17221, 1.86889, 2.86828)
+
+[node name="Corner-hitbox" parent="wall-garaje/awning-garaje" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15097, 1.84792, 2.79232)
+
+[node name="awning-garaje-closed" parent="wall-garaje" instance=ExtResource("6_r5f7h")]
+
+[node name="wall18" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 0, -11)
+
+[node name="skirting-double-middle" parent="wall18" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall19" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0, -11)
+
+[node name="skirting-double-middle" parent="wall19" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall20" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, -11)
+
+[node name="skirting-double-middle" parent="wall20" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall21" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, -11)
+
+[node name="skirting-double-middle" parent="wall21" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall22" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -11)
+
+[node name="skirting-double-middle" parent="wall22" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall23" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -11)
+
+[node name="skirting-double-middle" parent="wall23" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall24" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -11)
+
+[node name="skirting-double-middle" parent="wall24" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall25" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -11)
+
+[node name="skirting-double-middle" parent="wall25" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall26" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85, 3, -11)
+
+[node name="skirting-double-middle" parent="wall26" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall27" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82, 3, -11)
+
+[node name="skirting-double-middle" parent="wall27" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall28" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79, 3, -11)
+
+[node name="skirting-double-middle" parent="wall28" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall29" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76, 3, -11)
+
+[node name="skirting-double-middle" parent="wall29" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall30" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73, 3, -11)
+
+[node name="skirting-double-middle" parent="wall30" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall31" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 3, -11)
+
+[node name="skirting-double-middle" parent="wall31" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall32" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67, 3, -11)
+
+[node name="skirting-double-middle" parent="wall32" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall33" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 3, -11)
+
+[node name="skirting-double-middle" parent="wall33" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall34" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61, 3, -11)
+
+[node name="skirting-double-middle" parent="wall34" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="awning-bouncy" parent="wall34" instance=ExtResource("7_b03p0")]
+bounceForce = 15.0
+
+[node name="wall35" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 3, -11)
+
+[node name="skirting-double-middle" parent="wall35" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall36" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 3, -11)
+
+[node name="skirting-double-middle" parent="wall36" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="balcony-left" parent="wall36" instance=ExtResource("8_ymsc2")]
+transform = Transform3D(0.999992, 0.00376078, -0.00117388, -0.00376197, 0.999992, -0.00100565, 0.00117009, 0.00101007, 0.999999, 0.0112839, 2.99998, 0.00302982)
+
+[node name="balcony-railing-left" parent="wall36/balcony-left" instance=ExtResource("9_mksf6")]
+
+[node name="Corner-hitbox" parent="wall36/balcony-left" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31515, 0.80715, 2.79232)
+
+[node name="wall37" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52, 3, -11)
+
+[node name="skirting-double-middle" parent="wall37" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="balcony-right" parent="wall37" instance=ExtResource("10_fxuyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="balcony-railing-right" parent="wall37/balcony-right" instance=ExtResource("11_ypwyw")]
+
+[node name="Corner-hitbox2" parent="wall37/balcony-right" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33712, 0.803783, 2.86828)
+
+[node name="wall38" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, 3, -11)
+
+[node name="skirting-double-middle" parent="wall38" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall39" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 3, -11)
+
+[node name="skirting-double-middle" parent="wall39" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="balcony" parent="wall39" instance=ExtResource("12_303b2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 0)
+
+[node name="balcony-railing" parent="wall39/balcony" instance=ExtResource("13_pshcg")]
+
+[node name="Corner-hitbox2" parent="wall39/balcony/balcony-railing" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33712, 0.803783, 2.86828)
+
+[node name="Corner-hitbox" parent="wall39/balcony/balcony-railing" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31515, 0.80715, 2.79232)
+
+[node name="wall40" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43, 3, -11)
+
+[node name="skirting-double-middle" parent="wall40" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall41" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 3, -11)
+
+[node name="skirting-double-middle" parent="wall41" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall42" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 3, -11)
+
+[node name="skirting-double-middle" parent="wall42" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall43" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 3, -11)
+
+[node name="skirting-double-middle" parent="wall43" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall44" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 3, -11)
+
+[node name="skirting-double-middle" parent="wall44" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall45" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 3, -11)
+
+[node name="skirting-double-middle" parent="wall45" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall46" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 3, -11)
+
+[node name="skirting-double-middle" parent="wall46" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall47" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 3, -11)
+
+[node name="skirting-double-middle" parent="wall47" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall48" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 3, -11)
+
+[node name="skirting-double-middle" parent="wall48" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall49" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 3, -11)
+
+[node name="skirting-double-middle" parent="wall49" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall218" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 3, -11)
+
+[node name="skirting-double-middle" parent="wall218" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="awning-windows-normal" parent="wall218" instance=ExtResource("14_j15c1")]
+
+[node name="Corner-hitbox" parent="wall218/awning-windows-normal" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.592323, 1.83442, 2.79232)
+
+[node name="Corner-hitbox2" parent="wall218/awning-windows-normal" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.581711, 1.82183, 2.86828)
+
+[node name="wall219" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -11)
+
+[node name="skirting-double-middle" parent="wall219" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall220" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 6, -11)
+
+[node name="skirting-double-middle" parent="wall220" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall221" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 9, -11)
+
+[node name="skirting-double-middle" parent="wall221" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall222" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3, -11)
+
+[node name="skirting-double-middle" parent="wall222" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall223" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -11)
+
+[node name="skirting-double-middle" parent="wall223" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall224" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 6, -11)
+
+[node name="skirting-double-middle" parent="wall224" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="awning-windows-normal" parent="wall224" instance=ExtResource("14_j15c1")]
+
+[node name="Corner-hitbox" parent="wall224/awning-windows-normal" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.592323, 1.83442, 2.79232)
+
+[node name="Corner-hitbox2" parent="wall224/awning-windows-normal" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.581711, 1.82183, 2.86828)
+
+[node name="wall225" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 9, -11)
+
+[node name="skirting-double-middle" parent="wall225" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall50" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85, 6, -11)
+
+[node name="skirting-double-middle" parent="wall50" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall51" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82, 6, -11)
+
+[node name="skirting-double-middle" parent="wall51" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall52" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79, 6, -11)
+
+[node name="skirting-double-middle" parent="wall52" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall53" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76, 6, -11)
+
+[node name="skirting-double-middle" parent="wall53" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall54" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73, 6, -11)
+
+[node name="skirting-double-middle" parent="wall54" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall55" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 6, -11)
+
+[node name="skirting-double-middle" parent="wall55" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall56" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67, 6, -11)
+
+[node name="skirting-double-middle" parent="wall56" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall57" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 6, -11)
+
+[node name="skirting-double-middle" parent="wall57" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall58" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61, 6, -11)
+
+[node name="skirting-double-middle" parent="wall58" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall59" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 6, -11)
+
+[node name="skirting-double-middle" parent="wall59" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall60" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 6, -11)
+
+[node name="skirting-double-middle" parent="wall60" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall61" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52, 6, -11)
+
+[node name="skirting-double-middle" parent="wall61" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall62" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, 6, -11)
+
+[node name="skirting-double-middle" parent="wall62" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall63" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 6, -11)
+
+[node name="skirting-double-middle" parent="wall63" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall64" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43, 6, -11)
+
+[node name="skirting-double-middle" parent="wall64" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall65" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 6, -11)
+
+[node name="skirting-double-middle" parent="wall65" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall66" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 6, -11)
+
+[node name="skirting-double-middle" parent="wall66" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall67" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 6, -11)
+
+[node name="skirting-double-middle" parent="wall67" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall68" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 6, -11)
+
+[node name="skirting-double-middle" parent="wall68" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall69" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 6, -11)
+
+[node name="skirting-double-middle" parent="wall69" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall70" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 6, -11)
+
+[node name="skirting-double-middle" parent="wall70" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall71" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 6, -11)
+
+[node name="skirting-double-middle" parent="wall71" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall72" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 6, -11)
+
+[node name="skirting-double-middle" parent="wall72" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall73" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 6, -11)
+
+[node name="skirting-double-middle" parent="wall73" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall74" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85, 9, -11)
+
+[node name="skirting-double-middle" parent="wall74" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall75" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82, 9, -11)
+
+[node name="skirting-double-middle" parent="wall75" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall76" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79, 9, -11)
+
+[node name="skirting-double-middle" parent="wall76" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall77" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76, 9, -11)
+
+[node name="skirting-double-middle" parent="wall77" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall78" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73, 9, -11)
+
+[node name="skirting-double-middle" parent="wall78" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall79" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 9, -11)
+
+[node name="skirting-double-middle" parent="wall79" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="awning-windows-normal" parent="wall79" instance=ExtResource("14_j15c1")]
+
+[node name="Corner-hitbox" parent="wall79/awning-windows-normal" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.592323, 1.83442, 2.79232)
+
+[node name="Corner-hitbox2" parent="wall79/awning-windows-normal" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.581711, 1.82183, 2.86828)
+
+[node name="wall80" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67, 9, -11)
+
+[node name="skirting-double-middle" parent="wall80" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall81" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 9, -11)
+
+[node name="skirting-double-middle" parent="wall81" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="awning-windows-normal" parent="wall81" instance=ExtResource("14_j15c1")]
+
+[node name="Corner-hitbox" parent="wall81/awning-windows-normal" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.592323, 1.83442, 2.79232)
+
+[node name="Corner-hitbox2" parent="wall81/awning-windows-normal" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.581711, 1.82183, 2.86828)
+
+[node name="wall82" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61, 9, -11)
+
+[node name="skirting-double-middle" parent="wall82" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall83" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 9, -11)
+
+[node name="skirting-double-middle" parent="wall83" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall84" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 9, -11)
+
+[node name="skirting-double-middle" parent="wall84" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall85" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52, 9, -11)
+
+[node name="skirting-double-middle" parent="wall85" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall86" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, 9, -11)
+
+[node name="skirting-double-middle" parent="wall86" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall87" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 9, -11)
+
+[node name="skirting-double-middle" parent="wall87" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall88" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43, 9, -11)
+
+[node name="skirting-double-middle" parent="wall88" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall89" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 9, -11)
+
+[node name="skirting-double-middle" parent="wall89" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall90" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 9, -11)
+
+[node name="skirting-double-middle" parent="wall90" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="balcony" parent="wall90" instance=ExtResource("12_303b2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="balcony-railing" parent="wall90/balcony" instance=ExtResource("13_pshcg")]
+
+[node name="Corner-hitbox" parent="wall90/balcony/balcony-railing" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31515, 0.80715, 2.79232)
+
+[node name="Corner-hitbox2" parent="wall90/balcony/balcony-railing" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33712, 0.803783, 2.86828)
+
+[node name="wall91" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 9, -11)
+
+[node name="skirting-double-middle" parent="wall91" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall92" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 9, -11)
+
+[node name="skirting-double-middle" parent="wall92" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="awning-bouncy" parent="wall92" instance=ExtResource("7_b03p0")]
+bounceForce = 11.0
+
+[node name="wall93" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 9, -11)
+
+[node name="skirting-double-middle" parent="wall93" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall94" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 9, -11)
+
+[node name="skirting-double-middle" parent="wall94" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="awning-bouncy" parent="wall94" instance=ExtResource("7_b03p0")]
+bounceForce = 11.0
+
+[node name="wall95" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 9, -11)
+
+[node name="skirting-double-middle" parent="wall95" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall96" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 9, -11)
+
+[node name="skirting-double-middle" parent="wall96" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="awning-windows-normal" parent="wall96" instance=ExtResource("14_j15c1")]
+
+[node name="Corner-hitbox" parent="wall96/awning-windows-normal" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.592323, 1.83442, 2.79232)
+
+[node name="Corner-hitbox2" parent="wall96/awning-windows-normal" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.581711, 1.82183, 2.86828)
+
+[node name="wall97" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 9, -11)
+
+[node name="skirting-double-middle" parent="wall97" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall98" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85, 12, -11)
+
+[node name="skirting-double-middle" parent="wall98" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall99" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82, 12, -11)
+
+[node name="skirting-double-middle" parent="wall99" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall100" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79, 12, -11)
+
+[node name="skirting-double-middle" parent="wall100" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="awning-bouncy" parent="wall100" instance=ExtResource("7_b03p0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+bounceForce = 15.0
+
+[node name="wall101" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76, 12, -11)
+
+[node name="skirting-double-middle" parent="wall101" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="balcony" parent="wall101" instance=ExtResource("12_303b2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="balcony-railing" parent="wall101/balcony" instance=ExtResource("13_pshcg")]
+
+[node name="Corner-hitbox" parent="wall101/balcony/balcony-railing" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31515, 0.80715, 2.79232)
+
+[node name="Corner-hitbox2" parent="wall101/balcony/balcony-railing" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33712, 0.803783, 2.86828)
+
+[node name="wall102" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73, 12, -11)
+
+[node name="skirting-double-middle" parent="wall102" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall103" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 12, -11)
+
+[node name="skirting-double-middle" parent="wall103" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall104" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67, 12, -11)
+
+[node name="skirting-double-middle" parent="wall104" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall105" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 12, -11)
+
+[node name="skirting-double-middle" parent="wall105" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall106" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61, 12, -11)
+
+[node name="skirting-double-middle" parent="wall106" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall107" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 12, -11)
+
+[node name="skirting-double-middle" parent="wall107" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall108" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 12, -11)
+
+[node name="skirting-double-middle" parent="wall108" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall109" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52, 12, -11)
+
+[node name="skirting-double-middle" parent="wall109" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall110" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, 12, -11)
+
+[node name="skirting-double-middle" parent="wall110" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall111" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 12, -11)
+
+[node name="skirting-double-middle" parent="wall111" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall112" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43, 12, -11)
+
+[node name="skirting-double-middle" parent="wall112" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="balcony" parent="wall112" instance=ExtResource("12_303b2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="balcony-railing" parent="wall112/balcony" instance=ExtResource("13_pshcg")]
+
+[node name="Corner-hitbox" parent="wall112/balcony/balcony-railing" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31515, 0.80715, 2.79232)
+
+[node name="Corner-hitbox2" parent="wall112/balcony/balcony-railing" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33712, 0.803783, 2.86828)
+
+[node name="wall113" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 12, -11)
+
+[node name="skirting-double-middle" parent="wall113" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall114" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 12, -11)
+
+[node name="skirting-double-middle" parent="wall114" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall115" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 12, -11)
+
+[node name="skirting-double-middle" parent="wall115" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall116" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 12, -11)
+
+[node name="skirting-double-middle" parent="wall116" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall117" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 12, -11)
+
+[node name="skirting-double-middle" parent="wall117" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall118" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 12, -11)
+
+[node name="skirting-double-middle" parent="wall118" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall119" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 12, -11)
+
+[node name="skirting-double-middle" parent="wall119" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall120" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 12, -11)
+
+[node name="skirting-double-middle" parent="wall120" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall121" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 12, -11)
+
+[node name="skirting-double-middle" parent="wall121" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall122" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85, 15, -11)
+
+[node name="skirting-double-middle" parent="wall122" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall123" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82, 15, -11)
+
+[node name="skirting-double-middle" parent="wall123" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall124" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79, 15, -11)
+
+[node name="skirting-double-middle" parent="wall124" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall125" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76, 15, -11)
+
+[node name="skirting-double-middle" parent="wall125" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall126" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73, 15, -11)
+
+[node name="skirting-double-middle" parent="wall126" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall127" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 15, -11)
+
+[node name="skirting-double-middle" parent="wall127" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall128" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67, 15, -11)
+
+[node name="skirting-double-middle" parent="wall128" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall129" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 15, -11)
+
+[node name="skirting-double-middle" parent="wall129" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall130" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61, 15, -11)
+
+[node name="skirting-double-middle" parent="wall130" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="awning-windows-normal" parent="wall130" instance=ExtResource("14_j15c1")]
+
+[node name="Corner-hitbox" parent="wall130/awning-windows-normal" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.592323, 1.83442, 2.79232)
+
+[node name="Corner-hitbox2" parent="wall130/awning-windows-normal" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.581711, 1.82183, 2.86828)
+
+[node name="wall131" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 15, -11)
+
+[node name="skirting-double-middle" parent="wall131" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall132" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 15, -11)
+
+[node name="skirting-double-middle" parent="wall132" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall133" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52, 15, -11)
+
+[node name="skirting-double-middle" parent="wall133" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="awning-windows-normal" parent="wall133" instance=ExtResource("14_j15c1")]
+
+[node name="Corner-hitbox" parent="wall133/awning-windows-normal" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.592323, 1.83442, 2.79232)
+
+[node name="Corner-hitbox2" parent="wall133/awning-windows-normal" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.581711, 1.82183, 2.86828)
+
+[node name="wall134" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, 15, -11)
+
+[node name="skirting-double-middle" parent="wall134" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall135" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 15, -11)
+
+[node name="skirting-double-middle" parent="wall135" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall136" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43, 15, -11)
+
+[node name="skirting-double-middle" parent="wall136" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall137" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 15, -11)
+
+[node name="skirting-double-middle" parent="wall137" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall138" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 15, -11)
+
+[node name="skirting-double-middle" parent="wall138" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall139" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 15, -11)
+
+[node name="skirting-double-middle" parent="wall139" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall140" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 15, -11)
+
+[node name="skirting-double-middle" parent="wall140" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall141" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 15, -11)
+
+[node name="skirting-double-middle" parent="wall141" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall142" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 15, -11)
+
+[node name="skirting-double-middle" parent="wall142" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall143" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 15, -11)
+
+[node name="skirting-double-middle" parent="wall143" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall144" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 15, -11)
+
+[node name="skirting-double-middle" parent="wall144" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall145" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 15, -11)
+
+[node name="skirting-double-middle" parent="wall145" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall146" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85, 18, -11)
+
+[node name="skirting-double-middle" parent="wall146" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall147" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82, 18, -11)
+
+[node name="skirting-double-middle" parent="wall147" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall148" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79, 18, -11)
+
+[node name="skirting-double-middle" parent="wall148" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall149" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76, 18, -11)
+
+[node name="skirting-double-middle" parent="wall149" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall150" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73, 18, -11)
+
+[node name="skirting-double-middle" parent="wall150" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="balcony-left" parent="wall150" instance=ExtResource("8_ymsc2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="balcony-railing-left" parent="wall150/balcony-left" instance=ExtResource("9_mksf6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0342789, 0, 0)
+
+[node name="Corner-hitbox" parent="wall150/balcony-left/balcony-railing-left" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31515, 0.80715, 2.79232)
+
+[node name="wall151" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 18, -11)
+
+[node name="skirting-double-middle" parent="wall151" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="balcony-right" parent="wall151" instance=ExtResource("10_fxuyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="balcony-railing-right" parent="wall151/balcony-right" instance=ExtResource("11_ypwyw")]
+
+[node name="Corner-hitbox" parent="wall151/balcony-right/balcony-railing-right" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33179, 0.80715, 2.79232)
+
+[node name="wall152" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67, 18, -11)
+
+[node name="skirting-double-middle" parent="wall152" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall153" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 18, -11)
+
+[node name="skirting-double-middle" parent="wall153" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall154" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61, 18, -11)
+
+[node name="skirting-double-middle" parent="wall154" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall155" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 18, -11)
+
+[node name="skirting-double-middle" parent="wall155" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall156" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 18, -11)
+
+[node name="skirting-double-middle" parent="wall156" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall157" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52, 18, -11)
+
+[node name="skirting-double-middle" parent="wall157" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall158" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, 18, -11)
+
+[node name="skirting-double-middle" parent="wall158" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall159" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 18, -11)
+
+[node name="skirting-double-middle" parent="wall159" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall160" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43, 18, -11)
+
+[node name="skirting-double-middle" parent="wall160" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall161" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 18, -11)
+
+[node name="skirting-double-middle" parent="wall161" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall162" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 18, -11)
+
+[node name="skirting-double-middle" parent="wall162" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall163" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 18, -11)
+
+[node name="skirting-double-middle" parent="wall163" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall164" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 18, -11)
+
+[node name="skirting-double-middle" parent="wall164" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall165" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 18, -11)
+
+[node name="skirting-double-middle" parent="wall165" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall166" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 18, -11)
+
+[node name="skirting-double-middle" parent="wall166" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall167" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 18, -11)
+
+[node name="skirting-double-middle" parent="wall167" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall168" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 18, -11)
+
+[node name="skirting-double-middle" parent="wall168" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall169" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 18, -11)
+
+[node name="skirting-double-middle" parent="wall169" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall170" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85, 21, -11)
+
+[node name="skirting-double-middle" parent="wall170" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall171" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82, 21, -11)
+
+[node name="skirting-double-middle" parent="wall171" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall172" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79, 21, -11)
+
+[node name="skirting-double-middle" parent="wall172" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall173" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76, 21, -11)
+
+[node name="skirting-double-middle" parent="wall173" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall174" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73, 21, -11)
+
+[node name="skirting-double-middle" parent="wall174" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall175" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 21, -11)
+
+[node name="skirting-double-middle" parent="wall175" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall176" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67, 21, -11)
+
+[node name="skirting-double-middle" parent="wall176" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall177" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 21, -11)
+
+[node name="skirting-double-middle" parent="wall177" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall178" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61, 21, -11)
+
+[node name="skirting-double-middle" parent="wall178" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall179" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 21, -11)
+
+[node name="skirting-double-middle" parent="wall179" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall180" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 21, -11)
+
+[node name="skirting-double-middle" parent="wall180" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall181" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52, 21, -11)
+
+[node name="skirting-double-middle" parent="wall181" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall182" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, 21, -11)
+
+[node name="skirting-double-middle" parent="wall182" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall183" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 21, -11)
+
+[node name="skirting-double-middle" parent="wall183" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall184" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43, 21, -11)
+
+[node name="skirting-double-middle" parent="wall184" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall185" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 21, -11)
+
+[node name="skirting-double-middle" parent="wall185" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall186" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 21, -11)
+
+[node name="skirting-double-middle" parent="wall186" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall187" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 21, -11)
+
+[node name="skirting-double-middle" parent="wall187" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall188" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 21, -11)
+
+[node name="skirting-double-middle" parent="wall188" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall189" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 21, -11)
+
+[node name="skirting-double-middle" parent="wall189" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall190" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 21, -11)
+
+[node name="skirting-double-middle" parent="wall190" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall191" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 21, -11)
+
+[node name="skirting-double-middle" parent="wall191" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall192" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 21, -11)
+
+[node name="skirting-double-middle" parent="wall192" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall193" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 21, -11)
+
+[node name="skirting-double-middle" parent="wall193" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall194" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85, 24, -11)
+
+[node name="skirting-double-middle" parent="wall194" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall195" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82, 24, -11)
+
+[node name="skirting-double-middle" parent="wall195" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall196" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79, 24, -11)
+
+[node name="skirting-double-middle" parent="wall196" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall197" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76, 24, -11)
+
+[node name="skirting-double-middle" parent="wall197" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall198" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73, 24, -11)
+
+[node name="skirting-double-middle" parent="wall198" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall199" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 24, -11)
+
+[node name="skirting-double-middle" parent="wall199" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall200" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67, 24, -11)
+
+[node name="skirting-double-middle" parent="wall200" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall201" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 24, -11)
+
+[node name="skirting-double-middle" parent="wall201" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall202" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61, 24, -11)
+
+[node name="skirting-double-middle" parent="wall202" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall203" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 24, -11)
+
+[node name="skirting-double-middle" parent="wall203" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall204" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 24, -11)
+
+[node name="skirting-double-middle" parent="wall204" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall205" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52, 24, -11)
+
+[node name="skirting-double-middle" parent="wall205" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall206" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, 24, -11)
+
+[node name="skirting-double-middle" parent="wall206" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall207" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 24, -11)
+
+[node name="skirting-double-middle" parent="wall207" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall208" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43, 24, -11)
+
+[node name="skirting-double-middle" parent="wall208" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall209" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 24, -11)
+
+[node name="skirting-double-middle" parent="wall209" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall210" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 24, -11)
+
+[node name="skirting-double-middle" parent="wall210" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall211" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 24, -11)
+
+[node name="skirting-double-middle" parent="wall211" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall212" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 24, -11)
+
+[node name="skirting-double-middle" parent="wall212" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall213" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 24, -11)
+
+[node name="skirting-double-middle" parent="wall213" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall214" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 24, -11)
+
+[node name="skirting-double-middle" parent="wall214" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall215" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 24, -11)
+
+[node name="skirting-double-middle" parent="wall215" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall216" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 24, -11)
+
+[node name="skirting-double-middle" parent="wall216" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall217" parent="." instance=ExtResource("1_epkx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 24, -11)
+
+[node name="skirting-double-middle" parent="wall217" instance=ExtResource("2_ly6pd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wallmetalsmall_v1" parent="." instance=ExtResource("15_lvqkd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15, 0, -7.23301)
+
+[node name="wallmetalsmall_v2" parent="wallmetalsmall_v1" instance=ExtResource("15_lvqkd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.59077, 0)
+
+[node name="wallmetalsmall_v2" parent="wallmetalsmall_v1/wallmetalsmall_v2" instance=ExtResource("15_lvqkd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.59077, 0)
+
+[node name="Corner-hitbox2" parent="wallmetalsmall_v1/wallmetalsmall_v2/wallmetalsmall_v2" instance=ExtResource("5_mlgnn")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 3.18788, 0.00244713)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="wallmetalsmall_v1"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wallmetalsmall_v1/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.17948, 0)
+shape = SubResource("BoxShape3D_5cxwu")

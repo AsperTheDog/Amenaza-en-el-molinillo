@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://wr3am1xkf426"]
+[gd_scene load_steps=49 format=3 uid="uid://wr3am1xkf426"]
 
 [ext_resource type="Script" path="res://Scenes/MainScene.gd" id="1_3om1c"]
 [ext_resource type="PackedScene" uid="uid://blcpnk11d3lhx" path="res://Scenes/UI.tscn" id="2_nf5jt"]
@@ -31,6 +31,9 @@
 [ext_resource type="PackedScene" uid="uid://dkpkihfs62ww6" path="res://Assets/Models/Scene/ModularBuildings/balcony_railing.tscn" id="28_lg7f7"]
 [ext_resource type="PackedScene" uid="uid://5wb3cq3d04gp" path="res://Assets/Models/Scene/ModularBuildings/awning_windows_normal.tscn" id="29_7lk02"]
 [ext_resource type="PackedScene" uid="uid://k6u2nfwda81n" path="res://Assets/Models/Scene/Construction/wallmetalsmall_v_1.tscn" id="31_kk434"]
+[ext_resource type="PackedScene" uid="uid://r3yqkusrdnuw" path="res://Assets/Models/Scene/City/trash_big_v_1.tscn" id="34_ryj8j"]
+[ext_resource type="PackedScene" uid="uid://bvli3l61y8n23" path="res://Assets/Models/Scene/Vehicles/minitruck_and_wheels.tscn" id="35_ryt43"]
+[ext_resource type="PackedScene" uid="uid://dt7yajhh5q0q4" path="res://Assets/Models/Scene/ModularBuildings/ceiling_ground.tscn" id="36_4lugv"]
 [ext_resource type="PackedScene" uid="uid://byqqv7ru2gool" path="res://Assets/Models/Scene/Ground/floor_road_v_1.tscn" id="59_jy6ai"]
 [ext_resource type="Material" uid="uid://cvcqlnyd0mus" path="res://Materials/Ground/city-floor_v1.tres" id="60_wmg14"]
 
@@ -51,6 +54,21 @@ material = ExtResource("60_wmg14")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5cxwu"]
 size = Vector3(3.9961, 10.1789, 0.231198)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xwiuf"]
+size = Vector3(2.5435, 1.70215, 4.06887)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ci58i"]
+size = Vector3(2.5435, 1.70215, 0.892185)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rmquq"]
+size = Vector3(2.5435, 0.66167, 1.27699)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_imgks"]
+size = Vector3(1, 1.69183, 2.08571)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kfmty"]
+size = Vector3(2.04986, 0.457327, 1)
 
 [node name="main" type="Node3D" node_paths=PackedStringArray("chara")]
 script = ExtResource("1_3om1c")
@@ -84,7 +102,7 @@ shape = SubResource("BoxShape3D_dfl6r")
 transform = Transform3D(0.930852, 0, -0.365397, 0, 1, 0, 0.365397, 0, 0.930852, 0.00304604, 2.09802, -0.00776577)
 
 [node name="Rodolfo" parent="." instance=ExtResource("6_ci7uu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.5353, 0.524158, -6.93862)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.146, 0.630757, -6.93862)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("7_s14yk")
@@ -186,7 +204,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 224.732, 0, 0)
 
 [node name="ModularBuilding 1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 12)
-visible = false
 
 [node name="wall" parent="ModularBuilding 1" instance=ExtResource("11_mn36p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
@@ -231,7 +248,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
 [node name="ModularBuilding 2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83, 0, 13)
-visible = false
 
 [node name="wall-windows-normal" parent="ModularBuilding 2" instance=ExtResource("11_utgw7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
@@ -264,7 +280,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
 [node name="ModularBuilding 3" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 11)
-visible = false
 
 [node name="wall-windows-normal" parent="ModularBuilding 3" instance=ExtResource("11_utgw7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
@@ -297,7 +312,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
 [node name="ModularBuilding 4" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43, 0, 13)
-visible = false
 
 [node name="wall-windows-normal" parent="ModularBuilding 4" instance=ExtResource("11_utgw7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
@@ -661,6 +675,70 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 3, -11)
 
 [node name="skirting-double-middle" parent="EdificiosAltos/wall49" instance=ExtResource("18_yy6g8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall218" parent="EdificiosAltos" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 3, -11)
+
+[node name="skirting-double-middle" parent="EdificiosAltos/wall218" instance=ExtResource("18_yy6g8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="awning-windows-normal" parent="EdificiosAltos/wall218" instance=ExtResource("29_7lk02")]
+
+[node name="Corner-hitbox" parent="EdificiosAltos/wall218/awning-windows-normal" instance=ExtResource("21_42aha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.592323, 1.83442, 2.79232)
+
+[node name="Corner-hitbox2" parent="EdificiosAltos/wall218/awning-windows-normal" instance=ExtResource("21_42aha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.581711, 1.82183, 2.86828)
+
+[node name="wall219" parent="EdificiosAltos" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -11)
+
+[node name="skirting-double-middle" parent="EdificiosAltos/wall219" instance=ExtResource("18_yy6g8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall220" parent="EdificiosAltos" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 6, -11)
+
+[node name="skirting-double-middle" parent="EdificiosAltos/wall220" instance=ExtResource("18_yy6g8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall221" parent="EdificiosAltos" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 9, -11)
+
+[node name="skirting-double-middle" parent="EdificiosAltos/wall221" instance=ExtResource("18_yy6g8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall222" parent="EdificiosAltos" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3, -11)
+
+[node name="skirting-double-middle" parent="EdificiosAltos/wall222" instance=ExtResource("18_yy6g8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall223" parent="EdificiosAltos" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -11)
+
+[node name="skirting-double-middle" parent="EdificiosAltos/wall223" instance=ExtResource("18_yy6g8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall224" parent="EdificiosAltos" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 6, -11)
+
+[node name="skirting-double-middle" parent="EdificiosAltos/wall224" instance=ExtResource("18_yy6g8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="awning-windows-normal" parent="EdificiosAltos/wall224" instance=ExtResource("29_7lk02")]
+
+[node name="Corner-hitbox" parent="EdificiosAltos/wall224/awning-windows-normal" instance=ExtResource("21_42aha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.592323, 1.83442, 2.79232)
+
+[node name="Corner-hitbox2" parent="EdificiosAltos/wall224/awning-windows-normal" instance=ExtResource("21_42aha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.581711, 1.82183, 2.86828)
+
+[node name="wall225" parent="EdificiosAltos" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 9, -11)
+
+[node name="skirting-double-middle" parent="EdificiosAltos/wall225" instance=ExtResource("18_yy6g8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
 [node name="wall50" parent="EdificiosAltos" instance=ExtResource("11_mn36p")]
@@ -1771,19 +1849,385 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 24, -11)
 [node name="skirting-double-middle" parent="EdificiosAltos/wall217" instance=ExtResource("18_yy6g8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
-[node name="wallmetalsmall_v1" parent="." instance=ExtResource("31_kk434")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15, 0, -6.23301)
+[node name="wallmetalsmall_v1" parent="EdificiosAltos" instance=ExtResource("31_kk434")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15, 0, -7.23301)
 
-[node name="wallmetalsmall_v2" parent="wallmetalsmall_v1" instance=ExtResource("31_kk434")]
+[node name="wallmetalsmall_v2" parent="EdificiosAltos/wallmetalsmall_v1" instance=ExtResource("31_kk434")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.59077, 0)
 
-[node name="wallmetalsmall_v2" parent="wallmetalsmall_v1/wallmetalsmall_v2" instance=ExtResource("31_kk434")]
+[node name="wallmetalsmall_v2" parent="EdificiosAltos/wallmetalsmall_v1/wallmetalsmall_v2" instance=ExtResource("31_kk434")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.59077, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="wallmetalsmall_v1"]
+[node name="Corner-hitbox2" parent="EdificiosAltos/wallmetalsmall_v1/wallmetalsmall_v2/wallmetalsmall_v2" instance=ExtResource("21_42aha")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 3.18788, 0.00244713)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="EdificiosAltos/wallmetalsmall_v1"]
 collision_layer = 7
 collision_mask = 7
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="wallmetalsmall_v1/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EdificiosAltos/wallmetalsmall_v1/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.17948, 0)
 shape = SubResource("BoxShape3D_5cxwu")
+
+[node name="InteriorBuilding" type="Node3D" parent="."]
+
+[node name="wall2" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -10)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall2" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall3" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -10)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall3" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall4" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -10)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall4" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall5" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -10)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall5" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall6" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, -10)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall6" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall7" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -10)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall7" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall8" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3, -10)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall8" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall9" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 3, -10)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall9" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="awning-garaje" parent="InteriorBuilding/wall9" instance=ExtResource("20_hofi7")]
+
+[node name="Corner-hitbox2" parent="InteriorBuilding/wall9/awning-garaje" instance=ExtResource("21_42aha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17221, 1.86889, 2.86828)
+
+[node name="Corner-hitbox" parent="InteriorBuilding/wall9/awning-garaje" instance=ExtResource("21_42aha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15097, 1.84792, 2.79232)
+
+[node name="wall10" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 3, -10)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall10" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall11" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 3, -10)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall11" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall12" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 3, -10)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall12" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall13" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 3, -10)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall13" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall14" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 6, -10)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall14" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall15" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 6, -10)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall15" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall16" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 6, -10)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall16" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall17" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 6, -10)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall17" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="balcony-left" parent="InteriorBuilding/wall17" instance=ExtResource("23_3ive0")]
+
+[node name="balcony-railing-left" parent="InteriorBuilding/wall17/balcony-left" instance=ExtResource("24_rivef")]
+
+[node name="Corner-hitbox" parent="InteriorBuilding/wall17/balcony-left/balcony-railing-left" instance=ExtResource("21_42aha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31515, 0.80715, 2.79232)
+
+[node name="wall18" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 6, -10)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall18" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="balcony-right" parent="InteriorBuilding/wall18" instance=ExtResource("24_db0lx")]
+
+[node name="balcony-railing-right" parent="InteriorBuilding/wall18/balcony-right" instance=ExtResource("26_6a7nx")]
+
+[node name="Corner-hitbox2" parent="InteriorBuilding/wall18/balcony-right/balcony-railing-right" instance=ExtResource("21_42aha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33712, 0.803783, 2.86828)
+
+[node name="wall19" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 6, -10)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall19" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="trash-big_v1" parent="InteriorBuilding" instance=ExtResource("34_ryj8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -7)
+
+[node name="minitruck-and-wheels" parent="InteriorBuilding" instance=ExtResource("35_ryt43")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, -7)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="InteriorBuilding/minitruck-and-wheels"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteriorBuilding/minitruck-and-wheels/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.94078, -1.56834)
+shape = SubResource("BoxShape3D_xwiuf")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="InteriorBuilding/minitruck-and-wheels/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 1.05323, 0.623366)
+shape = SubResource("BoxShape3D_ci58i")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="InteriorBuilding/minitruck-and-wheels/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.805049, -0.593208, 0, 0.593208, 0.805049, 0, 1.259, 1.387)
+shape = SubResource("BoxShape3D_rmquq")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="InteriorBuilding/minitruck-and-wheels/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, 0.491369, 1.87631)
+shape = SubResource("BoxShape3D_imgks")
+
+[node name="Corner-hitbox" parent="InteriorBuilding/minitruck-and-wheels" instance=ExtResource("21_42aha")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2.768, -3.58567)
+
+[node name="wall20" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 27, 0, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall20" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall21" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 27, 3, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall21" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall22" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 27, 6, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall22" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="Corner-hitbox2" parent="InteriorBuilding/wall22/skirting-doublelines-middle" instance=ExtResource("21_42aha")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.278918, 0.598166, 1.96699)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="InteriorBuilding/wall22/skirting-doublelines-middle"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteriorBuilding/wall22/skirting-doublelines-middle/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.103465, 0.316782, 1.57399)
+shape = SubResource("BoxShape3D_kfmty")
+
+[node name="wall40" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39, 0, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall40" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall41" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39, 3, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall41" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall42" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39, 6, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall42" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="InteriorBuilding/wall42/skirting-doublelines-middle"]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteriorBuilding/wall42/skirting-doublelines-middle/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.103465, 0.316782, 1.48832)
+shape = SubResource("BoxShape3D_kfmty")
+
+[node name="wall47" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39, 15, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall47" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall23" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 27, 15, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall23" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="ceiling-ground" parent="InteriorBuilding/wall23" instance=ExtResource("36_4lugv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.4555, 0)
+
+[node name="ceiling-ground2" parent="InteriorBuilding/wall23" instance=ExtResource("36_4lugv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -5.4555, 0)
+
+[node name="ceiling-ground3" parent="InteriorBuilding/wall23" instance=ExtResource("36_4lugv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -5.4555, 0)
+
+[node name="ceiling-ground4" parent="InteriorBuilding/wall23" instance=ExtResource("36_4lugv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -5.4555, 0)
+
+[node name="ceiling-ground5" parent="InteriorBuilding/wall23" instance=ExtResource("36_4lugv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -5.4555, 0)
+
+[node name="wall43" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 30, 15, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall43" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall44" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 33, 15, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall44" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall45" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 36, 15, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall45" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall46" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 39, 15, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall46" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall25" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 27, 6, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall25" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall26" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 27, 3, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall26" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall27" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 27, 0, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall27" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall28" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 30, 6, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall28" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall29" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 30, 3, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall29" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall30" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 30, 0, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall30" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall31" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 33, 6, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall31" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall32" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 33, 3, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall32" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall33" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 33, 0, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall33" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall34" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 36, 6, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall34" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall35" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 36, 3, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall35" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall36" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 36, 0, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall36" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall37" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 39, 6, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall37" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall38" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 39, 3, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall38" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall39" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 39, 0, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall39" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="wall24" parent="InteriorBuilding" instance=ExtResource("11_mn36p")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 27, 15, -7)
+
+[node name="skirting-doublelines-middle" parent="InteriorBuilding/wall24" instance=ExtResource("19_ynr4x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
