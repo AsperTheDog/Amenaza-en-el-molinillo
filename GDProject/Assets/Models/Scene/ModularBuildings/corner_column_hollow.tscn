@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bynoxx1j8xp3b"]
 
-[ext_resource type="PackedScene" uid="uid://db2f5adwtv4qd" path="res://Assets/Models/Scene/ModularBuildings/corner-column-hollow.glb" id="1_qqgtx"]
-[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_emqx8"]
+[ext_resource type="PackedScene" uid="uid://db2f5adwtv4qd" path="res://Assets/Models/Scene/ModularBuildings/GlbOriginalFiles/corner-column-hollow.glb" id="1_qqgtx"]
+[ext_resource type="Material" uid="uid://d2dupdqjoxqay" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_emqx8"]
 
 [node name="corner-column-hollow" instance=ExtResource("1_qqgtx")]
 

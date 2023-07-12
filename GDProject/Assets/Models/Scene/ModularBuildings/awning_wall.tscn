@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cq2txmqseh2hd"]
 
-[ext_resource type="PackedScene" uid="uid://bo8gtl40svw3i" path="res://Assets/Models/Scene/ModularBuildings/awning-wall.glb" id="1_tqmq2"]
+[ext_resource type="PackedScene" uid="uid://bo8gtl40svw3i" path="res://Assets/Models/Scene/ModularBuildings/GlbOriginalFiles/awning-wall.glb" id="1_tqmq2"]
 [ext_resource type="Material" uid="uid://d2dupdqjoxqay" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_m8kas"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jl8vi"]

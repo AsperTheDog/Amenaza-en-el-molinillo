@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dojpy50xb11sd"]
 
-[ext_resource type="PackedScene" uid="uid://dsyp0n5jjd36y" path="res://Assets/Models/Scene/ModularBuildings/awning-garaje-closed.glb" id="1_252yx"]
+[ext_resource type="PackedScene" uid="uid://dsyp0n5jjd36y" path="res://Assets/Models/Scene/ModularBuildings/GlbOriginalFiles/awning-garaje-closed.glb" id="1_252yx"]
 [ext_resource type="Material" uid="uid://d2dupdqjoxqay" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_w3f2p"]
 
 [node name="awning-garaje-closed" instance=ExtResource("1_252yx")]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dyo7ru0vqgumn"]
 
-[ext_resource type="PackedScene" uid="uid://bgnn3p717m427" path="res://Assets/Models/Scene/ModularBuildings/balcony-railing-left.glb" id="1_801ap"]
+[ext_resource type="PackedScene" uid="uid://bgnn3p717m427" path="res://Assets/Models/Scene/ModularBuildings/GlbOriginalFiles/balcony-railing-left.glb" id="1_801ap"]
 [ext_resource type="Material" uid="uid://d2dupdqjoxqay" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_rtxo5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1t1xm"]

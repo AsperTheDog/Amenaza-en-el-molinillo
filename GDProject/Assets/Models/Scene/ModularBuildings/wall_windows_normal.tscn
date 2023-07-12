@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bj1lmy280yvq"]
 
-[ext_resource type="PackedScene" uid="uid://cpukaqqnh2mtc" path="res://Assets/Models/Scene/ModularBuildings/wall-windows-normal.glb" id="1_70n1v"]
-[ext_resource type="Material" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_i5ogn"]
+[ext_resource type="PackedScene" uid="uid://cpukaqqnh2mtc" path="res://Assets/Models/Scene/ModularBuildings/GlbOriginalFiles/wall-windows-normal.glb" id="1_70n1v"]
+[ext_resource type="Material" uid="uid://d2dupdqjoxqay" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_i5ogn"]
 
 [node name="wall-windows-normal" instance=ExtResource("1_70n1v")]
 

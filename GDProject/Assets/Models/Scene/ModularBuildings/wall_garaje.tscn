@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ddh7fypbnjfb2"]
 
-[ext_resource type="PackedScene" uid="uid://bp4su63lukbfw" path="res://Assets/Models/Scene/ModularBuildings/wall-garaje.glb" id="1_jw2lh"]
-[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_8riys"]
+[ext_resource type="PackedScene" uid="uid://bp4su63lukbfw" path="res://Assets/Models/Scene/ModularBuildings/GlbOriginalFiles/wall-garaje.glb" id="1_jw2lh"]
+[ext_resource type="Material" uid="uid://d2dupdqjoxqay" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_8riys"]
 
 [node name="wall-garaje" instance=ExtResource("1_jw2lh")]
 

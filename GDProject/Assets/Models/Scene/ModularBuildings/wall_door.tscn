@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bxkqxxwxoppm"]
 
-[ext_resource type="PackedScene" uid="uid://6y4kok4gs26g" path="res://Assets/Models/Scene/ModularBuildings/wall-door.glb" id="1_6cvxx"]
-[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_4kr21"]
+[ext_resource type="PackedScene" uid="uid://6y4kok4gs26g" path="res://Assets/Models/Scene/ModularBuildings/GlbOriginalFiles/wall-door.glb" id="1_6cvxx"]
+[ext_resource type="Material" uid="uid://d2dupdqjoxqay" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_4kr21"]
 
 [node name="wall-door" instance=ExtResource("1_6cvxx")]
 

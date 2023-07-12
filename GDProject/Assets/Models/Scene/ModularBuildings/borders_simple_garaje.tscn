@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://be1f0ofsj637h"]
 
-[ext_resource type="PackedScene" uid="uid://ddsvjpbw8bj2v" path="res://Assets/Models/Scene/ModularBuildings/borders-simple-garaje.glb" id="1_7ypkr"]
-[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_0i5na"]
+[ext_resource type="PackedScene" uid="uid://ddsvjpbw8bj2v" path="res://Assets/Models/Scene/ModularBuildings/GlbOriginalFiles/borders-simple-garaje.glb" id="1_7ypkr"]
+[ext_resource type="Material" uid="uid://d2dupdqjoxqay" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_0i5na"]
 
 [node name="borders-simple-garaje" instance=ExtResource("1_7ypkr")]
 

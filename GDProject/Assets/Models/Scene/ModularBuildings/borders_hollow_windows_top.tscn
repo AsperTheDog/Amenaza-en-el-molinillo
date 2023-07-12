@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://gkpyvp58mpkn"]
 
-[ext_resource type="PackedScene" uid="uid://cb18wv4pw5pv4" path="res://Assets/Models/Scene/ModularBuildings/borders-hollow-windows-top.glb" id="1_wtuni"]
-[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_yl31q"]
+[ext_resource type="PackedScene" uid="uid://cb18wv4pw5pv4" path="res://Assets/Models/Scene/ModularBuildings/GlbOriginalFiles/borders-hollow-windows-top.glb" id="1_wtuni"]
+[ext_resource type="Material" uid="uid://d2dupdqjoxqay" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_yl31q"]
 
 [node name="borders-hollow-windows-top" instance=ExtResource("1_wtuni")]
 

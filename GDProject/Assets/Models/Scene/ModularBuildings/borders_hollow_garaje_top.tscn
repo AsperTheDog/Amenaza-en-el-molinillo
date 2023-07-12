@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d3p3qcihrb8hq"]
 
-[ext_resource type="PackedScene" uid="uid://mv27wmeynx0g" path="res://Assets/Models/Scene/ModularBuildings/borders-hollow-garaje-top.glb" id="1_dm4gu"]
-[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_rq44i"]
+[ext_resource type="PackedScene" uid="uid://mv27wmeynx0g" path="res://Assets/Models/Scene/ModularBuildings/GlbOriginalFiles/borders-hollow-garaje-top.glb" id="1_dm4gu"]
+[ext_resource type="Material" uid="uid://d2dupdqjoxqay" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_rq44i"]
 
 [node name="borders-hollow-garaje-top" instance=ExtResource("1_dm4gu")]
 

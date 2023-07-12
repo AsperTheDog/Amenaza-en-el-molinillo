@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dgq2iy5figmt7"]
 
-[ext_resource type="PackedScene" uid="uid://jbroubmsyuge" path="res://Assets/Models/Scene/ModularBuildings/borders-doublelines-windows-top.glb" id="1_fow5l"]
-[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_q5dam"]
+[ext_resource type="PackedScene" uid="uid://jbroubmsyuge" path="res://Assets/Models/Scene/ModularBuildings/GlbOriginalFiles/borders-doublelines-windows-top.glb" id="1_fow5l"]
+[ext_resource type="Material" uid="uid://d2dupdqjoxqay" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_q5dam"]
 
 [node name="borders-doublelines-windows-top" instance=ExtResource("1_fow5l")]
 

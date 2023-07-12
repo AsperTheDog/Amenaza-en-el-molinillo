@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bpno8urvmercd"]
 
-[ext_resource type="PackedScene" uid="uid://daqbxmenvolye" path="res://Assets/Models/Scene/ModularBuildings/skirting-simple-middle.glb" id="1_tn4d1"]
-[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_nq7kq"]
+[ext_resource type="PackedScene" uid="uid://daqbxmenvolye" path="res://Assets/Models/Scene/ModularBuildings/GlbOriginalFiles/skirting-simple-middle.glb" id="1_tn4d1"]
+[ext_resource type="Material" uid="uid://d2dupdqjoxqay" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_nq7kq"]
 
 [node name="skirting-simple-middle" instance=ExtResource("1_tn4d1")]
 

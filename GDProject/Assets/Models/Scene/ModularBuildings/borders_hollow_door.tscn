@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cnhkg48kdiyfa"]
 
-[ext_resource type="PackedScene" uid="uid://bqyoyhqxp5js4" path="res://Assets/Models/Scene/ModularBuildings/borders-hollow-door.glb" id="1_nq61c"]
-[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_hqex0"]
+[ext_resource type="PackedScene" uid="uid://bqyoyhqxp5js4" path="res://Assets/Models/Scene/ModularBuildings/GlbOriginalFiles/borders-hollow-door.glb" id="1_nq61c"]
+[ext_resource type="Material" uid="uid://d2dupdqjoxqay" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_hqex0"]
 
 [node name="borders-hollow-door" instance=ExtResource("1_nq61c")]
 

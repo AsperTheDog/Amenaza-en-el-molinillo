@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bakyp2p1orb2t"]
 
-[ext_resource type="PackedScene" uid="uid://lo8bbdvdotma" path="res://Assets/Models/Scene/ModularBuildings/skirting-doublelines-middle.glb" id="1_rbquk"]
-[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_hn2wc"]
+[ext_resource type="PackedScene" uid="uid://lo8bbdvdotma" path="res://Assets/Models/Scene/ModularBuildings/GlbOriginalFiles/skirting-doublelines-middle.glb" id="1_rbquk"]
+[ext_resource type="Material" uid="uid://d2dupdqjoxqay" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_hn2wc"]
 
 [node name="skirting-doublelines-middle" instance=ExtResource("1_rbquk")]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dt7yajhh5q0q4"]
 
-[ext_resource type="PackedScene" uid="uid://dfgnr0ai1y5dt" path="res://Assets/Models/Scene/ModularBuildings/ceiling-ground.glb" id="1_6u7r0"]
+[ext_resource type="PackedScene" uid="uid://dfgnr0ai1y5dt" path="res://Assets/Models/Scene/ModularBuildings/GlbOriginalFiles/ceiling-ground.glb" id="1_6u7r0"]
 [ext_resource type="Material" uid="uid://d2dupdqjoxqay" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_sd1u3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_35p3h"]

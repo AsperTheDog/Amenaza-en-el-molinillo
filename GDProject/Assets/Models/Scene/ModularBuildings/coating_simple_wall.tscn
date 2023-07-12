@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bs3nb7yx4uwl7"]
 
-[ext_resource type="PackedScene" uid="uid://di8q13a1kgwc8" path="res://Assets/Models/Scene/ModularBuildings/coating-simple-wall.glb" id="1_bgl0o"]
-[ext_resource type="Material" uid="uid://dbj5x0drnlt7r" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_0odte"]
+[ext_resource type="PackedScene" uid="uid://di8q13a1kgwc8" path="res://Assets/Models/Scene/ModularBuildings/GlbOriginalFiles/coating-simple-wall.glb" id="1_bgl0o"]
+[ext_resource type="Material" uid="uid://d2dupdqjoxqay" path="res://Materials/ModularBuildings/modularbuildings-orangebricks_v1.tres" id="2_0odte"]
 
 [node name="coating-simple-wall" instance=ExtResource("1_bgl0o")]
 
